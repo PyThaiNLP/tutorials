@@ -1,0 +1,18 @@
+language: python
+env:
+  global:
+  - 'FTP_USER=[FTP_USER]'
+  - 'FTP_PASSWORD=[FTP_PASSWORD]'
+  - 'FTP_HOST=[FTP_HOST]'
+  - 'FTP_PORT=[FTP_PORT]'
+branches:
+  only: ["masterr"]
+script: 
+  - make html
+  - echo "Done build HTML files"
+# after_success:
+# - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+# - curl --ftp-create-dirs
+#        -T filename
+#        --key /tmp/sftp_rsa
+#        ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/tutorials/
