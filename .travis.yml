@@ -6,7 +6,7 @@ env:
   - 'FTP_HOST=[FTP_HOST]'
   - 'FTP_PORT=[FTP_PORT]'
 branches:
-  only: ["masterr"]
+  only: ["master"]
 script: 
   - make html
   - echo "Done build HTML files"
