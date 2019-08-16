@@ -7,9 +7,9 @@ All thte tutorial notebook are presented as sphinx-style document at:
 
 [https://www.thainlp.org/pythainlp/tutorials](https://www.thainlp.org/pythainlp/tutorials)
 
-## Contributing
 
+## Build documentation
 
-1. Upload Jupyter notebook to `source/notebooks`
+1. Add a Jupyter notebook to `source/notebooks`
 2. Run `make html` to build HTML document from notebooks 
 3. The generated HTML files will be in `build/html`
