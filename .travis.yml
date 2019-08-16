@@ -19,6 +19,6 @@ script:
 after_success:
   - echo "Uploading files to `thainlp.org/pythainlp/tutorials`"
   - cd ./build/html
-  - find . -type f -name "*" -print -exec curl --ftp-create-dir --ftp-pasv --ipv4 -v -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
+  - find . -type f -name "*" -print -exec curl --ftp-create-dir --disable-epsv --ftp-pasv --ipv4 -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
   - echo "Done uploading"
   - rm -rf ./build/html
