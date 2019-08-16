@@ -14,14 +14,6 @@ PyThaiNLP is a Python library for Thai Natural Language Processing.
 
    notebooks/*
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
 Apache Software License 2.0
 
 Maintained by the PyThaiNLP team.
