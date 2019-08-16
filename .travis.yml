@@ -13,12 +13,10 @@ before_install:
   - sudo apt-get update && sudo apt-get install pandoc
 
 script: 
-  - make build
-  - echo "Done build HTML files"
+  - make html
+  - echo "Done building HTML files"
 
-# after_success:
-# - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-# - curl --ftp-create-dirs
-#        -T filename
-#        --key /tmp/sftp_rsa
-#        ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/pythainlp/tutorials/
+after_success:
+  - echo "Uploading files to `thainlp.org/pythainlp/tutorials`"
+  - find . -type d \( -path "./.*" -o -path "./build/html" \) -prune -o -name "*" -print -exec curl --ftp-create-dirs -T {} ftp://thainlp.org/pythainlp/tutorials/ --user ${FTP_USER}:${FTP_PASSWORD} \;
+  - echo "Done uploading"
