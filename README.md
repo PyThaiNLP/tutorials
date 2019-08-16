@@ -9,5 +9,7 @@ All thte tutorial notebook are presented as sphinx-style document at:
 
 ## Contributing
 
-    1. Upload Jupyter notebook to `source/notenooks`
-    2. Run `make html` to build HTML document from notebooks
+
+1. Upload Jupyter notebook to `source/notebooks`
+2. Run `make html` to build HTML document from notebooks 
+3. The generated HTML files will be in `build/html`
