@@ -5,13 +5,6 @@ addons:
     packages:
     - openvpn
 
-env:
-  global:
-  - 'FTP_USER=[FTP_USER]'
-  - 'FTP_PASSWORD=[FTP_PASSWORD]'
-  - 'FTP_HOST=[FTP_HOST]'
-  - 'FTP_PORT=[FTP_PORT]'
-
 branches:
   only: ["master"]
 
@@ -26,6 +19,6 @@ script:
 after_success:
   - echo "Uploading files to `thainlp.org/pythainlp/tutorials`"
   - cd ./build/html
-  - find . -type f -name "*" -print -exec curl --ftp-create-dir -v -T {} ftp://thainlp.org/public_html/pythainlp/tutorials/{} --user ${FTP_USER}:${FTP_PASSWORD} \;
+  - find . -type f -name "*" -print -exec curl --ftp-create-dir -v -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
   - echo "Done uploading"
   - rm -rf ./build/html
