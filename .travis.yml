@@ -18,5 +18,7 @@ script:
 
 after_success:
   - echo "Uploading files to `thainlp.org/pythainlp/tutorials`"
-  - find . -type d \( -path "./.*" -o -path "./build/html" \) -prune -o -name "*" -print -exec curl --ftp-create-dirs -T {} ftp://thainlp.org/pythainlp/tutorials/ --user ${FTP_USER}:${FTP_PASSWORD} \;
+  - cd ./build/html
+  - find . -type f -name "*" -print -exec curl --ftp-create-dir -T {} ftp://thainlp.org/public_html/pythainlp/tutorials/{} --user ${FTP_USER}:${FTP_PASSWORD} \;
   - echo "Done uploading"
+  - rm -rf ./build/html
