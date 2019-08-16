@@ -5,14 +5,20 @@ env:
   - 'FTP_PASSWORD=[FTP_PASSWORD]'
   - 'FTP_HOST=[FTP_HOST]'
   - 'FTP_PORT=[FTP_PORT]'
+
 branches:
   only: ["master"]
+
+before-install:
+  - sudo apt-get update && sudo apt-get install pandoc
+
 script: 
-  - make html
+  - make build
   - echo "Done build HTML files"
+
 # after_success:
 # - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
 # - curl --ftp-create-dirs
 #        -T filename
 #        --key /tmp/sftp_rsa
-#        ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/tutorials/
+#        ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/pythainlp/tutorials/
