@@ -1,4 +1,10 @@
 language: python
+
+addons:
+  apt:
+    packages:
+    - openvpn
+
 env:
   global:
   - 'FTP_USER=[FTP_USER]'
@@ -11,6 +17,7 @@ branches:
 
 before_install:
   - sudo apt-get update && sudo apt-get install pandoc
+  - sudo openvpn path/to/conf.ovpn &>>openvpn-client.log &
 
 script: 
   - make html
