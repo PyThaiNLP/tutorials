@@ -14,7 +14,7 @@ All thte tutorial notebook are presented as sphinx-style document at:
 3. After the pull request is merged, the new notbook will be generated automatically and uploaded to thainlp.org/pythainlp/tutorials
 
 
-## Building the documentation
+## Generate documentation
 
 1. Add a Jupyter notebook to `source/notebooks`
 2. Run `make html` to build HTML document from notebooks 
