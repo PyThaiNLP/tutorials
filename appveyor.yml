@@ -3,13 +3,15 @@ image: ubuntu1604
 branches:
   only:
     - master
+
+only_commits:
+  message: /\(build doc\)/  # Start a new build if message contains '(build doc)'
+
+# scripts that run after cloning repository
 install:
   - sudo apt-get update && sudo apt-get install -y pandoc python3
   - sudo apt-get install -y python3-sphinx
   - sudo pip install -r requirements.txt
-
-only_commits:
-  message: /\(build doc\)/  # Start a new build if message contains '(build doc)'
 
 build_script: 
   - sudo make html
@@ -18,7 +20,11 @@ build_script:
 artifacts:
   - path: ./build/html
     name: document
-  
+
+before_deploy:
+  - echo "Start cleaning the directory /tutorials"
+  - bash ./clean_directory.sh
+
 deploy:
   - provider: FTP
     protocol: ftp
@@ -30,8 +36,5 @@ deploy:
     folder: public_html/pythainlp/tutorials
     artifact: document
 
-  # - echo "Start uploading files to `thainlp.org/pythainlp.tutorials` via FTP"
-  # - cd ./build/html
-  # - find . -type f -name "*" -print -exec curl --ftp-create-dir --ipv4 -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
-  # - echo "Done uploading"
-  # - rm -rf ./build/html
+after_deploy:
+  - echo "Done uploading files to /tutorials"
