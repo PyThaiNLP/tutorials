@@ -4,8 +4,9 @@ branches:
   only:
     - master
 
-only_commits:
-  message: /\(build doc\)/  # Start a new build if message contains '(build doc)'
+skip_commits:
+  message: /\(no ci\)/     # Skip a new build if message contains '(skip ci)'
+
 
 # scripts that run after cloning repository
 install:
@@ -28,7 +29,7 @@ before_deploy:
 deploy:
   - provider: FTP
     protocol: ftp
-    host: ftp://thainlp.org
+    host: thainlp.org
     username: ${FTP_USER}
     password:
       secure: ${FTP_PASSWORD}
