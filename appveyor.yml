@@ -1,17 +1,33 @@
 image: ubuntu1604
 
+branches:
+  only:
+    - master
 install:
   - sudo apt-get update && sudo apt-get install -y pandoc python3
   - sudo apt-get install -y python3-sphinx
   - sudo pip install -r requirements.txt
 
+only_commits:
+  message: /\(build doc\)/  # Start a new build if message contains '(build doc)'
+
 build_script: 
   - sudo make html
   - echo "Done building HTML files"
 
-after_build:
-  - echo "Start uploading files to `thainlp.org/pythainlp.tutorials` via FTP"
-  - cd ./build/html
-  - find . -type f -name "*" -print -exec curl --ftp-create-dir --ipv4 -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
-  - echo "Done uploading"
-  - rm -rf ./build/html
+deploy:
+  - provider: FTP
+    protocol: ftp
+    host: ftp://thainlp.org
+    username: ${FTP_USER}
+    password:
+      secure: ${FTP_PASSWORD}
+    active_mode: false
+    folder: public_html/pythainlp/tutorials
+    artifact: /build/html
+
+  # - echo "Start uploading files to `thainlp.org/pythainlp.tutorials` via FTP"
+  # - cd ./build/html
+  # - find . -type f -name "*" -print -exec curl --ftp-create-dir --ipv4 -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
+  # - echo "Done uploading"
+  # - rm -rf ./build/html
