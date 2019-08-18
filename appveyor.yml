@@ -1,4 +1,4 @@
-image: ubuntu
+image: ubuntu1604
 
 install:
   - sudo apt-get update && sudo apt-get install -y pandoc python3.6
