@@ -2,9 +2,9 @@ image: ubuntu
 
 install:
   - sudo apt-get update && sudo apt-get install -y pandoc
-  - pip install -r requirements.txt
+  - sudo pip install -r requirements.txt
 build_script: 
-  - make html
+  - sudo make html
   - echo "Done building HTML files"
 
 after_build:
