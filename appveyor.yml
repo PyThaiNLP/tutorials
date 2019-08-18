@@ -25,5 +25,5 @@ build_script:
   - echo "Done uploading files to /tutorials"
 
 artifacts:
-  - path: ./document
+  - path: ./build/html
     name: document
