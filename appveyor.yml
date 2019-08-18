@@ -28,7 +28,7 @@ before_deploy:
 deploy:
   - provider: FTP
     protocol: ftp
-    host: ftp.thainlp.org
+    host: $FTP_HOST
     username: $FTP_USER
     password:
       secure: $FTP_PASSWORD
