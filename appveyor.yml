@@ -10,4 +10,8 @@ build_script:
   - echo "Done building HTML files"
 
 after_build:
-  - echo "Done"
+  - echo "Start uploading files to `thainlp.org/pythainlp.tutorials` via FTP"
+  - cd ./build/html
+  - find . -type f -name "*" -print -exec curl --ftp-create-dir --ipv4 -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
+  - echo "Done uploading"
+  - rm -rf ./build/html
