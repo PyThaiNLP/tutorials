@@ -29,9 +29,9 @@ deploy:
   - provider: FTP
     protocol: ftp
     host: thainlp.org
-    username: ${FTP_USER}
+    username: $FTP_USER
     password:
-      secure: ${FTP_PASSWORD}
+      secure: $FTP_PASSWORD
     active_mode: false
     folder: public_html/pythainlp/tutorials
     artifact: document
