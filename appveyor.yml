@@ -15,11 +15,11 @@ install:
 
 build_script: 
   - sudo make html
-  - cd ./build
+  - cp ./build/html ./document
   - echo "Done building HTML files"
 
-  artifacts:
-  - path: ./html
+artifacts:
+  - path: ./document
     name: document
 
 before_deploy:
