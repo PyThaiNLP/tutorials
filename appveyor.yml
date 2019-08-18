@@ -5,7 +5,7 @@ branches:
     - master
 
 skip_commits:
-  message: /\(no ci\)/     # Skip a new build if message contains '(skip ci)'
+  message: /\(skip ci\)/     # Skip a new build if message contains '(skip ci)'
 
 # scripts that run after cloning repository
 install:
