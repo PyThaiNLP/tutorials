@@ -15,15 +15,17 @@ install:
 
 build_script: 
   - sudo make html
+  - cd ./build
   - echo "Done building HTML files"
 
-artifacts:
-  - path: ./build/html/**
+  artifacts:
+  - path: ./html
     name: document
 
 before_deploy:
   - echo "Start cleaning the directory /tutorials"
   - sudo bash ./clean_directory.sh $FTP_USER $FTP_PASSWORD 
+ 
 
 deploy:
   - provider: FTP
