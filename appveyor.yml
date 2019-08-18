@@ -1,0 +1,13 @@
+image: ubuntu
+
+install:
+- sudo apt-get update && sudo apt-get install pandoc
+
+build_script: 
+  - make html
+  - echo "Done building HTML files"
+
+after_build:
+  - echo "Done"
+  
+build: off
