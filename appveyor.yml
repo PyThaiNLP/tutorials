@@ -16,21 +16,14 @@ install:
 build_script: 
   - sudo make html
   - echo "Done building HTML files"
-
-artifacts:
-  - path: ./document
-    name: document
-
-before_deploy:
   - echo "Start cleaning the directory /tutorials"
   - sudo bash ./clean_directory.sh $FTP_USER $FTP_PASSWORD 
- 
-
-deploy:
   - echo "Uploading files to `thainlp.org/pythainlp/tutorials`"
   - cd ./build/html
   - find . -type f -name "*" -print -exec curl --ftp-create-dir --ipv4 -T {} ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/{} \;
   - echo "Done uploading"
-
-after_deploy:
   - echo "Done uploading files to /tutorials"
+
+artifacts:
+  - path: ./document
+    name: document
