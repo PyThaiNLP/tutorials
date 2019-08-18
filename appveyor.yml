@@ -15,6 +15,10 @@ build_script:
   - sudo make html
   - echo "Done building HTML files"
 
+artifacts:
+  - path: ./build/html
+    name: document
+  
 deploy:
   - provider: FTP
     protocol: ftp
@@ -24,7 +28,7 @@ deploy:
       secure: ${FTP_PASSWORD}
     active_mode: false
     folder: public_html/pythainlp/tutorials
-    artifact: /build/html
+    artifact: document
 
   # - echo "Start uploading files to `thainlp.org/pythainlp.tutorials` via FTP"
   # - cd ./build/html
