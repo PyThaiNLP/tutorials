@@ -23,7 +23,7 @@ artifacts:
 
 before_deploy:
   - echo "Start cleaning the directory /tutorials"
-  - FTP_USER=$FTP_USER FTP_PASSWORD=$FTP_PASSWORD bash ./clean_directory.sh
+  - ./clean_directory.sh $FTP_USER $FTP_PASSWORD 
 
 deploy:
   - provider: FTP
