@@ -1,6 +1,9 @@
 
 # PyThaiNLP Tutorials
 
+[![Build status](https://ci.appveyor.com/api/projects/status/8n37h7c6gmng825s/branch/master?svg=true)](https://ci.appveyor.com/project/wannaphongcom/tutorials/branch/master)
+
+
 The repository contains tutorial notebooks for the official documentation website.
 
 All thte tutorial notebook are presented as sphinx-style document at:
