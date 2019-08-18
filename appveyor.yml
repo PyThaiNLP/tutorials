@@ -7,7 +7,6 @@ branches:
 skip_commits:
   message: /\(no ci\)/     # Skip a new build if message contains '(skip ci)'
 
-
 # scripts that run after cloning repository
 install:
   - sudo apt-get update && sudo apt-get install -y pandoc python3
