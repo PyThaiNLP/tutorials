@@ -9,5 +9,3 @@ build_script:
 
 after_build:
   - echo "Done"
-
-build: off
