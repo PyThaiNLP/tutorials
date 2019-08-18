@@ -5,7 +5,7 @@
 for f in `curl --list-only --ipv4 ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org/public_html/pythainlp/tutorials/`; do
   # Delete each file individually
   echo "deleting: $f"
-  curl --ipv4 ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org -Q "DELE -r public_html/pythainlp/tutorials/$f"
+  curl --ipv4 ftp://${FTP_USER}:${FTP_PASSWORD}@thainlp.org -Q "DELE public_html/pythainlp/tutorials/$f"
 done
 
 # 2. Delete files in the sub directories: notebooks, _images, _sources, _static
