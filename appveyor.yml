@@ -15,7 +15,7 @@ install:
 
 build_script: 
   - sudo make html
-  - cp ./build/html ./document
+  - cp -r ./build/html ./document
   - echo "Done building HTML files"
 
 artifacts:
