@@ -30,8 +30,7 @@ deploy:
     protocol: ftp
     host: $FTP_HOST
     username: $FTP_USER
-    password:
-      secure: $FTP_PASSWORD
+    password: $FTP_PASSWORD
     active_mode: false
     folder: public_html/pythainlp/tutorials
     artifact: document
