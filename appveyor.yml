@@ -1,8 +1,8 @@
 image: ubuntu
 
 install:
-  - sudo apt-get update && sudo apt-get install -y pandoc
-  - sudo pip install -r requirements.txt
+  - sudo apt-get update && sudo apt-get install -y pandoc python3.6
+  - sudo pip3 install -r requirements.txt
 build_script: 
   - sudo make html
   - echo "Done building HTML files"
