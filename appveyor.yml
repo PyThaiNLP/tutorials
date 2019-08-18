@@ -18,7 +18,7 @@ build_script:
   - echo "Done building HTML files"
 
 artifacts:
-  - path: ./build/html
+  - path: ./build/html/**
     name: document
 
 before_deploy:
@@ -32,7 +32,7 @@ deploy:
     username: $FTP_USER
     password: $FTP_PASSWORD
     active_mode: false
-    folder: /public_html/pythainlp/tutorials
+    folder: public_html/pythainlp/tutorials
     artifact: document
 
 after_deploy:
