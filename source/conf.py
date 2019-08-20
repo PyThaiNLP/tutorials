@@ -96,3 +96,5 @@ nbsphinx_epilog = r"""
 
     \nbsphinxstopnotebook{\hfill End of notebook.}
 """
+
+master_doc = 'index'
