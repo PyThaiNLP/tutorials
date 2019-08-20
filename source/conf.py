@@ -68,3 +68,31 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Don't add .txt suffix to source files (available for Sphinx >= 1.5):
+html_sourcelink_suffix = ''
+
+nbsphinx_prolog = r"""
+{% set docname = env.doc2path(env.docname, base=None) %}
+{% set docname = docname.split('/')[1] %}
+
+.. only:: html
+
+    .. role:: raw-html(raw)
+        :format: html
+
+    .. nbinfo::
+        Interactive online version: 
+        :raw-html:`<a href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/{{ docname }}"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>`
+        :raw-html:`<a href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/{{ docname }}"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a>`
+.. raw:: latex
+
+    \nbsphinxstartnotebook{The following section was created from
+    \texttt{\strut{}{{ docname }}}:}
+"""
+
+nbsphinx_epilog = r"""
+.. raw:: latex
+
+    \nbsphinxstopnotebook{\hfill End of notebook.}
+"""
