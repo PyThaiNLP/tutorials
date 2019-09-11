@@ -9,8 +9,15 @@ skip_commits:
 
 # scripts that run after cloning repository
 install:
-  - sudo apt-get update && sudo apt-get install -y pandoc python3
-  - sudo apt-get install -y python3-sphinx
+  - sudo add-apt-repository ppa:jonathonf/python-3.6 -y
+  - sudo apt-get update
+  - sudo apt install -y python3.6 
+  - sudo apt install -y python3.6-dev
+  - sudo apt install -y python3.6-venv
+  - wget https://bootstrap.pypa.io/get-pip.py
+  - sudo python3.6 get-pip.py
+  - sudo ln -s /usr/bin/python3.6 /usr/local/bin/python
+  - sudo apt-get install -y pandoc libicu-dev
   - sudo pip install -r requirements.txt
 
 build_script: 
