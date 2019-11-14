@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to PyThaiNlp Tutorials
+Welcome to PyThaiNLP Tutorials
 ===============================================
 PyThaiNLP is a Python library for Thai Natural Language Processing.
 
@@ -14,7 +14,9 @@ PyThaiNLP is a Python library for Thai Natural Language Processing.
 
    notebooks/*
 
-Apache Software License 2.0
+`Apache Software License 2.0 <https://apache.org/licenses/LICENSE-2.0>`_
 
 Maintained by the PyThaiNLP team.
 
+* See source code of these tutorials at https://github.com/PyThaiNLP/tutorials
+* Main PyThaiNLP development at https://github.com/PyThaiNLP/pythainlp
