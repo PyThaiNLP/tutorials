@@ -1,0 +1,874 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Thai Wiki Language Model for Text Generation &mdash; pythainlp-tutorials a49e43a documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Thai2Vec Embeddings Examples" href="word2vec_examples.html" />
+    <link rel="prev" title="Wongnai Review Classification" href="text_classification.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pythainlp-tutorials
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="machine_translation.html">PyThaiNLP Translate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_get_started.html">PyThaiNLP Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html">Named Entity Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html#Part-of-speech">Part of speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html#Subword">Subword</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sentiment_analysis.html">Wisesight Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_classification.html">Wongnai Review Classification</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Thai Wiki Language Model for Text Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word2vec_examples.html">Thai2Vec Embeddings Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythainlp-tutorials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Thai Wiki Language Model for Text Generation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/notebooks/text_generation.ipynb" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="admonition note">
+<p>Interactive online version:
+<span class="raw-html"><a target="_blank" href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/text_generation.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a></span>
+<span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/text_generation.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
+</div>
+<div class="section" id="Thai-Wiki-Language-Model-for-Text-Generation">
+<h1>Thai Wiki Language Model for Text Generation<a class="headerlink" href="#Thai-Wiki-Language-Model-for-Text-Generation" title="Permalink to this headline">¶</a></h1>
+<p>This notebook details how you can use pretrained language model on <a class="reference external" href="https://dumps.wikimedia.org/thwiki/latest/thwiki-latest-pages-articles.xml.bz2">Thai Wikipedia Dump</a> to generate texts.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># #uncomment if you are running from google colab</span>
+<span class="c1"># !pip install pythainlp</span>
+<span class="c1"># !pip install fastai</span>
+<span class="c1"># !pip install emoji</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">import</span> <span class="nn">fastai</span>
+<span class="kn">from</span> <span class="nn">fastai.text</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fastai.callbacks</span> <span class="kn">import</span> <span class="n">CSVLogger</span>
+
+<span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">try</span><span class="p">:</span>
+  <span class="n">THWIKI_LSTM</span> <span class="o">=</span> <span class="n">_THWIKI_LSTM</span>
+<span class="k">except</span><span class="p">:</span>
+  <span class="n">THWIKI_LSTM</span> <span class="o">=</span> <span class="n">THWIKI_LSTM</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#get dummy data</span>
+<span class="n">imdb</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">IMDB_SAMPLE</span><span class="p">)</span>
+<span class="n">dummy_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">imdb</span><span class="o">/</span><span class="s1">&#39;texts.csv&#39;</span><span class="p">)</span>
+
+<span class="c1">#get vocab</span>
+<span class="n">thwiki_itos</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">THWIKI_LSTM</span><span class="p">[</span><span class="s1">&#39;itos_fname&#39;</span><span class="p">],</span> <span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+<span class="n">thwiki_vocab</span> <span class="o">=</span> <span class="n">fastai</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">Vocab</span><span class="p">(</span><span class="n">thwiki_itos</span><span class="p">)</span>
+
+<span class="c1">#dummy databunch</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">tok_func</span><span class="o">=</span><span class="n">ThaiTokenizer</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;th&#39;</span><span class="p">,</span> <span class="n">pre_rules</span><span class="o">=</span><span class="n">pre_rules_th</span><span class="p">,</span> <span class="n">post_rules</span><span class="o">=</span><span class="n">post_rules_th</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="p">[</span><span class="n">TokenizeProcessor</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tt</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">mark_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+            <span class="n">NumericalizeProcessor</span><span class="p">(</span><span class="n">vocab</span><span class="o">=</span><span class="n">thwiki_vocab</span><span class="p">,</span> <span class="n">max_vocab</span><span class="o">=</span><span class="mi">60000</span><span class="p">,</span> <span class="n">min_freq</span><span class="o">=</span><span class="mi">3</span><span class="p">)]</span>
+<span class="n">data_lm</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">dummy_df</span><span class="p">,</span> <span class="n">imdb</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">split_by_rand_pct</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">label_for_lm</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">databunch</span><span class="p">(</span><span class="n">bs</span><span class="o">=</span><span class="mi">64</span><span class="p">))</span>
+
+<span class="n">data_lm</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<!-- empty output --></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<!-- empty output --></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#check vocab size</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+60005
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tie_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">out_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">output_p</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">trn_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">language_model_learner</span><span class="p">(</span><span class="n">data_lm</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">trn_args</span><span class="p">)</span>
+
+<span class="c1">#load pretrained models</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load_pretrained</span><span class="p">(</span><span class="o">**</span><span class="n">THWIKI_LSTM</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+LanguageLearner(data=TextLMDataBunch;
+
+Train: LabelList (800 items)
+x: LMTextList
+xxbos   this   is   a   xxunk   xxunk   film .   the   acting ,   script   and   xxunk   are   all   xxunk .   the   music   is   good ,   too ,   though   it   is   mostly   early   in   the   film ,   when   things   are   still   xxunk   xxunk .   there   are   no   really   superstars   in   the   cast ,   though   several   faces   will   be   xxunk .   the   entire   cast   does   an   excellent   job   with   the   script .
+
+   but   it   is   hard   to   watch ,   because   there   is   no   good   end   to   a   situation   like   the   one   presented .   it   is   now   xxunk   to   xxunk   the   british   for   setting   xxunk   and   xxunk   against   each   other ,   and   then   xxunk   xxunk   them   into   two   countries .   there   is   some   merit   in   this   view ,   but   it &#39; s   also   true   that   no   one   forced   xxunk   and   xxunk   in   the   region   to   xxunk   each   other   as   they   did   around   the   time   of   partition .   it   xxunk   more   xxunk   that   the   british   simply   saw   the   xxunk   between   the   xxunk   and   were   xxunk   enough   to   xxunk   them   to   their   own   ends .
+
+   the   result   is   that   there   is   much   xxunk   and   xxunk   in   the   situation   and   this   is   very   xxunk   to   remember   and   to   see   on   the   screen .   but   it   is   never   painted   as   a   xxunk   case .   there   is   xxunk   and   xxunk   on   both   sides ,   and   also   the   hope   for   change   in   the   younger   generation .
+
+   there   is   redemption   of   a   sort ,   in   the   end ,   when   xxunk   has   to   make   a   hard   choice   between   a   man   who   has   xxunk   her   life ,   but   also   truly   loved   her ,   and   her   family   which   has   xxunk   her ,   then   later   come   looking   for   her .   but   by   that   point ,   she   has   no   option   that   is   without   great   pain   for   her .
+
+   this   film   carries   the   message   that   both   xxunk   and   xxunk   have   their   grave   xxunk ,   and   also   that   both   can   be   xxunk   and   xxunk   people .   the   reality   of   partition   makes   that   xxunk   all   the   more   xxunk ,   since   there   can   never   be   real   xxunk   across   the   india   /   pakistan   border .   in   that   sense ,   it   is   similar   to   &#34; mr   &amp;   mrs   xxunk &#34;.
+
+   in   the   end ,   we   were   glad   to   have   seen   the   film ,   even   though   the   resolution   was   xxunk .   if   the   uk   and   us   could   deal   with   their   own   xxunk   of   xxunk   with   this   kind   of   xxunk ,   they   would   xxunk   be   better   off .,xxbos   every   once   in   a   long   while   a   movie   will   come   along   that   will   be   so   xxunk   that   i   feel   xxunk   to   xxunk   people .   if   i   labor   all   my   days   and   i   can   save   but   one   soul   from   xxunk   this   movie ,   how   great   will   be   my   joy .
+
+   where   to   begin   my   xxunk   of   pain .   for   xxunk ,   there   was   a   musical   xxunk   every   five   minutes .   there   was   no   character   development .   every   character   was   a   stereotype .   we   had   xxunk   guy ,   fat   guy   who   xxunk   xxunk ,   xxunk   foreign   guy ,   etc .   the   script   xxunk   as   if   it   were   being   written   as   the   movie   was   being   shot .   the   production   value   was   so   xxunk   low   that   it   xxunk   like   i   was   xxunk   a   junior   high   video   presentation .   have   the   directors ,   producers ,   etc .   ever   even   seen   a   movie   before ?   xxunk   is   getting   worse   and   worse   with   every   new   entry .   the   concept   for   this   movie   xxunk   so   funny .   how   could   you   go   wrong   with   gary   coleman   and   a   xxunk   of   xxunk   xxunk   actors .   but   trust   me   when   i   say   this ,   things   went   wrong ,   very   wrong .,xxbos   name   just   says   it   all .   i   xxunk   this   movie   with   my   dad   when   it   came   out   and   having   xxunk   in   korea   he   had   great   xxunk   for   the   man .   the   xxunk   thing   about   this   film   is   that   it   only   xxunk   on   a   short   period   of   the   man &#39; s   life   -   xxunk   enough   the   man &#39; s   entire   life   would   have   made   such   an   epic   xxunk   that   it   is   xxunk   to   imagine   the   cost   for   production .
+
+   some   xxunk   xxunk   to   the   xxunk   xxunk   about   the   man ,   which   are   cheap   xxunk .   the   theme   of   the   movie   &#34; duty ,   honor ,   country &#34;   are   not   just   xxunk   words   xxunk   from   the   lips   of   a   xxunk   officer   -   it   is   the   deep   declaration   of   one   man &#39; s   total   xxunk   to   his   country .
+
+   xxunk   peck   being   the   liberal   that   he   was   xxunk   a   better   understanding   of   the   man .   he   does   a   great   job   xxunk   the   fearless   general   xxunk   with   the   humane   side   of   the   man .,xxbos   this   movie   xxunk   at   being   one   of   the   most   unique   movies   you &#39; ve   seen .   however   this   comes   from   the   fact   that   you   can &#39; t   make   heads   or   tails   of   this   mess .   it   almost   xxunk   as   a   series   of   challenges   set   up   to   xxunk   xxunk   or   not   you   are   xxunk   to   walk   out   of   the   movie   and   give   up   the   money   you   just   paid .   if   you   don &#39; t   want   to   feel   xxunk   you &#39; ll   sit   through   this   xxunk   film   and   xxunk   a   real   sense   of   xxunk   for   the   actors   xxunk ,   they &#39; ve   all   seen   better   days ,   but   then   you   xxunk   they   xxunk   got   paid   xxunk   a   bit   of   money   to   do   this   and   you &#39; ll   lose   xxunk   for   them   just   like   you &#39; ve   xxunk   done   for   the   film .   i   can &#39; t   go   on   enough   about   this   xxunk   movie ,   its   almost   something   that   ed   wood   would   have   made   and   in   that   case   it   xxunk   would   have   been   his   xxunk .
+
+   to   start   you   are   forced   to   sit   through   an   opening   dialogue   the   xxunk   of   which   you &#39; ve   never   seen   /   heard ,   this   thing   has   got   to   be   five   minutes   long .   on   top   of   that   it   is   xxunk ,   as   to   xxunk   that   you   the   viewer   cannot   read .   then   we   meet   mr .   xxunk   and   the   xxunk   of   xxunk   lines   gets   xxunk ,   it   is   as   if   he   is   operating   xxunk   to   get   lines   on   to   the   movie   xxunk   tag   line .   soon   we   meet   stephen   xxunk ,   who   i   xxunk   xxunk )   and   he   does   his   best   not   to   xxunk   in   this   but   xxunk   he   does .   then   comes   the   ultimate   xxunk ,   tara   reid   playing   an   intelligent   role ,   oh   help   us !   tara   reid   is   not   a   very   talented   actress   and   xxunk   she   xxunk   gets   xxunk   in   movies ,   in   my   xxunk   though   she   should   stick   to   movies   of   the   american   pie   type .
+
+   all   in   all   you   just   may   want   to   see   this   for   yourself   when   it   comes   out   on   video ,   i   know   that   i   got   a   kick   out   of   it ,   i   mean   xxunk   all   be   xxunk   here ,   xxunk   its   xxunk   to   xxunk   in   the   xxunk   of   others .,xxbos   from   the   start ,   you   know   how   this   movie   will   end .   it &#39; s   so   full   of   clich é s   your   typical   xxunk   member   will   not   even   like   this   movie .   i   give   it   2   out   of   10,   only   because   of   the   acting   of   william   benton .   i   can &#39; t   believe   people   xxunk   6 +   for   this   movie .   it &#39; s   so   biased   towards   a   &#39; certain   point   of   view &#39;   ( once   a   thief xxunk   people   xxunk &#39; t   born   bad .   neither   are   they   born   good .   they   are   born   with   a   clean   slate .   it &#39; s   society ,   parents   and   education   what   makes   them   who   they   are .   and   if   they   take   the   wrong   turn ,   somewhere   down   the   line ,   it   xxunk   isn &#39; t   going   to   be   the   american   xxunk   system   that   gets   them   back   on   track !   xxunk ,   xxunk   this   movie   like   the   xxunk .   i   bet   you   have   better   things   to   do   with   your   time   than   waste   it   on   this   piece   of   xxunk .
+
+
+y: LMLabelList
+,,,,
+Path: /root/.fastai/data/imdb_sample;
+
+Valid: LabelList (200 items)
+x: LMTextList
+xxbos   xxunk   was   a   show   i   xxunk   up   with .   from   late   night   xxunk   with   penn   and   teller   to   the   one ,   the   only ,   joe   bob   xxunk .   the   show   xxunk   me   up   friday   nights   back   in   my   high   school   years ,   and   provided   some   of   the   best   xxunk   memories   to   ever   come   outside   of   the   xxunk .
+
+   without   a   doubt ,   the   best   late   night   television   ever .   if   you   didn &#39; t   stay   up ,   you   were   missing   out .
+
+   i   know   john   bloom   and   joe   bob   live   on ,   but   i   want   them   back   where   they   belong xxunk xxunk !   question xxunk did   anyone   else   sit   through   all   4   hours   of   &#34; the   xxunk &#34;   ?   q :)
+
+   long   live   xxunk !,xxbos   the   xxunk   between   the   characters   is   a   moral   disaster .   you   end   up   xxunk   most   of   the   characters   and   you   don &#39; t   xxunk   like   any   of   them .
+
+   even   the   two   main   characters   played   by   david   and   xxunk   are   so   xxunk   written   that   you   really   don &#39; t   care   one   bit   about   them .   the   movie   has   no   plot ,   no   direction   and   no   purpose .   the   single   xxunk   quality   of   the   movie   was   to   treat   it   as   a   xxunk   into   the   xxunk   up   lives   of   a   few   xxunk   -   and   that &#39; s   xxunk   xxunk   even   as   an   afternoon   waste .,xxbos   for   a   low   budget   project ,   the   film   was   a   success .   the   story   is   xxunk ,   and   the   actors   were   xxunk .   eva   xxunk ,   who   now   stars   on   the   tv   show   &#34; xxunk ,&#34;   is   xxunk   than   ever .   the   xxunk   were   ideal   for   the   xxunk   plot ,   and   the   director   shows   his   talent   by   taking   on   many   xxunk   for   his   project .   of   course   this   low   budget   film   could   use   better   editing   xxunk   and   more   special   effects   for   the   gun   scenes ,   but   the   music   xxunk   this   script   moving .   although   this   film   has   it &#39; s   share   of   problems ,   such   as   xxunk ,   i   must   say   that   i   would   rent   the   director &#39; s   next   movie .   if   your   a   film   student ,   you   could   learn   a   few   things   from   the   director &#39; s   xxunk .,xxbos   yes ,   he   is !   xxunk no ,   not   because   of   xxunk   xxunk   to   xxunk   his   actors   and   show   xxunk   their   xxunk .   xxunk   is   the   naked   &#34; emperor &#34;   -   so   to   speak xxunk
+
+   it &#39; s   big   time   for   someone   to   state   the   truth .   this   xxunk   is   a   xxunk ,   a   xxunk   xxunk   in   an   old   man &#39; s   body .   his   xxunk   of   nude   scenes   have   no   artistic   xxunk   xxunk .   it   is   100 %   visual   xxunk :   he   gets   his   kicks   by   making   the   actors   strip   in   the   xxunk   and   look   at   their   xxunk .   and   if   he   does   this   in   front   of   the   audience ,   he   might   eve   get   a   xxunk !   did   you   know   that ,   on   the   set   of   &#34; xxunk   xxunk &#34;,   he   used   to   xxunk   poor   xxunk   xxunk ,   by   xxunk   her :   &#34; oh ,   xxunk ,   how   i   wanna   f xxunk   you xxunk   she   is   a   great   lady ,   very   xxunk   and   sensitive ,   and   she   became   xxunk   xxunk   -   to   his   petty   satisfaction !   and ,   as   a   xxunk   alarm   signal   about   the   degree   of   xxunk   and   xxunk   of   education   in   xxunk   xxunk ,   so   many   people   are   still   so   xxunk   to   xxunk   these   visual   xxunk   &#34; works   of   art &#34;!   will   anyone   have   ever   the   xxunk   to   xxunk   the   truth   of   it   all ?,xxbos   an   excellent   film   xxunk   the   cross   xxunk   in   the   lives   of   a   xxunk   mix   of   not   so   ordinary   people   in   the   rural   pacific   northwest .   solid   xxunk   and   writing   along   with   fine   acting ,   xxunk   the   performances   by   xxunk   xxunk   and   dan   xxunk .   xxunk ,   this   film   was   made   in   the   same   year   as   the   highly   successful   &#34; crash ,&#34;   written   and   directed   by   paul   xxunk .   the   pace   of   the   action   may   not   be   as   xxunk   as   that   in   urban   los   angeles ,   and   the   characters   may   xxunk   to   be   better   xxunk   with   each   other   in   &#34; apart   from   that ,&#34;   but   the   personal   relationships   of   the   characters   are   as   xxunk   and   xxunk   and   their   stories   as   xxunk   as   any   of   those   in   &#34; crash .&#34;   for   those   xxunk   who   xxunk   &#34; crash &#34;   this   is   a   must   see   film .   also ,   xxunk   of   jim   xxunk   and   john   xxunk   will   like   this   movie .
+y: LMLabelList
+,,,,
+Path: /root/.fastai/data/imdb_sample;
+
+Test: None, model=SequentialRNN(
+  (0): AWD_LSTM(
+    (encoder): Embedding(60005, 400, padding_idx=1)
+    (encoder_dp): EmbeddingDropout(
+      (emb): Embedding(60005, 400, padding_idx=1)
+    )
+    (rnns): ModuleList(
+      (0): WeightDropout(
+        (module): LSTM(400, 1550, batch_first=True)
+      )
+      (1): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (2): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (3): WeightDropout(
+        (module): LSTM(1550, 400, batch_first=True)
+      )
+    )
+    (input_dp): RNNDropout()
+    (hidden_dps): ModuleList(
+      (0): RNNDropout()
+      (1): RNNDropout()
+      (2): RNNDropout()
+      (3): RNNDropout()
+    )
+  )
+  (1): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=60005, bias=True)
+    (output_dp): RNNDropout()
+  )
+), opt_func=functools.partial(&lt;class &#39;torch.optim.adam.Adam&#39;&gt;, betas=(0.9, 0.99)), loss_func=FlattenedLoss of CrossEntropyLoss(), metrics=[&lt;function accuracy at 0x7f5215ef6ea0&gt;], true_wd=True, bn_wd=True, wd=0.01, train_bn=True, path=PosixPath(&#39;/root/.fastai/data/imdb_sample&#39;), model_dir=&#39;models&#39;, callback_fns=[functools.partial(&lt;class &#39;fastai.basic_train.Recorder&#39;&gt;, add_time=True, silent=False), functools.partial(&lt;class &#39;fastai.train.GradientClipping&#39;&gt;, clip=0.12)], callbacks=[RNNTrainer
+learn: LanguageLearner(data=TextLMDataBunch;
+
+Train: LabelList (800 items)
+x: LMTextList
+xxbos   this   is   a   xxunk   xxunk   film .   the   acting ,   script   and   xxunk   are   all   xxunk .   the   music   is   good ,   too ,   though   it   is   mostly   early   in   the   film ,   when   things   are   still   xxunk   xxunk .   there   are   no   really   superstars   in   the   cast ,   though   several   faces   will   be   xxunk .   the   entire   cast   does   an   excellent   job   with   the   script .
+
+   but   it   is   hard   to   watch ,   because   there   is   no   good   end   to   a   situation   like   the   one   presented .   it   is   now   xxunk   to   xxunk   the   british   for   setting   xxunk   and   xxunk   against   each   other ,   and   then   xxunk   xxunk   them   into   two   countries .   there   is   some   merit   in   this   view ,   but   it &#39; s   also   true   that   no   one   forced   xxunk   and   xxunk   in   the   region   to   xxunk   each   other   as   they   did   around   the   time   of   partition .   it   xxunk   more   xxunk   that   the   british   simply   saw   the   xxunk   between   the   xxunk   and   were   xxunk   enough   to   xxunk   them   to   their   own   ends .
+
+   the   result   is   that   there   is   much   xxunk   and   xxunk   in   the   situation   and   this   is   very   xxunk   to   remember   and   to   see   on   the   screen .   but   it   is   never   painted   as   a   xxunk   case .   there   is   xxunk   and   xxunk   on   both   sides ,   and   also   the   hope   for   change   in   the   younger   generation .
+
+   there   is   redemption   of   a   sort ,   in   the   end ,   when   xxunk   has   to   make   a   hard   choice   between   a   man   who   has   xxunk   her   life ,   but   also   truly   loved   her ,   and   her   family   which   has   xxunk   her ,   then   later   come   looking   for   her .   but   by   that   point ,   she   has   no   option   that   is   without   great   pain   for   her .
+
+   this   film   carries   the   message   that   both   xxunk   and   xxunk   have   their   grave   xxunk ,   and   also   that   both   can   be   xxunk   and   xxunk   people .   the   reality   of   partition   makes   that   xxunk   all   the   more   xxunk ,   since   there   can   never   be   real   xxunk   across   the   india   /   pakistan   border .   in   that   sense ,   it   is   similar   to   &#34; mr   &amp;   mrs   xxunk &#34;.
+
+   in   the   end ,   we   were   glad   to   have   seen   the   film ,   even   though   the   resolution   was   xxunk .   if   the   uk   and   us   could   deal   with   their   own   xxunk   of   xxunk   with   this   kind   of   xxunk ,   they   would   xxunk   be   better   off .,xxbos   every   once   in   a   long   while   a   movie   will   come   along   that   will   be   so   xxunk   that   i   feel   xxunk   to   xxunk   people .   if   i   labor   all   my   days   and   i   can   save   but   one   soul   from   xxunk   this   movie ,   how   great   will   be   my   joy .
+
+   where   to   begin   my   xxunk   of   pain .   for   xxunk ,   there   was   a   musical   xxunk   every   five   minutes .   there   was   no   character   development .   every   character   was   a   stereotype .   we   had   xxunk   guy ,   fat   guy   who   xxunk   xxunk ,   xxunk   foreign   guy ,   etc .   the   script   xxunk   as   if   it   were   being   written   as   the   movie   was   being   shot .   the   production   value   was   so   xxunk   low   that   it   xxunk   like   i   was   xxunk   a   junior   high   video   presentation .   have   the   directors ,   producers ,   etc .   ever   even   seen   a   movie   before ?   xxunk   is   getting   worse   and   worse   with   every   new   entry .   the   concept   for   this   movie   xxunk   so   funny .   how   could   you   go   wrong   with   gary   coleman   and   a   xxunk   of   xxunk   xxunk   actors .   but   trust   me   when   i   say   this ,   things   went   wrong ,   very   wrong .,xxbos   name   just   says   it   all .   i   xxunk   this   movie   with   my   dad   when   it   came   out   and   having   xxunk   in   korea   he   had   great   xxunk   for   the   man .   the   xxunk   thing   about   this   film   is   that   it   only   xxunk   on   a   short   period   of   the   man &#39; s   life   -   xxunk   enough   the   man &#39; s   entire   life   would   have   made   such   an   epic   xxunk   that   it   is   xxunk   to   imagine   the   cost   for   production .
+
+   some   xxunk   xxunk   to   the   xxunk   xxunk   about   the   man ,   which   are   cheap   xxunk .   the   theme   of   the   movie   &#34; duty ,   honor ,   country &#34;   are   not   just   xxunk   words   xxunk   from   the   lips   of   a   xxunk   officer   -   it   is   the   deep   declaration   of   one   man &#39; s   total   xxunk   to   his   country .
+
+   xxunk   peck   being   the   liberal   that   he   was   xxunk   a   better   understanding   of   the   man .   he   does   a   great   job   xxunk   the   fearless   general   xxunk   with   the   humane   side   of   the   man .,xxbos   this   movie   xxunk   at   being   one   of   the   most   unique   movies   you &#39; ve   seen .   however   this   comes   from   the   fact   that   you   can &#39; t   make   heads   or   tails   of   this   mess .   it   almost   xxunk   as   a   series   of   challenges   set   up   to   xxunk   xxunk   or   not   you   are   xxunk   to   walk   out   of   the   movie   and   give   up   the   money   you   just   paid .   if   you   don &#39; t   want   to   feel   xxunk   you &#39; ll   sit   through   this   xxunk   film   and   xxunk   a   real   sense   of   xxunk   for   the   actors   xxunk ,   they &#39; ve   all   seen   better   days ,   but   then   you   xxunk   they   xxunk   got   paid   xxunk   a   bit   of   money   to   do   this   and   you &#39; ll   lose   xxunk   for   them   just   like   you &#39; ve   xxunk   done   for   the   film .   i   can &#39; t   go   on   enough   about   this   xxunk   movie ,   its   almost   something   that   ed   wood   would   have   made   and   in   that   case   it   xxunk   would   have   been   his   xxunk .
+
+   to   start   you   are   forced   to   sit   through   an   opening   dialogue   the   xxunk   of   which   you &#39; ve   never   seen   /   heard ,   this   thing   has   got   to   be   five   minutes   long .   on   top   of   that   it   is   xxunk ,   as   to   xxunk   that   you   the   viewer   cannot   read .   then   we   meet   mr .   xxunk   and   the   xxunk   of   xxunk   lines   gets   xxunk ,   it   is   as   if   he   is   operating   xxunk   to   get   lines   on   to   the   movie   xxunk   tag   line .   soon   we   meet   stephen   xxunk ,   who   i   xxunk   xxunk )   and   he   does   his   best   not   to   xxunk   in   this   but   xxunk   he   does .   then   comes   the   ultimate   xxunk ,   tara   reid   playing   an   intelligent   role ,   oh   help   us !   tara   reid   is   not   a   very   talented   actress   and   xxunk   she   xxunk   gets   xxunk   in   movies ,   in   my   xxunk   though   she   should   stick   to   movies   of   the   american   pie   type .
+
+   all   in   all   you   just   may   want   to   see   this   for   yourself   when   it   comes   out   on   video ,   i   know   that   i   got   a   kick   out   of   it ,   i   mean   xxunk   all   be   xxunk   here ,   xxunk   its   xxunk   to   xxunk   in   the   xxunk   of   others .,xxbos   from   the   start ,   you   know   how   this   movie   will   end .   it &#39; s   so   full   of   clich é s   your   typical   xxunk   member   will   not   even   like   this   movie .   i   give   it   2   out   of   10,   only   because   of   the   acting   of   william   benton .   i   can &#39; t   believe   people   xxunk   6 +   for   this   movie .   it &#39; s   so   biased   towards   a   &#39; certain   point   of   view &#39;   ( once   a   thief xxunk   people   xxunk &#39; t   born   bad .   neither   are   they   born   good .   they   are   born   with   a   clean   slate .   it &#39; s   society ,   parents   and   education   what   makes   them   who   they   are .   and   if   they   take   the   wrong   turn ,   somewhere   down   the   line ,   it   xxunk   isn &#39; t   going   to   be   the   american   xxunk   system   that   gets   them   back   on   track !   xxunk ,   xxunk   this   movie   like   the   xxunk .   i   bet   you   have   better   things   to   do   with   your   time   than   waste   it   on   this   piece   of   xxunk .
+
+
+y: LMLabelList
+,,,,
+Path: /root/.fastai/data/imdb_sample;
+
+Valid: LabelList (200 items)
+x: LMTextList
+xxbos   xxunk   was   a   show   i   xxunk   up   with .   from   late   night   xxunk   with   penn   and   teller   to   the   one ,   the   only ,   joe   bob   xxunk .   the   show   xxunk   me   up   friday   nights   back   in   my   high   school   years ,   and   provided   some   of   the   best   xxunk   memories   to   ever   come   outside   of   the   xxunk .
+
+   without   a   doubt ,   the   best   late   night   television   ever .   if   you   didn &#39; t   stay   up ,   you   were   missing   out .
+
+   i   know   john   bloom   and   joe   bob   live   on ,   but   i   want   them   back   where   they   belong xxunk xxunk !   question xxunk did   anyone   else   sit   through   all   4   hours   of   &#34; the   xxunk &#34;   ?   q :)
+
+   long   live   xxunk !,xxbos   the   xxunk   between   the   characters   is   a   moral   disaster .   you   end   up   xxunk   most   of   the   characters   and   you   don &#39; t   xxunk   like   any   of   them .
+
+   even   the   two   main   characters   played   by   david   and   xxunk   are   so   xxunk   written   that   you   really   don &#39; t   care   one   bit   about   them .   the   movie   has   no   plot ,   no   direction   and   no   purpose .   the   single   xxunk   quality   of   the   movie   was   to   treat   it   as   a   xxunk   into   the   xxunk   up   lives   of   a   few   xxunk   -   and   that &#39; s   xxunk   xxunk   even   as   an   afternoon   waste .,xxbos   for   a   low   budget   project ,   the   film   was   a   success .   the   story   is   xxunk ,   and   the   actors   were   xxunk .   eva   xxunk ,   who   now   stars   on   the   tv   show   &#34; xxunk ,&#34;   is   xxunk   than   ever .   the   xxunk   were   ideal   for   the   xxunk   plot ,   and   the   director   shows   his   talent   by   taking   on   many   xxunk   for   his   project .   of   course   this   low   budget   film   could   use   better   editing   xxunk   and   more   special   effects   for   the   gun   scenes ,   but   the   music   xxunk   this   script   moving .   although   this   film   has   it &#39; s   share   of   problems ,   such   as   xxunk ,   i   must   say   that   i   would   rent   the   director &#39; s   next   movie .   if   your   a   film   student ,   you   could   learn   a   few   things   from   the   director &#39; s   xxunk .,xxbos   yes ,   he   is !   xxunk no ,   not   because   of   xxunk   xxunk   to   xxunk   his   actors   and   show   xxunk   their   xxunk .   xxunk   is   the   naked   &#34; emperor &#34;   -   so   to   speak xxunk
+
+   it &#39; s   big   time   for   someone   to   state   the   truth .   this   xxunk   is   a   xxunk ,   a   xxunk   xxunk   in   an   old   man &#39; s   body .   his   xxunk   of   nude   scenes   have   no   artistic   xxunk   xxunk .   it   is   100 %   visual   xxunk :   he   gets   his   kicks   by   making   the   actors   strip   in   the   xxunk   and   look   at   their   xxunk .   and   if   he   does   this   in   front   of   the   audience ,   he   might   eve   get   a   xxunk !   did   you   know   that ,   on   the   set   of   &#34; xxunk   xxunk &#34;,   he   used   to   xxunk   poor   xxunk   xxunk ,   by   xxunk   her :   &#34; oh ,   xxunk ,   how   i   wanna   f xxunk   you xxunk   she   is   a   great   lady ,   very   xxunk   and   sensitive ,   and   she   became   xxunk   xxunk   -   to   his   petty   satisfaction !   and ,   as   a   xxunk   alarm   signal   about   the   degree   of   xxunk   and   xxunk   of   education   in   xxunk   xxunk ,   so   many   people   are   still   so   xxunk   to   xxunk   these   visual   xxunk   &#34; works   of   art &#34;!   will   anyone   have   ever   the   xxunk   to   xxunk   the   truth   of   it   all ?,xxbos   an   excellent   film   xxunk   the   cross   xxunk   in   the   lives   of   a   xxunk   mix   of   not   so   ordinary   people   in   the   rural   pacific   northwest .   solid   xxunk   and   writing   along   with   fine   acting ,   xxunk   the   performances   by   xxunk   xxunk   and   dan   xxunk .   xxunk ,   this   film   was   made   in   the   same   year   as   the   highly   successful   &#34; crash ,&#34;   written   and   directed   by   paul   xxunk .   the   pace   of   the   action   may   not   be   as   xxunk   as   that   in   urban   los   angeles ,   and   the   characters   may   xxunk   to   be   better   xxunk   with   each   other   in   &#34; apart   from   that ,&#34;   but   the   personal   relationships   of   the   characters   are   as   xxunk   and   xxunk   and   their   stories   as   xxunk   as   any   of   those   in   &#34; crash .&#34;   for   those   xxunk   who   xxunk   &#34; crash &#34;   this   is   a   must   see   film .   also ,   xxunk   of   jim   xxunk   and   john   xxunk   will   like   this   movie .
+y: LMLabelList
+,,,,
+Path: /root/.fastai/data/imdb_sample;
+
+Test: None, model=SequentialRNN(
+  (0): AWD_LSTM(
+    (encoder): Embedding(60005, 400, padding_idx=1)
+    (encoder_dp): EmbeddingDropout(
+      (emb): Embedding(60005, 400, padding_idx=1)
+    )
+    (rnns): ModuleList(
+      (0): WeightDropout(
+        (module): LSTM(400, 1550, batch_first=True)
+      )
+      (1): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (2): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (3): WeightDropout(
+        (module): LSTM(1550, 400, batch_first=True)
+      )
+    )
+    (input_dp): RNNDropout()
+    (hidden_dps): ModuleList(
+      (0): RNNDropout()
+      (1): RNNDropout()
+      (2): RNNDropout()
+      (3): RNNDropout()
+    )
+  )
+  (1): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=60005, bias=True)
+    (output_dp): RNNDropout()
+  )
+), opt_func=functools.partial(&lt;class &#39;torch.optim.adam.Adam&#39;&gt;, betas=(0.9, 0.99)), loss_func=FlattenedLoss of CrossEntropyLoss(), metrics=[&lt;function accuracy at 0x7f5215ef6ea0&gt;], true_wd=True, bn_wd=True, wd=0.01, train_bn=True, path=PosixPath(&#39;/root/.fastai/data/imdb_sample&#39;), model_dir=&#39;models&#39;, callback_fns=[functools.partial(&lt;class &#39;fastai.basic_train.Recorder&#39;&gt;, add_time=True, silent=False), functools.partial(&lt;class &#39;fastai.train.GradientClipping&#39;&gt;, clip=0.12)], callbacks=[...], layer_groups=[Sequential(
+  (0): WeightDropout(
+    (module): LSTM(400, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 400, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): Embedding(60005, 400, padding_idx=1)
+  (1): EmbeddingDropout(
+    (emb): Embedding(60005, 400, padding_idx=1)
+  )
+  (2): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=60005, bias=True)
+    (output_dp): RNNDropout()
+  )
+)], add_time=True, silent=False)
+alpha: 2
+beta: 1], layer_groups=[Sequential(
+  (0): WeightDropout(
+    (module): LSTM(400, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 400, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): Embedding(60005, 400, padding_idx=1)
+  (1): EmbeddingDropout(
+    (emb): Embedding(60005, 400, padding_idx=1)
+  )
+  (2): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=60005, bias=True)
+    (output_dp): RNNDropout()
+  )
+)], add_time=True, silent=False)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">&#39;กาลครั้งหนึ่งนานมาแล้ว &#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">min_p</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+กาลครั้งหนึ่งนานมาแล้ว
+
+ ช่วงสองหนุ่มที่มีฐานะร่ำรวย และเป็นลูกสาวของ ดร. นิโคลัส (รับบทโดย อลิสัน คิง) เป็นลูกชายคนโตของ นาย โอลิเวอร์ และ มารดา นิโคลัส ในช่วงแรก เขาเป็นพ่อของ โอลลี เขามีพ่อ และแม่ เป็นคนที่มีจิตใจอ่อนโยน และเป็นเพื่อนสนิทกับ ดร. คาลิส (โรส วิลสัน) ที่เป็นพ่อของเธอนั่นเอง
+
+ ในปี ค.ศ. 1967 สมิธได้รับการเลี้ยงดูจาก จอร์จ สปีลเบิร์ก และ ซาร่า ซึ่งต่อมาก็ได้รับการดูแลจากแม่ ซึ่งทำให้เขามีทักษะด้านวิทยาศาสตร์และเทคโนโลยีสูง หลังจากสำเร็จการศึกษาจากมหาวิทยาลัยแล้ว โรส ได้เดินทางไปที่ ประเทศออสเตรเลีย เพื่อเป็นที่ปรึกษา และในช่วงนั้นเอง ที่ได้พบกับ คริส เจ โรส ผู้เป็นมารดา
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="word2vec_examples.html" class="btn btn-neutral float-right" title="Thai2Vec Embeddings Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="text_classification.html" class="btn btn-neutral float-left" title="Wongnai Review Classification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, PyThaiNLP.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

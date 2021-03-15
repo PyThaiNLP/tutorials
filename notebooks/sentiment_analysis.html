@@ -1,0 +1,1930 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Wisesight Sentiment Analysis &mdash; pythainlp-tutorials a49e43a documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Wongnai Review Classification" href="text_classification.html" />
+    <link rel="prev" title="Named Entity Recognition" href="pythainlp_wangchanberta.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pythainlp-tutorials
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="machine_translation.html">PyThaiNLP Translate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_get_started.html">PyThaiNLP Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html">Named Entity Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html#Part-of-speech">Part of speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html#Subword">Subword</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Wisesight Sentiment Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Text-Processor-for-Logistic-Regression">Text Processor for Logistic Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Process-Text-Files-to-CSVs">Process Text Files to CSVs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Load-Data">Load Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Train-validation-Split">Train-validation Split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Logistic-Regression">Logistic Regression</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Create-Features">Create Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Fit-Model">Fit Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#See-Results">See Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ULMFit-Model">ULMFit Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Finetune-Language-Model">Finetune Language Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Train-Text-Classifier">Train Text Classifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">See Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_classification.html">Wongnai Review Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_generation.html">Thai Wiki Language Model for Text Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word2vec_examples.html">Thai2Vec Embeddings Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythainlp-tutorials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Wisesight Sentiment Analysis</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/notebooks/sentiment_analysis.ipynb" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="admonition note">
+<p>Interactive online version:
+<span class="raw-html"><a target="_blank" href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/sentiment_analysis.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a></span>
+<span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/sentiment_analysis.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
+</div>
+<div class="section" id="Wisesight-Sentiment-Analysis">
+<h1>Wisesight Sentiment Analysis<a class="headerlink" href="#Wisesight-Sentiment-Analysis" title="Permalink to this headline">¶</a></h1>
+<p>This notebook details the steps taken to create a sentiment analyzer using data from <a class="reference external" href="https://github.com/PyThaiNLP/wisesight-sentiment/">Wisesight Sentiment Corpus</a>. Evaluation metric is overall accuracy across <code class="docutils literal notranslate"><span class="pre">neg</span></code>ative, <code class="docutils literal notranslate"><span class="pre">pos</span></code>itive, <code class="docutils literal notranslate"><span class="pre">neu</span></code>tral and <code class="docutils literal notranslate"><span class="pre">q</span></code>uestion classes. We give examples using logistic regression and <a class="reference external" href="https://arxiv.org/abs/1801.06146">ULMFit</a>.</p>
+<p>The results for logistic regression, <a class="reference external" href="https://fasttext.cc/">fastText</a>, ULMFit, ULMFit with semi-supervised data are as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 23%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Public Accuracy</p></th>
+<th class="head"><p>Private Accuracy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Logistic Regression</p></td>
+<td><p>0.72781</p></td>
+<td><p>0.7499</p></td>
+</tr>
+<tr class="row-odd"><td><p>fastText</p></td>
+<td><p>0.63144</p></td>
+<td><p>0.6131</p></td>
+</tr>
+<tr class="row-even"><td><p>ULMFit</p></td>
+<td><p>0.71259</p></td>
+<td><p>0.74194</p></td>
+</tr>
+<tr class="row-odd"><td><p>ULMFit Semi-supervised</p></td>
+<td><p>0.73119</p></td>
+<td><p>0.75859</p></td>
+</tr>
+<tr class="row-even"><td><p>ULMFit Semi-supervised Repeated One Time</p></td>
+<td><p><strong>0.73372</strong></p></td>
+<td><p><strong>0.75968</strong></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>For more information about the Kaggle competition, which this notebook based upon, see <a class="reference external" href="https://www.kaggle.com/c/wisesight-sentiment/discussion/83564">1st Place Solution</a>.</p></li>
+<li><p>For more updated version of data, including a tokenized <code class="docutils literal notranslate"><span class="pre">wisesight-1000</span></code> evaluation set, see <a class="reference external" href="https://github.com/PyThaiNLP/wisesight-sentiment">Wisesight Sentiment Corpus</a>.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># #uncomment if you are running from google colab</span>
+<span class="c1"># !pip install sklearn_crfsuite</span>
+<span class="c1"># !pip install emoji</span>
+<span class="c1"># !pip install https://github.com/PyThaiNLP/pythainlp/archive/dev.zip</span>
+<span class="c1"># !pip install fastai</span>
+<span class="c1"># !wget https://github.com/PyThaiNLP/wisesight-sentiment/archive/master.zip</span>
+<span class="c1"># !unzip master.zip</span>
+<span class="c1"># !mkdir wisesight_data; ls</span>
+<span class="c1"># !cd wisesight-sentiment-master/kaggle-competition; ls</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#snippet to install thai font in matplotlib from https://gist.github.com/korakot/9d7f5db632351dc92607fdec72a4953f</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">!</span>wget https://github.com/Phonbopit/sarabun-webfont/raw/master/fonts/thsarabunnew-webfont.ttf
+<span class="o">!</span>cp thsarabunnew-webfont.ttf /usr/local/lib/python3.6/dist-packages/matplotlib/mpl-data/fonts/ttf/
+<span class="o">!</span>cp thsarabunnew-webfont.ttf /usr/share/fonts/truetype/
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">font_manager</span><span class="o">.</span><span class="n">_rebuild</span><span class="p">()</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;TH Sarabun New&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
+<span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="n">process_thai</span>
+
+<span class="c1">#viz</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+</pre></div></div>
+</div>
+<div class="section" id="Text-Processor-for-Logistic-Regression">
+<h2>Text Processor for Logistic Regression<a class="headerlink" href="#Text-Processor-for-Logistic-Regression" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pythainlp.ulmfit.process_thai</span></code> contains text cleaning rules with the default aimed for sparse models like bag of words. It contains <code class="docutils literal notranslate"><span class="pre">pre_rules</span></code> applied before tokenization and <code class="docutils literal notranslate"><span class="pre">post_rules</span></code> applied after.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">?</span>process_thai
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">process_thai</span><span class="p">(</span><span class="s2">&quot;บ้านนนนน ()อยู่นานนานนาน 😂🤣😃😄😅 PyThaiNLP amp;     www.google.com&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;บ้าน&#39;,
+ &#39;xxrep&#39;,
+ &#39;  &#39;,
+ &#39;อยู่&#39;,
+ &#39;xxwrep&#39;,
+ &#39;นาน&#39;,
+ &#39;😂&#39;,
+ &#39;🤣&#39;,
+ &#39;😃&#39;,
+ &#39;😄&#39;,
+ &#39;😅&#39;,
+ &#39;pythainlp&#39;,
+ &#39;&amp;&#39;,
+ &#39;xxurl&#39;]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Process-Text-Files-to-CSVs">
+<h2>Process Text Files to CSVs<a class="headerlink" href="#Process-Text-Files-to-CSVs" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;wisesight-sentiment-master/kaggle-competition/train.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;wisesight-sentiment-master/kaggle-competition/train_label.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+
+<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;category&quot;</span><span class="p">:</span><span class="n">categories</span><span class="p">,</span> <span class="s2">&quot;texts&quot;</span><span class="p">:</span><span class="n">texts</span><span class="p">})</span>
+<span class="n">all_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;all_df.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">all_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(24063, 2)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;wisesight-sentiment-master/kaggle-competition/test.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;category&quot;</span><span class="p">:</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;texts&quot;</span><span class="p">:</span><span class="n">texts</span><span class="p">})</span>
+<span class="n">test_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(2674, 2)
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Load-Data">
+<h2>Load Data<a class="headerlink" href="#Load-Data" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">all_df</span><span class="p">[</span><span class="s2">&quot;processed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_df</span><span class="o">.</span><span class="n">texts</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="n">all_df</span><span class="p">[</span><span class="s2">&quot;wc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_df</span><span class="o">.</span><span class="n">processed</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)))</span>
+<span class="n">all_df</span><span class="p">[</span><span class="s2">&quot;uwc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_df</span><span class="o">.</span><span class="n">processed</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">))))</span>
+
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;processed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">texts</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;wc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">processed</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)))</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;uwc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">processed</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#prevalence</span>
+<span class="n">all_df</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="n">all_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+neu    0.544612
+neg    0.255164
+pos    0.178698
+q      0.021527
+Name: category, dtype: float64
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Train-validation-Split">
+<h2>Train-validation Split<a class="headerlink" href="#Train-validation-Split" title="Permalink to this headline">¶</a></h2>
+<p>We perform 85/15 random train-validation split. We also perform under/oversampling to balance out the classes a little.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#when finding hyperparameters</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">train_df</span><span class="p">,</span> <span class="n">valid_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">all_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1412</span><span class="p">)</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">valid_df</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#when actually doing it</span>
+<span class="c1"># train_df = all_df.copy()</span>
+<span class="c1"># valid_df = pd.read_csv(&#39;valid_df.csv&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">valid_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>category</th>
+      <th>texts</th>
+      <th>processed</th>
+      <th>wc</th>
+      <th>uwc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>neu</td>
+      <td>เห็นคนลบแอพ viu ก็เห็นใจและเข้าใจเขานะคะ แผลมั...</td>
+      <td>เห็น|คน|ลบ|แอ|พ|viu|ก็|เห็นใจ|และ|เข้าใจ|เขา|น...</td>
+      <td>48</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>neu</td>
+      <td>ไปชมไม้คิวของแชมป์ และรองแชมป์ กันจ้า! ..........</td>
+      <td>ไป|ชม|ไม้|คิว|ของ|แชมป์|และ|รอง|แชมป์|กัน|จ้า|...</td>
+      <td>43</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>neg</td>
+      <td>กลุ่มรถซีวิคเป็นกลุ่มที่น่ารำคานมากกกกกกกกก อว...</td>
+      <td>กลุ่ม|รถ|ซีวิค|เป็น|กลุ่ม|ที่|น่า|รำ|คาน|มาก|x...</td>
+      <td>47</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>neu</td>
+      <td>อยากสวยเหมือนเจ้าของแบรนด์สิคะ เนย โชติกา ใบหน...</td>
+      <td>อยาก|สวย|เหมือน|เจ้าของ|แบรนด์|สิ|คะ|เนย|โชติ|...</td>
+      <td>72</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>neg</td>
+      <td>ข้าวโถละร้อย แพง เพราะตักเป็นจานๆละ15 เต็มที่ก...</td>
+      <td>ข้าว|โถ|ละ|ร้อย|แพง|เพราะ|ตัก|เป็น|จาน|ๆ|ละ|15...</td>
+      <td>381</td>
+      <td>218</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#prevalence</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="n">train_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+neu    0.544957
+neg    0.253557
+pos    0.180071
+q      0.021415
+Name: category, dtype: float64
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#prevalence</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valid_df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+neu    0.542659
+neg    0.264266
+pos    0.170914
+q      0.022161
+Name: category, dtype: float64
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Logistic-Regression">
+<h2>Logistic Regression<a class="headerlink" href="#Logistic-Regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Create-Features">
+<h3>Create Features<a class="headerlink" href="#Create-Features" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#dependent variables</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">y_valid</span> <span class="o">=</span> <span class="n">valid_df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#text faetures</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">process_thai</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">sublinear_tf</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tfidf_fit</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">all_df</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">])</span>
+<span class="n">text_train</span> <span class="o">=</span> <span class="n">tfidf_fit</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">])</span>
+<span class="n">text_valid</span> <span class="o">=</span> <span class="n">tfidf_fit</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">valid_df</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">])</span>
+<span class="n">text_test</span> <span class="o">=</span> <span class="n">tfidf_fit</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">])</span>
+<span class="n">text_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">text_valid</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+((20453, 4614), (3610, 4614))
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#visualize texts</span>
+<span class="kn">from</span> <span class="nn">visualize</span> <span class="kn">import</span> <span class="n">top_feats_all</span><span class="p">,</span> <span class="n">plot_top_feats</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">tfidf_fit</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
+<span class="o">%</span><span class="k">time</span> ts = top_feats_all(text_train.toarray(), y_train, features)
+<span class="nb">print</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 448 ms, sys: 492 ms, total: 940 ms
+Wall time: 938 ms
+(4614, 5)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rank</th>
+      <th>feature</th>
+      <th>score</th>
+      <th>ngram</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>ไม่</td>
+      <td>0.029990</td>
+      <td>1</td>
+      <td>neg</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>กิน</td>
+      <td>0.022852</td>
+      <td>1</td>
+      <td>neg</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>xxrep</td>
+      <td>0.020252</td>
+      <td>1</td>
+      <td>neg</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>เลย</td>
+      <td>0.019493</td>
+      <td>1</td>
+      <td>neg</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>แต่</td>
+      <td>0.018153</td>
+      <td>1</td>
+      <td>neg</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">time</span> plot_top_feats(ts)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_sentiment_analysis_26_0.png" src="../_images/notebooks_sentiment_analysis_26_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 1.36 s, sys: 852 ms, total: 2.21 s
+Wall time: 862 ms
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#word count and unique word counts; actually might not be so useful</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaler_fit</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">all_df</span><span class="p">[[</span><span class="s2">&quot;wc&quot;</span><span class="p">,</span><span class="s2">&quot;uwc&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scaler_fit</span><span class="o">.</span><span class="n">mean_</span><span class="p">,</span> <span class="n">scaler_fit</span><span class="o">.</span><span class="n">var_</span><span class="p">)</span>
+<span class="n">num_train</span> <span class="o">=</span> <span class="n">scaler_fit</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train_df</span><span class="p">[[</span><span class="s2">&quot;wc&quot;</span><span class="p">,</span><span class="s2">&quot;uwc&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+<span class="n">num_valid</span> <span class="o">=</span> <span class="n">scaler_fit</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">valid_df</span><span class="p">[[</span><span class="s2">&quot;wc&quot;</span><span class="p">,</span><span class="s2">&quot;uwc&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+<span class="n">num_test</span> <span class="o">=</span> <span class="n">scaler_fit</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_df</span><span class="p">[[</span><span class="s2">&quot;wc&quot;</span><span class="p">,</span><span class="s2">&quot;uwc&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+<span class="n">num_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">num_valid</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[21.96529942 18.22744462] [1151.47512883  513.46009207]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+((20453, 2), (3610, 2))
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#concatenate text and word count features</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">num_train</span><span class="p">,</span><span class="n">text_train</span><span class="o">.</span><span class="n">toarray</span><span class="p">()],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_valid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">num_valid</span><span class="p">,</span><span class="n">text_valid</span><span class="o">.</span><span class="n">toarray</span><span class="p">()],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">num_test</span><span class="p">,</span><span class="n">text_test</span><span class="o">.</span><span class="n">toarray</span><span class="p">()],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_valid</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+((20453, 4616), (3610, 4616))
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Fit-Model">
+<h3>Fit Model<a class="headerlink" href="#Fit-Model" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#fit logistic regression models</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;liblinear&quot;</span><span class="p">,</span> <span class="n">dual</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s2">&quot;ovr&quot;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span><span class="n">y_valid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.7324099722991689
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="See-Results">
+<h3>See Results<a class="headerlink" href="#See-Results" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">probs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
+<span class="n">probs_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
+<span class="n">probs_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">classes_</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;preds&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">category</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">texts</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;processed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">processed</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;wc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">wc</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;uwc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">uwc</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;hit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">probs_df</span><span class="o">.</span><span class="n">preds</span><span class="o">==</span><span class="n">probs_df</span><span class="o">.</span><span class="n">category</span><span class="p">)</span>
+<span class="n">probs_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;probs_df_linear.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="n">conf_mat</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">probs_df</span><span class="o">.</span><span class="n">category</span><span class="p">,</span><span class="n">probs_df</span><span class="o">.</span><span class="n">preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span><span class="n">y_valid</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">conf_mat</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Actual&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predicted&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.7324099722991689
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_sentiment_analysis_33_1.png" src="../_images/notebooks_sentiment_analysis_33_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ULMFit-Model">
+<h2><a class="reference external" href="https://github.com/cstorm125/thai2fit">ULMFit</a> Model<a class="headerlink" href="#ULMFit-Model" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fastai.text</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fastai.callbacks</span> <span class="kn">import</span> <span class="n">CSVLogger</span><span class="p">,</span> <span class="n">SaveModelCallback</span>
+<span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;wisesight_data/&quot;</span>
+<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;all_df.csv&quot;</span><span class="p">)</span>
+<span class="n">train_df</span><span class="p">,</span> <span class="n">valid_df</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">all_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1412</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Finetune-Language-Model">
+<h3>Finetune Language Model<a class="headerlink" href="#Finetune-Language-Model" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">tt</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">tok_func</span><span class="o">=</span><span class="n">ThaiTokenizer</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;th&quot;</span><span class="p">,</span> <span class="n">pre_rules</span><span class="o">=</span><span class="n">pre_rules_th</span><span class="p">,</span> <span class="n">post_rules</span><span class="o">=</span><span class="n">post_rules_th</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="p">[</span><span class="n">TokenizeProcessor</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tt</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">mark_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+            <span class="n">NumericalizeProcessor</span><span class="p">(</span><span class="n">vocab</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_vocab</span><span class="o">=</span><span class="mi">60000</span><span class="p">,</span> <span class="n">min_freq</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
+
+<span class="n">data_lm</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">all_df</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s2">&quot;texts&quot;</span><span class="p">,</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">split_by_rand_pct</span><span class="p">(</span><span class="n">valid_pct</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">1412</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">label_for_lm</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">databunch</span><span class="p">(</span><span class="n">bs</span><span class="o">=</span><span class="mi">48</span><span class="p">))</span>
+<span class="n">data_lm</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
+<span class="n">data_lm</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;wisesight_lm.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data_lm</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">train_ds</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">valid_ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(23823, 240)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tie_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">out_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">output_p</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">trn_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">drop_mult</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">language_model_learner</span><span class="p">(</span><span class="n">data_lm</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">trn_args</span><span class="p">)</span>
+
+<span class="c1">#load pretrained models</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load_pretrained</span><span class="p">(</span><span class="o">**</span><span class="n">_THWIKI_LSTM</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+LanguageLearner(data=TextLMDataBunch;
+
+Train: LabelList (23823 items)
+x: LMTextList
+xxbos   ประเทศ เรา ผลิต และ ส่งออก ยาสูบ เยอะ สุด ใน โลก จิง ป่าว คับ,xxbos   คะ,xxbos   อิ เหี้ย ออม ทำ กู อยาก กิน เอ็ม เค,xxbos   xxwrep 2 😅,xxbos   สวัสดี วัน พุธ   แนน   อะไร นะ
+y: LMLabelList
+,,,,
+Path: wisesight_data;
+
+Valid: LabelList (240 items)
+x: LMTextList
+xxbos   เห็น คน ลบ แอ พ   viu   ก็ เห็นใจ และ เข้าใจ เขา นะคะ   แผล มัน ยัง ใหม่ แถม อารมณ์ ยิ่ง โดน xxunk ง่าย อยู่ นี่ เนอะ 5   xxrep   7   ส่วน ทาง นี้ ก็ กอด   netflix   แน่น มาก   เธอ อย่า ทำร้าย เรา นะ   เรา รู้ เธอ ไม่ ทำร้าย เรา แน่นอน,xxbos   ไป ชม ไม้ คิว ของ แชมป์   และ รอง แชมป์   กัน จ้า !   .   xxrep   32   เก็บตก จาก การแข่งขัน   แสงโสม   สนุกเกอร์   6   แดง   โอเพ่น   ประจำปี   2560   สนาม ที่   2   ณ   มัง กี้   สนุกเกอร์   คลับ   ซอย โชค ชัย   4   ลาดพร้าว   เมื่อ วันที่   12   ต.ค. 60,xxbos   กลุ่ม รถ ซีวิค เป็น กลุ่ม ที่ น่า รำ คาน มาก   xxrep   9   อวด รถ กัน ได้ ทุก วินาที   อวด ทำไม มึง ก็ ใช้ รถ เหมือนกัน ทุกคน   ละ ก็ พวก xxunk ที่ บอ กว่า อวด รถ แต่ ถ่าย นม ตัวเอง ชัด ละ รถ เบลอ นี่ คือ ?   xxrep   5  ,xxbos   อยาก สวย เหมือน เจ้าของ แบรนด์ สิ คะ   เนย   โชติ กา   ใบหน้า สวย   ใส xxunk   แม้ แต่งหน้า   นี่ ขนาด เป็น คุณแม่ แล้ว นะเนี่ย ก็ ยัง สวย ไม่ xxunk   ผ่าน ไป กี่ ปี ๆ ก็ ไม่ เปลี่ยน   ผิว ดี๊ ดี   ความ สวย . เรา สร้าง เอง ได้ ด้วยตัวเอง   ถ้า ได้ ใช้ มาส ์กโช   ต้อง สวย เหมือน โชติ กา แน่นอน ค่ะ   #   มาส ์กโช สวย ข้ามคืน   #   cho _ cosmetics   #   daradaily   #   ดารา เดลี่,xxbos   ข้าว โถ ละ ร้อย   แพง   เพราะ ตัก เป็น จาน ๆ ละ 15   เต็มที่ ก็ 5 จาน   คนไทย ต้อง กินข้าว ประเทศ xxunk ข้าว   กินข้าว ในประเทศ ตัวเอง หม้อ เป็น ร้อย เป็นลม ดีกว่า ค่า ฉะ xxunk ถุง 5 โล ไม่ เกิน 200 เป็น ข้าว มะลิ   ไก่ นี่ ไม่รู้ ว่า เป็นตัว หรือเปล่า   แต่ ถ้า ตัว ละ 250 บาท แพง   ไก่ย่าง ขาย 140 - 160   มี เยอะแยะ ยัง ได้ กำไร   แพง สุด ไม่ ควร xxunk 200   ข้าวผัด ปู จาน ใหญ่   300 ร้อย แพง   ถ้า ผัด เป็น จาน ๆ ละ 50 ผัด 4 จาน ก็ เต็ม ถาด ใหญ่ แล้ว   ส่วน เครื่อง ดืม ด้านบน อะไร 80 ถ้า เป็น ชาเย็น แพง มาก   น้ำ ดืม ขวด ใหญ่ ขวด ละ 50 แพง   บ้าน เรา เมืองร้อน อย่า เห็นแก่ตัว 30 ก็ พอแล้ว   คน ต้อง ซื้อ เยอะ   เบียร์ ช้าง ขวด ละ 120   กำไร xxunk น่าเกลียด มา 3 ขวด 360 แพง   xxunk ขวด ใหญ่ ก็ แพง   แต่ น้ำแข็ง พอได้ เพราะ อากาศ บ้าน เรา ร้อน ละลาย ง่าย อันนี้ พอ เข้าใจ คน ขาย   แต่ ทะเล เผา ทะเล ลวก ไม่เห็น หน้าตา ว่า มี อะไร บ้าง ก็ กุ้ง หมึก ปู xxunk 300   ตัว กลางๆ ใส่ มา อย่าง 5 ตัว ปู สัก ตัว   กำไร xxunk   ตำ ทะเล ตำ กุ้ง สด 150 ไม่ แพง   กุ้ง ชุ ป แป้ง ทอด แพง มาก ๆ   ต้มยำ หม้อ ละ 300 ร้อย ถือว่า แพง มาก   เพราะ มัน ใส่ ได้ ไม่ เยอะ หรอก   มันดี ตรง ที่ มี น้ำ กับ ไฟ อุ่น ร้อน   ของ กินใน บ้าน ยัง แทบ แตะ ไม่ได้   ทั้งที่ ป ระ ก็ xxunk   คน ในประเทศ ยัง กิน ไม่ อิม ส่งออก นอก พอ มี น้อย เหลือ น้อย   ก็ ขาย ให้ กัน แพง ๆ   ระบบ แย่ เอาเปรียบ กันเอง   ที่ บ้าน ขาย อาหาร กับข้าว ตาม สั่ง ป รุ่ง สุก ใหม่   แค่ จาน ละ 100 - 150   คน ยัง ว่า แพง ทั้งที่ บอ กว่า อร่อย   ถ้า ไป เจอ แบบนี้ สงสัย ช็อค ตาย คา ร้าน เลย มัง   ถ้า ต้อง ไป เจอ ทั้ง แพง ทั้ง ไม่อร่อย สัก แต่ ทำ ขาย   ใคร ว่า ไม่ แพง ยินดี ด้วย ที่ คุณ เป็น คน มี ตัง   แต่ เรา มอง จาก ค่าแรง กลางๆ ของ คน ในประเทศ นะ   ซึ่ง ส่วนมาก คนใน ประเทศไทย ได้ แต่ ค่าแรงขั้นต่ำ กับ เบี้ย ขยัน เล็กน้อย   คนจน เยอะ กว่า คนรวย ด้วย   ทำ อะไร ต้อง นึกถึง ความ สมควร   นึกถึง กันและกัน   แต่ เรา ไม่ใช่ คน xxunk   ชอบ มอง และ คิด จาก ความเป็นจริง   ถึง ขาย ให้ ชาวต่างชาติ ก็ เถอะ   เหมือน คนไทย เอาเปรียบ ช่วย โอกาส และ ไม่ ค่อย xxunk
+y: LMLabelList
+,,,,
+Path: wisesight_data;
+
+Test: None, model=SequentialRNN(
+  (0): AWD_LSTM(
+    (encoder): Embedding(15000, 400, padding_idx=1)
+    (encoder_dp): EmbeddingDropout(
+      (emb): Embedding(15000, 400, padding_idx=1)
+    )
+    (rnns): ModuleList(
+      (0): WeightDropout(
+        (module): LSTM(400, 1550, batch_first=True)
+      )
+      (1): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (2): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (3): WeightDropout(
+        (module): LSTM(1550, 400, batch_first=True)
+      )
+    )
+    (input_dp): RNNDropout()
+    (hidden_dps): ModuleList(
+      (0): RNNDropout()
+      (1): RNNDropout()
+      (2): RNNDropout()
+      (3): RNNDropout()
+    )
+  )
+  (1): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=15000, bias=True)
+    (output_dp): RNNDropout()
+  )
+), opt_func=functools.partial(&lt;class &#39;torch.optim.adam.Adam&#39;&gt;, betas=(0.9, 0.99)), loss_func=FlattenedLoss of CrossEntropyLoss(), metrics=[&lt;function accuracy at 0x7f51be568268&gt;], true_wd=True, bn_wd=True, wd=0.01, train_bn=True, path=PosixPath(&#39;wisesight_data&#39;), model_dir=&#39;models&#39;, callback_fns=[functools.partial(&lt;class &#39;fastai.basic_train.Recorder&#39;&gt;, add_time=True, silent=False), functools.partial(&lt;class &#39;fastai.train.GradientClipping&#39;&gt;, clip=0.12)], callbacks=[RNNTrainer
+learn: LanguageLearner(data=TextLMDataBunch;
+
+Train: LabelList (23823 items)
+x: LMTextList
+xxbos   ประเทศ เรา ผลิต และ ส่งออก ยาสูบ เยอะ สุด ใน โลก จิง ป่าว คับ,xxbos   คะ,xxbos   อิ เหี้ย ออม ทำ กู อยาก กิน เอ็ม เค,xxbos   xxwrep 2 😅,xxbos   สวัสดี วัน พุธ   แนน   อะไร นะ
+y: LMLabelList
+,,,,
+Path: wisesight_data;
+
+Valid: LabelList (240 items)
+x: LMTextList
+xxbos   เห็น คน ลบ แอ พ   viu   ก็ เห็นใจ และ เข้าใจ เขา นะคะ   แผล มัน ยัง ใหม่ แถม อารมณ์ ยิ่ง โดน xxunk ง่าย อยู่ นี่ เนอะ 5   xxrep   7   ส่วน ทาง นี้ ก็ กอด   netflix   แน่น มาก   เธอ อย่า ทำร้าย เรา นะ   เรา รู้ เธอ ไม่ ทำร้าย เรา แน่นอน,xxbos   ไป ชม ไม้ คิว ของ แชมป์   และ รอง แชมป์   กัน จ้า !   .   xxrep   32   เก็บตก จาก การแข่งขัน   แสงโสม   สนุกเกอร์   6   แดง   โอเพ่น   ประจำปี   2560   สนาม ที่   2   ณ   มัง กี้   สนุกเกอร์   คลับ   ซอย โชค ชัย   4   ลาดพร้าว   เมื่อ วันที่   12   ต.ค. 60,xxbos   กลุ่ม รถ ซีวิค เป็น กลุ่ม ที่ น่า รำ คาน มาก   xxrep   9   อวด รถ กัน ได้ ทุก วินาที   อวด ทำไม มึง ก็ ใช้ รถ เหมือนกัน ทุกคน   ละ ก็ พวก xxunk ที่ บอ กว่า อวด รถ แต่ ถ่าย นม ตัวเอง ชัด ละ รถ เบลอ นี่ คือ ?   xxrep   5  ,xxbos   อยาก สวย เหมือน เจ้าของ แบรนด์ สิ คะ   เนย   โชติ กา   ใบหน้า สวย   ใส xxunk   แม้ แต่งหน้า   นี่ ขนาด เป็น คุณแม่ แล้ว นะเนี่ย ก็ ยัง สวย ไม่ xxunk   ผ่าน ไป กี่ ปี ๆ ก็ ไม่ เปลี่ยน   ผิว ดี๊ ดี   ความ สวย . เรา สร้าง เอง ได้ ด้วยตัวเอง   ถ้า ได้ ใช้ มาส ์กโช   ต้อง สวย เหมือน โชติ กา แน่นอน ค่ะ   #   มาส ์กโช สวย ข้ามคืน   #   cho _ cosmetics   #   daradaily   #   ดารา เดลี่,xxbos   ข้าว โถ ละ ร้อย   แพง   เพราะ ตัก เป็น จาน ๆ ละ 15   เต็มที่ ก็ 5 จาน   คนไทย ต้อง กินข้าว ประเทศ xxunk ข้าว   กินข้าว ในประเทศ ตัวเอง หม้อ เป็น ร้อย เป็นลม ดีกว่า ค่า ฉะ xxunk ถุง 5 โล ไม่ เกิน 200 เป็น ข้าว มะลิ   ไก่ นี่ ไม่รู้ ว่า เป็นตัว หรือเปล่า   แต่ ถ้า ตัว ละ 250 บาท แพง   ไก่ย่าง ขาย 140 - 160   มี เยอะแยะ ยัง ได้ กำไร   แพง สุด ไม่ ควร xxunk 200   ข้าวผัด ปู จาน ใหญ่   300 ร้อย แพง   ถ้า ผัด เป็น จาน ๆ ละ 50 ผัด 4 จาน ก็ เต็ม ถาด ใหญ่ แล้ว   ส่วน เครื่อง ดืม ด้านบน อะไร 80 ถ้า เป็น ชาเย็น แพง มาก   น้ำ ดืม ขวด ใหญ่ ขวด ละ 50 แพง   บ้าน เรา เมืองร้อน อย่า เห็นแก่ตัว 30 ก็ พอแล้ว   คน ต้อง ซื้อ เยอะ   เบียร์ ช้าง ขวด ละ 120   กำไร xxunk น่าเกลียด มา 3 ขวด 360 แพง   xxunk ขวด ใหญ่ ก็ แพง   แต่ น้ำแข็ง พอได้ เพราะ อากาศ บ้าน เรา ร้อน ละลาย ง่าย อันนี้ พอ เข้าใจ คน ขาย   แต่ ทะเล เผา ทะเล ลวก ไม่เห็น หน้าตา ว่า มี อะไร บ้าง ก็ กุ้ง หมึก ปู xxunk 300   ตัว กลางๆ ใส่ มา อย่าง 5 ตัว ปู สัก ตัว   กำไร xxunk   ตำ ทะเล ตำ กุ้ง สด 150 ไม่ แพง   กุ้ง ชุ ป แป้ง ทอด แพง มาก ๆ   ต้มยำ หม้อ ละ 300 ร้อย ถือว่า แพง มาก   เพราะ มัน ใส่ ได้ ไม่ เยอะ หรอก   มันดี ตรง ที่ มี น้ำ กับ ไฟ อุ่น ร้อน   ของ กินใน บ้าน ยัง แทบ แตะ ไม่ได้   ทั้งที่ ป ระ ก็ xxunk   คน ในประเทศ ยัง กิน ไม่ อิม ส่งออก นอก พอ มี น้อย เหลือ น้อย   ก็ ขาย ให้ กัน แพง ๆ   ระบบ แย่ เอาเปรียบ กันเอง   ที่ บ้าน ขาย อาหาร กับข้าว ตาม สั่ง ป รุ่ง สุก ใหม่   แค่ จาน ละ 100 - 150   คน ยัง ว่า แพง ทั้งที่ บอ กว่า อร่อย   ถ้า ไป เจอ แบบนี้ สงสัย ช็อค ตาย คา ร้าน เลย มัง   ถ้า ต้อง ไป เจอ ทั้ง แพง ทั้ง ไม่อร่อย สัก แต่ ทำ ขาย   ใคร ว่า ไม่ แพง ยินดี ด้วย ที่ คุณ เป็น คน มี ตัง   แต่ เรา มอง จาก ค่าแรง กลางๆ ของ คน ในประเทศ นะ   ซึ่ง ส่วนมาก คนใน ประเทศไทย ได้ แต่ ค่าแรงขั้นต่ำ กับ เบี้ย ขยัน เล็กน้อย   คนจน เยอะ กว่า คนรวย ด้วย   ทำ อะไร ต้อง นึกถึง ความ สมควร   นึกถึง กันและกัน   แต่ เรา ไม่ใช่ คน xxunk   ชอบ มอง และ คิด จาก ความเป็นจริง   ถึง ขาย ให้ ชาวต่างชาติ ก็ เถอะ   เหมือน คนไทย เอาเปรียบ ช่วย โอกาส และ ไม่ ค่อย xxunk
+y: LMLabelList
+,,,,
+Path: wisesight_data;
+
+Test: None, model=SequentialRNN(
+  (0): AWD_LSTM(
+    (encoder): Embedding(15000, 400, padding_idx=1)
+    (encoder_dp): EmbeddingDropout(
+      (emb): Embedding(15000, 400, padding_idx=1)
+    )
+    (rnns): ModuleList(
+      (0): WeightDropout(
+        (module): LSTM(400, 1550, batch_first=True)
+      )
+      (1): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (2): WeightDropout(
+        (module): LSTM(1550, 1550, batch_first=True)
+      )
+      (3): WeightDropout(
+        (module): LSTM(1550, 400, batch_first=True)
+      )
+    )
+    (input_dp): RNNDropout()
+    (hidden_dps): ModuleList(
+      (0): RNNDropout()
+      (1): RNNDropout()
+      (2): RNNDropout()
+      (3): RNNDropout()
+    )
+  )
+  (1): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=15000, bias=True)
+    (output_dp): RNNDropout()
+  )
+), opt_func=functools.partial(&lt;class &#39;torch.optim.adam.Adam&#39;&gt;, betas=(0.9, 0.99)), loss_func=FlattenedLoss of CrossEntropyLoss(), metrics=[&lt;function accuracy at 0x7f51be568268&gt;], true_wd=True, bn_wd=True, wd=0.01, train_bn=True, path=PosixPath(&#39;wisesight_data&#39;), model_dir=&#39;models&#39;, callback_fns=[functools.partial(&lt;class &#39;fastai.basic_train.Recorder&#39;&gt;, add_time=True, silent=False), functools.partial(&lt;class &#39;fastai.train.GradientClipping&#39;&gt;, clip=0.12)], callbacks=[...], layer_groups=[Sequential(
+  (0): WeightDropout(
+    (module): LSTM(400, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 400, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): Embedding(15000, 400, padding_idx=1)
+  (1): EmbeddingDropout(
+    (emb): Embedding(15000, 400, padding_idx=1)
+  )
+  (2): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=15000, bias=True)
+    (output_dp): RNNDropout()
+  )
+)], add_time=True, silent=False, cb_fns_registered=False)
+alpha: 2
+beta: 1], layer_groups=[Sequential(
+  (0): WeightDropout(
+    (module): LSTM(400, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 400, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): Embedding(15000, 400, padding_idx=1)
+  (1): EmbeddingDropout(
+    (emb): Embedding(15000, 400, padding_idx=1)
+  )
+  (2): LinearDecoder(
+    (decoder): Linear(in_features=400, out_features=15000, bias=True)
+    (output_dp): RNNDropout()
+  )
+)], add_time=True, silent=False, cb_fns_registered=False)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#train frozen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training frozen&quot;</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">freeze_to</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="n">moms</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+training frozen
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>accuracy</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>4.841187</td>
+      <td>4.462714</td>
+      <td>0.319742</td>
+      <td>02:47</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#train unfrozen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training unfrozen&quot;</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">()</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="n">moms</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+training unfrozen
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>accuracy</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>4.411834</td>
+      <td>4.205552</td>
+      <td>0.341766</td>
+      <td>03:31</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>4.178030</td>
+      <td>4.037095</td>
+      <td>0.361508</td>
+      <td>03:31</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3.970388</td>
+      <td>3.930919</td>
+      <td>0.370139</td>
+      <td>03:31</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>3.756190</td>
+      <td>3.890398</td>
+      <td>0.376191</td>
+      <td>03:31</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3.671704</td>
+      <td>3.890232</td>
+      <td>0.375595</td>
+      <td>03:31</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># learn.save(&#39;wisesight_lm&#39;)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save_encoder</span><span class="p">(</span><span class="s2">&quot;wisesight_enc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Train-Text-Classifier">
+<h3>Train Text Classifier<a class="headerlink" href="#Train-Text-Classifier" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#lm data</span>
+<span class="n">data_lm</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;wisesight_lm.pkl&quot;</span><span class="p">)</span>
+<span class="n">data_lm</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
+
+<span class="c1">#classification data</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">tok_func</span><span class="o">=</span><span class="n">ThaiTokenizer</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;th&quot;</span><span class="p">,</span> <span class="n">pre_rules</span><span class="o">=</span><span class="n">pre_rules_th</span><span class="p">,</span> <span class="n">post_rules</span><span class="o">=</span><span class="n">post_rules_th</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="p">[</span><span class="n">TokenizeProcessor</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tt</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">mark_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+            <span class="n">NumericalizeProcessor</span><span class="p">(</span><span class="n">vocab</span><span class="o">=</span><span class="n">data_lm</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">max_vocab</span><span class="o">=</span><span class="mi">60000</span><span class="p">,</span> <span class="n">min_freq</span><span class="o">=</span><span class="mi">20</span><span class="p">)]</span>
+
+<span class="n">data_cls</span> <span class="o">=</span> <span class="p">(</span><span class="n">ItemLists</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span><span class="n">train</span><span class="o">=</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">),</span>
+                     <span class="n">valid</span><span class="o">=</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">valid_df</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">label_from_df</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">databunch</span><span class="p">(</span><span class="n">bs</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="n">data_cls</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_cls</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+15000
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#model</span>
+<span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">output_p</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">trn_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bptt</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_len</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">text_classifier_learner</span><span class="p">(</span><span class="n">data_cls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">trn_args</span><span class="p">)</span>
+<span class="c1">#load pretrained finetuned model</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="s2">&quot;wisesight_enc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+RNNLearner(data=TextClasDataBunch;
+
+Train: LabelList (20453 items)
+x: TextList
+xxbos   กันแดด คิว เพลส ตัวใหม่ นี่ คุม มัน ดีจริง อ่ะ   นี่ หน้า มัน   ยิ่ง ที โซน ยิ่ง มัน เยอะ   นีเวีย หลอด ยาว ๆ ฝา เขียว ก็ เอา ไม่อยู่ อ่ะ   แล้ว xxunk,xxbos   พบ กับ การ ร่วม ตัว ของ ศิลปิน   soul   pop   สาม ยุค   สาม สไตล์   ใน งาน   jamnight   อะไร ก็ช่าง xxunk   ( ชุ่ย )   นำ ทีม โดย   soul   after   six ,   the   parkinson   และ   the   xxup toys   งาน นี้ นอกจาก จะ ได้ ดู โชว์ แบบ เต็ม รูปแบบ จาก ทั้ง สาม วง แล้ว   ยัง มี โชว์ สุด พิเศษ ที่ ทั้ง สาม จะ ร่วม แจม กัน ด้วย   ไม่ อยาก ให้ พลาด   เจอกัน วันที่   29   กันยายน นี้ ที่ ช่าง ชุ่ย   ประตู เปิด   19.00   น. เป็นต้นไป   สามารถ ซื้อ บัตร ได้ แล้ว ที่   event   pop :   http :   /   /   go . eventpop . me   /   jamnight   * จำกัด ผู้ ที่ มีอายุ   20   ปี ขึ้นไป   #   jamnightbyjameson   #   jamesonthailand   #   soulaftersix   #   theparkinson   #   thetoys,xxbos   👌 🏻 👌 🏻 👌 🏻 xxwrep 2 😆,xxbos   จ - ศ   แถม ถึง   29   ไม่ทัน มะ ว้า   xxrep   4  ,xxbos   ใช้ ดี ค่ะ   บอกต่อ   คือ เป็น คน แพ้ ง่าย มาก กก   ใช้ กา นิ เย หรือ พอน ก็ แพ้   แต่ ใช้ ครีม แตงโม แล้ว คือ ดี   สิว ลด   กันน้ำ ค่ะ   นี้ ใช้ ไป เล่น สงกรานต์ มา   รอด ค่ะ 555   เล่อ ค่า   xxrep   5
+y: CategoryList
+neg,neu,neu,neu,neg
+Path: wisesight_data;
+
+Valid: LabelList (3610 items)
+x: TextList
+xxbos   เห็น คน ลบ แอ พ   viu   ก็ เห็นใจ และ เข้าใจ เขา นะคะ   แผล มัน ยัง ใหม่ แถม อารมณ์ ยิ่ง โดน xxunk ง่าย อยู่ นี่ เนอะ 5   xxrep   7   ส่วน ทาง นี้ ก็ กอด   netflix   แน่น มาก   เธอ อย่า ทำร้าย เรา นะ   เรา รู้ เธอ ไม่ ทำร้าย เรา แน่นอน,xxbos   ไป ชม ไม้ คิว ของ แชมป์   และ รอง แชมป์   กัน จ้า !   .   xxrep   32   เก็บตก จาก การแข่งขัน   แสงโสม   สนุกเกอร์   6   แดง   โอเพ่น   ประจำปี   2560   สนาม ที่   2   ณ   มัง กี้   สนุกเกอร์   คลับ   ซอย โชค ชัย   4   ลาดพร้าว   เมื่อ วันที่   12   ต.ค. 60,xxbos   กลุ่ม รถ ซีวิค เป็น กลุ่ม ที่ น่า รำ คาน มาก   xxrep   9   อวด รถ กัน ได้ ทุก วินาที   อวด ทำไม มึง ก็ ใช้ รถ เหมือนกัน ทุกคน   ละ ก็ พวก xxunk ที่ บอ กว่า อวด รถ แต่ ถ่าย นม ตัวเอง ชัด ละ รถ เบลอ นี่ คือ ?   xxrep   5  ,xxbos   อยาก สวย เหมือน เจ้าของ แบรนด์ สิ คะ   เนย   โชติ กา   ใบหน้า สวย   ใส xxunk   แม้ แต่งหน้า   นี่ ขนาด เป็น คุณแม่ แล้ว นะเนี่ย ก็ ยัง สวย ไม่ xxunk   ผ่าน ไป กี่ ปี ๆ ก็ ไม่ เปลี่ยน   ผิว ดี๊ ดี   ความ สวย . เรา สร้าง เอง ได้ ด้วยตัวเอง   ถ้า ได้ ใช้ มาส ์กโช   ต้อง สวย เหมือน โชติ กา แน่นอน ค่ะ   #   มาส ์กโช สวย ข้ามคืน   #   cho _ cosmetics   #   daradaily   #   ดารา เดลี่,xxbos   ข้าว โถ ละ ร้อย   แพง   เพราะ ตัก เป็น จาน ๆ ละ 15   เต็มที่ ก็ 5 จาน   คนไทย ต้อง กินข้าว ประเทศ xxunk ข้าว   กินข้าว ในประเทศ ตัวเอง หม้อ เป็น ร้อย เป็นลม ดีกว่า ค่า ฉะ xxunk ถุง 5 โล ไม่ เกิน 200 เป็น ข้าว มะลิ   ไก่ นี่ ไม่รู้ ว่า เป็นตัว หรือเปล่า   แต่ ถ้า ตัว ละ 250 บาท แพง   ไก่ย่าง ขาย 140 - 160   มี เยอะแยะ ยัง ได้ กำไร   แพง สุด ไม่ ควร xxunk 200   ข้าวผัด ปู จาน ใหญ่   300 ร้อย แพง   ถ้า ผัด เป็น จาน ๆ ละ 50 ผัด 4 จาน ก็ เต็ม ถาด ใหญ่ แล้ว   ส่วน เครื่อง ดืม ด้านบน อะไร 80 ถ้า เป็น ชาเย็น แพง มาก   น้ำ ดืม ขวด ใหญ่ ขวด ละ 50 แพง   บ้าน เรา เมืองร้อน อย่า เห็นแก่ตัว 30 ก็ พอแล้ว   คน ต้อง ซื้อ เยอะ   เบียร์ ช้าง ขวด ละ 120   กำไร xxunk น่าเกลียด มา 3 ขวด 360 แพง   xxunk ขวด ใหญ่ ก็ แพง   แต่ น้ำแข็ง พอได้ เพราะ อากาศ บ้าน เรา ร้อน ละลาย ง่าย อันนี้ พอ เข้าใจ คน ขาย   แต่ ทะเล เผา ทะเล ลวก ไม่เห็น หน้าตา ว่า มี อะไร บ้าง ก็ กุ้ง หมึก ปู xxunk 300   ตัว กลางๆ ใส่ มา อย่าง 5 ตัว ปู สัก ตัว   กำไร xxunk   ตำ ทะเล ตำ กุ้ง สด 150 ไม่ แพง   กุ้ง ชุ ป แป้ง ทอด แพง มาก ๆ   ต้มยำ หม้อ ละ 300 ร้อย ถือว่า แพง มาก   เพราะ มัน ใส่ ได้ ไม่ เยอะ หรอก   มันดี ตรง ที่ มี น้ำ กับ ไฟ อุ่น ร้อน   ของ กินใน บ้าน ยัง แทบ แตะ ไม่ได้   ทั้งที่ ป ระ ก็ xxunk   คน ในประเทศ ยัง กิน ไม่ อิม ส่งออก นอก พอ มี น้อย เหลือ น้อย   ก็ ขาย ให้ กัน แพง ๆ   ระบบ แย่ เอาเปรียบ กันเอง   ที่ บ้าน ขาย อาหาร กับข้าว ตาม สั่ง ป รุ่ง สุก ใหม่   แค่ จาน ละ 100 - 150   คน ยัง ว่า แพง ทั้งที่ บอ กว่า อร่อย   ถ้า ไป เจอ แบบนี้ สงสัย ช็อค ตาย คา ร้าน เลย มัง   ถ้า ต้อง ไป เจอ ทั้ง แพง ทั้ง ไม่อร่อย สัก แต่ ทำ ขาย   ใคร ว่า ไม่ แพง ยินดี ด้วย ที่ คุณ เป็น คน มี ตัง   แต่ เรา มอง จาก ค่าแรง กลางๆ ของ คน ในประเทศ นะ   ซึ่ง ส่วนมาก คนใน ประเทศไทย ได้ แต่ ค่าแรงขั้นต่ำ กับ เบี้ย ขยัน เล็กน้อย   คนจน เยอะ กว่า คนรวย ด้วย   ทำ อะไร ต้อง นึกถึง ความ สมควร   นึกถึง กันและกัน   แต่ เรา ไม่ใช่ คน xxunk   ชอบ มอง และ คิด จาก ความเป็นจริง   ถึง ขาย ให้ ชาวต่างชาติ ก็ เถอะ   เหมือน คนไทย เอาเปรียบ ช่วย โอกาส และ ไม่ ค่อย xxunk
+y: CategoryList
+neu,neu,neg,neu,neg
+Path: wisesight_data;
+
+Test: None, model=SequentialRNN(
+  (0): MultiBatchEncoder(
+    (module): AWD_LSTM(
+      (encoder): Embedding(15000, 400, padding_idx=1)
+      (encoder_dp): EmbeddingDropout(
+        (emb): Embedding(15000, 400, padding_idx=1)
+      )
+      (rnns): ModuleList(
+        (0): WeightDropout(
+          (module): LSTM(400, 1550, batch_first=True)
+        )
+        (1): WeightDropout(
+          (module): LSTM(1550, 1550, batch_first=True)
+        )
+        (2): WeightDropout(
+          (module): LSTM(1550, 1550, batch_first=True)
+        )
+        (3): WeightDropout(
+          (module): LSTM(1550, 400, batch_first=True)
+        )
+      )
+      (input_dp): RNNDropout()
+      (hidden_dps): ModuleList(
+        (0): RNNDropout()
+        (1): RNNDropout()
+        (2): RNNDropout()
+        (3): RNNDropout()
+      )
+    )
+  )
+  (1): PoolingLinearClassifier(
+    (layers): Sequential(
+      (0): BatchNorm1d(1200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): Dropout(p=0.27999999999999997)
+      (2): Linear(in_features=1200, out_features=50, bias=True)
+      (3): ReLU(inplace)
+      (4): BatchNorm1d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): Dropout(p=0.1)
+      (6): Linear(in_features=50, out_features=4, bias=True)
+    )
+  )
+), opt_func=functools.partial(&lt;class &#39;torch.optim.adam.Adam&#39;&gt;, betas=(0.9, 0.99)), loss_func=FlattenedLoss of CrossEntropyLoss(), metrics=[&lt;function accuracy at 0x7f51be568268&gt;], true_wd=True, bn_wd=True, wd=0.01, train_bn=True, path=PosixPath(&#39;wisesight_data&#39;), model_dir=&#39;models&#39;, callback_fns=[functools.partial(&lt;class &#39;fastai.basic_train.Recorder&#39;&gt;, add_time=True, silent=False)], callbacks=[RNNTrainer
+learn: RNNLearner(data=TextClasDataBunch;
+
+Train: LabelList (20453 items)
+x: TextList
+xxbos   กันแดด คิว เพลส ตัวใหม่ นี่ คุม มัน ดีจริง อ่ะ   นี่ หน้า มัน   ยิ่ง ที โซน ยิ่ง มัน เยอะ   นีเวีย หลอด ยาว ๆ ฝา เขียว ก็ เอา ไม่อยู่ อ่ะ   แล้ว xxunk,xxbos   พบ กับ การ ร่วม ตัว ของ ศิลปิน   soul   pop   สาม ยุค   สาม สไตล์   ใน งาน   jamnight   อะไร ก็ช่าง xxunk   ( ชุ่ย )   นำ ทีม โดย   soul   after   six ,   the   parkinson   และ   the   xxup toys   งาน นี้ นอกจาก จะ ได้ ดู โชว์ แบบ เต็ม รูปแบบ จาก ทั้ง สาม วง แล้ว   ยัง มี โชว์ สุด พิเศษ ที่ ทั้ง สาม จะ ร่วม แจม กัน ด้วย   ไม่ อยาก ให้ พลาด   เจอกัน วันที่   29   กันยายน นี้ ที่ ช่าง ชุ่ย   ประตู เปิด   19.00   น. เป็นต้นไป   สามารถ ซื้อ บัตร ได้ แล้ว ที่   event   pop :   http :   /   /   go . eventpop . me   /   jamnight   * จำกัด ผู้ ที่ มีอายุ   20   ปี ขึ้นไป   #   jamnightbyjameson   #   jamesonthailand   #   soulaftersix   #   theparkinson   #   thetoys,xxbos   👌 🏻 👌 🏻 👌 🏻 xxwrep 2 😆,xxbos   จ - ศ   แถม ถึง   29   ไม่ทัน มะ ว้า   xxrep   4  ,xxbos   ใช้ ดี ค่ะ   บอกต่อ   คือ เป็น คน แพ้ ง่าย มาก กก   ใช้ กา นิ เย หรือ พอน ก็ แพ้   แต่ ใช้ ครีม แตงโม แล้ว คือ ดี   สิว ลด   กันน้ำ ค่ะ   นี้ ใช้ ไป เล่น สงกรานต์ มา   รอด ค่ะ 555   เล่อ ค่า   xxrep   5
+y: CategoryList
+neg,neu,neu,neu,neg
+Path: wisesight_data;
+
+Valid: LabelList (3610 items)
+x: TextList
+xxbos   เห็น คน ลบ แอ พ   viu   ก็ เห็นใจ และ เข้าใจ เขา นะคะ   แผล มัน ยัง ใหม่ แถม อารมณ์ ยิ่ง โดน xxunk ง่าย อยู่ นี่ เนอะ 5   xxrep   7   ส่วน ทาง นี้ ก็ กอด   netflix   แน่น มาก   เธอ อย่า ทำร้าย เรา นะ   เรา รู้ เธอ ไม่ ทำร้าย เรา แน่นอน,xxbos   ไป ชม ไม้ คิว ของ แชมป์   และ รอง แชมป์   กัน จ้า !   .   xxrep   32   เก็บตก จาก การแข่งขัน   แสงโสม   สนุกเกอร์   6   แดง   โอเพ่น   ประจำปี   2560   สนาม ที่   2   ณ   มัง กี้   สนุกเกอร์   คลับ   ซอย โชค ชัย   4   ลาดพร้าว   เมื่อ วันที่   12   ต.ค. 60,xxbos   กลุ่ม รถ ซีวิค เป็น กลุ่ม ที่ น่า รำ คาน มาก   xxrep   9   อวด รถ กัน ได้ ทุก วินาที   อวด ทำไม มึง ก็ ใช้ รถ เหมือนกัน ทุกคน   ละ ก็ พวก xxunk ที่ บอ กว่า อวด รถ แต่ ถ่าย นม ตัวเอง ชัด ละ รถ เบลอ นี่ คือ ?   xxrep   5  ,xxbos   อยาก สวย เหมือน เจ้าของ แบรนด์ สิ คะ   เนย   โชติ กา   ใบหน้า สวย   ใส xxunk   แม้ แต่งหน้า   นี่ ขนาด เป็น คุณแม่ แล้ว นะเนี่ย ก็ ยัง สวย ไม่ xxunk   ผ่าน ไป กี่ ปี ๆ ก็ ไม่ เปลี่ยน   ผิว ดี๊ ดี   ความ สวย . เรา สร้าง เอง ได้ ด้วยตัวเอง   ถ้า ได้ ใช้ มาส ์กโช   ต้อง สวย เหมือน โชติ กา แน่นอน ค่ะ   #   มาส ์กโช สวย ข้ามคืน   #   cho _ cosmetics   #   daradaily   #   ดารา เดลี่,xxbos   ข้าว โถ ละ ร้อย   แพง   เพราะ ตัก เป็น จาน ๆ ละ 15   เต็มที่ ก็ 5 จาน   คนไทย ต้อง กินข้าว ประเทศ xxunk ข้าว   กินข้าว ในประเทศ ตัวเอง หม้อ เป็น ร้อย เป็นลม ดีกว่า ค่า ฉะ xxunk ถุง 5 โล ไม่ เกิน 200 เป็น ข้าว มะลิ   ไก่ นี่ ไม่รู้ ว่า เป็นตัว หรือเปล่า   แต่ ถ้า ตัว ละ 250 บาท แพง   ไก่ย่าง ขาย 140 - 160   มี เยอะแยะ ยัง ได้ กำไร   แพง สุด ไม่ ควร xxunk 200   ข้าวผัด ปู จาน ใหญ่   300 ร้อย แพง   ถ้า ผัด เป็น จาน ๆ ละ 50 ผัด 4 จาน ก็ เต็ม ถาด ใหญ่ แล้ว   ส่วน เครื่อง ดืม ด้านบน อะไร 80 ถ้า เป็น ชาเย็น แพง มาก   น้ำ ดืม ขวด ใหญ่ ขวด ละ 50 แพง   บ้าน เรา เมืองร้อน อย่า เห็นแก่ตัว 30 ก็ พอแล้ว   คน ต้อง ซื้อ เยอะ   เบียร์ ช้าง ขวด ละ 120   กำไร xxunk น่าเกลียด มา 3 ขวด 360 แพง   xxunk ขวด ใหญ่ ก็ แพง   แต่ น้ำแข็ง พอได้ เพราะ อากาศ บ้าน เรา ร้อน ละลาย ง่าย อันนี้ พอ เข้าใจ คน ขาย   แต่ ทะเล เผา ทะเล ลวก ไม่เห็น หน้าตา ว่า มี อะไร บ้าง ก็ กุ้ง หมึก ปู xxunk 300   ตัว กลางๆ ใส่ มา อย่าง 5 ตัว ปู สัก ตัว   กำไร xxunk   ตำ ทะเล ตำ กุ้ง สด 150 ไม่ แพง   กุ้ง ชุ ป แป้ง ทอด แพง มาก ๆ   ต้มยำ หม้อ ละ 300 ร้อย ถือว่า แพง มาก   เพราะ มัน ใส่ ได้ ไม่ เยอะ หรอก   มันดี ตรง ที่ มี น้ำ กับ ไฟ อุ่น ร้อน   ของ กินใน บ้าน ยัง แทบ แตะ ไม่ได้   ทั้งที่ ป ระ ก็ xxunk   คน ในประเทศ ยัง กิน ไม่ อิม ส่งออก นอก พอ มี น้อย เหลือ น้อย   ก็ ขาย ให้ กัน แพง ๆ   ระบบ แย่ เอาเปรียบ กันเอง   ที่ บ้าน ขาย อาหาร กับข้าว ตาม สั่ง ป รุ่ง สุก ใหม่   แค่ จาน ละ 100 - 150   คน ยัง ว่า แพง ทั้งที่ บอ กว่า อร่อย   ถ้า ไป เจอ แบบนี้ สงสัย ช็อค ตาย คา ร้าน เลย มัง   ถ้า ต้อง ไป เจอ ทั้ง แพง ทั้ง ไม่อร่อย สัก แต่ ทำ ขาย   ใคร ว่า ไม่ แพง ยินดี ด้วย ที่ คุณ เป็น คน มี ตัง   แต่ เรา มอง จาก ค่าแรง กลางๆ ของ คน ในประเทศ นะ   ซึ่ง ส่วนมาก คนใน ประเทศไทย ได้ แต่ ค่าแรงขั้นต่ำ กับ เบี้ย ขยัน เล็กน้อย   คนจน เยอะ กว่า คนรวย ด้วย   ทำ อะไร ต้อง นึกถึง ความ สมควร   นึกถึง กันและกัน   แต่ เรา ไม่ใช่ คน xxunk   ชอบ มอง และ คิด จาก ความเป็นจริง   ถึง ขาย ให้ ชาวต่างชาติ ก็ เถอะ   เหมือน คนไทย เอาเปรียบ ช่วย โอกาส และ ไม่ ค่อย xxunk
+y: CategoryList
+neu,neu,neg,neu,neg
+Path: wisesight_data;
+
+Test: None, model=SequentialRNN(
+  (0): MultiBatchEncoder(
+    (module): AWD_LSTM(
+      (encoder): Embedding(15000, 400, padding_idx=1)
+      (encoder_dp): EmbeddingDropout(
+        (emb): Embedding(15000, 400, padding_idx=1)
+      )
+      (rnns): ModuleList(
+        (0): WeightDropout(
+          (module): LSTM(400, 1550, batch_first=True)
+        )
+        (1): WeightDropout(
+          (module): LSTM(1550, 1550, batch_first=True)
+        )
+        (2): WeightDropout(
+          (module): LSTM(1550, 1550, batch_first=True)
+        )
+        (3): WeightDropout(
+          (module): LSTM(1550, 400, batch_first=True)
+        )
+      )
+      (input_dp): RNNDropout()
+      (hidden_dps): ModuleList(
+        (0): RNNDropout()
+        (1): RNNDropout()
+        (2): RNNDropout()
+        (3): RNNDropout()
+      )
+    )
+  )
+  (1): PoolingLinearClassifier(
+    (layers): Sequential(
+      (0): BatchNorm1d(1200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): Dropout(p=0.27999999999999997)
+      (2): Linear(in_features=1200, out_features=50, bias=True)
+      (3): ReLU(inplace)
+      (4): BatchNorm1d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): Dropout(p=0.1)
+      (6): Linear(in_features=50, out_features=4, bias=True)
+    )
+  )
+), opt_func=functools.partial(&lt;class &#39;torch.optim.adam.Adam&#39;&gt;, betas=(0.9, 0.99)), loss_func=FlattenedLoss of CrossEntropyLoss(), metrics=[&lt;function accuracy at 0x7f51be568268&gt;], true_wd=True, bn_wd=True, wd=0.01, train_bn=True, path=PosixPath(&#39;wisesight_data&#39;), model_dir=&#39;models&#39;, callback_fns=[functools.partial(&lt;class &#39;fastai.basic_train.Recorder&#39;&gt;, add_time=True, silent=False)], callbacks=[...], layer_groups=[Sequential(
+  (0): Embedding(15000, 400, padding_idx=1)
+  (1): EmbeddingDropout(
+    (emb): Embedding(15000, 400, padding_idx=1)
+  )
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(400, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 400, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): PoolingLinearClassifier(
+    (layers): Sequential(
+      (0): BatchNorm1d(1200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): Dropout(p=0.27999999999999997)
+      (2): Linear(in_features=1200, out_features=50, bias=True)
+      (3): ReLU(inplace)
+      (4): BatchNorm1d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): Dropout(p=0.1)
+      (6): Linear(in_features=50, out_features=4, bias=True)
+    )
+  )
+)], add_time=True, silent=False, cb_fns_registered=False)
+alpha: 2
+beta: 1], layer_groups=[Sequential(
+  (0): Embedding(15000, 400, padding_idx=1)
+  (1): EmbeddingDropout(
+    (emb): Embedding(15000, 400, padding_idx=1)
+  )
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(400, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 1550, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): WeightDropout(
+    (module): LSTM(1550, 400, batch_first=True)
+  )
+  (1): RNNDropout()
+), Sequential(
+  (0): PoolingLinearClassifier(
+    (layers): Sequential(
+      (0): BatchNorm1d(1200, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (1): Dropout(p=0.27999999999999997)
+      (2): Linear(in_features=1200, out_features=50, bias=True)
+      (3): ReLU(inplace)
+      (4): BatchNorm1d(50, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): Dropout(p=0.1)
+      (6): Linear(in_features=50, out_features=4, bias=True)
+    )
+  )
+)], add_time=True, silent=False, cb_fns_registered=False)
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># #train unfrozen</span>
+<span class="c1"># learn.freeze_to(-1)</span>
+<span class="c1"># learn.fit_one_cycle(1, 2e-2, moms=(0.8, 0.7))</span>
+<span class="c1"># learn.freeze_to(-2)</span>
+<span class="c1"># learn.fit_one_cycle(1, slice(1e-2 / (2.6 ** 4), 1e-2), moms=(0.8, 0.7))</span>
+<span class="c1"># learn.freeze_to(-3)</span>
+<span class="c1"># learn.fit_one_cycle(1, slice(5e-3 / (2.6 ** 4), 5e-3), moms=(0.8, 0.7))</span>
+<span class="c1"># learn.unfreeze()</span>
+<span class="c1"># learn.fit_one_cycle(10, slice(1e-3 / (2.6 ** 4), 1e-3), moms=(0.8, 0.7),</span>
+<span class="c1">#                    callbacks=[SaveModelCallback(learn, every=&#39;improvement&#39;, monitor=&#39;accuracy&#39;, name=&#39;bestmodel&#39;)])</span>
+</pre></div>
+</div>
+</div>
+<p>Training takes about 20 minutes so we use the script <code class="docutils literal notranslate"><span class="pre">train_model.py</span></code> to do it with the following results (validation run):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>epoch     train_loss  valid_loss  accuracy
+1         0.812156    0.753478    0.687532
+Total time: 00:56
+epoch     train_loss  valid_loss  accuracy
+1         0.740403    0.699093    0.714394
+Total time: 00:57
+epoch     train_loss  valid_loss  accuracy
+1         0.727394    0.668807    0.723011
+Total time: 01:34
+epoch     train_loss  valid_loss  accuracy
+1         0.722163    0.675351    0.723517
+2         0.675266    0.654477    0.738723
+3         0.669178    0.641070    0.737962
+4         0.612528    0.637456    0.744551
+5         0.618259    0.635149    0.749366
+6         0.572621    0.651169    0.749873
+7         0.561985    0.661739    0.747593
+8         0.534753    0.673563    0.738469
+9         0.530844    0.688871    0.746072
+10        0.522788    0.670024    0.743031
+Total time: 23:42
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>See Results<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;bestmodel&quot;</span><span class="p">)</span>
+
+<span class="c1">#get predictions</span>
+<span class="n">probs</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">get_preds</span><span class="p">(</span><span class="n">ds_type</span> <span class="o">=</span> <span class="n">DatasetType</span><span class="o">.</span><span class="n">Valid</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_loss</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">train_ds</span><span class="o">.</span><span class="n">classes</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">classes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y_true</span><span class="o">.</span><span class="n">numpy</span><span class="p">()])</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">classes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">probs</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()])</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">probs</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">loss</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">to_df</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">y_true</span><span class="p">[:,</span><span class="kc">None</span><span class="p">],</span><span class="n">preds</span><span class="p">[:,</span><span class="kc">None</span><span class="p">],</span><span class="n">loss</span><span class="p">[:,</span><span class="kc">None</span><span class="p">],</span><span class="n">prob</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">probs_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">to_df</span><span class="p">)</span>
+<span class="n">probs_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">,</span><span class="s2">&quot;preds&quot;</span><span class="p">,</span><span class="s2">&quot;loss&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">classes</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;hit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">probs_df</span><span class="o">.</span><span class="n">category</span> <span class="o">==</span> <span class="n">probs_df</span><span class="o">.</span><span class="n">preds</span><span class="p">)</span>
+<span class="n">probs_df</span><span class="p">[</span><span class="s2">&quot;texts&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">texts</span>
+<span class="p">(</span><span class="n">y_true</span><span class="o">==</span><span class="n">preds</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.8392661555312158
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">conf_mat</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">probs_df</span><span class="o">.</span><span class="n">category</span><span class="p">,</span><span class="n">probs_df</span><span class="o">.</span><span class="n">preds</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">conf_mat</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Actual&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predicted&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_sentiment_analysis_51_0.png" src="../_images/notebooks_sentiment_analysis_51_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="text_classification.html" class="btn btn-neutral float-right" title="Wongnai Review Classification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pythainlp_wangchanberta.html" class="btn btn-neutral float-left" title="Named Entity Recognition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, PyThaiNLP.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

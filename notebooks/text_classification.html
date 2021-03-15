@@ -1,0 +1,1644 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Wongnai Review Classification &mdash; pythainlp-tutorials a49e43a documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Thai Wiki Language Model for Text Generation" href="text_generation.html" />
+    <link rel="prev" title="Wisesight Sentiment Analysis" href="sentiment_analysis.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pythainlp-tutorials
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="machine_translation.html">PyThaiNLP Translate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_get_started.html">PyThaiNLP Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html">Named Entity Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html#Part-of-speech">Part of speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html#Subword">Subword</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sentiment_analysis.html">Wisesight Sentiment Analysis</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Wongnai Review Classification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Oversampling">Oversampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fastText-Model">fastText Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#LinearSVC-Model">LinearSVC Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ULMFit-Model">ULMFit Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Finetune-Language-Model">Finetune Language Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Classification">Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Submission">Submission</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_generation.html">Thai Wiki Language Model for Text Generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word2vec_examples.html">Thai2Vec Embeddings Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythainlp-tutorials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Wongnai Review Classification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/notebooks/text_classification.ipynb" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="admonition note">
+<p>Interactive online version:
+<span class="raw-html"><a target="_blank" href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/text_classification.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a></span>
+<span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/text_classification.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
+</div>
+<div class="section" id="Wongnai-Review-Classification">
+<h1>Wongnai Review Classification<a class="headerlink" href="#Wongnai-Review-Classification" title="Permalink to this headline">¶</a></h1>
+<p>We provide two benchmarks for 5-star multi-class classification of <a class="reference external" href="https://github.com/wongnai/wongnai-corpus">wongnai-corpus</a>: <a class="reference external" href="https://github.com/facebookresearch/fastText">fastText</a> and <a class="reference external" href="https://github.com/cstorm125/thai2fit">ULMFit</a>. In both cases, we first finetune the embeddings using all data. The benchmark numbers are based on the test set. Performance metric is the micro-averaged F1 by the test set of <a class="reference external" href="https://www.kaggle.com/c/wongnai-challenge-review-rating-prediction/data">Wongnai
+Challenge</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 23%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>micro_f1_public</p></th>
+<th class="head"><p>micro_f1_private</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ULMFit</strong></p></td>
+<td><p><strong>0.59313</strong></p></td>
+<td><p><strong>0.60322</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>fastText</p></td>
+<td><p>0.5145</p></td>
+<td><p>0.5109</p></td>
+</tr>
+<tr class="row-even"><td><p>LinearSVC</p></td>
+<td><p>0.5022</p></td>
+<td><p>0.4976</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kaggle Score</p></td>
+<td><p>0.59139</p></td>
+<td><p>0.58139</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ThAIKeras/bert">BERT</a></p></td>
+<td><p>0.56612</p></td>
+<td><p>0.57057</p></td>
+</tr>
+</tbody>
+</table>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># #uncomment if you are running from google colab</span>
+<span class="c1"># !pip install sklearn_crfsuite</span>
+<span class="c1"># !pip install https://github.com/PyThaiNLP/pythainlp/archive/dev.zip</span>
+<span class="c1"># !pip install fastai==1.0.45</span>
+<span class="c1"># !wget https://github.com/wongnai/wongnai-corpus/raw/master/review/review_dataset.zip; unzip review_dataset.zip</span>
+<span class="c1"># !mkdir wongnai_data; ls</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1">#viz</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># from fastai.text import *</span>
+<span class="c1"># from fastai.callbacks import CSVLogger</span>
+
+<span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="n">process_thai</span>
+
+<span class="n">ft_data</span> <span class="o">=</span> <span class="s1">&#39;ft_data/&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Oversampling">
+<h2>Oversampling<a class="headerlink" href="#Oversampling" title="Permalink to this headline">¶</a></h2>
+<p>We oversampled class <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> for 11 and 3 times respectively in order to balance the classes.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;w_review_train.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;test_file.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]),</span>\
+                   <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">])])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_df</span><span class="o">.</span><span class="n">rating</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="n">train_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4    0.469282
+3    0.304328
+5    0.169880
+2    0.046133
+1    0.010377
+Name: rating, dtype: float64
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">two_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="o">.</span><span class="n">rating</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">one_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="o">.</span><span class="n">rating</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_bal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">,</span><span class="n">one_df</span><span class="p">,</span><span class="n">two_df</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_bal</span><span class="o">.</span><span class="n">rating</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="n">train_bal</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4    0.392365
+3    0.254448
+5    0.142036
+2    0.115715
+1    0.095436
+Name: rating, dtype: float64
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="fastText-Model">
+<h2><a class="reference external" href="https://github.com/facebookresearch/fastText">fastText</a> Model<a class="headerlink" href="#fastText-Model" title="Permalink to this headline">¶</a></h2>
+<p>We used embeddings pretrained on <a class="reference external" href="https://github.com/facebookresearch/fastText/blob/master/docs/pretrained-vectors.md">Thai Wikipedia Dump</a> and finetuned them using all of <code class="docutils literal notranslate"><span class="pre">wisesight-sentiment</span></code> using skipgram model. After that, we do a 5-class classification.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 38%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>micro_f1_public</p></th>
+<th class="head"><p>micro_f1_private</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>fastText</p></td>
+<td><p>0.5145</p></td>
+<td><p>0.5109</p></td>
+</tr>
+</tbody>
+</table>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df_txts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;train_bal&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_df</span><span class="p">,</span> <span class="n">train_bal</span><span class="p">,</span> <span class="n">test_df</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">ft_lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">ft_lab</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;__label__</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">ft_text</span> <span class="o">=</span> <span class="n">replace_newline</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">ft_line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_lab</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ft_text</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">ft_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ft_line</span><span class="p">)</span>
+
+    <span class="n">doc</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ft_lines</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_data</span><span class="si">}{</span><span class="n">df_txts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># for fasttext embedding finetuning</span>
+<span class="n">ft_lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">all_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">ft_lab</span> <span class="o">=</span> <span class="s2">&quot;__label__0&quot;</span>
+    <span class="n">ft_text</span> <span class="o">=</span> <span class="n">replace_newline</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ft_line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_lab</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ft_text</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">ft_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ft_line</span><span class="p">)</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ft_lines</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_data</span><span class="si">}</span><span class="s1">df_all.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span># finetune with all data
+!/home/charin/fastText-0.1.0/fasttext skipgram \
+-pretrainedVectors &#39;model/wiki.th.vec&#39; -dim 300 \
+-input ft_data/df_all.txt -output &#39;model/finetuned&#39;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Read 1M words
+Number of words:  18176
+Number of labels: 1
+Progress: 100.0%  words/sec/thread: 24858  lr: 0.000000  loss: 1.309402  eta: 0h0m
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span># train classifier
+!/home/charin/fastText-0.1.0/fasttext supervised \
+-input &#39;ft_data/train_bal.txt&#39; -output &#39;model/wongnai_bal&#39; \
+-pretrainedVectors &#39;model/finetuned.vec&#39; -epoch 5 -dim 300 -wordNgrams 2
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Read 1M words
+Number of words:  731006
+Number of labels: 5
+Progress: 100.0%  words/sec/thread: 391282  lr: 0.000000  loss: 0.764689  eta: 0h0m
+^C
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># get prediction</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="o">!</span>/home/charin/fastText-0.1.0/fasttext predict <span class="s1">&#39;model/wongnai_bal.bin&#39;</span> <span class="s1">&#39;ft_data/test.txt&#39;</span>
+<span class="n">pred_lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;__&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;reviewID&quot;</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span>
+                          <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="n">pred_lab</span><span class="p">})</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;submit_fastttext_bal.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="LinearSVC-Model">
+<h2>LinearSVC Model<a class="headerlink" href="#LinearSVC-Model" title="Permalink to this headline">¶</a></h2>
+<p>Code for LinearSVC is initially provided by [&#64;lukkiddd](<a class="reference external" href="https://github.com/lukkiddd">https://github.com/lukkiddd</a>). <code class="docutils literal notranslate"><span class="pre">pythainlp.ulmfit.process_thai</span></code> contains text cleaning rules with the default aimed for sparse models like bag of words. It contains <code class="docutils literal notranslate"><span class="pre">pre_rules</span></code> applied before tokenization and <code class="docutils literal notranslate"><span class="pre">post_rules</span></code> applied after.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 38%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>micro_f1_public</p></th>
+<th class="head"><p>micro_f1_private</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LinearSVC</p></td>
+<td><p>0.5022</p></td>
+<td><p>0.4976</p></td>
+</tr>
+</tbody>
+</table>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_bal</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">train_bal</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">train_splits</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_splits</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">train_bal</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+    <span class="n">train_splits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">train_bal</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">])))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">test_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+    <span class="n">test_splits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "01cf5b2e041d4ce0a482073127c67c8b", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "097725d69a834eb5bda2b6d4b6c0c1e3", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+
+<span class="n">text_clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s2">&quot;vect&quot;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">process_thai</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))),</span>
+    <span class="p">(</span><span class="s2">&quot;tfidf&#39;, TfidfTransformer()),</span>
+    <span class="p">(</span><span class="s2">&quot;clf&quot;</span><span class="p">,</span> <span class="n">LinearSVC</span><span class="p">()),</span>
+<span class="p">])</span>
+
+<span class="n">text_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Pipeline(memory=None,
+     steps=[(&#39;vect&#39;, CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
+        dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
+        lowercase=True, max_df=1.0, max_features=None, min_df=1,
+        ngram_range=(1, 2), preprocessor=None, stop_words=None,
+        strip...ax_iter=1000,
+     multi_class=&#39;ovr&#39;, penalty=&#39;l2&#39;, random_state=None, tol=0.0001,
+     verbose=0))])
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pred_lab</span> <span class="o">=</span> <span class="n">text_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">pred_lab</span> <span class="o">=</span> <span class="n">text_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;reviewID&quot;</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span>
+                          <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="n">pred_lab</span><span class="p">})</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;submit_linearsvc.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ULMFit-Model">
+<h2><a class="reference external" href="https://github.com/cstorm125/thai2fit">ULMFit</a> Model<a class="headerlink" href="#ULMFit-Model" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 40%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>model</p></th>
+<th class="head"><p>micro_f1_public</p></th>
+<th class="head"><p>micro_f1_private</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ULMFit</p></td>
+<td><p>0.59590</p></td>
+<td><p>0.59731</p></td>
+</tr>
+</tbody>
+</table>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># #uncomment if you are running from google colab</span>
+<span class="c1"># !pip install sklearn_crfsuite</span>
+<span class="c1"># !pip install https://github.com/PyThaiNLP/pythainlp/archive/dev.zip</span>
+<span class="c1"># !pip install fastai==1.0.45</span>
+<span class="c1"># !wget https://github.com/wongnai/wongnai-corpus/raw/master/review/review_dataset.zip; unzip review_dataset.zip</span>
+<span class="c1"># !mkdir wongnai_data; ls</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">fastai.text</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fastai.callbacks</span> <span class="kn">import</span> <span class="n">CSVLogger</span>
+
+<span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;wongnai_data/&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#process data</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;w_review_train.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;test_file.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]),</span>\
+                   <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">])])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">two_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="o">.</span><span class="n">rating</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">one_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="o">.</span><span class="n">rating</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_bal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">,</span> <span class="n">one_df</span><span class="p">,</span> <span class="n">two_df</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Finetune-Language-Model">
+<h3>Finetune Language Model<a class="headerlink" href="#Finetune-Language-Model" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># tt = Tokenizer(tok_func = ThaiTokenizer, lang = &#39;th&#39;, pre_rules = pre_rules_th, post_rules=post_rules_th)</span>
+<span class="c1"># processor = [TokenizeProcessor(tokenizer=tt, chunksize=10000, mark_fields=False),</span>
+<span class="c1">#             NumericalizeProcessor(vocab=None, max_vocab=60000, min_freq=3)]</span>
+
+<span class="c1"># data_lm = (TextList.from_df(all_df, model_path, cols=[&#39;review&#39;], processor=processor)</span>
+<span class="c1">#     .random_split_by_pct(valid_pct = 0.01, seed = 1412)</span>
+<span class="c1">#     .label_for_lm()</span>
+<span class="c1">#     .databunch(bs=64))</span>
+<span class="c1"># data_lm.sanity_check()</span>
+<span class="c1"># data_lm.save(&#39;wongnai_lm.pkl&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data_lm</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;wongnai_lm.pkl&quot;</span><span class="p">)</span>
+<span class="n">data_lm</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">train_ds</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">valid_ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(45735, 461)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data_lm</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>idx</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>ไข่ดาว หมด ซะ ก่อน   แต่ แค่   2   อย่าง กับ ข้าวสวย ที่ ให้ มา ใน ปริมาณ ที่ อิ่ม พอดี ก็ เต็ม ที่แล้ว   แม่ค้า ก็ อัธยาศัย ดี รับรอง ว่า มี กลับมา กิน   \n   อีก บ่อยๆ แน่ นอ น. ..   \n   ใคร ผ่าน มา แถว นี้ ลอง แวะ ชิม นะคะ   สำหรับ คน ที่ ชอบ รส</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>เครื่องดื่ม มากมาย   แต่ ที่ กิน แล้ว ปลื้ม คง เป็น โกโก้ ปั่น   เข้มข้น   และ   topping   เยอะ ดี   เสียดาย หา รูป ไม่ เจอ   ?   xxrep   12   xxbos   ตอน :   ก๋วยเตี๋ยว บ้าน บึง   1   \n   \n   ก๋วยเตี๋ยว บ้าน บึง</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>เนื้อ เน้น ๆ   ดี อ่ะ   \n   ลืม ถ่าย สุ กี้ หมู !! xxbos   เช้า วันอาทิตย์ หิว มาก ค่ะ   หา อะไร ทาน ค่อนข้าง ยาก   นึก ขึ้น ได้ ว่า ร้าน วา วี สาขา พัฒนาการ เปิด ทุกวัน และ เปิด แต่เช้า ด้วย   เลย มา ฝาก ท้อง ที่นี่   ใน ตู้ กัน มี ให้ เลือก หลายอย่าง เลย   ทั้ง</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>สด   เน้น ว่า สด มาก   การ บริการ   ลุง กะ ป้า   และ ลูกสาว เจ้าของร้าน   พุด จา ดี   บริการ ดีมาก xxbos   รี วิว นี้ ความคิดเห็น ส่วนตัว   ล้วน ๆ ครับ   \n   ผม ได้ เห็น คน รี วิว ร้าน นี้ เยอะ มาก   ออก แนวทาง บวก ด้วย ส่วนใหญ่   แล้ว เมื่อ วันที่</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>\n   บรรยากาศ ร้าน จะ เป็น รถเข็น ที่ตั้ง ขาย อยู่ ริม ทาง เลย ครับ   โต๊ะ นั่ง มี ไม่ มาก   ตกแต่ง ให้ ออก เป็นแนว ญี่ปุ่น เล็กน้อย   มี บาร์ นั่ง โดยรอบ รถเข็น   นึกถึง ร้า นรา เมน ที่ ญี่ปุ่น อยู่ ร้าน นึง เลย   ยืน กิน โดยรอบ ร้าน   ได้ บรรยากาศ ยิ่งนัก   ร้าน นี้ จะ เปิด ขาย ทุกวัน</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">train_dl</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[tensor([[   8,    2,    8,  ...,  414,    8,   29],
+         [  43, 3408,    8,  ...,  135,   25,  409],
+         [1325,    8, 1185,  ...,   13,   18,    8],
+         ...,
+         [   4, 9903,    8,  ...,    8,  368,   18],
+         [  27,  360,  870,  ...,  254, 3448,   34],
+         [  37,   25,  174,  ...,  429,    8, 1412]], device=&#39;cuda:0&#39;),
+ tensor([[    2,     8,    36,  ...,     8,    29,   193],
+         [ 3408,     8,    14,  ...,    25,   409,    61],
+         [    8,  1185,     8,  ...,    18,     8,    80],
+         ...,
+         [ 9903,     8,     4,  ...,   368,    18,     8],
+         [  360,   870, 10074,  ...,  3448,    34,   258],
+         [   25,   174,   456,  ...,     8,  1412,   270]], device=&#39;cuda:0&#39;)]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tie_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">out_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">output_p</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">trn_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">language_model_learner</span><span class="p">(</span><span class="n">data_lm</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">trn_args</span><span class="p">)</span>
+
+<span class="c1">#load pretrained models</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load_pretrained</span><span class="p">(</span><span class="o">**</span><span class="n">_THWIKI_LSTM</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;สวัสดีครับพี่น้องเสื้อ &quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;สวัสดีครับพี่น้องเสื้อ แดง = เสื้อ ไหม เสื้อ แดง &#34; สำหรับ &#34; Mr . คช &#34; เป็น ภาพยนตร์ ไทย ที่ ออก ฉาย ใน ปี พ.ศ. 2557 กำกับ โดย ยุทธ เลิศ สิ ปป ภาค และ ออก ฉาย ใน โรงภาพยนตร์ ใน วันที่ 3 เมษายน พ.ศ. 2558 โดย มี เนื้อหา เกี่ยวกับ &#34; เด็ก คน&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">learn</span><span class="o">.</span><span class="n">lr_find</span><span class="p">()</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">recorder</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<!-- empty output --></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+LR Finder is complete, type {learner_name}.recorder.plot() to see the graph.
+Min numerical gradient: 1.58E-04
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_text_classification_37_2.png" src="../_images/notebooks_text_classification_37_2.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">len</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+22562
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#train frozen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training frozen&quot;</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">freeze_to</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="n">moms</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+training frozen
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+Total time: 06:36 <p><table style='width:300px; margin-bottom:10px'>
+  <tr>
+    <th>epoch</th>
+    <th>train_loss</th>
+    <th>valid_loss</th>
+    <th>accuracy</th>
+  </tr>
+  <tr>
+    <th>1</th>
+    <th>4.659182</th>
+    <th>4.493942</th>
+    <th>0.342857</th>
+  </tr>
+</table></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#train unfrozen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training unfrozen&quot;</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">()</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="n">moms</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+training unfrozen
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+Total time: 1:26:45 <p><table style='width:300px; margin-bottom:10px'>
+  <tr>
+    <th>epoch</th>
+    <th>train_loss</th>
+    <th>valid_loss</th>
+    <th>accuracy</th>
+  </tr>
+  <tr>
+    <th>1</th>
+    <th>4.375606</th>
+    <th>4.252919</th>
+    <th>0.385714</th>
+  </tr>
+  <tr>
+    <th>2</th>
+    <th>4.165419</th>
+    <th>4.013862</th>
+    <th>0.371429</th>
+  </tr>
+  <tr>
+    <th>3</th>
+    <th>4.034220</th>
+    <th>3.802707</th>
+    <th>0.357143</th>
+  </tr>
+  <tr>
+    <th>4</th>
+    <th>3.879111</th>
+    <th>3.712463</th>
+    <th>0.357143</th>
+  </tr>
+  <tr>
+    <th>5</th>
+    <th>3.823682</th>
+    <th>3.624331</th>
+    <th>0.371429</th>
+  </tr>
+  <tr>
+    <th>6</th>
+    <th>3.784611</th>
+    <th>3.580608</th>
+    <th>0.371429</th>
+  </tr>
+  <tr>
+    <th>7</th>
+    <th>3.753532</th>
+    <th>3.553170</th>
+    <th>0.371429</th>
+  </tr>
+  <tr>
+    <th>8</th>
+    <th>3.719396</th>
+    <th>3.516521</th>
+    <th>0.385714</th>
+  </tr>
+  <tr>
+    <th>9</th>
+    <th>3.699165</th>
+    <th>3.513339</th>
+    <th>0.385714</th>
+  </tr>
+  <tr>
+    <th>10</th>
+    <th>3.696516</th>
+    <th>3.512542</th>
+    <th>0.385714</th>
+  </tr>
+</table></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;wongnai_lm&quot;</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save_encoder</span><span class="p">(</span><span class="s2">&quot;wongnai_enc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Classification">
+<h3>Classification<a class="headerlink" href="#Classification" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>reviewID</th>
+      <th>review</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>ร้านนี้จะอยู่เส้นสันกำแพง-แม่ออน เลยแยกบ่...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>สั่งไป2 เมนู คือมัชฉะลาเต้ร้อน กับ ไอศครีมชาเข...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>ครัววงเดือน  \n\nหิวดึกๆ ตระเวนหาร้านทาน มาเจอ...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>จะว่าเป็นเจ้าประจำก็คงไม่ผิด แต่ก็ไม่กล้า...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>ถ้าคิดถึงสลัดผมคิดถึงร้านนี้เป็นร้านแรกๆเลยครั...</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">tt</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">tok_func</span><span class="o">=</span><span class="n">ThaiTokenizer</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;th&quot;</span><span class="p">,</span> <span class="n">pre_rule</span> <span class="o">=</span><span class="n">pre_rules_th</span><span class="p">,</span> <span class="n">post_rules</span><span class="o">=</span><span class="n">post_rules_th</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="p">[</span><span class="n">TokenizeProcessor</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tt</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">mark_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+            <span class="n">NumericalizeProcessor</span><span class="p">(</span><span class="n">vocab</span><span class="o">=</span><span class="n">data_lm</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">max_vocab</span><span class="o">=</span><span class="mi">60000</span><span class="p">,</span> <span class="n">min_freq</span><span class="o">=</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="n">data_cls</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">train_bal</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">random_split_by_pct</span><span class="p">(</span><span class="n">valid_pct</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">1412</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">label_from_df</span><span class="p">(</span><span class="s2">&quot;rating&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">add_test</span><span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">test_df</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">databunch</span><span class="p">(</span><span class="n">bs</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">data_cls</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
+<span class="n">data_cls</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;wongnai_cls.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#make sure we got the right number of vocab</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data_cls</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(22562, 22562)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data_cls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>text</th>
+      <th>target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>xxbos   สำหรับ วันนี้ ก็ จะ พา ไป กิน อาหาร อาเซียน กันที่ รร. เจ้าพระยาปาร์ค   รัชดาภิเษก กัน บ้าง นะคะ   โดย การ ไป ครั้งนี้ ก็ เป็นการ ชวน จาก คุณ อ้น เจ้าเดิม เช่นเคย ค่ะ   ( งาน ชุก จริงๆ   xxunk )   สำหรับ การ ไป วันนั้น เรา เอา รถ ส่วนตัว ไป ค่ะ   รถติด มาก ถึง มาก ที่สุด   กว่า จะ ไป</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>xxbos   เมื่อ วันที่ 22   พฤศจิกายน   ที่ผ่านมา วงใน ได้ จัดกิจกรรม   xxmaj relax   day   xxmaj relax   night   ขึ้น ที่   xxmaj phothalai   ซึ่ง ใน งาน วันนี้ ได้ เริ่มต้น ขึ้น จาก การ ได้   xxmaj tasting   ประเดิม ห้องอาหาร ใหม่ สด ซิ งๆ ที่ เปิด ต้อนรับ   group   ของ</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>xxbos   มีปัญหา เรื่อง บริการ คน เยอะ คง ดูแล ไม่ ทั่วถึง   หรือ การ   xxmaj xxunk   เรื่อง การ บริการ   การสื่อสาร มีปัญหา พนักงาน กับ พนักงาน ไม่ คุย กัน   \n   \n   การสื่อสาร   ผม มาถึง ร้าน   16 : 43   น.   โดย ผม เดิน ไป ที่   xxmaj terrace</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>xxbos   เนื่องจาก คน พูดถึง มาก - มาก ที่สุด   จน ทน กระแส ความแรง ของ   xxmaj shibuya   xxmaj shabu   ไม่ไหว   วันนี้ ดาว จึง ขอ ตามรอย คุณ เบิร์ด   ( xxmaj user   :   xxmaj xxunk )   ซึ่ง ดาว ได้ อ่า นรี วิว ของ คุณ เบิร์ด แล้ว คิด ว่า จะ ต้องหา โอ กา สมาทาน ให้</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>xxbos   เปิด รี วิว ประจำสัปดาห์ นี้   ด้วย ชา บู ชั้น กลางๆ   \n   \n   สวัสดี เพื่อน ๆ ชาว วงใน กัน อีกครั้ง กับ ผม   xxmaj pednoii   ahha   กับ รี วิว ร้านอาหาร ใน กรุงเทพมหานคร   รี วิว แรก ใน วันนี้ ผม จะ มา นำเสนอ ร้าน ชา บู ที่ มี สาขา เยอะ ไม่ แพ้ ชา บู นางใน</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">output_p</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">trn_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bptt</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">text_classifier_learner</span><span class="p">(</span><span class="n">data_cls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">trn_args</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">opt_func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">))</span>
+
+<span class="c1">#load pretrained finetuned model</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="s2">&quot;wongnai_enc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">learn</span><span class="o">.</span><span class="n">lr_find</span><span class="p">()</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">recorder</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<!-- empty output --></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+LR Finder is complete, type {learner_name}.recorder.plot() to see the graph.
+Min numerical gradient: 6.31E-07
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_text_classification_48_2.png" src="../_images/notebooks_text_classification_48_2.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># #train unfrozen</span>
+<span class="c1"># learn.freeze_to(-1)</span>
+<span class="c1"># learn.fit_one_cycle(1, 2e-2, moms=(0.8, 0.7))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># #gradual unfreezing</span>
+<span class="c1"># learn.freeze_to(-2)</span>
+<span class="c1"># learn.fit_one_cycle(1, slice(1e-2 / (2.6 ** 4), 1e-2), moms=(0.8, 0.7))</span>
+<span class="c1"># learn.freeze_to(-3)</span>
+<span class="c1"># learn.fit_one_cycle(1, slice(5e-3 / (2.6 ** 4), 5e-3), moms=(0.8, 0.7))</span>
+<span class="c1"># learn.unfreeze()</span>
+<span class="c1"># learn.fit_one_cycle(1, slice(1e-3 / (2.6 ** 4), 1e-3), moms=(0.8, 0.7))</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>epoch     train_loss  valid_loss  accuracy
+1         1.187845    1.158394    0.472803
+Total time: 08:20
+epoch     train_loss  valid_loss  accuracy
+1         0.889035    0.828990    0.629707
+Total time: 08:39
+epoch     train_loss  valid_loss  accuracy
+1         0.760357    0.751162    0.656904
+Total time: 11:40
+epoch     train_loss  valid_loss  accuracy
+1         0.628719    0.721673    0.669456
+Total time: 18:06
+</pre></div>
+</div>
+</div>
+<div class="section" id="Submission">
+<h3>Submission<a class="headerlink" href="#Submission" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">output_p</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">trn_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bptt</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">text_classifier_learner</span><span class="p">(</span><span class="n">data_cls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">trn_args</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">opt_func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">))</span>
+
+<span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wongnai_cls&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">probs</span><span class="p">,</span><span class="n">y</span><span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">get_preds</span><span class="p">(</span><span class="n">DatasetType</span><span class="o">.</span><span class="n">Test</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">probs</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">Counter</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;reviewID&quot;</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="n">preds</span><span class="p">})</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;submit_ulmfit.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="text_generation.html" class="btn btn-neutral float-right" title="Thai Wiki Language Model for Text Generation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sentiment_analysis.html" class="btn btn-neutral float-left" title="Wisesight Sentiment Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, PyThaiNLP.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
