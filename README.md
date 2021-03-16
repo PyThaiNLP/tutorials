@@ -8,7 +8,7 @@ The repository contains tutorial notebooks for the official documentation websit
 
 All the tutorial notebook are presented as sphinx-style document at:
 
-[https://www.thainlp.org/pythainlp/tutorials](https://www.thainlp.org/pythainlp/tutorials)
+[https://pythainlp.github.io/tutorials](https://pythainlp.github.io/tutorials)
 
 ## Contributing Guideline
 
