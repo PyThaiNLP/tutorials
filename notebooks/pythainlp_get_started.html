@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials 1a10d0e documentation</title>
+  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials b8498fc documentation</title>
   
 
   
@@ -513,7 +513,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Thai-Characters">
 <h2>Thai Characters<a class="headerlink" href="#Thai-Characters" title="Permalink to this headline">¶</a></h2>
-<p>PyThaiNLP provides some ready-to-use Thai character set (e.g. Thai consonants, vowels, tonemarks, symbols) as a string for convenience. There are also few utility functions to test if a string is in Thai or not.</p>
+<p>PyThaiNLP provides some ready-to-use Thai character set (e.g. Thai consonants, vowels, tonemarks, symbols) as a string for convenience. There are also few utility functions to test if a string is in Thai or not.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -1252,7 +1252,7 @@ Wall time: 576 ms
 <p>Tokenization can also be done at subword level, either syllable or Thai Character Cluster (TCC).</p>
 <ul class="simple">
 <li><p>Syllable segmentation is using <code class="docutils literal notranslate"><span class="pre">`ssg</span></code> &lt;<a class="reference external" href="https://github.com/ponrawee/ssg">https://github.com/ponrawee/ssg</a>&gt;`__, a CRF syllable segmenter for Thai by Ponrawee Prasertsom.</p></li>
-<li><p>TCC is smaller than syllable. For information about TCC, see <a class="reference external" href="https://www.researchgate.net/publication/2853284_Character_Cluster_Based_Thai_Information_Retrieval">Character Cluster Based Thai Information Retrieval</a> (Theeramunkong et al. 2004).</p></li>
+<li><p>TCC is smaller than syllable. For information about TCC, see <a class="reference external" href="https://www.researchgate.net/publication/2853284_Character_Cluster_Based_Thai_Information_Retrieval">Character Cluster Based Thai Information Retrieval</a> (Theeramunkong et al. 2004).</p></li>
 </ul>
 <div class="section" id="Subword-tokenization">
 <h4>Subword tokenization<a class="headerlink" href="#Subword-tokenization" title="Permalink to this headline">¶</a></h4>
@@ -1401,10 +1401,16 @@ Wall time: 576 ms
 <h2>Transliteration<a class="headerlink" href="#Transliteration" title="Permalink to this headline">¶</a></h2>
 <p>There are two types of transliteration here: romanization and transliteration.</p>
 <ul class="simple">
-<li><p>Romanization will render Thai words in the Latin alphabet using the <a class="reference external" href="https://en.wikipedia.org/wiki/Royal_Thai_General_System_of_Transcription">Royal Thai General System of Transcription (RTGS)</a>.</p></li>
+<li><p>Romanization will render Thai words in the Latin alphabet using the <a class="reference external" href="https://en.wikipedia.org/wiki/Royal_Thai_General_System_of_Transcription">Royal Thai General System of Transcription (RTGS)</a>.</p>
+<ul>
 <li><p>Two engines are supported here: a simple <code class="docutils literal notranslate"><span class="pre">royin</span></code> engine (default) and a more accurate <code class="docutils literal notranslate"><span class="pre">thai2rom</span></code> engine.</p></li>
-<li><p>Transliteration here, in PyThaiNLP context, means the sound representation of a string.</p></li>
+</ul>
+</li>
+<li><p>Transliteration here, in PyThaiNLP context, means the sound representation of a string.</p>
+<ul>
 <li><p>Two engines are supported here: <code class="docutils literal notranslate"><span class="pre">ipa</span></code> (International Phonetic Alphabet system, using <a class="reference external" href="https://github.com/dmort27/epitran">Epitran</a>) (default) and <code class="docutils literal notranslate"><span class="pre">icu</span></code> (International Components for Unicode, using <a class="reference external" href="https://github.com/ovalhub/pyicu">PyICU</a>).</p></li>
+</ul>
+</li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
