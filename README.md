@@ -1,7 +1,7 @@
 
 # PyThaiNLP Tutorials
 
-[![Build status](https://ci.appveyor.com/api/projects/status/8n37h7c6gmng825s/branch/master?svg=true)](https://ci.appveyor.com/project/wannaphongcom/tutorials/branch/master)
+[![Deploy Docs dev](https://github.com/PyThaiNLP/tutorials/actions/workflows/deploy_docs.yml/badge.svg)](https://github.com/PyThaiNLP/tutorials/actions/workflows/deploy_docs.yml)
 
 
 The repository contains tutorial notebooks for the official documentation website.
