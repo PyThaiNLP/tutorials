@@ -3,7 +3,7 @@
   "nbformat_minor": 0,
   "metadata": {
     "colab": {
-      "name": "oxidized-thainlp.ipynb",
+      "name": "nlpo3.ipynb",
       "provenance": [],
       "collapsed_sections": []
     },
@@ -22,7 +22,7 @@
         "id": "1dUnwVxgISWq"
       },
       "source": [
-        "# oxidized-thainlp\n",
+        "# nlpO3\n",
         "\n",
         "Thai Natural Language Processing in Rust, with Python-binding.\n",
         "\n",
@@ -30,7 +30,7 @@
         "- newmm dictionary-based word tokenization, at ultra fast speed\n",
         "- support custom dictionary\n",
         "\n",
-        "GitHub: https://github.com/PyThaiNLP/oxidized-thainlp"
+        "GitHub: https://github.com/PyThaiNLP/nlpo3"
       ]
     },
     {
@@ -94,7 +94,7 @@
         "id": "4_v-LpBbIKN9"
       },
       "source": [
-        "from oxidized_thainlp import segment"
+        "from nlpo3 import segment"
       ],
       "execution_count": 2,
       "outputs": []
@@ -182,7 +182,7 @@
         "id": "-DT_WnJeIk6q"
       },
       "source": [
-        "from oxidized_thainlp import segment, load_dict"
+        "from nlpo3 import segment, load_dict"
       ],
       "execution_count": 5,
       "outputs": []
@@ -244,7 +244,7 @@
         "id": "8Ng4h-gkLsQK"
       },
       "source": [
-        "for speed of word segmentation benchmark, you can read more at https://github.com/PyThaiNLP/oxidized-thainlp/tree/main/notebooks"
+        "for speed of word segmentation benchmark, you can read more at https://github.com/PyThaiNLP/nlpo3/blob/main/nlpo3-python/notebooks/nlpo3_segment_benchmarks.ipynb"
       ]
     }
   ]
