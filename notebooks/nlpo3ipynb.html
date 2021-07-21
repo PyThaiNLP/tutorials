@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Thai Dependency Parser &mdash; pythainlp-tutorials 67a4d6d documentation</title>
+  <title>nlpO3 &mdash; pythainlp-tutorials 67a4d6d documentation</title>
   
 
   
@@ -44,8 +44,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyThaiNLP Translate" href="machine_translation.html" />
-    <link rel="prev" title="Welcome to PyThaiNLP Tutorials" href="../index.html" /> 
+    <link rel="next" title="PyThaiNLP Get Started" href="pythainlp_get_started.html" />
+    <link rel="prev" title="PyThaiNLP Translate" href="machine_translation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,9 +92,18 @@
             
               <p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Thai Dependency Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thai_Dependency_Parser.html">Thai Dependency Parser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine_translation.html">PyThaiNLP Translate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nlpo3ipynb.html">nlpO3</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">nlpO3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Install">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Using">Using</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#PyThaiNLP-dictionary">PyThaiNLP dictionary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-dictionary">custom dictionary</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="pythainlp_get_started.html">PyThaiNLP Get Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html">Wangchanberta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sentiment_analysis.html">Wisesight Sentiment Analysis</a></li>
@@ -149,13 +158,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Thai Dependency Parser</li>
+      <li>nlpO3</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/notebooks/Thai_Dependency_Parser.ipynb" rel="nofollow"> View page source</a>
+            <a href="../_sources/notebooks/nlpo3ipynb.ipynb" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -440,19 +449,28 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p>Interactive online version:
-<span class="raw-html"><a target="_blank" href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/Thai_Dependency_Parser.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a></span>
-<span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/Thai_Dependency_Parser.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
+<span class="raw-html"><a target="_blank" href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/nlpo3ipynb.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a></span>
+<span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/nlpo3ipynb.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
-<div class="section" id="Thai-Dependency-Parser">
-<h1>Thai Dependency Parser<a class="headerlink" href="#Thai-Dependency-Parser" title="Permalink to this headline">¶</a></h1>
-<p>PyThaiNLP have not <code class="docutils literal notranslate"><span class="pre">Thai</span> <span class="pre">Dependency</span> <span class="pre">Parser</span></code>. You can use Dependency Parser from spaCy-Thai.</p>
-<p>spaCy-Thai work with Universal Dependencies. <a class="reference external" href="https://github.com/KoichiYasuoka/spaCy-Thai">github.com/KoichiYasuoka/spaCy-Thai</a></p>
+<div class="section" id="nlpO3">
+<h1>nlpO3<a class="headerlink" href="#nlpO3" title="Permalink to this headline">¶</a></h1>
+<p>Thai Natural Language Processing in Rust, with Python-binding.</p>
+<div class="section" id="Features">
+<h2>Features<a class="headerlink" href="#Features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>newmm dictionary-based word tokenization, at ultra fast speed</p></li>
+<li><p>support custom dictionary</p></li>
+</ul>
+<p>GitHub: <a class="reference external" href="https://github.com/PyThaiNLP/nlpo3">https://github.com/PyThaiNLP/nlpo3</a></p>
+</div>
+<div class="section" id="Install">
+<h2>Install<a class="headerlink" href="#Install" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>!pip install spacy_thai
+<span></span>!pip install pythainlp-rust-modules
 </pre></div>
 </div>
 </div>
@@ -461,96 +479,126 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Collecting spacy_thai
-  Downloading https://files.pythonhosted.org/packages/ca/2d/c2e71a4143d6d9cd9db6744e328dfb9f65b98ad7607644d0ad4369bce303/spacy_thai-0.6.2-py3-none-any.whl (5.1MB)
-     |████████████████████████████████| 5.1MB 11.2MB/s
-Collecting ufal.udpipe&gt;=1.2.0
-  Downloading https://files.pythonhosted.org/packages/e5/72/2b8b9dc7c80017c790bb3308bbad34b57accfed2ac2f1f4ab252ff4e9cb2/ufal.udpipe-1.2.0.3.tar.gz (304kB)
-     |████████████████████████████████| 307kB 45.8MB/s
-Requirement already satisfied: spacy&gt;=2.2.2 in /usr/local/lib/python3.7/dist-packages (from spacy_thai) (2.2.4)
-Collecting deplacy&gt;=1.9.2
-  Downloading https://files.pythonhosted.org/packages/11/58/87b6286c9578fc456de1363f877228ee0d117b8de238e3e2cd49dbc06eaa/deplacy-1.9.3-py3-none-any.whl
-Collecting pythainlp&gt;=2.2.6
-  Downloading https://files.pythonhosted.org/packages/c1/09/1215cb6f6ef0cfc9dbb427a961fda8a47c111955f782f659ca2d38c79adc/pythainlp-2.2.6-py3-none-any.whl (10.6MB)
-     |████████████████████████████████| 10.6MB 28.7MB/s
-Requirement already satisfied: srsly&lt;1.1.0,&gt;=1.0.2 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (1.0.5)
-Requirement already satisfied: requests&lt;3.0.0,&gt;=2.13.0 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (2.23.0)
-Requirement already satisfied: thinc==7.4.0 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (7.4.0)
-Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (3.0.5)
-Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.4.0 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (0.8.2)
-Requirement already satisfied: plac&lt;1.2.0,&gt;=0.9.6 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (1.1.3)
-Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (2.0.5)
-Requirement already satisfied: blis&lt;0.5.0,&gt;=0.4.0 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (0.4.1)
-Requirement already satisfied: tqdm&lt;5.0.0,&gt;=4.38.0 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (4.41.1)
-Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (1.0.5)
-Requirement already satisfied: numpy&gt;=1.15.0 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (1.19.5)
-Requirement already satisfied: catalogue&lt;1.1.0,&gt;=0.0.7 in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (1.0.0)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.7/dist-packages (from spacy&gt;=2.2.2-&gt;spacy_thai) (54.1.2)
-Collecting tinydb&gt;=3.0
-  Downloading https://files.pythonhosted.org/packages/af/cd/1ce3d93818cdeda0446b8033d21e5f32daeb3a866bbafd878a9a62058a9c/tinydb-4.4.0-py3-none-any.whl
-Collecting python-crfsuite&gt;=0.9.6
-  Downloading https://files.pythonhosted.org/packages/79/47/58f16c46506139f17de4630dbcfb877ce41a6355a1bbf3c443edb9708429/python_crfsuite-0.9.7-cp37-cp37m-manylinux1_x86_64.whl (743kB)
-     |████████████████████████████████| 747kB 68.5MB/s
-Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /usr/local/lib/python3.7/dist-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;spacy_thai) (3.0.4)
-Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.7/dist-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;spacy_thai) (1.24.3)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.7/dist-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;spacy_thai) (2020.12.5)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.7/dist-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy&gt;=2.2.2-&gt;spacy_thai) (2.10)
-Requirement already satisfied: importlib-metadata&gt;=0.20; python_version &lt; &#34;3.8&#34; in /usr/local/lib/python3.7/dist-packages (from catalogue&lt;1.1.0,&gt;=0.0.7-&gt;spacy&gt;=2.2.2-&gt;spacy_thai) (3.7.2)
-Requirement already satisfied: typing-extensions&gt;=3.6.4; python_version &lt; &#34;3.8&#34; in /usr/local/lib/python3.7/dist-packages (from importlib-metadata&gt;=0.20; python_version &lt; &#34;3.8&#34;-&gt;catalogue&lt;1.1.0,&gt;=0.0.7-&gt;spacy&gt;=2.2.2-&gt;spacy_thai) (3.7.4.3)
-Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.7/dist-packages (from importlib-metadata&gt;=0.20; python_version &lt; &#34;3.8&#34;-&gt;catalogue&lt;1.1.0,&gt;=0.0.7-&gt;spacy&gt;=2.2.2-&gt;spacy_thai) (3.4.1)
-Building wheels for collected packages: ufal.udpipe
-  Building wheel for ufal.udpipe (setup.py) ... done
-  Created wheel for ufal.udpipe: filename=ufal.udpipe-1.2.0.3-cp37-cp37m-linux_x86_64.whl size=5626703 sha256=a58565fc21a1f9d3a7c51a3aea138cf612babbefb36ae05cbaccec852b55d967
-  Stored in directory: /root/.cache/pip/wheels/0c/9d/db/6d3404c33da5b7adb6c6972853efb6a27649d3ba15f7e9bebb
-Successfully built ufal.udpipe
-Installing collected packages: ufal.udpipe, deplacy, tinydb, python-crfsuite, pythainlp, spacy-thai
-Successfully installed deplacy-1.9.3 pythainlp-2.2.6 python-crfsuite-0.9.7 spacy-thai-0.6.2 tinydb-4.4.0 ufal.udpipe-1.2.0.3
+Collecting pythainlp-rust-modules
+  Downloading https://files.pythonhosted.org/packages/fb/1e/c82c805853e38a0e76d7194116e2f47c494b1147ddc9af568cc182ffcb5c/pythainlp_rust_modules-0.2.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (947kB)
+     |████████████████████████████████| 952kB 6.8MB/s
+Installing collected packages: pythainlp-rust-modules
+Successfully installed pythainlp-rust-modules-0.2.0
 </pre></div></div>
 </div>
+</div>
+<div class="section" id="Using">
+<h2>Using<a class="headerlink" href="#Using" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="PyThaiNLP-dictionary">
+<h3>PyThaiNLP dictionary<a class="headerlink" href="#PyThaiNLP-dictionary" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">spacy_thai</span>
-<span class="n">nlp</span><span class="o">=</span><span class="n">spacy_thai</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;พวกเราใช้ภาษาไทย&quot;</span><span class="p">)</span>
+<span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">graphviz</span>
-<span class="kn">import</span> <span class="nn">deplacy</span>
-<span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">deplacy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">doc</span><span class="p">))</span>
+<span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;ทดสอบตัดคำภาษาไทย&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Thai_Dependency_Parser_4_0.svg" src="../_images/notebooks_Thai_Dependency_Parser_4_0.svg" /></div>
+<div class="highlight"><pre>
+[&#39;ทดสอบ&#39;, &#39;ตัด&#39;, &#39;คำ&#39;, &#39;ภาษาไทย&#39;]
+</pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</div>
+<div class="section" id="custom-dictionary">
+<h3>custom dictionary<a class="headerlink" href="#custom-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>We try to use a thai countries dictionary for segment text.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span>!wget https://github.com/PyThaiNLP/pythainlp/raw/dev/pythainlp/corpus/countries_th.txt
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--2021-06-22 05:14:58--  https://github.com/PyThaiNLP/pythainlp/raw/dev/pythainlp/corpus/countries_th.txt
+Resolving github.com (github.com)... 140.82.112.4
+Connecting to github.com (github.com)|140.82.112.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/PyThaiNLP/pythainlp/dev/pythainlp/corpus/countries_th.txt [following]
+--2021-06-22 05:14:58--  https://raw.githubusercontent.com/PyThaiNLP/pythainlp/dev/pythainlp/corpus/countries_th.txt
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7622 (7.4K) [text/plain]
+Saving to: ‘countries_th.txt’
+
+countries_th.txt    100%[===================&gt;]   7.44K  --.-KB/s    in 0s
+
+2021-06-22 05:14:58 (70.3 MB/s) - ‘countries_th.txt’ saved [7622/7622]
+
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span><span class="p">,</span> <span class="n">load_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">load_dict</span><span class="p">(</span><span class="s2">&quot;countries_th.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Successful: dictionary name countries from file countries_th.txt has been successfully loaded
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
+<span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;สวัสดีครับประเทศไทย เกาหลี&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;สวัสดีครับประเทศ&#39;, &#39;ไทย&#39;, &#39; &#39;, &#39;เกาหลี&#39;]
+</pre></div></div>
+</div>
+<p>for speed of word segmentation benchmark, you can read more at <a class="reference external" href="https://github.com/PyThaiNLP/nlpo3/blob/main/nlpo3-python/notebooks/nlpo3_segment_benchmarks.ipynb">https://github.com/PyThaiNLP/nlpo3/blob/main/nlpo3-python/notebooks/nlpo3_segment_benchmarks.ipynb</a></p>
 </div>
 </div>
 </div>
@@ -561,8 +609,8 @@ Successfully installed deplacy-1.9.3 pythainlp-2.2.6 python-crfsuite-0.9.7 spacy
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="machine_translation.html" class="btn btn-neutral float-right" title="PyThaiNLP Translate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to PyThaiNLP Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pythainlp_get_started.html" class="btn btn-neutral float-right" title="PyThaiNLP Get Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="machine_translation.html" class="btn btn-neutral float-left" title="PyThaiNLP Translate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
