@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:11
+msgid "Interactive online version: :raw-html:`<a target=\"_blank\" href=\"https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/nlpo3ipynb.ipynb\"><img alt=\"Binder badge\" src=\"https://mybinder.org/badge_logo.svg\" style=\"vertical-align:text-bottom\"></a>` :raw-html:`<a target=\"_blank\" href=\"https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/nlpo3ipynb.ipynb\"><img alt=\"Google Colab badge\" src=\"https://colab.research.google.com/assets/colab-badge.svg\" style=\"vertical-align:text-bottom\"></a>`"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:9
+msgid "nlpO3"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:11
+msgid "Thai Natural Language Processing in Rust, with Python-binding."
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:14
+msgid "Features"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:16
+msgid "newmm dictionary-based word tokenization, at ultra fast speed"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:17
+msgid "support custom dictionary"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:19
+msgid "GitHub: https://github.com/PyThaiNLP/nlpo3"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:31
+msgid "Install"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:79
+msgid "Using"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:91
+msgid "PyThaiNLP dictionary"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:147
+msgid "custom dictionary"
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:149
+msgid "We try to use a thai countries dictionary for segment text."
+msgstr ""
+
+#: ../../source/notebooks/nlpo3ipynb.ipynb:315
+msgid "for speed of word segmentation benchmark, you can read more at https://github.com/PyThaiNLP/nlpo3/blob/main/nlpo3-python/notebooks/nlpo3_segment_benchmarks.ipynb"
+msgstr ""

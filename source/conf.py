@@ -98,3 +98,5 @@ nbsphinx_epilog = r"""
 """
 
 master_doc = 'index'
+locale_dirs = ['locale/']   # path is example but recommended.
+gettext_compact = False     # optional.

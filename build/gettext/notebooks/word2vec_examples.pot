@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/notebooks/word2vec_examples.ipynb:11
+msgid "Interactive online version: :raw-html:`<a target=\"_blank\" href=\"https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/word2vec_examples.ipynb\"><img alt=\"Binder badge\" src=\"https://mybinder.org/badge_logo.svg\" style=\"vertical-align:text-bottom\"></a>` :raw-html:`<a target=\"_blank\" href=\"https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/word2vec_examples.ipynb\"><img alt=\"Google Colab badge\" src=\"https://colab.research.google.com/assets/colab-badge.svg\" style=\"vertical-align:text-bottom\"></a>`"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:9
+msgid "Thai2Vec Embeddings Examples"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:11
+msgid "We use the embeddings from ``v0.1`` since it was trained specifically for word2vec as opposed to latter versions which garner to classification. The ``thai2vec.bin`` 51,556 word embeddings of 300 dimensions, in descending order by their frequencies (See ``thai2vec.vocab``). The files are in word2vec format readable by ``gensim``. Most common applications include word vector visualization, word arithmetic, word grouping, cosine similarity and sentence or document vectors. For sample code, see ``thwiki_lm/word2vec_examples.ipynb``."
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:24
+msgid "Imports"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:582
+msgid "Using t-SNE, we can compress the 300 dimensions of each word into a 2D plane and plot their relationships."
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:658
+msgid "Word Arithmetic"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:669
+msgid "You can do simple “arithmetic” with words based on the word vectors such as: \\* ผู้หญิง + พระราชา - ผู้ชาย = พระราชินี \\* นายกรัฐมนตรี - อำนาจ = ประธานาธิบดี \\* กิ้งก่า + โบราณ = ไดโนเสาร์"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:935
+msgid "Doesn’t Match"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:946
+msgid "It can also be used to do word groupings. For instance: \\* อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน - อาหารสัตว์ is type of food whereas others are meals in the day \\* ลาก ดึง ดูด ดัน - ดัน is pushing while the rest is pulling. \\* กด กัด กิน เคี้ยว - กด is not verbs for the eating process Note that this could be relying on a different “take” than you would expect. For example, you could have answered ลูกเขย in the second example because it is the one associated with male gender."
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:1157
+msgid "Cosine Similarity"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:1245
+msgid "Spellchecking"
+msgstr ""
+
+#: ../../source/notebooks/word2vec_examples.ipynb:1256
+msgid "Originally contributed by `Sakares ATV <https://github.com/sakares>`__, adapted from `Kaggle Spell Checker using Word2vec by CPMP <https://www.kaggle.com/cpmpml/spell-checker-using-word2vec>`__."
+msgstr ""

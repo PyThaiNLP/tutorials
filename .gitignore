@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+build/html
 develop-eggs/
 dist/
 downloads/
@@ -24,6 +24,8 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*.doctree
+build/gettext/.doctrees/*
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -48,8 +50,8 @@ coverage.xml
 .pytest_cache/
 
 # Translations
-*.mo
-*.pot
+# *.mo
+# *.pot
 
 # Django stuff:
 *.log

@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:11
+msgid "Interactive online version: :raw-html:`<a target=\"_blank\" href=\"https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/thai_wav2vec2_onnx.ipynb\"><img alt=\"Binder badge\" src=\"https://mybinder.org/badge_logo.svg\" style=\"vertical-align:text-bottom\"></a>` :raw-html:`<a target=\"_blank\" href=\"https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/thai_wav2vec2_onnx.ipynb\"><img alt=\"Google Colab badge\" src=\"https://colab.research.google.com/assets/colab-badge.svg\" style=\"vertical-align:text-bottom\"></a>`"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:9
+msgid "Thai Wav2vec2 model to ONNX model"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:20
+msgid "This notebook show how to convert Thai wav2vec2 model from Huggingface to ONNX model."
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:22
+msgid "Thai wav2vec2 model: `airesearch/wav2vec2-large-xlsr-53-th <https://huggingface.co/airesearch/wav2vec2-large-xlsr-53-th>`__"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:34
+msgid "Install"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:45
+msgid "**For Google Colab**"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:172
+msgid "**Install**"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:384
+msgid "Build ONNX Model"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:386
+msgid "We will build ONNX model."
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:388
+msgid "Resource"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:390
+msgid "`Build Wav2Vec2Model from Hugging Face to PyTorch <https://pytorch.org/audio/stable/models.html#wav2vec2-0-hubert>`__"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:391
+msgid "`Convert your PyTorch model to ONNX <https://docs.microsoft.com/en-us/windows/ai/windows-ml/tutorials/pytorch-convert-model>`__"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:2001
+msgid "Inference"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:2003
+msgid "This onnx inference with onnxruntime."
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:2005
+msgid "onnxruntime: https://onnxruntime.ai/"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:2016
+msgid "**Load Audio file**"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:2045
+msgid "**load vocab.json from huggingface model**"
+msgstr ""
+
+#: ../../source/notebooks/thai_wav2vec2_onnx.ipynb:2075
+msgid "**Inference**"
+msgstr ""

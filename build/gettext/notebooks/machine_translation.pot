@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/notebooks/machine_translation.ipynb:11
+msgid "Interactive online version: :raw-html:`<a target=\"_blank\" href=\"https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/machine_translation.ipynb\"><img alt=\"Binder badge\" src=\"https://mybinder.org/badge_logo.svg\" style=\"vertical-align:text-bottom\"></a>` :raw-html:`<a target=\"_blank\" href=\"https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/machine_translation.ipynb\"><img alt=\"Google Colab badge\" src=\"https://colab.research.google.com/assets/colab-badge.svg\" style=\"vertical-align:text-bottom\"></a>`"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:9
+msgid "PyThaiNLP Translate"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:20
+msgid "We used machine translation model from `The VISTEC-depa Thailand Artificial Intelligence Research Institute <https://airesearch.in.th/releases/machine-translation-models/>`__."
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:32
+msgid "Install"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:334
+msgid "**All download and install model**"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:469
+msgid "Translate"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:481
+msgid "Import"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:502
+msgid "``EnThTranslator/ThEnTranslator.translate(text)``"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:504
+msgid "text : text"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:507
+msgid "List language"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:509
+msgid "``th`` is Thai language"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:510
+msgid "``en`` is English language"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:522
+msgid "English to Thai"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:533
+msgid "We have 1 model"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:535
+#: ../../source/notebooks/machine_translation.ipynb:584
+msgid "``scb_1m_en-th_moses`` - ``bpe`` tokenizer"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:580
+msgid "Thai to English"
+msgstr ""
+
+#: ../../source/notebooks/machine_translation.ipynb:582
+msgid "We have 2 model"
+msgstr ""

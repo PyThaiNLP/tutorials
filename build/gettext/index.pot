@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/index.rst:10
+#: ../../source/index.rst:10
+msgid "Tutorials:"
+msgstr ""
+
+#: ../../source/index.rst:7
+msgid "Welcome to PyThaiNLP Tutorials"
+msgstr ""
+
+#: ../../source/index.rst:8
+msgid "PyThaiNLP is a Python library for Thai Natural Language Processing."
+msgstr ""
+
+#: ../../source/index.rst:17
+msgid "`Apache Software License 2.0 <https://apache.org/licenses/LICENSE-2.0>`_"
+msgstr ""
+
+#: ../../source/index.rst:19
+msgid "Maintained by the PyThaiNLP team."
+msgstr ""
+
+#: ../../source/index.rst:21
+msgid "See source code of these tutorials at https://github.com/PyThaiNLP/tutorials"
+msgstr ""
+
+#: ../../source/index.rst:22
+msgid "Main PyThaiNLP development at https://github.com/PyThaiNLP/pythainlp"
+msgstr ""
+
+#: ../../source/index.rst:23
+msgid "PyThaiNLP website at https://pythainlp.github.io"
+msgstr ""

@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:11
+msgid "Interactive online version: :raw-html:`<a target=\"_blank\" href=\"https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/pythainlp_wangchanberta.ipynb\"><img alt=\"Binder badge\" src=\"https://mybinder.org/badge_logo.svg\" style=\"vertical-align:text-bottom\"></a>` :raw-html:`<a target=\"_blank\" href=\"https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/pythainlp_wangchanberta.ipynb\"><img alt=\"Google Colab badge\" src=\"https://colab.research.google.com/assets/colab-badge.svg\" style=\"vertical-align:text-bottom\"></a>`"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:9
+msgid "Wangchanberta"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:11
+msgid "This notebook for pythainlp.wangchanberta"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:13
+msgid "Lowphansirikul L, Polpanumas C, Jantrakulchai N, Nutanong S. WangchanBERTa: Pretraining transformer-based Thai Language Models. arXiv preprint arXiv:2101.09635. 2021 Jan 24."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:622
+msgid "Named Entity Recognition"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:624
+msgid "Dataset support:"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:626
+msgid "thainer"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:627
+msgid "lst20"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:1184
+msgid "Part of speech"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:1186
+msgid "It is use ``lst20`` dataset."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_wangchanberta.ipynb:1324
+msgid "Subword"
+msgstr ""

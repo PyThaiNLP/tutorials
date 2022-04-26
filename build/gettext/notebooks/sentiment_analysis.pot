@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:11
+msgid "Interactive online version: :raw-html:`<a target=\"_blank\" href=\"https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/sentiment_analysis.ipynb\"><img alt=\"Binder badge\" src=\"https://mybinder.org/badge_logo.svg\" style=\"vertical-align:text-bottom\"></a>` :raw-html:`<a target=\"_blank\" href=\"https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/sentiment_analysis.ipynb\"><img alt=\"Google Colab badge\" src=\"https://colab.research.google.com/assets/colab-badge.svg\" style=\"vertical-align:text-bottom\"></a>`"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:9
+msgid "Wisesight Sentiment Analysis"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:20
+msgid "This notebook details the steps taken to create a sentiment analyzer using data from `Wisesight Sentiment Corpus <https://github.com/PyThaiNLP/wisesight-sentiment/>`__. Evaluation metric is overall accuracy across ``neg``\\ ative, ``pos``\\ itive, ``neu``\\ tral and ``q``\\ uestion classes. We give examples using logistic regression and `ULMFit <https://arxiv.org/abs/1801.06146>`__."
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:22
+msgid "The results for logistic regression, `fastText <https://fasttext.cc/>`__, ULMFit, ULMFit with semi-supervised data are as follows:"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:25
+msgid "Model"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:25
+msgid "Public Accuracy"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:25
+msgid "Private Accuracy"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:27
+#: ../../source/notebooks/sentiment_analysis.ipynb:687
+msgid "Logistic Regression"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:27
+msgid "0.72781"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:27
+msgid "0.7499"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:28
+msgid "fastText"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:28
+msgid "0.63144"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:28
+msgid "0.6131"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:29
+msgid "ULMFit"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:29
+msgid "0.71259"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:29
+msgid "0.74194"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:30
+msgid "ULMFit Semi-supervised"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:30
+msgid "0.73119"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:30
+msgid "0.75859"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:31
+msgid "ULMFit Semi-supervised Repeated One Time"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:31
+msgid "**0.73372**"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:31
+msgid "**0.75968**"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:34
+msgid "For more information about the Kaggle competition, which this notebook based upon, see `1st Place Solution <https://www.kaggle.com/c/wisesight-sentiment/discussion/83564>`__."
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:35
+msgid "For more updated version of data, including a tokenized ``wisesight-1000`` evaluation set, see `Wisesight Sentiment Corpus <https://github.com/PyThaiNLP/wisesight-sentiment>`__."
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:129
+msgid "Text Processor for Logistic Regression"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:140
+msgid "``pythainlp.ulmfit.process_thai`` contains text cleaning rules with the default aimed for sparse models like bag of words. It contains ``pre_rules`` applied before tokenization and ``post_rules`` applied after."
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:236
+msgid "Process Text Files to CSVs"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:328
+msgid "Load Data"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:403
+msgid "Train-validation Split"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:414
+msgid "We perform 85/15 random train-validation split. We also perform under/oversampling to balance out the classes a little."
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:699
+msgid "Create Features"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:1081
+msgid "Fit Model"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:1130
+#: ../../source/notebooks/sentiment_analysis.ipynb:2764
+msgid "See Results"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:1212
+msgid "`ULMFit <https://github.com/cstorm125/thai2fit>`__ Model"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:1240
+msgid "Finetune Language Model"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:2037
+msgid "Train Text Classifier"
+msgstr ""
+
+#: ../../source/notebooks/sentiment_analysis.ipynb:2728
+msgid "Training takes about 20 minutes so we use the script ``train_model.py`` to do it with the following results (validation run):"
+msgstr ""

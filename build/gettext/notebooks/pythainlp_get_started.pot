@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, PyThaiNLP
+# This file is distributed under the same license as the pythainlp-tutorials package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pythainlp-tutorials \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-27 01:01+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:11
+msgid "Interactive online version: :raw-html:`<a target=\"_blank\" href=\"https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/pythainlp_get_started.ipynb\"><img alt=\"Binder badge\" src=\"https://mybinder.org/badge_logo.svg\" style=\"vertical-align:text-bottom\"></a>` :raw-html:`<a target=\"_blank\" href=\"https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/pythainlp_get_started.ipynb\"><img alt=\"Google Colab badge\" src=\"https://colab.research.google.com/assets/colab-badge.svg\" style=\"vertical-align:text-bottom\"></a>`"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:9
+msgid "PyThaiNLP Get Started"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:11
+msgid "Code examples for basic functions in PyThaiNLP https://github.com/PyThaiNLP/pythainlp"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:39
+msgid "Import PyThaiNLP"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:87
+msgid "Thai Characters"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:89
+msgid "PyThaiNLP provides some ready-to-use Thai character set (e.g. Thai consonants, vowels, tonemarks, symbols) as a string for convenience. There are also few utility functions to test if a string is in Thai or not."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:271
+msgid "Checking if a string contains Thai character or not, or how many"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:386
+msgid "``counthai()`` returns proportion of Thai characters in the text. It will ignore non-alphabets by default."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:431
+msgid "You can specify characters to be ignored, using ``ignore_chars=`` parameter."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:477
+msgid "Collation"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:479
+msgid "Sorting according to Thai dictionary."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:562
+msgid "Date/Time Format and Spellout"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:565
+msgid "Date/Time Format"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:567
+msgid "Get Thai day and month names with Thai Buddhist Era (B.E.). Use `formatting directives <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes>`__ similar to ``datetime.strftime()``."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:618
+msgid "From version 2.2, these modifiers can be applied right before the main directive:"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:620
+msgid "*(minus)* Do not pad a numeric result string (also available in version 2.1)"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:621
+msgid "\\_ *(underscore)* Pad a numeric result string with spaces"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:622
+msgid "0 *(zero)* Pad a number result string with zeros"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:623
+msgid "^ Convert alphabetic characters in result string to upper case"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:624
+msgid "# Swap the case of the result string"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:625
+msgid "O *(letter o)* Use the locale’s alternative numeric symbols (Thai digit)"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:705
+msgid "Time Spellout"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:707
+msgid "*Note: ``thai_time()`` will be renamed to ``time_to_thaiword()`` in version 2.2.*"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:754
+msgid "The way to spellout can be chosen, using ``fmt`` parameter. It can be ``24h``, ``6h``, or ``m6h``. Try one by yourself."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:799
+msgid "Precision of spellout can be chosen as well. Using ``precision`` parameter. It can be ``m`` for minute-level, ``s`` for second-level, or ``None`` for only read the non-zero value."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:889
+msgid "We can also pass ``datetime`` and ``time`` objects to ``thai_time()``."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:973
+msgid "Tokenization and Segmentation"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:975
+msgid "At sentence, word, and sub-word levels."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:987
+msgid "Sentence"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:989
+msgid "Default sentence tokenizer is “crfcut”. Tokenization engine can be chosen ussing ``engine=`` parameter."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1056
+msgid "Word"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1058
+msgid "Default word tokenizer (“newmm”) use maximum matching algorithm."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1121
+msgid "Other algorithm can be chosen. We can also create a tokenizer with a custom dictionary."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1180
+msgid "Default word tokenizer use a word list from ``pythainlp.corpus.common.thai_words()``. We can get that list, add/remove words, and create new tokenizer from the modified list."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1238
+msgid "We can also, alternatively, create a dictionary trie, using ``pythainlp.util.Trie()`` function, and pass it to a default tokenizer."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1296
+msgid "Testing different tokenization engines"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1482
+msgid "Get all possible segmentations"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1572
+msgid "Subword, syllable, and Thai Character Cluster (TCC)"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1574
+msgid "Tokenization can also be done at subword level, either syllable or Thai Character Cluster (TCC)."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1576
+msgid "Syllable segmentation is using ```ssg`` <https://github.com/ponrawee/ssg>`__, a CRF syllable segmenter for Thai by Ponrawee Prasertsom."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1577
+msgid "TCC is smaller than syllable. For information about TCC, see `Character Cluster Based Thai Information Retrieval <https://www.researchgate.net/publication/2853284_Character_Cluster_Based_Thai_Information_Retrieval>`__ (Theeramunkong et al. 2004)."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1589
+msgid "Subword tokenization"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1591
+msgid "Default subword tokenization engine is ``tcc``, which will use Thai Character Cluster (TCC) as a subword unit."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1639
+msgid "Syllable tokenization"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1641
+msgid "Default syllable tokenization engine is ``dict``, which will use ``newmm`` word tokenization engine with a custom dictionary contains known syllables in Thai language."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1726
+msgid "External ```ssg`` <https://github.com/ponrawee/ssg>`__ engine call be called. Note that ``ssg`` engine ommitted whitespaces in the output tokens."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1772
+msgid "Low-level subword operations"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1774
+msgid "These low-level TCC operations can be useful for some pre-processing tasks. Like checking if it’s ok to cut a string at a certain point or to find typos."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1890
+msgid "Transliteration"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1892
+msgid "There are two types of transliteration here: romanization and transliteration."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1894
+msgid "Romanization will render Thai words in the Latin alphabet using the `Royal Thai General System of Transcription (RTGS) <https://en.wikipedia.org/wiki/Royal_Thai_General_System_of_Transcription>`__."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1896
+msgid "Two engines are supported here: a simple ``royin`` engine (default) and a more accurate ``thai2rom`` engine."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1898
+msgid "Transliteration here, in PyThaiNLP context, means the sound representation of a string."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:1900
+msgid "Two engines are supported here: ``ipa`` (International Phonetic Alphabet system, using `Epitran <https://github.com/dmort27/epitran>`__) (default) and ``icu`` (International Components for Unicode, using `PyICU <https://github.com/ovalhub/pyicu>`__)."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2082
+msgid "Normalization"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2084
+msgid "``normalize()`` removes zero-width spaces (ZWSP and ZWNJ), duplicated spaces, repeating vowels, and dangling characters. It also reorder vowels and tone marks during the process of removing repeating vowels."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2131
+msgid "The string below contains a non-standard order of Thai characters, Sara Aa (following vowel) + Mai Ek (upper tone mark). ``normalize()`` will reorder it to Mai Ek + Sara Aa."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2177
+msgid "This can be useful for string matching, including tokenization."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2240
+msgid "The string below contains repeating vowels (multiple Sara A in a row) normalize() will keep only one of them. It can be use to reduce variations in spellings, useful for classification task."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2285
+msgid "Internally, ``normalize()`` is just a series of function calls like this:"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2294
+msgid "If you don’t like the behavior of default ``normalize()``, you can call those functions shown above, also ``remove_tonemark()`` and ``reorder_vowels()``, individually from ``pythainlp.util``, to customize your own normalization."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2306
+msgid "Digit conversion"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2308
+msgid "Thai text sometimes use Thai digits. This can reduce performance for classification and searching. PyThaiNP provides few utility functions to deal with this."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2426
+msgid "Soundex"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2428
+msgid "“Soundex is a phonetic algorithm for indexing names by sound.” (`Wikipedia <https://en.wikipedia.org/wiki/Soundex>`__). PyThaiNLP provides three kinds of Thai soundex."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2547
+msgid "Spellchecking"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2549
+msgid "Default spellchecker uses `Peter Norvig’s algorithm <http://www.norvig.com/spell-correct.html>`__ together with word frequency from Thai National Corpus (TNC)."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2551
+msgid "``spell()`` returns a list of all possible spellings."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2598
+msgid "``correct()`` returns the most likely spelling."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2646
+msgid "Spellchecking - Custom dictionary and word frequency"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2648
+msgid "Custom dictionary can be provided when creating spellchecker."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2650
+msgid "When create a ``NorvigSpellChecker`` object, you can pass a custom dictionary to ``custom_dict`` parameter."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2652
+msgid "``custom_dict`` can be: - a dictionary (``dict``), with words (``str``) as keys and frequencies (``int``) as values; or - a list, a tuple, or a set of (word, frequency) tuples; or - a list, a tuple, or a set of just words, without their frequencies – in this case ``1`` will be assigned to every words."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2702
+msgid "As you can see, our version of ``NorvigSpellChecker`` gives the edit distance a priority over a word frequency."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2713
+msgid "You can use word frequencies from Thai National Corpus and Thai Textbook Corpus as well."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2715
+msgid "By default, ``NorvigSpellChecker`` uses Thai National Corpus."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2798
+msgid "To check the current dictionary of a spellchecker:"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:2867
+msgid "We can also apply conditions and filter function to dictionary when creating spellchecker."
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:3022
+msgid "Part-of-Speech Tagging"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:3157
+msgid "Named-Entity Tagging"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:3159
+msgid "The tagger use BIO scheme: - B - beginning of entity - I - inside entity - O - outside entity"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:3308
+msgid "Word Vector"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:3418
+msgid "Number Spell Out"
+msgstr ""
+
+#: ../../source/notebooks/pythainlp_get_started.ipynb:3465
+msgid "``bahttext()`` will round the satang part"
+msgstr ""
