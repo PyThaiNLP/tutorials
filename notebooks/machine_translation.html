@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyThaiNLP Translate &mdash; pythainlp-tutorials 4446bbf documentation</title>
+  <title>PyThaiNLP Translate &mdash; pythainlp-tutorials 2d868c8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -301,7 +301,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -375,8 +375,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!pip install fairseq
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!pip install fairseq
 </pre></div>
 </div>
 </div>
@@ -432,8 +431,7 @@ Successfully installed PyYAML-5.4.1 antlr4-python3-runtime-4.8 dataclasses-0.6 f
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!pip install sacremoses sentencepiece
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!pip install sacremoses sentencepiece
 </pre></div>
 </div>
 </div>
@@ -459,8 +457,7 @@ Successfully installed sentencepiece-0.1.95
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!pip install https://github.com/PyThaiNLP/pythainlp/archive/dev.zip
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!pip install https://github.com/PyThaiNLP/pythainlp/archive/dev.zip
 </pre></div>
 </div>
 </div>
@@ -491,8 +488,7 @@ Successfully built pythainlp
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>from pythainlp.translate import download_model_all
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>from pythainlp.translate import download_model_all
 </pre></div>
 </div>
 </div>
@@ -500,8 +496,7 @@ Successfully built pythainlp
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>download_model_all()
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>download_model_all()
 </pre></div>
 </div>
 </div>
@@ -548,8 +543,7 @@ Corpus: scb_1m_th-en_spm
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>from pythainlp.translate import EnThTranslator, ThEnTranslator
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>from pythainlp.translate import EnThTranslator, ThEnTranslator
 </pre></div>
 </div>
 </div>
@@ -575,8 +569,7 @@ Corpus: scb_1m_th-en_spm
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>print(EnThTranslator().translate(&quot;I want fried chicken.&quot;))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>print(EnThTranslator().translate(&quot;I want fried chicken.&quot;))
 </pre></div>
 </div>
 </div>
@@ -599,8 +592,7 @@ Corpus: scb_1m_th-en_spm
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>print(ThEnTranslator().translate(&quot;ผมอยากกินไก่ทอด&quot;))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>print(ThEnTranslator().translate(&quot;ผมอยากกินไก่ทอด&quot;))
 </pre></div>
 </div>
 </div>
@@ -616,8 +608,7 @@ I want fried chicken.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>print(ThEnTranslator().translate(&quot;ผมอยากเขียนโปรแกรมคอมพิวเตอร์&quot;))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>print(ThEnTranslator().translate(&quot;ผมอยากเขียนโปรแกรมคอมพิวเตอร์&quot;))
 </pre></div>
 </div>
 </div>

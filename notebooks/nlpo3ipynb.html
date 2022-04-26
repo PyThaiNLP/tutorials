@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nlpO3 &mdash; pythainlp-tutorials 4446bbf documentation</title>
+  <title>nlpO3 &mdash; pythainlp-tutorials 2d868c8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -298,7 +298,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -380,8 +380,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>!pip install nlpo3
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install nlpo3
 </pre></div>
 </div>
 </div>
@@ -403,8 +402,7 @@ Successfully installed nlpo3-1.1.2
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span>
 </pre></div>
 </div>
 </div>
@@ -412,8 +410,7 @@ Successfully installed nlpo3-1.1.2
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;ทดสอบตัดคำภาษาไทย&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;ทดสอบตัดคำภาษาไทย&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -434,8 +431,7 @@ Successfully installed nlpo3-1.1.2
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>!wget https://github.com/PyThaiNLP/pythainlp/raw/dev/pythainlp/corpus/countries_th.txt
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/PyThaiNLP/pythainlp/raw/dev/pythainlp/corpus/countries_th.txt
 </pre></div>
 </div>
 </div>
@@ -466,8 +462,7 @@ countries_th.txt    100%[===================&gt;]   7.44K  --.-KB/s    in 0s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span><span class="p">,</span> <span class="n">load_dict</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span><span class="p">,</span> <span class="n">load_dict</span>
 </pre></div>
 </div>
 </div>
@@ -475,8 +470,7 @@ countries_th.txt    100%[===================&gt;]   7.44K  --.-KB/s    in 0s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">load_dict</span><span class="p">(</span><span class="s2">&quot;countries_th.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">load_dict</span><span class="p">(</span><span class="s2">&quot;countries_th.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -492,8 +486,7 @@ Successful: dictionary name countries from file countries_th.txt has been succes
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;สวัสดีครับประเทศไทย เกาหลี&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;สวัสดีครับประเทศไทย เกาหลี&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

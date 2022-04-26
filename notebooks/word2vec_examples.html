@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai2Vec Embeddings Examples &mdash; pythainlp-tutorials 4446bbf documentation</title>
+  <title>Thai2Vec Embeddings Examples &mdash; pythainlp-tutorials 2d868c8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -295,7 +295,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -370,8 +370,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># #uncomment if you are running from google colab</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># #uncomment if you are running from google colab</span>
 <span class="c1"># !pip install sklearn_crfsuite</span>
 <span class="c1"># !pip install https://github.com/PyThaiNLP/pythainlp/archive/dev.zip</span>
 <span class="c1"># !pip install fastai==1.0.46</span>
@@ -383,8 +382,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="o">%</span><span class="k">reload_ext</span> autoreload
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
@@ -424,8 +422,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#load into gensim</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#load into gensim</span>
 <span class="c1"># model = KeyedVectors.load_word2vec_format(f&#39;{model_path}thai2vec.bin&#39;,binary=True)</span>
 <span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_vector</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">word_vector</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
@@ -436,8 +433,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#create dataframe</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#create dataframe</span>
 <span class="n">thai2dict</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span><span class="p">:</span>
     <span class="n">thai2dict</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
@@ -743,8 +739,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span>
 
 <span class="c1"># #tnse</span>
 <span class="c1"># tsne = TSNE(n_components=2, init=&#39;pca&#39;, n_iter=1000)</span>
@@ -759,8 +754,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -768,8 +762,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#stolen from https://blog.manash.me/how-to-use-pre-trained-word-vectors-from-facebooks-fasttext-a71e6d55f27</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#stolen from https://blog.manash.me/how-to-use-pre-trained-word-vectors-from-facebooks-fasttext-a71e6d55f27</span>
 <span class="k">def</span> <span class="nf">plot_with_labels</span><span class="p">(</span><span class="n">low_dim_embs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
                     <span class="n">axis_lims</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">low_dim_embs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="s2">&quot;More labels than embeddings&quot;</span>
@@ -807,8 +800,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#word arithmetic</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#word arithmetic</span>
 <span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;พระราชา&#39;</span><span class="p">,</span><span class="s1">&#39;ผู้หญิง&#39;</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ผู้ชาย&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -835,8 +827,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ผู้หญิง&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชา&#39;</span><span class="p">,</span><span class="s1">&#39;ผู้ชาย&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชินี&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ผู้หญิง&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชา&#39;</span><span class="p">,</span><span class="s1">&#39;ผู้ชาย&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชินี&#39;</span><span class="p">]</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -856,8 +847,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">],</span><span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">],</span><span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -883,8 +873,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">,</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">,</span><span class="s1">&#39;รองนายกรัฐมนตรี&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">,</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">,</span><span class="s1">&#39;รองนายกรัฐมนตรี&#39;</span><span class="p">]</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -904,8 +893,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#word arithmetic</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#word arithmetic</span>
 <span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;สัตว์&#39;</span><span class="p">,</span><span class="s1">&#39;พืช&#39;</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[])</span>
 </pre></div>
 </div>
@@ -932,8 +920,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;สัตว์&#39;</span><span class="p">,</span><span class="s1">&#39;พืช&#39;</span><span class="p">,</span><span class="s1">&#39;สิ่งมีชีวิต&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;สัตว์&#39;</span><span class="p">,</span><span class="s1">&#39;พืช&#39;</span><span class="p">,</span><span class="s1">&#39;สิ่งมีชีวิต&#39;</span><span class="p">]</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -957,8 +944,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -984,8 +970,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -1005,8 +990,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1023,8 +1007,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -1044,8 +1027,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1062,8 +1044,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -1086,8 +1067,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;China + Beijing:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">,</span> <span class="s1">&#39;จีน&#39;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;China + Beijing:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">,</span> <span class="s1">&#39;จีน&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Italy + Rome:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;โรม&#39;</span><span class="p">,</span><span class="s1">&#39;อิตาลี&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Beijing + Rome:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;โรม&#39;</span><span class="p">,</span> <span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Italy + Beijing:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">,</span> <span class="s1">&#39;อิตาลี&#39;</span><span class="p">))</span>
@@ -1113,8 +1093,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ปักกิ่ง จีน โรม อิตาลี โตเกียว ญี่ปุ่น&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ปักกิ่ง จีน โรม อิตาลี โตเกียว ญี่ปุ่น&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -1138,8 +1117,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">words</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span>
 
 <span class="n">w_rank</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
@@ -1153,8 +1131,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">thai_letters</span> <span class="o">=</span> <span class="s1">&#39;กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤฤๅลฦฦๅวศษสหฬอฮะัาำิีึืุูเแโใไ็่้๊๋์&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_letters</span> <span class="o">=</span> <span class="s1">&#39;กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤฤๅลฦฦๅวศษสหฬอฮะัาำิีึืุูเแโใไ็่้๊๋์&#39;</span>
 
 <span class="k">def</span> <span class="nf">words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span> <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 
@@ -1196,8 +1173,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;พัดนา&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;พัดนา&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1214,8 +1190,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;ขริง&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;ขริง&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1232,8 +1207,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;จย้า&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;จย้า&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1250,8 +1224,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;นะค่ะ&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;นะค่ะ&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

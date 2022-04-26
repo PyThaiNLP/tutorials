@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai Chunk Parser &mdash; pythainlp-tutorials 4446bbf documentation</title>
+  <title>Thai Chunk Parser &mdash; pythainlp-tutorials 2d868c8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -289,7 +289,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -362,8 +362,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>!pip install pythainlp svgling nltk
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!pip install pythainlp svgling nltk
 </pre></div>
 </div>
 </div>
@@ -396,8 +395,7 @@ Successfully installed svgling-0.3.0 svgwrite-1.4.1
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>from pythainlp.tokenize import word_tokenize
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>from pythainlp.tokenize import word_tokenize
 from pythainlp.tag import pos_tag
 from pythainlp.tag import chunk_parse
 from nltk.chunk import conlltags2tree
@@ -409,8 +407,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>def test(txt):
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>def test(txt):
     m = [(w,t) for w,t in pos_tag(word_tokenize(txt), engine= &#39;perceptron&#39;,corpus = &#39;orchid&#39;)]
     tag = chunk_parse(m)
     p = [(w,t,tag[i]) for i,(w,t) in enumerate(m)]
@@ -422,8 +419,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>svgling.draw_tree(conlltags2tree(test(&quot;แมวกินปลา&quot;)))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;แมวกินปลา&quot;)))
 </pre></div>
 </div>
 </div>
@@ -438,8 +434,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>svgling.draw_tree(conlltags2tree(test(&quot;คนหนองคายเป็นน่ารัก&quot;)))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;คนหนองคายเป็นน่ารัก&quot;)))
 </pre></div>
 </div>
 </div>
@@ -454,8 +449,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>svgling.draw_tree(conlltags2tree(test(&quot;ปลาอะไรอยู่ในน้ำ&quot;)))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;ปลาอะไรอยู่ในน้ำ&quot;)))
 </pre></div>
 </div>
 </div>
@@ -470,8 +464,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>svgling.draw_tree(conlltags2tree(test(&quot;ในน้ำมีอะไรอยู่&quot;)))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;ในน้ำมีอะไรอยู่&quot;)))
 </pre></div>
 </div>
 </div>
@@ -486,8 +479,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>svgling.draw_tree(conlltags2tree(test(&quot;ทำไมเขารักคุณ&quot;)))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;ทำไมเขารักคุณ&quot;)))
 </pre></div>
 </div>
 </div>
@@ -502,8 +494,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>svgling.draw_tree(conlltags2tree(test(&quot;คนอะไรอยู่หลังต้นไม้&quot;)))
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;คนอะไรอยู่หลังต้นไม้&quot;)))
 </pre></div>
 </div>
 </div>
@@ -518,8 +509,7 @@ import svgling
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

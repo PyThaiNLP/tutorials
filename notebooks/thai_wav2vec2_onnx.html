@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai Wav2vec2 model to ONNX model &mdash; pythainlp-tutorials 4446bbf documentation</title>
+  <title>Thai Wav2vec2 model to ONNX model &mdash; pythainlp-tutorials 2d868c8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -294,7 +294,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -370,8 +370,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># !pip install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html</span>
 </pre></div>
 </div>
 </div>
@@ -416,8 +415,7 @@ Successfully installed torch-1.10.0+cu113 torchaudio-0.10.0+cu113 torchvision-0.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>!pip install transformers onnxruntime onnx pythainlp soundfile
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install transformers onnxruntime onnx pythainlp soundfile
 </pre></div>
 </div>
 </div>
@@ -498,8 +496,7 @@ Successfully installed huggingface-hub-0.1.2 onnx-1.10.2 onnxruntime-1.9.0 pytha
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">transformers</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">transformers</span>
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">Wav2Vec2ForCTC</span>
 <span class="kn">from</span> <span class="nn">torchaudio.models.wav2vec2.utils</span> <span class="kn">import</span> <span class="n">import_huggingface_model</span>
 </pre></div>
@@ -509,8 +506,7 @@ Successfully installed huggingface-hub-0.1.2 onnx-1.10.2 onnxruntime-1.9.0 pytha
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">original</span> <span class="o">=</span> <span class="n">Wav2Vec2ForCTC</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;airesearch/wav2vec2-large-xlsr-53-th&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">original</span> <span class="o">=</span> <span class="n">Wav2Vec2ForCTC</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;airesearch/wav2vec2-large-xlsr-53-th&quot;</span><span class="p">)</span>
 <span class="n">imported</span> <span class="o">=</span> <span class="n">import_huggingface_model</span><span class="p">(</span><span class="n">original</span><span class="p">)</span> <span class="c1"># Build Wav2Vec2Model from the corresponding model object of Hugging Face https://pytorch.org/audio/stable/models.html#wav2vec2-0-hubert</span>
 </pre></div>
 </div>
@@ -540,8 +536,7 @@ Successfully installed huggingface-hub-0.1.2 onnx-1.10.2 onnxruntime-1.9.0 pytha
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">imported</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span> <span class="c1"># set the model to inference mode</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imported</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span> <span class="c1"># set the model to inference mode</span>
 </pre></div>
 </div>
 </div>
@@ -1015,8 +1010,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">torch.onnx</span> <span class="c1"># https://docs.microsoft.com/en-us/windows/ai/windows-ml/tutorials/pytorch-convert-model</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.onnx</span> <span class="c1"># https://docs.microsoft.com/en-us/windows/ai/windows-ml/tutorials/pytorch-convert-model</span>
 </pre></div>
 </div>
 </div>
@@ -1024,8 +1018,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">input_size</span> <span class="o">=</span> <span class="mi">100000</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">input_size</span> <span class="o">=</span> <span class="mi">100000</span>
 <span class="n">AUDIO_MAXLEN</span> <span class="o">=</span> <span class="n">input_size</span>
 </pre></div>
 </div>
@@ -1034,8 +1027,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">dummy_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dummy_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1043,8 +1035,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">imported</span><span class="p">,</span>         <span class="c1"># model being run</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">imported</span><span class="p">,</span>         <span class="c1"># model being run</span>
          <span class="n">dummy_input</span><span class="p">,</span>       <span class="c1"># model input (or a tuple for multiple inputs)</span>
          <span class="s2">&quot;asr3.onnx&quot;</span><span class="p">,</span>       <span class="c1"># where to save the model</span>
          <span class="n">export_params</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># store the trained parameter weights inside the model file</span>
@@ -1076,8 +1067,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>!wget https://www.dropbox.com/s/9kpeh8eodshcqhj/common_voice_th_23646850.wav?dl=1
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://www.dropbox.com/s/9kpeh8eodshcqhj/common_voice_th_23646850.wav?dl=1
 </pre></div>
 </div>
 </div>
@@ -1085,8 +1075,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>!mv common_voice_th_23646850.wav?dl=1 sound.wav
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!mv common_voice_th_23646850.wav?dl=1 sound.wav
 </pre></div>
 </div>
 </div>
@@ -1095,8 +1084,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span>!wget https://huggingface.co/airesearch/wav2vec2-large-xlsr-53-th/raw/main/vocab.json
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://huggingface.co/airesearch/wav2vec2-large-xlsr-53-th/raw/main/vocab.json
 </pre></div>
 </div>
 </div>
@@ -1104,8 +1092,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;vocab.json&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;vocab.json&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="n">d</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1115,8 +1102,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">onnx</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">onnx</span>
 <span class="kn">import</span> <span class="nn">onnxruntime</span>
 </pre></div>
 </div>
@@ -1125,8 +1111,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1134,8 +1119,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
 <span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">wavfile</span>
 <span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="k">as</span> <span class="nn">sps</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1147,8 +1131,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">input_size</span> <span class="o">=</span> <span class="mi">100000</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">input_size</span> <span class="o">=</span> <span class="mi">100000</span>
 <span class="n">new_rate</span> <span class="o">=</span> <span class="mi">16000</span>
 <span class="n">AUDIO_MAXLEN</span> <span class="o">=</span> <span class="n">input_size</span>
 </pre></div>
@@ -1158,8 +1141,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ort_session</span> <span class="o">=</span> <span class="n">onnxruntime</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span><span class="s1">&#39;asr3.onnx&#39;</span><span class="p">)</span> <span class="c1"># load onnx model</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ort_session</span> <span class="o">=</span> <span class="n">onnxruntime</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span><span class="s1">&#39;asr3.onnx&#39;</span><span class="p">)</span> <span class="c1"># load onnx model</span>
 </pre></div>
 </div>
 </div>
@@ -1167,8 +1149,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">res</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="n">res</span><span class="p">[</span><span class="mi">69</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;[PAD]&quot;</span>
 <span class="n">res</span><span class="p">[</span><span class="mi">68</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;[UNK]&quot;</span>
 </pre></div>
@@ -1178,8 +1159,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">_normalize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1">#</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_normalize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1">#</span>
   <span class="sd">&quot;&quot;&quot;You must call this before padding.</span>
 <span class="sd">  Code from https://github.com/vasudevgupta7/gsoc-wav2vec2/blob/main/src/wav2vec2/processor.py#L101</span>
 <span class="sd">  Fork TF to numpy</span>
@@ -1195,8 +1175,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">remove_adjacent</span><span class="p">(</span><span class="n">item</span><span class="p">):</span> <span class="c1"># code from https://stackoverflow.com/a/3460423</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_adjacent</span><span class="p">(</span><span class="n">item</span><span class="p">):</span> <span class="c1"># code from https://stackoverflow.com/a/3460423</span>
   <span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
   <span class="n">a</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
   <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
@@ -1210,8 +1189,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">asr</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">asr</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Code from https://github.com/vasudevgupta7/gsoc-wav2vec2/blob/main/notebooks/wav2vec2_onnx.ipynb</span>
 <span class="sd">    Fork TF to numpy</span>
@@ -1236,8 +1214,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">FILENAME</span> <span class="o">=</span> <span class="s2">&quot;sound.wav&quot;</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">FILENAME</span> <span class="o">=</span> <span class="s2">&quot;sound.wav&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1245,8 +1222,7 @@ Wav2Vec2Model(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre>
-<span></span><span class="n">asr</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">asr</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai Wiki Language Model for Text Generation &mdash; pythainlp-tutorials 4446bbf documentation</title>
+  <title>Thai Wiki Language Model for Text Generation &mdash; pythainlp-tutorials 2d868c8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -289,7 +289,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -361,8 +361,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># #uncomment if you are running from google colab</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># #uncomment if you are running from google colab</span>
 <span class="c1"># !pip install pythainlp</span>
 <span class="c1"># !pip install fastai</span>
 <span class="c1"># !pip install emoji</span>
@@ -373,8 +372,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
@@ -396,8 +394,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
   <span class="n">THWIKI_LSTM</span> <span class="o">=</span> <span class="n">_THWIKI_LSTM</span>
 <span class="k">except</span><span class="p">:</span>
   <span class="n">THWIKI_LSTM</span> <span class="o">=</span> <span class="n">THWIKI_LSTM</span>
@@ -408,8 +405,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#get dummy data</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#get dummy data</span>
 <span class="n">imdb</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">IMDB_SAMPLE</span><span class="p">)</span>
 <span class="n">dummy_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">imdb</span><span class="o">/</span><span class="s1">&#39;texts.csv&#39;</span><span class="p">)</span>
 
@@ -446,8 +442,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#check vocab size</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check vocab size</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -465,8 +460,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tie_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">out_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">emb_sz</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">n_hid</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="n">n_layers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">qrnn</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tie_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">out_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
              <span class="n">output_p</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">hidden_p</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">input_p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">embed_p</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">weight_p</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
 <span class="n">trn_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
@@ -711,8 +705,7 @@ beta: 1], layer_groups=[Sequential(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">&#39;กาลครั้งหนึ่งนานมาแล้ว &#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">min_p</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">&#39;กาลครั้งหนึ่งนานมาแล้ว &#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">min_p</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -732,8 +725,7 @@ beta: 1], layer_groups=[Sequential(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials 4446bbf documentation</title>
+  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials 2d868c8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -321,7 +321,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -393,8 +393,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># # pip install required modules</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # pip install required modules</span>
 <span class="c1"># # uncomment if running from colab</span>
 <span class="c1"># # see list of modules in `requirements` and `extras`</span>
 <span class="c1"># # in https://github.com/PyThaiNLP/pythainlp/blob/dev/setup.py</span>
@@ -410,8 +409,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pythainlp</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pythainlp</span>
 
 <span class="n">pythainlp</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
@@ -434,8 +432,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_characters</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_characters</span>
 </pre></div>
 </div>
 </div>
@@ -452,8 +449,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">len</span><span class="p">(</span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_characters</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_characters</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -470,8 +466,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_consonants</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_consonants</span>
 </pre></div>
 </div>
 </div>
@@ -488,8 +483,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">len</span><span class="p">(</span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_consonants</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_consonants</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -506,8 +500,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="s2">&quot;๔&quot;</span> <span class="ow">in</span> <span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_digits</span>  <span class="c1"># check if Thai digit &quot;4&quot; is in the character set</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;๔&quot;</span> <span class="ow">in</span> <span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_digits</span>  <span class="c1"># check if Thai digit &quot;4&quot; is in the character set</span>
 </pre></div>
 </div>
 </div>
@@ -527,8 +520,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pythainlp.util</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pythainlp.util</span>
 
 <span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;ก&quot;</span><span class="p">)</span>
 </pre></div>
@@ -547,8 +539,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;(ก.พ.)&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;(ก.พ.)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -565,8 +556,7 @@ False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;(ก.พ.)&quot;</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">&quot;.()&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;(ก.พ.)&quot;</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">&quot;.()&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -584,8 +574,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">&quot;วันอาทิตย์ที่ 24 มีนาคม 2562&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">&quot;วันอาทิตย์ที่ 24 มีนาคม 2562&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -603,8 +592,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">&quot;วันอาทิตย์ที่ 24 มีนาคม 2562&quot;</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">&quot;วันอาทิตย์ที่ 24 มีนาคม 2562&quot;</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -625,8 +613,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">collate</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">collate</span>
 
 <span class="n">thai_words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ค้อน&quot;</span><span class="p">,</span> <span class="s2">&quot;กระดาษ&quot;</span><span class="p">,</span> <span class="s2">&quot;กรรไกร&quot;</span><span class="p">,</span> <span class="s2">&quot;ไข่&quot;</span><span class="p">,</span> <span class="s2">&quot;ผ้าไหม&quot;</span><span class="p">]</span>
 <span class="n">collate</span><span class="p">(</span><span class="n">thai_words</span><span class="p">)</span>
@@ -646,8 +633,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">collate</span><span class="p">(</span><span class="n">thai_words</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collate</span><span class="p">(</span><span class="n">thai_words</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -670,8 +656,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">thai_strftime</span>
 
 <span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;%Aที่ </span><span class="si">%-d</span><span class="s2"> %B พ.ศ. %Y เวลา %H:%M น. (</span><span class="si">%a</span><span class="s2"> </span><span class="si">%d</span><span class="s2">-%b-%y)&quot;</span>
@@ -706,8 +691,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %b %y&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %b %y&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -724,8 +708,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %b %Y&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %b %Y&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -746,8 +729,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">thai_time</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">thai_time</span>
 
 <span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">)</span>
 </pre></div>
@@ -767,8 +749,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -786,8 +767,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -804,8 +784,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;8:17:00&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;8:17:00&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;8:17:00&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;m6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;18:30:01&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;m6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;13:30:01&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">))</span>
@@ -828,8 +807,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 <span class="n">thai_time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
@@ -849,8 +827,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 <span class="n">thai_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -876,8 +853,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว พุทธศักราช ๒๔๗๕ &quot;</span>
         <span class="s2">&quot;เป็นรัฐธรรมนูญฉบับชั่วคราว ซึ่งถือว่าเป็นรัฐธรรมนูญฉบับแรกแห่งราชอาณาจักรสยาม &quot;</span>
@@ -911,8 +887,7 @@ whitespace+newline:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ก็จะรู้ความชั่วร้ายที่ทำไว้     และคงจะไม่ยอมให้ทำนาบนหลังคน &quot;</span>
 
@@ -940,8 +915,7 @@ newmm and keep_whitespace=False:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span><span class="p">,</span> <span class="n">Tokenizer</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span><span class="p">,</span> <span class="n">Tokenizer</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;กฎหมายแรงงานฉบับปรับปรุงใหม่ประกาศใช้แล้ว&quot;</span>
 
@@ -969,8 +943,7 @@ newmm (custom dictionary): [&#39;กฎหมาย&#39;, &#39;แรงงา�
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus.common</span> <span class="kn">import</span> <span class="n">thai_words</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus.common</span> <span class="kn">import</span> <span class="n">thai_words</span>
 <span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;นิยายวิทยาศาสตร์ของไอแซค อสิมอฟ&quot;</span>
@@ -999,8 +972,7 @@ custom dictionary : [&#39;นิยาย&#39;, &#39;วิทยาศาสต
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus.common</span> <span class="kn">import</span> <span class="n">thai_words</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus.common</span> <span class="kn">import</span> <span class="n">thai_words</span>
 <span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">Trie</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ILO87 ว่าด้วยเสรีภาพในการสมาคมและการคุ้มครองสิทธิในการรวมตัว ILO98 ว่าด้วยสิทธิในการรวมตัวและการร่วมเจรจาต่อรอง&quot;</span>
@@ -1029,8 +1001,7 @@ custom dictionary : [&#39;ILO87&#39;, &#39; &#39;, &#39;ว่าด้วย&#3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">speedtest_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speedtest_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">ครบรอบ 14 ปี ตากใบ เช้าวันนั้น 25 ต.ค. 2547 ผู้ชุมนุมชายกว่า 1,370 คน</span>
 <span class="s2">ถูกโยนขึ้นรถยีเอ็มซี 22 หรือ 24 คัน นอนซ้อนกันคันละ 4-5 ชั้น เดินทางจากสถานีตำรวจตากใบ ไปไกล 150 กิโลเมตร</span>
 <span class="s2">ไปถึงค่ายอิงคยุทธบริหาร ใช้เวลากว่า 6 ชั่วโมง / ในอีกคดีที่ญาติฟ้องร้องรัฐ คดีจบลงที่การประนีประนอมยอมความ</span>
@@ -1054,8 +1025,7 @@ custom dictionary : [&#39;ILO87&#39;, &#39; &#39;, &#39;ว่าด้วย&#3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Speed test: Calling &quot;longest&quot; engine through word_tokenize wrapper</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling &quot;longest&quot; engine through word_tokenize wrapper</span>
 <span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;longest&quot;)
 </pre></div>
 </div>
@@ -1073,8 +1043,7 @@ Wall time: 255 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Speed test: Calling &quot;newmm&quot; engine through word_tokenize wrapper</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling &quot;newmm&quot; engine through word_tokenize wrapper</span>
 <span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;newmm&quot;)
 </pre></div>
 </div>
@@ -1092,8 +1061,7 @@ Wall time: 3.47 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Speed test: Calling &quot;newmm&quot; engine through word_tokenize wrapper</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling &quot;newmm&quot; engine through word_tokenize wrapper</span>
 <span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;newmm-safe&quot;)
 </pre></div>
 </div>
@@ -1111,8 +1079,7 @@ Wall time: 4.15 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="ch">#!pip install attacut</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install attacut</span>
 <span class="c1"># Speed test: Calling &quot;attacut&quot; engine through word_tokenize wrapper</span>
 <span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;attacut&quot;)
 </pre></div>
@@ -1132,8 +1099,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize.multi_cut</span> <span class="kn">import</span> <span class="n">find_all_segment</span><span class="p">,</span> <span class="n">mmcut</span><span class="p">,</span> <span class="n">segment</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize.multi_cut</span> <span class="kn">import</span> <span class="n">find_all_segment</span><span class="p">,</span> <span class="n">mmcut</span><span class="p">,</span> <span class="n">segment</span>
 
 <span class="n">find_all_segment</span><span class="p">(</span><span class="s2">&quot;มีความเป็นไปได้อย่างไรบ้าง&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1177,8 +1143,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">subword_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">subword_tokenize</span>
 
 <span class="n">subword_tokenize</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">)</span>  <span class="c1"># default subword unit is TCC</span>
 </pre></div>
@@ -1201,8 +1166,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">syllable_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">syllable_tokenize</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;อับดุลเลาะ อีซอมูซอ สมองบวมรุนแรง&quot;</span>
 
@@ -1236,8 +1200,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;ssg&quot;</span><span class="p">)</span>  <span class="c1"># use &quot;ssg&quot; for syllable</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;ssg&quot;</span><span class="p">)</span>  <span class="c1"># use &quot;ssg&quot; for syllable</span>
 </pre></div>
 </div>
 </div>
@@ -1258,8 +1221,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">tcc</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">tcc</span>
 
 <span class="n">tcc</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1278,8 +1240,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">tcc</span><span class="o">.</span><span class="n">tcc_pos</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">)</span>  <span class="c1"># return positions</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcc</span><span class="o">.</span><span class="n">tcc_pos</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">)</span>  <span class="c1"># return positions</span>
 </pre></div>
 </div>
 </div>
@@ -1296,8 +1257,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">tcc</span><span class="o">.</span><span class="n">tcc</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">):</span>  <span class="c1"># TCC generator</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">tcc</span><span class="o">.</span><span class="n">tcc</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">):</span>  <span class="c1"># TCC generator</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1332,8 +1292,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.transliterate</span> <span class="kn">import</span> <span class="n">romanize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.transliterate</span> <span class="kn">import</span> <span class="n">romanize</span>
 
 <span class="n">romanize</span><span class="p">(</span><span class="s2">&quot;แมว&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;maeo&#39;</span>
 </pre></div>
@@ -1352,8 +1311,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">romanize</span><span class="p">(</span><span class="s2">&quot;ภาพยนตร์&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;phapn&#39; (*obviously wrong)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">romanize</span><span class="p">(</span><span class="s2">&quot;ภาพยนตร์&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;phapn&#39; (*obviously wrong)</span>
 </pre></div>
 </div>
 </div>
@@ -1370,8 +1328,7 @@ Wall time: 576 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.transliterate</span> <span class="kn">import</span> <span class="n">transliterate</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.transliterate</span> <span class="kn">import</span> <span class="n">transliterate</span>
 
 <span class="n">transliterate</span><span class="p">(</span><span class="s2">&quot;แมว&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;mɛːw&#39;</span>
 </pre></div>
@@ -1400,8 +1357,7 @@ Corpus: thai-g2p
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">transliterate</span><span class="p">(</span><span class="s2">&quot;ภาพยนตร์&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;pʰaːpjanot&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transliterate</span><span class="p">(</span><span class="s2">&quot;ภาพยนตร์&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;pʰaːpjanot&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1422,8 +1378,7 @@ Corpus: thai-g2p
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">normalize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">normalize</span>
 
 <span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;เเปลก&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;แปลก&quot;</span>  <span class="c1"># เ เ ป ล ก  vs แ ป ล ก</span>
 </pre></div>
@@ -1443,8 +1398,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;เกา่&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;เกา่&quot;</span>
 <span class="n">normalize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1463,8 +1417,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;เก็บวันน้ี พรุ่งน้ีก็เกา่&quot;</span>
 
@@ -1492,8 +1445,7 @@ normalize, then tokenize:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;เกะะะ&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;เกะะะ&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1522,8 +1474,7 @@ text = remove_dangling(text)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">arabic_digit_to_thai_digit</span><span class="p">,</span> <span class="n">thai_digit_to_arabic_digit</span><span class="p">,</span> <span class="n">digit_to_text</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">arabic_digit_to_thai_digit</span><span class="p">,</span> <span class="n">thai_digit_to_arabic_digit</span><span class="p">,</span> <span class="n">digit_to_text</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ฉุกเฉินที่ยุโรปเรียก 112 ๑๑๒&quot;</span>
 
@@ -1544,8 +1495,7 @@ text = remove_dangling(text)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">thai_digit_to_arabic_digit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_digit_to_arabic_digit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1562,8 +1512,7 @@ text = remove_dangling(text)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">digit_to_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">digit_to_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1584,8 +1533,7 @@ text = remove_dangling(text)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.soundex</span> <span class="kn">import</span> <span class="n">lk82</span><span class="p">,</span> <span class="n">metasound</span><span class="p">,</span> <span class="n">udom83</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.soundex</span> <span class="kn">import</span> <span class="n">lk82</span><span class="p">,</span> <span class="n">metasound</span><span class="p">,</span> <span class="n">udom83</span>
 
 <span class="c1"># check equivalence</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lk82</span><span class="p">(</span><span class="s2">&quot;รถ&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">lk82</span><span class="p">(</span><span class="s2">&quot;รด&quot;</span><span class="p">))</span>
@@ -1608,8 +1556,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;บูรณะ&quot;</span><span class="p">,</span> <span class="s2">&quot;บูรณการ&quot;</span><span class="p">,</span> <span class="s2">&quot;มัก&quot;</span><span class="p">,</span> <span class="s2">&quot;มัค&quot;</span><span class="p">,</span> <span class="s2">&quot;มรรค&quot;</span><span class="p">,</span> <span class="s2">&quot;ลัก&quot;</span><span class="p">,</span> <span class="s2">&quot;รัก&quot;</span><span class="p">,</span> <span class="s2">&quot;รักษ์&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;บูรณะ&quot;</span><span class="p">,</span> <span class="s2">&quot;บูรณการ&quot;</span><span class="p">,</span> <span class="s2">&quot;มัก&quot;</span><span class="p">,</span> <span class="s2">&quot;มัค&quot;</span><span class="p">,</span> <span class="s2">&quot;มรรค&quot;</span><span class="p">,</span> <span class="s2">&quot;ลัก&quot;</span><span class="p">,</span> <span class="s2">&quot;รัก&quot;</span><span class="p">,</span> <span class="s2">&quot;รักษ์&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span>
         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> - lk82: </span><span class="si">{}</span><span class="s2"> - udom83: </span><span class="si">{}</span><span class="s2"> - metasound: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
@@ -1644,8 +1591,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">spell</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">spell</span>
 
 <span class="n">spell</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1665,8 +1611,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">correct</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">correct</span>
 
 <span class="n">correct</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1691,8 +1636,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.spell</span> <span class="kn">import</span> <span class="n">NorvigSpellChecker</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.spell</span> <span class="kn">import</span> <span class="n">NorvigSpellChecker</span>
 
 <span class="n">user_dict</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;เหลียม&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;เหลือม&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;เหลียว&quot;</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span>
 <span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">custom_dict</span><span class="o">=</span><span class="n">user_dict</span><span class="p">)</span>
@@ -1717,8 +1661,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus</span> <span class="kn">import</span> <span class="n">ttc</span>  <span class="c1"># Thai Textbook Corpus</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus</span> <span class="kn">import</span> <span class="n">ttc</span>  <span class="c1"># Thai Textbook Corpus</span>
 
 <span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">custom_dict</span><span class="o">=</span><span class="n">ttc</span><span class="o">.</span><span class="n">word_freqs</span><span class="p">())</span>
 
@@ -1739,8 +1682,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">checker</span><span class="o">.</span><span class="n">correct</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker</span><span class="o">.</span><span class="n">correct</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1758,8 +1700,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">list</span><span class="p">(</span><span class="n">checker</span><span class="o">.</span><span class="n">dictionary</span><span class="p">())[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">checker</span><span class="o">.</span><span class="n">dictionary</span><span class="p">())[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1785,8 +1726,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">()</span>  <span class="c1"># use default filter (remove any word with number or non-Thai character)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">()</span>  <span class="c1"># use default filter (remove any word with number or non-Thai character)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">checker</span><span class="o">.</span><span class="n">dictionary</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1804,8 +1744,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">min_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">min_len</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_len</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">min_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">min_len</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_len</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">checker</span><span class="o">.</span><span class="n">dictionary</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1823,8 +1762,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">checker_no_filter</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">dict_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># use no filter</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker_no_filter</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">dict_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># use no filter</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">checker_no_filter</span><span class="o">.</span><span class="n">dictionary</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -1842,8 +1780,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">remove_yamok</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_yamok</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
     <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="s2">&quot;ๆ&quot;</span> <span class="ow">in</span> <span class="n">word</span> <span class="k">else</span> <span class="kc">True</span>
 
 <span class="n">checker_custom_filter</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">dict_filter</span><span class="o">=</span><span class="n">remove_yamok</span><span class="p">)</span>  <span class="c1"># use custom filter</span>
@@ -1867,8 +1804,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.tag</span> <span class="kn">import</span> <span class="n">pos_tag</span><span class="p">,</span> <span class="n">pos_tag_sents</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tag</span> <span class="kn">import</span> <span class="n">pos_tag</span><span class="p">,</span> <span class="n">pos_tag_sents</span>
 
 <span class="n">pos_tag</span><span class="p">([</span><span class="s2">&quot;การ&quot;</span><span class="p">,</span><span class="s2">&quot;เดินทาง&quot;</span><span class="p">])</span>
 </pre></div>
@@ -1887,8 +1823,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sents</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;ประกาศสำนักนายกฯ&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;ให้&quot;</span><span class="p">,</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sents</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;ประกาศสำนักนายกฯ&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;ให้&quot;</span><span class="p">,</span>
     <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;พล.ท.สรรเสริญ แก้วกำเนิด&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;พ้นจากตำแหน่ง&quot;</span><span class="p">,</span>
     <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;ผู้ทรงคุณวุฒิพิเศษ&quot;</span><span class="p">,</span> <span class="s2">&quot;กองทัพบก&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;กระทรวงกลาโหม&quot;</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">&quot;และ&quot;</span><span class="p">,</span> <span class="s2">&quot;แต่งตั้ง&quot;</span><span class="p">,</span> <span class="s2">&quot;ให้&quot;</span><span class="p">,</span> <span class="s2">&quot;เป็น&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;อธิบดีกรมประชาสัมพันธ์&#39;&quot;</span><span class="p">]]</span>
@@ -1930,8 +1865,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="ch">#!pip3 install pythainlp[ner]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip3 install pythainlp[ner]</span>
 <span class="kn">from</span> <span class="nn">pythainlp.tag.named_entity</span> <span class="kn">import</span> <span class="n">ThaiNameTagger</span>
 
 <span class="n">ner</span> <span class="o">=</span> <span class="n">ThaiNameTagger</span><span class="p">()</span>
@@ -1988,8 +1922,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pythainlp.word_vector</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pythainlp.word_vector</span>
 
 <span class="n">pythainlp</span><span class="o">.</span><span class="n">word_vector</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s2">&quot;คน&quot;</span><span class="p">,</span> <span class="s2">&quot;มนุษย์&quot;</span><span class="p">)</span>
 </pre></div>
@@ -2008,8 +1941,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">word_vector</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">([</span><span class="s2">&quot;คน&quot;</span><span class="p">,</span> <span class="s2">&quot;มนุษย์&quot;</span><span class="p">,</span> <span class="s2">&quot;บุคคล&quot;</span><span class="p">,</span> <span class="s2">&quot;เจ้าหน้าที่&quot;</span><span class="p">,</span> <span class="s2">&quot;ไก่&quot;</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">word_vector</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">([</span><span class="s2">&quot;คน&quot;</span><span class="p">,</span> <span class="s2">&quot;มนุษย์&quot;</span><span class="p">,</span> <span class="s2">&quot;บุคคล&quot;</span><span class="p">,</span> <span class="s2">&quot;เจ้าหน้าที่&quot;</span><span class="p">,</span> <span class="s2">&quot;ไก่&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2038,8 +1970,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">bahttext</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">bahttext</span>
 
 <span class="n">bahttext</span><span class="p">(</span><span class="mf">1234567890123.45</span><span class="p">)</span>
 </pre></div>
@@ -2059,8 +1990,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">bahttext</span><span class="p">(</span><span class="mf">1.909</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bahttext</span><span class="p">(</span><span class="mf">1.909</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
