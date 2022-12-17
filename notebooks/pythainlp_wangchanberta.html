@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wangchanberta &mdash; pythainlp-tutorials 05a5001 documentation</title>
+  <title>Wangchanberta &mdash; pythainlp-tutorials thai2plot-1-g0ba3754 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -73,8 +75,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Wangchanberta</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Wangchanberta</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/pythainlp_wangchanberta.ipynb" rel="nofollow"> View page source</a>
       </li>
@@ -194,10 +196,11 @@ div.nboutput.container div.prompt > div {
     }
 }
 
-/* disable scrollbars on prompts */
+/* disable scrollbars and line breaks on prompts */
 div.nbinput.container div.prompt pre,
 div.nboutput.container div.prompt pre {
     overflow: hidden;
+    white-space: pre;
 }
 
 /* input/output area */
@@ -299,6 +302,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -307,10 +311,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -322,12 +330,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -360,7 +371,7 @@ div.rendered_html tbody tr:hover {
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/pythainlp_wangchanberta.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Wangchanberta">
-<h1>Wangchanberta<a class="headerlink" href="#Wangchanberta" title="Permalink to this headline"></a></h1>
+<h1>Wangchanberta<a class="headerlink" href="#Wangchanberta" title="Permalink to this heading"></a></h1>
 <p>This notebook for pythainlp.wangchanberta</p>
 <p>Lowphansirikul L, Polpanumas C, Jantrakulchai N, Nutanong S. WangchanBERTa: Pretraining transformer-based Thai Language Models. arXiv preprint arXiv:2101.09635. 2021 Jan 24.</p>
 <div class="nbinput docutils container">
@@ -542,7 +553,7 @@ Successfully installed sacremoses-0.0.43 sentencepiece-0.1.95 tokenizers-0.10.1 
 </pre></div></div>
 </div>
 <section id="Named-Entity-Recognition">
-<h2>Named Entity Recognition<a class="headerlink" href="#Named-Entity-Recognition" title="Permalink to this headline"></a></h2>
+<h2>Named Entity Recognition<a class="headerlink" href="#Named-Entity-Recognition" title="Permalink to this heading"></a></h2>
 <p>Dataset support:</p>
 <ul class="simple">
 <li><p>thainer</p></li>
@@ -757,7 +768,7 @@ Asking to truncate to max_length but no maximum length is provided and the model
 </div>
 </section>
 <section id="Part-of-speech">
-<h2>Part of speech<a class="headerlink" href="#Part-of-speech" title="Permalink to this headline"></a></h2>
+<h2>Part of speech<a class="headerlink" href="#Part-of-speech" title="Permalink to this heading"></a></h2>
 <p>It is use <code class="docutils literal notranslate"><span class="pre">lst20</span></code> dataset.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -814,7 +825,7 @@ Asking to truncate to max_length but no maximum length is provided and the model
 </div>
 </section>
 <section id="Subword">
-<h2>Subword<a class="headerlink" href="#Subword" title="Permalink to this headline"></a></h2>
+<h2>Subword<a class="headerlink" href="#Subword" title="Permalink to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>

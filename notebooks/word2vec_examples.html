@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai2Vec Embeddings Examples &mdash; pythainlp-tutorials 05a5001 documentation</title>
+  <title>Thai2Vec Embeddings Examples &mdash; pythainlp-tutorials thai2plot-1-g0ba3754 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -74,8 +76,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Thai2Vec Embeddings Examples</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Thai2Vec Embeddings Examples</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/word2vec_examples.ipynb" rel="nofollow"> View page source</a>
       </li>
@@ -195,10 +197,11 @@ div.nboutput.container div.prompt > div {
     }
 }
 
-/* disable scrollbars on prompts */
+/* disable scrollbars and line breaks on prompts */
 div.nbinput.container div.prompt pre,
 div.nboutput.container div.prompt pre {
     overflow: hidden;
+    white-space: pre;
 }
 
 /* input/output area */
@@ -300,6 +303,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -308,10 +312,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -323,12 +331,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -361,11 +372,11 @@ div.rendered_html tbody tr:hover {
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/word2vec_examples.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Thai2Vec-Embeddings-Examples">
-<h1>Thai2Vec Embeddings Examples<a class="headerlink" href="#Thai2Vec-Embeddings-Examples" title="Permalink to this headline"></a></h1>
+<h1>Thai2Vec Embeddings Examples<a class="headerlink" href="#Thai2Vec-Embeddings-Examples" title="Permalink to this heading"></a></h1>
 <p>We use the embeddings from <code class="docutils literal notranslate"><span class="pre">v0.1</span></code> since it was trained specifically for word2vec as opposed to latter versions which garner to classification. The <code class="docutils literal notranslate"><span class="pre">thai2vec.bin</span></code> 51,556 word embeddings of 300 dimensions, in descending order by their frequencies (See <code class="docutils literal notranslate"><span class="pre">thai2vec.vocab</span></code>). The files are in word2vec format readable by <code class="docutils literal notranslate"><span class="pre">gensim</span></code>. Most common applications include word vector visualization, word arithmetic, word grouping, cosine similarity and sentence or document vectors. For sample code, see
 <code class="docutils literal notranslate"><span class="pre">thwiki_lm/word2vec_examples.ipynb</span></code>.</p>
 <section id="Imports">
-<h2>Imports<a class="headerlink" href="#Imports" title="Permalink to this headline"></a></h2>
+<h2>Imports<a class="headerlink" href="#Imports" title="Permalink to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -378,7 +389,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -397,7 +408,18 @@ div.rendered_html tbody tr:hover {
 <span class="kn">import</span> <span class="nn">dill</span> <span class="k">as</span> <span class="nn">pickle</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;thwiki_data/models/&#39;</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#load into gensim</span>
+<span class="c1"># model = KeyedVectors.load_word2vec_format(f&#39;{model_path}thai2vec.bin&#39;,binary=True)</span>
+<span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_vector</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">word_vector</span><span class="o">.</span><span class="n">WordVector</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;thai2fit_wv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span> <span class="c1"># load thai2fit_wv from pythainlp</span>
 </pre></div>
 </div>
 </div>
@@ -406,28 +428,15 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Download: thai2fit_wv
-thai2fit_wv 0.1
+Corpus: thai2fit_wv
+- Downloading: thai2fit_wv 0.1
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#load into gensim</span>
-<span class="c1"># model = KeyedVectors.load_word2vec_format(f&#39;{model_path}thai2vec.bin&#39;,binary=True)</span>
-<span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_vector</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">word_vector</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span>
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "b0e583cb2be447b293bd6366e3d63dcb"}</script></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -447,7 +456,9 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div>
+  <div id="df-c722192d-a8e1-48b3-97e8-7f66b425b342">
+    <div class="colab-df-container">
+      <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -732,11 +743,94 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
   </tbody>
 </table>
 <p>10 rows × 300 columns</p>
-</div></div>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c722192d-a8e1-48b3-97e8-7f66b425b342')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-c722192d-a8e1-48b3-97e8-7f66b425b342 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-c722192d-a8e1-48b3-97e8-7f66b425b342');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div></div>
 </div>
 <p>Using t-SNE, we can compress the 300 dimensions of each word into a 2D plane and plot their relationships.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget https://github.com/PyThaiNLP/tutorials/releases/download/thai2plot/thai2plot.pkl
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span>
@@ -750,16 +844,56 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;ที่&#39;, &#39;และ&#39;, &#39;เป็น&#39;, &#39;ของ&#39;, &#39;มี&#39;, &#39;ได้&#39;, &#39;&#34;&#34;&#34;&#34;&#39;, &#39;การ&#39;, &#39;(&#39;, &#39;)&#39;]
+</pre></div></div>
+</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget https://github.com/jeffmcneill/thai-font-collection/raw/master/downloadable-free-thai-fonts/dip-sipa/TH-Sarabun-New-Regular.ttf
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--2022-12-17 16:26:35--  https://github.com/jeffmcneill/thai-font-collection/raw/master/downloadable-free-thai-fonts/dip-sipa/TH-Sarabun-New-Regular.ttf
+Resolving github.com (github.com)... 140.82.114.4
+Connecting to github.com (github.com)|140.82.114.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/jeffmcneill/thai-font-collection/master/downloadable-free-thai-fonts/dip-sipa/TH-Sarabun-New-Regular.ttf [following]
+--2022-12-17 16:26:35--  https://raw.githubusercontent.com/jeffmcneill/thai-font-collection/master/downloadable-free-thai-fonts/dip-sipa/TH-Sarabun-New-Regular.ttf
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 479628 (468K) [application/octet-stream]
+Saving to: ‘TH-Sarabun-New-Regular.ttf’
+
+TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
+
+2022-12-17 16:26:36 (12.6 MB/s) - ‘TH-Sarabun-New-Regular.ttf’ saved [479628/479628]
+
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#stolen from https://blog.manash.me/how-to-use-pre-trained-word-vectors-from-facebooks-fasttext-a71e6d55f27</span>
@@ -770,7 +904,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">low_dim_embs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;THSarabunNew.ttf&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">prop</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;TH-Sarabun-New-Regular.ttf&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">label</span><span class="p">,</span>
                  <span class="n">fontproperties</span><span class="o">=</span><span class="n">prop</span><span class="p">,</span>
                  <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
@@ -789,15 +923,15 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_word2vec_examples_9_0.png" src="../_images/notebooks_word2vec_examples_9_0.png" />
+<img alt="../_images/notebooks_word2vec_examples_11_0.png" src="../_images/notebooks_word2vec_examples_11_0.png" />
 </div>
 </div>
 </section>
 <section id="Word-Arithmetic">
-<h2>Word Arithmetic<a class="headerlink" href="#Word-Arithmetic" title="Permalink to this headline"></a></h2>
+<h2>Word Arithmetic<a class="headerlink" href="#Word-Arithmetic" title="Permalink to this heading"></a></h2>
 <p>You can do simple “arithmetic” with words based on the word vectors such as: * ผู้หญิง + พระราชา - ผู้ชาย = พระราชินี * นายกรัฐมนตรี - อำนาจ = ประธานาธิบดี * กิ้งก่า + โบราณ = ไดโนเสาร์</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#word arithmetic</span>
@@ -806,7 +940,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -824,7 +958,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ผู้หญิง&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชา&#39;</span><span class="p">,</span><span class="s1">&#39;ผู้ชาย&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชินี&#39;</span><span class="p">]</span>
@@ -840,11 +974,11 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_word2vec_examples_13_0.png" src="../_images/notebooks_word2vec_examples_13_0.png" />
+<img alt="../_images/notebooks_word2vec_examples_15_0.png" src="../_images/notebooks_word2vec_examples_15_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">],</span><span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">])</span>
@@ -852,7 +986,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -870,7 +1004,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">,</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">,</span><span class="s1">&#39;รองนายกรัฐมนตรี&#39;</span><span class="p">]</span>
@@ -886,11 +1020,11 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_word2vec_examples_15_0.png" src="../_images/notebooks_word2vec_examples_15_0.png" />
+<img alt="../_images/notebooks_word2vec_examples_17_0.png" src="../_images/notebooks_word2vec_examples_17_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#word arithmetic</span>
@@ -899,7 +1033,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -917,7 +1051,7 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;สัตว์&#39;</span><span class="p">,</span><span class="s1">&#39;พืช&#39;</span><span class="p">,</span><span class="s1">&#39;สิ่งมีชีวิต&#39;</span><span class="p">]</span>
@@ -933,15 +1067,15 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_word2vec_examples_17_0.png" src="../_images/notebooks_word2vec_examples_17_0.png" />
+<img alt="../_images/notebooks_word2vec_examples_19_0.png" src="../_images/notebooks_word2vec_examples_19_0.png" />
 </div>
 </div>
 </section>
 <section id="Doesn’t-Match">
-<h2>Doesn’t Match<a class="headerlink" href="#Doesn’t-Match" title="Permalink to this headline"></a></h2>
+<h2>Doesn’t Match<a class="headerlink" href="#Doesn’t-Match" title="Permalink to this heading"></a></h2>
 <p>It can also be used to do word groupings. For instance: * อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน - อาหารสัตว์ is type of food whereas others are meals in the day * ลาก ดึง ดูด ดัน - ดัน is pushing while the rest is pulling. * กด กัด กิน เคี้ยว - กด is not verbs for the eating process Note that this could be relying on a different “take” than you would expect. For example, you could have answered ลูกเขย in the second example because it is the one associated with male gender.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
@@ -953,12 +1087,12 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/local/lib/python3.6/dist-packages/gensim/models/keyedvectors.py:858: FutureWarning: arrays to stack must be passed as a &#34;sequence&#34; type such as list or tuple. Support for non-sequence iterables such as generators is deprecated as of NumPy 1.16 and will raise an error in the future.
+/usr/local/lib/python3.8/dist-packages/gensim/models/keyedvectors.py:895: FutureWarning: arrays to stack must be passed as a &#34;sequence&#34; type such as list or tuple. Support for non-sequence iterables such as generators is deprecated as of NumPy 1.16 and will raise an error in the future.
   vectors = vstack(self.word_vec(word, use_norm=True) for word in used_words).astype(REAL)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -967,47 +1101,10 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
-    <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
-<span class="n">sample_plot</span> <span class="o">=</span> <span class="n">thai2plot</span><span class="p">[</span><span class="n">sample_idx</span><span class="p">]</span>
-<span class="n">plot_with_labels</span><span class="p">(</span><span class="n">sample_plot</span><span class="p">,</span><span class="n">sample_words</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_word2vec_examples_21_0.png" src="../_images/notebooks_word2vec_examples_21_0.png" />
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&#39;ดัน&#39;
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -1024,27 +1121,27 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;หมอ&#39;
+&#39;ดัน&#39;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -1060,11 +1157,48 @@ thai2vec.bin?dl=1: 62.5MB [00:15, 4.09MB/s]
 <img alt="../_images/notebooks_word2vec_examples_25_0.png" src="../_images/notebooks_word2vec_examples_25_0.png" />
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;หมอ&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
+    <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+<span class="n">sample_plot</span> <span class="o">=</span> <span class="n">thai2plot</span><span class="p">[</span><span class="n">sample_idx</span><span class="p">]</span>
+<span class="n">plot_with_labels</span><span class="p">(</span><span class="n">sample_plot</span><span class="p">,</span><span class="n">sample_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_word2vec_examples_27_0.png" src="../_images/notebooks_word2vec_examples_27_0.png" />
+</div>
+</div>
 </section>
 <section id="Cosine-Similarity">
-<h2>Cosine Similarity<a class="headerlink" href="#Cosine-Similarity" title="Permalink to this headline"></a></h2>
+<h2>Cosine Similarity<a class="headerlink" href="#Cosine-Similarity" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;China + Beijing:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">,</span> <span class="s1">&#39;จีน&#39;</span><span class="p">))</span>
@@ -1090,7 +1224,7 @@ China + Italy: 0.24352394
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ปักกิ่ง จีน โรม อิตาลี โตเกียว ญี่ปุ่น&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -1106,15 +1240,15 @@ China + Italy: 0.24352394
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_word2vec_examples_28_0.png" src="../_images/notebooks_word2vec_examples_28_0.png" />
+<img alt="../_images/notebooks_word2vec_examples_30_0.png" src="../_images/notebooks_word2vec_examples_30_0.png" />
 </div>
 </div>
 </section>
 <section id="Spellchecking">
-<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Permalink to this headline"></a></h2>
+<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Permalink to this heading"></a></h2>
 <p>Originally contributed by <a class="reference external" href="https://github.com/sakares">Sakares ATV</a>, adapted from <a class="reference external" href="https://www.kaggle.com/cpmpml/spell-checker-using-word2vec">Kaggle Spell Checker using Word2vec by CPMP</a>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span>
@@ -1128,7 +1262,7 @@ China + Italy: 0.24352394
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_letters</span> <span class="o">=</span> <span class="s1">&#39;กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤฤๅลฦฦๅวศษสหฬอฮะัาำิีึืุูเแโใไ็่้๊๋์&#39;</span>
@@ -1170,7 +1304,7 @@ China + Italy: 0.24352394
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;พัดนา&#39;</span><span class="p">)</span>
@@ -1178,7 +1312,7 @@ China + Italy: 0.24352394
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1187,7 +1321,7 @@ China + Italy: 0.24352394
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;ขริง&#39;</span><span class="p">)</span>
@@ -1195,7 +1329,7 @@ China + Italy: 0.24352394
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1204,7 +1338,7 @@ China + Italy: 0.24352394
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;จย้า&#39;</span><span class="p">)</span>
@@ -1212,7 +1346,7 @@ China + Italy: 0.24352394
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1221,7 +1355,7 @@ China + Italy: 0.24352394
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;นะค่ะ&#39;</span><span class="p">)</span>
@@ -1229,7 +1363,7 @@ China + Italy: 0.24352394
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1237,7 +1371,17 @@ China + Italy: 0.24352394
 &#39;นะคะ&#39;
 </pre></div></div>
 </div>
-</section>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"b0e583cb2be447b293bd6366e3d63dcb": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_420c2cac47094dd3831c4585bf7b6c46", "IPY_MODEL_3543f12dcb084ca087d24c47f1593df4", "IPY_MODEL_dcbfedeb2b3443f2bd48695d687c77b0"], "layout": "IPY_MODEL_aae5f97edd8744839351ccad1f170110"}}, "420c2cac47094dd3831c4585bf7b6c46": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2725170c8c504ed9820fbf407b048a88", "placeholder": "\u200b", "style": "IPY_MODEL_82d799b8fe1d4ffc9a2a218e331a7a73", "value": "100%"}}, "3543f12dcb084ca087d24c47f1593df4": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_5b791e436b9841d09f18ba49d6f7427a", "max": 62452646, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_08d4a95758d74e9f8b35597f39a16286", "value": 62452646}}, "dcbfedeb2b3443f2bd48695d687c77b0": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9baba4af2b2249738dc7be0059ee1d07", "placeholder": "\u200b", "style": "IPY_MODEL_09786cee5447425b8218d4442b6ab5be", "value": " 62452646/62452646 [00:00&lt;00:00, 111861105.09it/s]"}}, "aae5f97edd8744839351ccad1f170110": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2725170c8c504ed9820fbf407b048a88": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "82d799b8fe1d4ffc9a2a218e331a7a73": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "5b791e436b9841d09f18ba49d6f7427a": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "08d4a95758d74e9f8b35597f39a16286": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "9baba4af2b2249738dc7be0059ee1d07": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "09786cee5447425b8218d4442b6ab5be": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}}
+</script></section>
 </section>
 
 

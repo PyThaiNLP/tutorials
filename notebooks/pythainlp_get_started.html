@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials 05a5001 documentation</title>
+  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials thai2plot-1-g0ba3754 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -100,8 +102,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>PyThaiNLP Get Started</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">PyThaiNLP Get Started</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/pythainlp_get_started.ipynb" rel="nofollow"> View page source</a>
       </li>
@@ -221,10 +223,11 @@ div.nboutput.container div.prompt > div {
     }
 }
 
-/* disable scrollbars on prompts */
+/* disable scrollbars and line breaks on prompts */
 div.nbinput.container div.prompt pre,
 div.nboutput.container div.prompt pre {
     overflow: hidden;
+    white-space: pre;
 }
 
 /* input/output area */
@@ -326,6 +329,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -334,10 +338,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -349,12 +357,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -387,7 +398,7 @@ div.rendered_html tbody tr:hover {
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/pythainlp_get_started.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="PyThaiNLP-Get-Started">
-<h1>PyThaiNLP Get Started<a class="headerlink" href="#PyThaiNLP-Get-Started" title="Permalink to this headline"></a></h1>
+<h1>PyThaiNLP Get Started<a class="headerlink" href="#PyThaiNLP-Get-Started" title="Permalink to this heading"></a></h1>
 <p>Code examples for basic functions in PyThaiNLP <a class="reference external" href="https://github.com/PyThaiNLP/pythainlp">https://github.com/PyThaiNLP/pythainlp</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -404,7 +415,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <section id="Import-PyThaiNLP">
-<h2>Import PyThaiNLP<a class="headerlink" href="#Import-PyThaiNLP" title="Permalink to this headline"></a></h2>
+<h2>Import PyThaiNLP<a class="headerlink" href="#Import-PyThaiNLP" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -426,7 +437,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </section>
 <section id="Thai-Characters">
-<h2>Thai Characters<a class="headerlink" href="#Thai-Characters" title="Permalink to this headline"></a></h2>
+<h2>Thai Characters<a class="headerlink" href="#Thai-Characters" title="Permalink to this heading"></a></h2>
 <p>PyThaiNLP provides some ready-to-use Thai character set (e.g. Thai consonants, vowels, tonemarks, symbols) as a string for convenience. There are also few utility functions to test if a string is in Thai or not.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -515,7 +526,7 @@ True
 </div>
 </section>
 <section id="Checking-if-a-string-contains-Thai-character-or-not,-or-how-many">
-<h2>Checking if a string contains Thai character or not, or how many<a class="headerlink" href="#Checking-if-a-string-contains-Thai-character-or-not,-or-how-many" title="Permalink to this headline"></a></h2>
+<h2>Checking if a string contains Thai character or not, or how many<a class="headerlink" href="#Checking-if-a-string-contains-Thai-character-or-not,-or-how-many" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -607,7 +618,7 @@ True
 </div>
 </section>
 <section id="Collation">
-<h2>Collation<a class="headerlink" href="#Collation" title="Permalink to this headline"></a></h2>
+<h2>Collation<a class="headerlink" href="#Collation" title="Permalink to this heading"></a></h2>
 <p>Sorting according to Thai dictionary.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -648,9 +659,9 @@ True
 </div>
 </section>
 <section id="Date/Time-Format-and-Spellout">
-<h2>Date/Time Format and Spellout<a class="headerlink" href="#Date/Time-Format-and-Spellout" title="Permalink to this headline"></a></h2>
+<h2>Date/Time Format and Spellout<a class="headerlink" href="#Date/Time-Format-and-Spellout" title="Permalink to this heading"></a></h2>
 <section id="Date/Time-Format">
-<h3>Date/Time Format<a class="headerlink" href="#Date/Time-Format" title="Permalink to this headline"></a></h3>
+<h3>Date/Time Format<a class="headerlink" href="#Date/Time-Format" title="Permalink to this heading"></a></h3>
 <p>Get Thai day and month names with Thai Buddhist Era (B.E.). Use <a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">formatting directives</a> similar to <code class="docutils literal notranslate"><span class="pre">datetime.strftime()</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
@@ -723,7 +734,7 @@ True
 </div>
 </section>
 <section id="Time-Spellout">
-<h3>Time Spellout<a class="headerlink" href="#Time-Spellout" title="Permalink to this headline"></a></h3>
+<h3>Time Spellout<a class="headerlink" href="#Time-Spellout" title="Permalink to this heading"></a></h3>
 <p><em>Note: ``thai_time()`` will be renamed to ``time_to_thaiword()`` in version 2.2.</em></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
@@ -844,10 +855,10 @@ True
 </section>
 </section>
 <section id="Tokenization-and-Segmentation">
-<h2>Tokenization and Segmentation<a class="headerlink" href="#Tokenization-and-Segmentation" title="Permalink to this headline"></a></h2>
+<h2>Tokenization and Segmentation<a class="headerlink" href="#Tokenization-and-Segmentation" title="Permalink to this heading"></a></h2>
 <p>At sentence, word, and sub-word levels.</p>
 <section id="Sentence">
-<h3>Sentence<a class="headerlink" href="#Sentence" title="Permalink to this headline"></a></h3>
+<h3>Sentence<a class="headerlink" href="#Sentence" title="Permalink to this heading"></a></h3>
 <p>Default sentence tokenizer is “crfcut”. Tokenization engine can be chosen ussing <code class="docutils literal notranslate"><span class="pre">engine=</span></code> parameter.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
@@ -881,7 +892,7 @@ whitespace+newline:
 </div>
 </section>
 <section id="Word">
-<h3>Word<a class="headerlink" href="#Word" title="Permalink to this headline"></a></h3>
+<h3>Word<a class="headerlink" href="#Word" title="Permalink to this heading"></a></h3>
 <p>Default word tokenizer (“newmm”) use maximum matching algorithm.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1130,14 +1141,14 @@ Wall time: 576 ms
 </div>
 </section>
 <section id="Subword,-syllable,-and-Thai-Character-Cluster-(TCC)">
-<h3>Subword, syllable, and Thai Character Cluster (TCC)<a class="headerlink" href="#Subword,-syllable,-and-Thai-Character-Cluster-(TCC)" title="Permalink to this headline"></a></h3>
+<h3>Subword, syllable, and Thai Character Cluster (TCC)<a class="headerlink" href="#Subword,-syllable,-and-Thai-Character-Cluster-(TCC)" title="Permalink to this heading"></a></h3>
 <p>Tokenization can also be done at subword level, either syllable or Thai Character Cluster (TCC).</p>
 <ul class="simple">
 <li><p>Syllable segmentation is using <code class="docutils literal notranslate"><span class="pre">`ssg</span></code> &lt;<a class="reference external" href="https://github.com/ponrawee/ssg">https://github.com/ponrawee/ssg</a>&gt;`__, a CRF syllable segmenter for Thai by Ponrawee Prasertsom.</p></li>
 <li><p>TCC is smaller than syllable. For information about TCC, see <a class="reference external" href="https://www.researchgate.net/publication/2853284_Character_Cluster_Based_Thai_Information_Retrieval">Character Cluster Based Thai Information Retrieval</a> (Theeramunkong et al. 2004).</p></li>
 </ul>
 <section id="Subword-tokenization">
-<h4>Subword tokenization<a class="headerlink" href="#Subword-tokenization" title="Permalink to this headline"></a></h4>
+<h4>Subword tokenization<a class="headerlink" href="#Subword-tokenization" title="Permalink to this heading"></a></h4>
 <p>Default subword tokenization engine is <code class="docutils literal notranslate"><span class="pre">tcc</span></code>, which will use Thai Character Cluster (TCC) as a subword unit.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
@@ -1160,7 +1171,7 @@ Wall time: 576 ms
 </div>
 </section>
 <section id="Syllable-tokenization">
-<h4>Syllable tokenization<a class="headerlink" href="#Syllable-tokenization" title="Permalink to this headline"></a></h4>
+<h4>Syllable tokenization<a class="headerlink" href="#Syllable-tokenization" title="Permalink to this heading"></a></h4>
 <p>Default syllable tokenization engine is <code class="docutils literal notranslate"><span class="pre">dict</span></code>, which will use <code class="docutils literal notranslate"><span class="pre">newmm</span></code> word tokenization engine with a custom dictionary contains known syllables in Thai language.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
@@ -1215,7 +1226,7 @@ Wall time: 576 ms
 </div>
 </section>
 <section id="Low-level-subword-operations">
-<h4>Low-level subword operations<a class="headerlink" href="#Low-level-subword-operations" title="Permalink to this headline"></a></h4>
+<h4>Low-level subword operations<a class="headerlink" href="#Low-level-subword-operations" title="Permalink to this heading"></a></h4>
 <p>These low-level TCC operations can be useful for some pre-processing tasks. Like checking if it’s ok to cut a string at a certain point or to find typos.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
@@ -1274,7 +1285,7 @@ Wall time: 576 ms
 </section>
 </section>
 <section id="Transliteration">
-<h2>Transliteration<a class="headerlink" href="#Transliteration" title="Permalink to this headline"></a></h2>
+<h2>Transliteration<a class="headerlink" href="#Transliteration" title="Permalink to this heading"></a></h2>
 <p>There are two types of transliteration here: romanization and transliteration.</p>
 <ul class="simple">
 <li><p>Romanization will render Thai words in the Latin alphabet using the <a class="reference external" href="https://en.wikipedia.org/wiki/Royal_Thai_General_System_of_Transcription">Royal Thai General System of Transcription (RTGS)</a>.</p>
@@ -1372,7 +1383,7 @@ Corpus: thai-g2p
 </div>
 </section>
 <section id="Normalization">
-<h2>Normalization<a class="headerlink" href="#Normalization" title="Permalink to this headline"></a></h2>
+<h2>Normalization<a class="headerlink" href="#Normalization" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">normalize()</span></code> removes zero-width spaces (ZWSP and ZWNJ), duplicated spaces, repeating vowels, and dangling characters. It also reorder vowels and tone marks during the process of removing repeating vowels.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
@@ -1468,7 +1479,7 @@ text = remove_dangling(text)
 <p>If you don’t like the behavior of default <code class="docutils literal notranslate"><span class="pre">normalize()</span></code>, you can call those functions shown above, also <code class="docutils literal notranslate"><span class="pre">remove_tonemark()</span></code> and <code class="docutils literal notranslate"><span class="pre">reorder_vowels()</span></code>, individually from <code class="docutils literal notranslate"><span class="pre">pythainlp.util</span></code>, to customize your own normalization.</p>
 </section>
 <section id="Digit-conversion">
-<h2>Digit conversion<a class="headerlink" href="#Digit-conversion" title="Permalink to this headline"></a></h2>
+<h2>Digit conversion<a class="headerlink" href="#Digit-conversion" title="Permalink to this heading"></a></h2>
 <p>Thai text sometimes use Thai digits. This can reduce performance for classification and searching. PyThaiNP provides few utility functions to deal with this.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
@@ -1527,7 +1538,7 @@ text = remove_dangling(text)
 </div>
 </section>
 <section id="Soundex">
-<h2>Soundex<a class="headerlink" href="#Soundex" title="Permalink to this headline"></a></h2>
+<h2>Soundex<a class="headerlink" href="#Soundex" title="Permalink to this heading"></a></h2>
 <p>“Soundex is a phonetic algorithm for indexing names by sound.” (<a class="reference external" href="https://en.wikipedia.org/wiki/Soundex">Wikipedia</a>). PyThaiNLP provides three kinds of Thai soundex.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
@@ -1584,7 +1595,7 @@ True
 </div>
 </section>
 <section id="Spellchecking">
-<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Permalink to this headline"></a></h2>
+<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Permalink to this heading"></a></h2>
 <p>Default spellchecker uses <a class="reference external" href="http://www.norvig.com/spell-correct.html">Peter Norvig’s algorithm</a> together with word frequency from Thai National Corpus (TNC).</p>
 <p><code class="docutils literal notranslate"><span class="pre">spell()</span></code> returns a list of all possible spellings.</p>
 <div class="nbinput docutils container">
@@ -1628,7 +1639,7 @@ True
 </div>
 </section>
 <section id="Spellchecking---Custom-dictionary-and-word-frequency">
-<h2>Spellchecking - Custom dictionary and word frequency<a class="headerlink" href="#Spellchecking---Custom-dictionary-and-word-frequency" title="Permalink to this headline"></a></h2>
+<h2>Spellchecking - Custom dictionary and word frequency<a class="headerlink" href="#Spellchecking---Custom-dictionary-and-word-frequency" title="Permalink to this heading"></a></h2>
 <p>Custom dictionary can be provided when creating spellchecker.</p>
 <p>When create a <code class="docutils literal notranslate"><span class="pre">NorvigSpellChecker</span></code> object, you can pass a custom dictionary to <code class="docutils literal notranslate"><span class="pre">custom_dict</span></code> parameter.</p>
 <p><code class="docutils literal notranslate"><span class="pre">custom_dict</span></code> can be: - a dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>), with words (<code class="docutils literal notranslate"><span class="pre">str</span></code>) as keys and frequencies (<code class="docutils literal notranslate"><span class="pre">int</span></code>) as values; or - a list, a tuple, or a set of (word, frequency) tuples; or - a list, a tuple, or a set of just words, without their frequencies – in this case <code class="docutils literal notranslate"><span class="pre">1</span></code> will be assigned to every words.</p>
@@ -1799,7 +1810,7 @@ True
 </div>
 </section>
 <section id="Part-of-Speech-Tagging">
-<h2>Part-of-Speech Tagging<a class="headerlink" href="#Part-of-Speech-Tagging" title="Permalink to this headline"></a></h2>
+<h2>Part-of-Speech Tagging<a class="headerlink" href="#Part-of-Speech-Tagging" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
 </pre></div>
@@ -1859,7 +1870,7 @@ True
 </div>
 </section>
 <section id="Named-Entity-Tagging">
-<h2>Named-Entity Tagging<a class="headerlink" href="#Named-Entity-Tagging" title="Permalink to this headline"></a></h2>
+<h2>Named-Entity Tagging<a class="headerlink" href="#Named-Entity-Tagging" title="Permalink to this heading"></a></h2>
 <p>The tagger use BIO scheme: - B - beginning of entity - I - inside entity - O - outside entity</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
@@ -1917,7 +1928,7 @@ True
 </div>
 </section>
 <section id="Word-Vector">
-<h2>Word Vector<a class="headerlink" href="#Word-Vector" title="Permalink to this headline"></a></h2>
+<h2>Word Vector<a class="headerlink" href="#Word-Vector" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
 </pre></div>
@@ -1965,7 +1976,7 @@ True
 </div>
 </section>
 <section id="Number-Spell-Out">
-<h2>Number Spell Out<a class="headerlink" href="#Number-Spell-Out" title="Permalink to this headline"></a></h2>
+<h2>Number Spell Out<a class="headerlink" href="#Number-Spell-Out" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
