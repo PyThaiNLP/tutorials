@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>spaCy-PyThaiNLP &mdash; pythainlp-tutorials thai2plot-4-g5de03cf documentation</title>
+  <title>spaCy-PyThaiNLP &mdash; pythainlp-tutorials thai2plot-5-g83979b5 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -387,7 +387,7 @@ Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-whe
 Requirement already satisfied: pip in /usr/local/lib/python3.8/dist-packages (21.1.3)
 Collecting pip
   Downloading pip-22.3.1-py3-none-any.whl (2.1 MB)
-     |████████████████████████████████| 2.1 MB 34.1 MB/s
+     |████████████████████████████████| 2.1 MB 8.6 MB/s
 Installing collected packages: pip
   Attempting uninstall: pip
     Found existing installation: pip 21.1.3
@@ -397,69 +397,10 @@ Successfully installed pip-22.3.1
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install spacy-pythainlp==0.1.dev4
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting spacy-pythainlp==0.1.dev4
-  Downloading spacy_pythainlp-0.1.dev4-py3-none-any.whl (8.4 kB)
-Collecting pythainlp&gt;=3.1.0
-  Downloading pythainlp-3.1.1-py3-none-any.whl (9.6 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">9.6/9.6 MB</span> <span class="ansi-red-fg">85.6 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Requirement already satisfied: spacy&gt;=3.0 in /usr/local/lib/python3.8/dist-packages (from spacy-pythainlp==0.1.dev4) (3.4.4)
-Collecting python-crfsuite
-  Downloading python_crfsuite-0.9.8-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.0/1.0 MB</span> <span class="ansi-red-fg">64.7 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Requirement already satisfied: requests&gt;=2.22.0 in /usr/local/lib/python3.8/dist-packages (from pythainlp&gt;=3.1.0-&gt;spacy-pythainlp==0.1.dev4) (2.23.0)
-Requirement already satisfied: spacy-legacy&lt;3.1.0,&gt;=3.0.10 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (3.0.10)
-Requirement already satisfied: srsly&lt;3.0.0,&gt;=2.4.3 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (2.4.5)
-Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (2.0.7)
-Requirement already satisfied: tqdm&lt;5.0.0,&gt;=4.38.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (4.64.1)
-Requirement already satisfied: langcodes&lt;4.0.0,&gt;=3.2.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (3.3.0)
-Requirement already satisfied: typer&lt;0.8.0,&gt;=0.3.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (0.7.0)
-Requirement already satisfied: numpy&gt;=1.15.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (1.21.6)
-Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (1.0.9)
-Requirement already satisfied: spacy-loggers&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (1.0.4)
-Requirement already satisfied: smart-open&lt;7.0.0,&gt;=5.2.1 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (6.3.0)
-Requirement already satisfied: thinc&lt;8.2.0,&gt;=8.1.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (8.1.5)
-Requirement already satisfied: jinja2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (2.11.3)
-Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.9.1 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (0.10.1)
-Requirement already satisfied: catalogue&lt;2.1.0,&gt;=2.0.6 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (2.0.8)
-Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (21.3)
-Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (3.0.8)
-Requirement already satisfied: pathy&gt;=0.3.5 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (0.10.1)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (57.4.0)
-Requirement already satisfied: pydantic!=1.8,!=1.8.1,&lt;1.11.0,&gt;=1.7.4 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (1.10.2)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from packaging&gt;=20.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (3.0.9)
-Requirement already satisfied: typing-extensions&gt;=4.1.0 in /usr/local/lib/python3.8/dist-packages (from pydantic!=1.8,!=1.8.1,&lt;1.11.0,&gt;=1.7.4-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (4.4.0)
-Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp==0.1.dev4) (3.0.4)
-Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp==0.1.dev4) (1.24.3)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp==0.1.dev4) (2.10)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp==0.1.dev4) (2022.12.7)
-Requirement already satisfied: blis&lt;0.8.0,&gt;=0.7.8 in /usr/local/lib/python3.8/dist-packages (from thinc&lt;8.2.0,&gt;=8.1.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (0.7.9)
-Requirement already satisfied: confection&lt;1.0.0,&gt;=0.0.1 in /usr/local/lib/python3.8/dist-packages (from thinc&lt;8.2.0,&gt;=8.1.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (0.0.3)
-Requirement already satisfied: click&lt;9.0.0,&gt;=7.1.1 in /usr/local/lib/python3.8/dist-packages (from typer&lt;0.8.0,&gt;=0.3.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (7.1.2)
-Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/local/lib/python3.8/dist-packages (from jinja2-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp==0.1.dev4) (2.0.1)
-Installing collected packages: python-crfsuite, pythainlp, spacy-pythainlp
-Successfully installed pythainlp-3.1.1 python-crfsuite-0.9.8 spacy-pythainlp-0.1.dev4
-<span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><span class="ansi-yellow-fg">
-</span>
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install deepcut
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install pythainlp[dependency_parsing] esupar
 </pre></div>
 </div>
 </div>
@@ -469,68 +410,183 @@ Successfully installed pythainlp-3.1.1 python-crfsuite-0.9.8 spacy-pythainlp-0.1
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting deepcut
-  Downloading deepcut-0.7.0.0-py3-none-any.whl (2.0 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">2.0/2.0 MB</span> <span class="ansi-red-fg">8.1 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Requirement already satisfied: numpy in /usr/local/lib/python3.8/dist-packages (from deepcut) (1.21.6)
-Requirement already satisfied: h5py in /usr/local/lib/python3.8/dist-packages (from deepcut) (3.1.0)
-Requirement already satisfied: scipy in /usr/local/lib/python3.8/dist-packages (from deepcut) (1.7.3)
-Requirement already satisfied: scikit-learn in /usr/local/lib/python3.8/dist-packages (from deepcut) (1.0.2)
-Requirement already satisfied: tensorflow&gt;=2.0.0 in /usr/local/lib/python3.8/dist-packages (from deepcut) (2.9.2)
-Requirement already satisfied: pandas in /usr/local/lib/python3.8/dist-packages (from deepcut) (1.3.5)
-Requirement already satisfied: flatbuffers&lt;2,&gt;=1.12 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (1.12)
-Requirement already satisfied: tensorflow-io-gcs-filesystem&gt;=0.23.1 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (0.28.0)
-Requirement already satisfied: keras&lt;2.10.0,&gt;=2.9.0rc0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (2.9.0)
-Requirement already satisfied: gast&lt;=0.4.0,&gt;=0.2.1 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (0.4.0)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (57.4.0)
-Requirement already satisfied: absl-py&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (1.3.0)
-Requirement already satisfied: opt-einsum&gt;=2.3.2 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (3.3.0)
-Requirement already satisfied: keras-preprocessing&gt;=1.1.1 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (1.1.2)
-Requirement already satisfied: libclang&gt;=13.0.0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (14.0.6)
-Requirement already satisfied: six&gt;=1.12.0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (1.15.0)
-Requirement already satisfied: packaging in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (21.3)
-Requirement already satisfied: wrapt&gt;=1.11.0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (1.14.1)
-Requirement already satisfied: typing-extensions&gt;=3.6.6 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (4.4.0)
-Requirement already satisfied: google-pasta&gt;=0.1.1 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (0.2.0)
-Requirement already satisfied: tensorboard&lt;2.10,&gt;=2.9 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (2.9.1)
-Requirement already satisfied: grpcio&lt;2.0,&gt;=1.24.3 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (1.51.1)
-Requirement already satisfied: protobuf&lt;3.20,&gt;=3.9.2 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (3.19.6)
-Requirement already satisfied: termcolor&gt;=1.1.0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (2.1.1)
-Requirement already satisfied: tensorflow-estimator&lt;2.10.0,&gt;=2.9.0rc0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (2.9.0)
-Requirement already satisfied: astunparse&gt;=1.6.0 in /usr/local/lib/python3.8/dist-packages (from tensorflow&gt;=2.0.0-&gt;deepcut) (1.6.3)
-Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;deepcut) (2022.6)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;deepcut) (2.8.2)
-Requirement already satisfied: joblib&gt;=0.11 in /usr/local/lib/python3.8/dist-packages (from scikit-learn-&gt;deepcut) (1.2.0)
-Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.8/dist-packages (from scikit-learn-&gt;deepcut) (3.1.0)
-Requirement already satisfied: wheel&lt;1.0,&gt;=0.23.0 in /usr/local/lib/python3.8/dist-packages (from astunparse&gt;=1.6.0-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (0.38.4)
-Requirement already satisfied: requests&lt;3,&gt;=2.21.0 in /usr/local/lib/python3.8/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (2.23.0)
-Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /usr/local/lib/python3.8/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (0.4.6)
-Requirement already satisfied: werkzeug&gt;=1.0.1 in /usr/local/lib/python3.8/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (1.0.1)
-Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /usr/local/lib/python3.8/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (0.6.1)
-Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /usr/local/lib/python3.8/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (2.15.0)
-Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /usr/local/lib/python3.8/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (1.8.1)
-Requirement already satisfied: markdown&gt;=2.6.8 in /usr/local/lib/python3.8/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (3.4.1)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from packaging-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (3.0.9)
-Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /usr/local/lib/python3.8/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (0.2.8)
-Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /usr/local/lib/python3.8/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (4.9)
-Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /usr/local/lib/python3.8/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (5.2.0)
-Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /usr/local/lib/python3.8/dist-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (1.3.1)
-Requirement already satisfied: importlib-metadata&gt;=4.4 in /usr/local/lib/python3.8/dist-packages (from markdown&gt;=2.6.8-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (5.1.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (2022.12.7)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (2.10)
-Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (3.0.4)
-Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (1.24.3)
-Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.8/dist-packages (from importlib-metadata&gt;=4.4-&gt;markdown&gt;=2.6.8-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (3.11.0)
-Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /usr/local/lib/python3.8/dist-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (0.4.8)
-Requirement already satisfied: oauthlib&gt;=3.0.0 in /usr/local/lib/python3.8/dist-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&gt;=2.0.0-&gt;deepcut) (3.2.2)
-Installing collected packages: deepcut
-Successfully installed deepcut-0.7.0.0
+Requirement already satisfied: pythainlp[dependency_parsing] in /usr/local/lib/python3.8/dist-packages (3.1.1)
+Collecting esupar
+  Downloading esupar-1.4.7-py3-none-any.whl (57 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">57.6/57.6 kB</span> <span class="ansi-red-fg">5.4 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: requests&gt;=2.22.0 in /usr/local/lib/python3.8/dist-packages (from pythainlp[dependency_parsing]) (2.23.0)
+Requirement already satisfied: spacy-thai&gt;=0.7.1 in /usr/local/lib/python3.8/dist-packages (from pythainlp[dependency_parsing]) (0.7.3)
+Requirement already satisfied: ufal.chu-liu-edmonds&gt;=1.0.2 in /usr/local/lib/python3.8/dist-packages (from pythainlp[dependency_parsing]) (1.0.2)
+Requirement already satisfied: transformers&gt;=4.22.1 in /usr/local/lib/python3.8/dist-packages (from pythainlp[dependency_parsing]) (4.25.1)
+Collecting supar&gt;=1.1.4
+  Downloading supar-1.1.4-py3-none-any.whl (93 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">93.1/93.1 kB</span> <span class="ansi-red-fg">8.5 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: deplacy&gt;=2.0.3 in /usr/local/lib/python3.8/dist-packages (from esupar) (2.0.3)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp[dependency_parsing]) (2.10)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp[dependency_parsing]) (3.0.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp[dependency_parsing]) (2022.12.7)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp[dependency_parsing]) (1.24.3)
+Requirement already satisfied: spacy&gt;=2.2.2 in /usr/local/lib/python3.8/dist-packages (from spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (3.4.4)
+Requirement already satisfied: ufal.udpipe&gt;=1.2.0 in /usr/local/lib/python3.8/dist-packages (from spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (1.2.0.3)
+Requirement already satisfied: torch&gt;=1.7.1 in /usr/local/lib/python3.8/dist-packages (from supar&gt;=1.1.4-&gt;esupar) (1.13.0+cu116)
+Requirement already satisfied: nltk in /usr/local/lib/python3.8/dist-packages (from supar&gt;=1.1.4-&gt;esupar) (3.7)
+Requirement already satisfied: dill in /usr/local/lib/python3.8/dist-packages (from supar&gt;=1.1.4-&gt;esupar) (0.3.6)
+Collecting stanza
+  Downloading stanza-1.4.2-py3-none-any.whl (691 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">691.3/691.3 kB</span> <span class="ansi-red-fg">30.2 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (21.3)
+Requirement already satisfied: pyyaml&gt;=5.1 in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (6.0)
+Requirement already satisfied: filelock in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (3.8.2)
+Requirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.10.0 in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (0.11.1)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (1.21.6)
+Requirement already satisfied: tqdm&gt;=4.27 in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (4.64.1)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (2022.6.2)
+Requirement already satisfied: tokenizers!=0.11.3,&lt;0.14,&gt;=0.11.1 in /usr/local/lib/python3.8/dist-packages (from transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (0.13.2)
+Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /usr/local/lib/python3.8/dist-packages (from huggingface-hub&lt;1.0,&gt;=0.10.0-&gt;transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (4.4.0)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from packaging&gt;=20.0-&gt;transformers&gt;=4.22.1-&gt;pythainlp[dependency_parsing]) (3.0.9)
+Requirement already satisfied: typer&lt;0.8.0,&gt;=0.3.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (0.7.0)
+Requirement already satisfied: pathy&gt;=0.3.5 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (0.10.1)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (2.11.3)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,&lt;1.11.0,&gt;=1.7.4 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (1.10.2)
+Requirement already satisfied: spacy-loggers&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (1.0.4)
+Requirement already satisfied: thinc&lt;8.2.0,&gt;=8.1.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (8.1.5)
+Requirement already satisfied: langcodes&lt;4.0.0,&gt;=3.2.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (3.3.0)
+Requirement already satisfied: srsly&lt;3.0.0,&gt;=2.4.3 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (2.4.5)
+Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (3.0.8)
+Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (1.0.9)
+Requirement already satisfied: catalogue&lt;2.1.0,&gt;=2.0.6 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (2.0.8)
+Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (2.0.7)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (57.4.0)
+Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.9.1 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (0.10.1)
+Requirement already satisfied: smart-open&lt;7.0.0,&gt;=5.2.1 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (6.3.0)
+Requirement already satisfied: spacy-legacy&lt;3.1.0,&gt;=3.0.10 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (3.0.10)
+Requirement already satisfied: click in /usr/local/lib/python3.8/dist-packages (from nltk-&gt;supar&gt;=1.1.4-&gt;esupar) (7.1.2)
+Requirement already satisfied: joblib in /usr/local/lib/python3.8/dist-packages (from nltk-&gt;supar&gt;=1.1.4-&gt;esupar) (1.2.0)
+Collecting emoji
+  Downloading emoji-2.2.0.tar.gz (240 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">240.9/240.9 kB</span> <span class="ansi-red-fg">31.7 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: protobuf in /usr/local/lib/python3.8/dist-packages (from stanza-&gt;supar&gt;=1.1.4-&gt;esupar) (3.19.6)
+Requirement already satisfied: six in /usr/local/lib/python3.8/dist-packages (from stanza-&gt;supar&gt;=1.1.4-&gt;esupar) (1.15.0)
+Requirement already satisfied: confection&lt;1.0.0,&gt;=0.0.1 in /usr/local/lib/python3.8/dist-packages (from thinc&lt;8.2.0,&gt;=8.1.0-&gt;spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (0.0.3)
+Requirement already satisfied: blis&lt;0.8.0,&gt;=0.7.8 in /usr/local/lib/python3.8/dist-packages (from thinc&lt;8.2.0,&gt;=8.1.0-&gt;spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (0.7.9)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/local/lib/python3.8/dist-packages (from jinja2-&gt;spacy&gt;=2.2.2-&gt;spacy-thai&gt;=0.7.1-&gt;pythainlp[dependency_parsing]) (2.0.1)
+Building wheels for collected packages: emoji
+  Building wheel for emoji (setup.py) ... done
+  Created wheel for emoji: filename=emoji-2.2.0-py3-none-any.whl size=234926 sha256=54ff13b263fd92fe0c6d69bf9f9e207bb35ae2605edd102136f83ff3a1f12e7e
+  Stored in directory: /root/.cache/pip/wheels/39/08/a1/b0bb1f7683d20b75b34ceeb56ee83a585e9b065a5fef0b2cb1
+Successfully built emoji
+Installing collected packages: emoji, stanza, supar, esupar
+Successfully installed emoji-2.2.0 esupar-1.4.7 stanza-1.4.2 supar-1.1.4
 <span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><span class="ansi-yellow-fg">
 </span>
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install spacy-pythainlp
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: spacy-pythainlp in /usr/local/lib/python3.8/dist-packages (0.1.dev5)
+Requirement already satisfied: pythainlp&gt;=3.1.0 in /usr/local/lib/python3.8/dist-packages (from spacy-pythainlp) (3.1.1)
+Requirement already satisfied: python-crfsuite in /usr/local/lib/python3.8/dist-packages (from spacy-pythainlp) (0.9.8)
+Requirement already satisfied: spacy&gt;=3.0 in /usr/local/lib/python3.8/dist-packages (from spacy-pythainlp) (3.4.4)
+Requirement already satisfied: requests&gt;=2.22.0 in /usr/local/lib/python3.8/dist-packages (from pythainlp&gt;=3.1.0-&gt;spacy-pythainlp) (2.23.0)
+Requirement already satisfied: spacy-legacy&lt;3.1.0,&gt;=3.0.10 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (3.0.10)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (2.11.3)
+Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (1.0.9)
+Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.9.1 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (0.10.1)
+Requirement already satisfied: spacy-loggers&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (1.0.4)
+Requirement already satisfied: langcodes&lt;4.0.0,&gt;=3.2.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (3.3.0)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (57.4.0)
+Requirement already satisfied: thinc&lt;8.2.0,&gt;=8.1.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (8.1.5)
+Requirement already satisfied: tqdm&lt;5.0.0,&gt;=4.38.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (4.64.1)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (21.3)
+Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (3.0.8)
+Requirement already satisfied: srsly&lt;3.0.0,&gt;=2.4.3 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (2.4.5)
+Requirement already satisfied: catalogue&lt;2.1.0,&gt;=2.0.6 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (2.0.8)
+Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (2.0.7)
+Requirement already satisfied: numpy&gt;=1.15.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (1.21.6)
+Requirement already satisfied: smart-open&lt;7.0.0,&gt;=5.2.1 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (6.3.0)
+Requirement already satisfied: typer&lt;0.8.0,&gt;=0.3.0 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (0.7.0)
+Requirement already satisfied: pathy&gt;=0.3.5 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (0.10.1)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,&lt;1.11.0,&gt;=1.7.4 in /usr/local/lib/python3.8/dist-packages (from spacy&gt;=3.0-&gt;spacy-pythainlp) (1.10.2)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from packaging&gt;=20.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp) (3.0.9)
+Requirement already satisfied: typing-extensions&gt;=4.1.0 in /usr/local/lib/python3.8/dist-packages (from pydantic!=1.8,!=1.8.1,&lt;1.11.0,&gt;=1.7.4-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp) (4.4.0)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp) (1.24.3)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp) (3.0.4)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp) (2.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests&gt;=2.22.0-&gt;pythainlp&gt;=3.1.0-&gt;spacy-pythainlp) (2022.12.7)
+Requirement already satisfied: blis&lt;0.8.0,&gt;=0.7.8 in /usr/local/lib/python3.8/dist-packages (from thinc&lt;8.2.0,&gt;=8.1.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp) (0.7.9)
+Requirement already satisfied: confection&lt;1.0.0,&gt;=0.0.1 in /usr/local/lib/python3.8/dist-packages (from thinc&lt;8.2.0,&gt;=8.1.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp) (0.0.3)
+Requirement already satisfied: click&lt;9.0.0,&gt;=7.1.1 in /usr/local/lib/python3.8/dist-packages (from typer&lt;0.8.0,&gt;=0.3.0-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp) (7.1.2)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/local/lib/python3.8/dist-packages (from jinja2-&gt;spacy&gt;=3.0-&gt;spacy-pythainlp) (2.0.1)
+<span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><span class="ansi-yellow-fg">
+</span>
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install attacut
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting attacut
+  Downloading attacut-1.0.6-py3-none-any.whl (1.3 MB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.3/1.3 MB</span> <span class="ansi-red-fg">25.3 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: pyyaml&gt;=5.1.2 in /usr/local/lib/python3.8/dist-packages (from attacut) (6.0)
+Collecting docopt&gt;=0.6.2
+  Downloading docopt-0.6.2.tar.gz (25 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: six&gt;=1.12.0 in /usr/local/lib/python3.8/dist-packages (from attacut) (1.15.0)
+Collecting fire&gt;=0.1.3
+  Downloading fire-0.5.0.tar.gz (88 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">88.3/88.3 kB</span> <span class="ansi-red-fg">11.2 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: torch&gt;=1.2.0 in /usr/local/lib/python3.8/dist-packages (from attacut) (1.13.0+cu116)
+Requirement already satisfied: numpy&gt;=1.17.0 in /usr/local/lib/python3.8/dist-packages (from attacut) (1.21.6)
+Collecting ssg&gt;=0.0.4
+  Downloading ssg-0.0.8-py3-none-any.whl (473 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">473.8/473.8 kB</span> <span class="ansi-red-fg">32.4 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Collecting nptyping&gt;=0.2.0
+  Downloading nptyping-2.4.1-py3-none-any.whl (36 kB)
+Requirement already satisfied: termcolor in /usr/local/lib/python3.8/dist-packages (from fire&gt;=0.1.3-&gt;attacut) (2.1.1)
+Requirement already satisfied: typing-extensions&lt;5.0.0,&gt;=4.0.0 in /usr/local/lib/python3.8/dist-packages (from nptyping&gt;=0.2.0-&gt;attacut) (4.4.0)
+Requirement already satisfied: python-crfsuite&gt;=0.9.6 in /usr/local/lib/python3.8/dist-packages (from ssg&gt;=0.0.4-&gt;attacut) (0.9.8)
+Requirement already satisfied: tqdm&gt;=4.32.2 in /usr/local/lib/python3.8/dist-packages (from ssg&gt;=0.0.4-&gt;attacut) (4.64.1)
+Building wheels for collected packages: docopt, fire
+  Building wheel for docopt (setup.py) ... done
+  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13723 sha256=f18df55c0bb21b412c1a111261c9d41a6edd197a50b5efd85b6cb341327d6435
+  Stored in directory: /root/.cache/pip/wheels/ca/cc/e3/f1e272f628fdb013d969acc99cfe2e031ea15b3efb74ffe842
+  Building wheel for fire (setup.py) ... done
+  Created wheel for fire: filename=fire-0.5.0-py2.py3-none-any.whl size=116949 sha256=d8faad37832ab6fff38e75f4644d070c700de5505fa2f4b036bcebc21f8c7f66
+  Stored in directory: /root/.cache/pip/wheels/40/86/45/88e8603bd3b1a9bff9d02d820c7431c47ad032865632657bb9
+Successfully built docopt fire
+Installing collected packages: docopt, nptyping, fire, ssg, attacut
+Successfully installed attacut-1.0.6 docopt-0.6.2 fire-0.5.0 nptyping-2.4.1 ssg-0.0.8
+<span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><span class="ansi-yellow-fg">
+</span>
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
@@ -548,7 +604,7 @@ Successfully installed deepcut-0.7.0.0
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
@@ -568,6 +624,9 @@ Successfully installed deepcut-0.7.0.0
         <span class="s2">&quot;ner&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
         <span class="s2">&quot;tokenize_engine&quot;</span><span class="p">:</span> <span class="s2">&quot;newmm&quot;</span><span class="p">,</span>
         <span class="s2">&quot;tokenize&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;dependency_parsing&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;dependency_parsing_engine&quot;</span><span class="p">:</span> <span class="s2">&quot;esupar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dependency_parsing_model&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
@@ -581,9 +640,13 @@ Successfully installed deepcut-0.7.0.0
 <li><p>pos_engine: The part-of-speech engine. You can read more: <a class="reference external" href="https://pythainlp.github.io/docs/3.1/api/tag.html#pythainlp.tag.pos_tag">Options for engine</a></p></li>
 <li><p>ner: Bool (True or False) to turn on the NER.</p></li>
 <li><p>ner_engine: The NER engine. You can read more: <a class="reference external" href="https://pythainlp.github.io/docs/3.1/api/tag.html#pythainlp.tag.NER">Options for engine</a></p></li>
+<li><p>dependency_parsing: Bool (True or False) to turn on the Dependency parsing.</p></li>
+<li><p>dependency_parsing_engine: The Dependency parsing engine. You can read more: <a class="reference external" href="https://pythainlp.github.io/docs/3.1/api/parse.html#pythainlp.parse.dependency_parsing">Options for engine</a></p></li>
+<li><p>dependency_parsing_model: The Dependency parsing model. You can read more: <a class="reference external" href="https://pythainlp.github.io/docs/3.1/api/parse.html#pythainlp.parse.dependency_parsing">Options for model</a></p></li>
 </ul>
+<p><strong>Note: If you turn on Dependency parsing, word segmentation and sentence segmentation are turn off to use word segmentation and sentence segmentation from Dependency parsing.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)</span>
@@ -592,46 +655,46 @@ Successfully installed deepcut-0.7.0.0
    <span class="n">config</span><span class="o">=</span><span class="p">{</span>
       <span class="s2">&quot;sent&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
       <span class="s2">&quot;tokenize&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-      <span class="s2">&quot;tokenize_engine&quot;</span><span class="p">:</span><span class="s2">&quot;newmm&quot;</span><span class="c1"># try change !!! &quot;deepcut&quot; &quot;newmm&quot;</span>
+      <span class="s2">&quot;tokenize_engine&quot;</span><span class="p">:</span><span class="s2">&quot;attacut&quot;</span><span class="c1"># try change !!! &quot;attacut&quot; &quot;newmm&quot;</span>
    <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Corpus: thainer
-- Downloading: thainer 1.5
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bf4c9def5647418590b4e86766826c73"}</script></div>
-</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;spacy_pythainlp.core.PyThaiNLP at 0x7f89158664c0&gt;
+&lt;spacy_pythainlp.core.PyThaiNLP at 0x7fb3419144f0&gt;
 </pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;ผมเป็นแมว ผมชอบไปเล่นที่โรงเรียนนางรอง บุรีรัมย์&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/local/lib/python3.8/dist-packages/pythainlp/tag/perceptron.py:42: UserWarning:
+    LST20 corpus are free for research and open source only.
+
+    If you want to use in Commercial use, please contract NECTEC.
+
+    https://www.facebook.com/dancearmy/posts/10157641945708284
+
+  warnings.warn(
+</pre></div></div>
+</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
@@ -639,16 +702,16 @@ Corpus: thainer
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[ผม, เป็น, แมว,  , ผม, ชอบ, ไป, เล่น, ที่, โรงเรียน, นางรอง,  , บุรีรัมย์]
+[ผม, เป็น, แมว,  , ผมชอบ, ไป, เล่น, ที่, โรง, เรียน, นางรอง,  บุรีรัมย์]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">)</span>
@@ -656,16 +719,16 @@ Corpus: thainer
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[ผมเป็นแมว , ผมชอบไปเล่นที่โรงเรียนนางรอง  บุรีรัมย์]
+[ผมเป็นแมว  ผมชอบ, ไปเล่นที่โรงเรียนนางรอง บุรีรัมย์]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">.</span><span class="n">ents</span>
@@ -673,16 +736,16 @@ Corpus: thainer
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(โรงเรียนนางรอง, บุรีรัมย์)
+(โรงเรียนนางรอง,)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -698,6 +761,169 @@ Corpus: thainer
     โรงเรียนนางรอง
     <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LOCATION</span>
 </mark>
+ บุรีรัมย์</div></span></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p><strong>Dependency parsing</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span>
+   <span class="s2">&quot;pythainlp&quot;</span><span class="p">,</span>
+   <span class="n">config</span><span class="o">=</span><span class="p">{</span>
+      <span class="s2">&quot;sent&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+      <span class="s2">&quot;dependency_parsing&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+   <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;spacy_pythainlp.core.PyThaiNLP at 0x7fb3310a2400&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;ผมเป็นแมว ผมชอบไปเล่นที่โรงเรียนนางรอง บุรีรัมย์&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6bb3e5001b5c4f80b0831728b5500708"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d67eee85498d491daf3e90895713ce00"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9918a56333654fc5bbbaa51ce2a80cca"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "b91a435c3ab346568e9d1a0a9984e8c8"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d3b8ac811cd94fd49b573d6b74bcfae5"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "146056ebdab04b2e82a1015aeb9ef93a"}</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e918cc1682424b2e85056318255e729e"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Some weights of the model checkpoint at KoichiYasuoka/roberta-base-thai-spm-upos were not used when initializing RobertaModel: [&#39;classifier.bias&#39;, &#39;classifier.weight&#39;]
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at KoichiYasuoka/roberta-base-thai-spm-upos and are newly initialized: [&#39;roberta.pooler.dense.weight&#39;, &#39;roberta.pooler.dense.bias&#39;]
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+INFO:supar:Loading the data
+INFO:supar:
+Dataset(n_sentences=1, n_batches=1, n_buckets=1)
+INFO:supar:Making predictions on the dataset
+  0%|                  | 0/1 00:00&lt;?, ?it/s/usr/local/lib/python3.8/dist-packages/torch/nn/modules/rnn.py:26: UserWarning: apply_permutation is deprecated, please use tensor.index_select(dim, permutation) instead
+  warnings.warn(&#34;apply_permutation is deprecated, please use tensor.index_select(dim, permutation) instead&#34;)
+INFO:supar:0:00:00.188279s elapsed, 5.31 Sents/s
+/usr/local/lib/python3.8/dist-packages/pythainlp/tag/perceptron.py:42: UserWarning:
+    LST20 corpus are free for research and open source only.
+
+    If you want to use in Commercial use, please contract NECTEC.
+
+    https://www.facebook.com/dancearmy/posts/10157641945708284
+
+  warnings.warn(
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[ผม, เป็น, แมว, ผม, ชอบ, ไป, เล่น, ที่, โรงเรียน, นางรอง, บุรีรัมย์]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[ผมเป็นแมว ผมชอบไปเล่น, ที่โรงเรียนนางรอง บุรีรัมย์]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<span class="tex2jax_ignore"><div class="entities" style="line-height: 2.5; direction: ltr">ผมเป็นแมว ผมชอบไปเล่นที่
+<mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    โรงเรียนนางรอง
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LOCATION</span>
+</mark>
 
 <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
     บุรีรัมย์
@@ -705,8 +931,149 @@ Corpus: thainer
 </mark>
 </div></span></div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dep&quot;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<span class="tex2jax_ignore"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="th" id="b7b371ff3b7d405182373a6981cf692c-0" class="displacy" width="1975" height="399.5" direction="ltr" style="max-width: none; height: 399.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="50">ผม</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">PRON</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="225">เป็น</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="225">VERB</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="400">แมว</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="400">NOUN</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="575">ผม</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="575">PRON</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="750">ชอบ</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="750">VERB</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="925">ไป</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="925">AUX</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="1100">เล่น</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1100">VERB</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="1275">ที่</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1275">SCONJ</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="1450">โรงเรียน</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1450">NOUN</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="1625">นางรอง</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1625">VERB</tspan>
+</text>
+
+<text class="displacy-token" fill="currentColor" text-anchor="middle" y="309.5">
+    <tspan class="displacy-word" fill="currentColor" x="1800">บุรีรัมย์</tspan>
+    <tspan class="displacy-tag" dy="2em" fill="currentColor" x="1800">NOUN</tspan>
+</text>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-0" stroke-width="2px" d="M70,264.5 C70,2.0 575.0,2.0 575.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M70,266.5 L62,254.5 78,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-1" stroke-width="2px" d="M245,264.5 C245,89.5 570.0,89.5 570.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">cop</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M245,266.5 L237,254.5 253,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-2" stroke-width="2px" d="M70,264.5 C70,177.0 390.0,177.0 390.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-2" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">root</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M390.0,266.5 L398.0,254.5 382.0,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-3" stroke-width="2px" d="M595,264.5 C595,89.5 920.0,89.5 920.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-3" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M595,266.5 L587,254.5 603,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-4" stroke-width="2px" d="M595,264.5 C595,177.0 740.0,177.0 740.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-4" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">acl</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M740.0,266.5 L748.0,254.5 732.0,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-5" stroke-width="2px" d="M945,264.5 C945,177.0 1090.0,177.0 1090.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-5" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">xcomp</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M1090.0,266.5 L1098.0,254.5 1082.0,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-6" stroke-width="2px" d="M1295,264.5 C1295,177.0 1615.0,177.0 1615.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-6" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">case</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M1295,266.5 L1287,254.5 1303,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-7" stroke-width="2px" d="M945,264.5 C945,89.5 1445.0,89.5 1445.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-7" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">obl</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M1445.0,266.5 L1453.0,254.5 1437.0,254.5" fill="currentColor"/>
+</g>
+
+<g class="displacy-arrow">
+    <path class="displacy-arc" id="arrow-b7b371ff3b7d405182373a6981cf692c-0-8" stroke-width="2px" d="M1645,264.5 C1645,177.0 1790.0,177.0 1790.0,264.5" fill="none" stroke="currentColor"/>
+    <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
+        <textPath xlink:href="#arrow-b7b371ff3b7d405182373a6981cf692c-0-8" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">flat:name</textPath>
+    </text>
+    <path class="displacy-arrowhead" d="M1790.0,266.5 L1798.0,254.5 1782.0,254.5" fill="currentColor"/>
+</g>
+</svg></span></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>
@@ -714,7 +1081,7 @@ Corpus: thainer
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
-{"bf4c9def5647418590b4e86766826c73": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ea7809df654c48aea930cf65104990e9", "IPY_MODEL_970d964e763e49b395c4548bb6131775", "IPY_MODEL_51dbafc15b3c4dfba5c1bdda6868c333"], "layout": "IPY_MODEL_c20e65fb0f754c5e8913fd564d9694dd"}}, "ea7809df654c48aea930cf65104990e9": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_f9187b7632ec4b9b941a0adb0ad8faf7", "placeholder": "\u200b", "style": "IPY_MODEL_d7b51b27291043849f7c1d115d85d52c", "value": "100%"}}, "970d964e763e49b395c4548bb6131775": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_cb164cc4ed464cc69925efa74e56f05a", "max": 1637304, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_78d86ef95d0a478ea22eb3134b0a1d02", "value": 1637304}}, "51dbafc15b3c4dfba5c1bdda6868c333": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_4346ca089b2847998b01417775416ea8", "placeholder": "\u200b", "style": "IPY_MODEL_dd2adcaf1e9a429e958a2847168deb93", "value": " 1637304/1637304 [00:00&lt;00:00, 48949710.72it/s]"}}, "c20e65fb0f754c5e8913fd564d9694dd": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f9187b7632ec4b9b941a0adb0ad8faf7": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d7b51b27291043849f7c1d115d85d52c": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "cb164cc4ed464cc69925efa74e56f05a": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "78d86ef95d0a478ea22eb3134b0a1d02": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "4346ca089b2847998b01417775416ea8": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "dd2adcaf1e9a429e958a2847168deb93": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}}
+{"6bb3e5001b5c4f80b0831728b5500708": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ca8136dd6347490f8c0549fcff940dc6", "IPY_MODEL_fc1f67f410ef4ccda68ddd23fc7701d7", "IPY_MODEL_c11d2801fb1b4a4d8323df6c67887445"], "layout": "IPY_MODEL_fc30fcbfe66f4fae97dace4a9fd03f30"}}, "ca8136dd6347490f8c0549fcff940dc6": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_36d98eb7139343bcad48becd55944619", "placeholder": "\u200b", "style": "IPY_MODEL_2b3dabfc6ba142b3b4f261bef0cb78ff", "value": "Downloading: 100%"}}, "fc1f67f410ef4ccda68ddd23fc7701d7": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_485cc02e538647d7b6a944a0d5f26723", "max": 405, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_a00b1a99dee748f1af90197af9ed9f0c", "value": 405}}, "c11d2801fb1b4a4d8323df6c67887445": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_37bddab21e6a4193b757d61d3882f1b1", "placeholder": "\u200b", "style": "IPY_MODEL_836ae973b9544381b9c4080404b25af4", "value": " 405/405 [00:00&lt;00:00, 18.6kB/s]"}}, "fc30fcbfe66f4fae97dace4a9fd03f30": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "36d98eb7139343bcad48becd55944619": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2b3dabfc6ba142b3b4f261bef0cb78ff": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "485cc02e538647d7b6a944a0d5f26723": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a00b1a99dee748f1af90197af9ed9f0c": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "37bddab21e6a4193b757d61d3882f1b1": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "836ae973b9544381b9c4080404b25af4": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d67eee85498d491daf3e90895713ce00": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ec1d5adefcdf47c09df902584d6470b2", "IPY_MODEL_3b9c7e39a52d41ccb99ac295d743eeda", "IPY_MODEL_9366da96ca234136a40a20260307b507"], "layout": "IPY_MODEL_c7875faf09d548649aab925715251407"}}, "ec1d5adefcdf47c09df902584d6470b2": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ee001501e0ec4abdaa255f9eaa8f24fd", "placeholder": "\u200b", "style": "IPY_MODEL_973b100bf2d14e5aa953e9c9203f8e87", "value": "Downloading: 100%"}}, "3b9c7e39a52d41ccb99ac295d743eeda": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9d916ab23d4d429698c83a95c8bfe4fa", "max": 1, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_2dc3e743a03b460b971d39d8484ac1c5", "value": 1}}, "9366da96ca234136a40a20260307b507": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_96f7a064ebc8475f83aae9d942b1bb0c", "placeholder": "\u200b", "style": "IPY_MODEL_18310023525e43a6bf49eedb9c39dfc5", "value": " 1.00/1.00 [00:00&lt;00:00, 36.0B/s]"}}, "c7875faf09d548649aab925715251407": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ee001501e0ec4abdaa255f9eaa8f24fd": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "973b100bf2d14e5aa953e9c9203f8e87": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "9d916ab23d4d429698c83a95c8bfe4fa": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2dc3e743a03b460b971d39d8484ac1c5": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "96f7a064ebc8475f83aae9d942b1bb0c": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "18310023525e43a6bf49eedb9c39dfc5": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "9918a56333654fc5bbbaa51ce2a80cca": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_58ea117e18f147e6aeacc97ebb9821db", "IPY_MODEL_f8c744ef40744d3b950eb421fb8955df", "IPY_MODEL_f88c7265846143018b2cb53afca07495"], "layout": "IPY_MODEL_0c1c4c220dcb436ca155f1499ac14061"}}, "58ea117e18f147e6aeacc97ebb9821db": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_52dfb60d272b4c99a2597e09e023d493", "placeholder": "\u200b", "style": "IPY_MODEL_3e3b1b9f70964284b9581e8acbf06df6", "value": "Downloading: 100%"}}, "f8c744ef40744d3b950eb421fb8955df": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2a0453d80b2f4c83a49669ddf5b0696a", "max": 197616, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_e5439e11914840a392c234d2b1442e5e", "value": 197616}}, "f88c7265846143018b2cb53afca07495": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_7c69769f3f9a4310adeef87b7cce2497", "placeholder": "\u200b", "style": "IPY_MODEL_8f5f6229ec7043a0a82039c461c8f334", "value": " 198k/198k [00:00&lt;00:00, 881kB/s]"}}, "0c1c4c220dcb436ca155f1499ac14061": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "52dfb60d272b4c99a2597e09e023d493": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3e3b1b9f70964284b9581e8acbf06df6": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "2a0453d80b2f4c83a49669ddf5b0696a": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e5439e11914840a392c234d2b1442e5e": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "7c69769f3f9a4310adeef87b7cce2497": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8f5f6229ec7043a0a82039c461c8f334": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "b91a435c3ab346568e9d1a0a9984e8c8": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_1c0985d32e754d4c8cac1a6ac3aa23fd", "IPY_MODEL_26c34a68e5964539b93d00096883a1a7", "IPY_MODEL_b5fc8e234a8f4173824a52dfcf22a952"], "layout": "IPY_MODEL_ad8ea964a76e48f1bc542df7db9f8c5c"}}, "1c0985d32e754d4c8cac1a6ac3aa23fd": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_b1da73f3c81c4fdf9130086ad0b6834a", "placeholder": "\u200b", "style": "IPY_MODEL_7306c9d5d2bb4d50a7b3db8e9196e6d4", "value": "Downloading: 100%"}}, "26c34a68e5964539b93d00096883a1a7": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_83dee80f488d44e2897fda4422a01f89", "max": 244, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_5bbc3d46a98048cabc04f0ca2be85119", "value": 244}}, "b5fc8e234a8f4173824a52dfcf22a952": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_80e501575fb643fba6be9075435688b7", "placeholder": "\u200b", "style": "IPY_MODEL_c038da6d765b4a98b398ccecb4383b91", "value": " 244/244 [00:00&lt;00:00, 10.1kB/s]"}}, "ad8ea964a76e48f1bc542df7db9f8c5c": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b1da73f3c81c4fdf9130086ad0b6834a": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7306c9d5d2bb4d50a7b3db8e9196e6d4": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "83dee80f488d44e2897fda4422a01f89": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5bbc3d46a98048cabc04f0ca2be85119": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "80e501575fb643fba6be9075435688b7": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c038da6d765b4a98b398ccecb4383b91": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d3b8ac811cd94fd49b573d6b74bcfae5": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_df2ec7e1d34c481986560429e3abca95", "IPY_MODEL_f2b9166f152f4c81b94663e63bbeb13c", "IPY_MODEL_5e19e5df48e3484caafd6e2d44bd81b5"], "layout": "IPY_MODEL_5b1e3dd55ab94f2089ade0fd49557f01"}}, "df2ec7e1d34c481986560429e3abca95": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_34e839ee92e645e6be4c9228aaeb7fd4", "placeholder": "\u200b", "style": "IPY_MODEL_7a4b29315a3545e8926bc12ed644d1af", "value": "Downloading: 100%"}}, "f2b9166f152f4c81b94663e63bbeb13c": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_eb7448b04d734c4483e6755321cefc86", "max": 292398, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_e869750d16914fed914770f8050c3b68", "value": 292398}}, "5e19e5df48e3484caafd6e2d44bd81b5": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_b95a08a2c4a14a81a65f881f6e264646", "placeholder": "\u200b", "style": "IPY_MODEL_73304b9de6a04bd0bcea531d5109c4a8", "value": " 292k/292k [00:00&lt;00:00, 872kB/s]"}}, "5b1e3dd55ab94f2089ade0fd49557f01": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "34e839ee92e645e6be4c9228aaeb7fd4": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7a4b29315a3545e8926bc12ed644d1af": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "eb7448b04d734c4483e6755321cefc86": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e869750d16914fed914770f8050c3b68": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "b95a08a2c4a14a81a65f881f6e264646": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "73304b9de6a04bd0bcea531d5109c4a8": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "146056ebdab04b2e82a1015aeb9ef93a": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_3d8f325d9be243a58ef7e1300a8189ba", "IPY_MODEL_3534484521554f0c9acf8ca96c5249d0", "IPY_MODEL_6dca94cf678944aebf20f978ce30fb83"], "layout": "IPY_MODEL_a2a8cf85131f4d368fa9123bb1f7f77e"}}, "3d8f325d9be243a58ef7e1300a8189ba": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_f188faa4dea0406786779b40ce6825d0", "placeholder": "\u200b", "style": "IPY_MODEL_13b116aa92994273990abef18b46501d", "value": "Downloading: 100%"}}, "3534484521554f0c9acf8ca96c5249d0": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_4af3607e9aba4d6b96d01b83ecab56c2", "max": 351910513, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_bf4cf43a9ac446dfb2de7d5e3c509ece", "value": 351910513}}, "6dca94cf678944aebf20f978ce30fb83": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_2cf8d0e09737466db280ed0472f7f86b", "placeholder": "\u200b", "style": "IPY_MODEL_839380d637f54a749656f827d288f247", "value": " 352M/352M [00:17&lt;00:00, 22.3MB/s]"}}, "a2a8cf85131f4d368fa9123bb1f7f77e": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f188faa4dea0406786779b40ce6825d0": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "13b116aa92994273990abef18b46501d": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "4af3607e9aba4d6b96d01b83ecab56c2": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bf4cf43a9ac446dfb2de7d5e3c509ece": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "2cf8d0e09737466db280ed0472f7f86b": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "839380d637f54a749656f827d288f247": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e918cc1682424b2e85056318255e729e": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_d3fc4f9c5e7d43ed9bdf63eb14f96f2a", "IPY_MODEL_3d428a439216495992fcea7d5220b62e", "IPY_MODEL_1f9efc25b3a748eebc93b7ec81b42fe4"], "layout": "IPY_MODEL_a265d53b6dd14757b27e6e1967ca7fc3"}}, "d3fc4f9c5e7d43ed9bdf63eb14f96f2a": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_83b2702acfdf4beeaa11d3a6a7ee50bc", "placeholder": "\u200b", "style": "IPY_MODEL_75e16aac8625425d9f70ed1a5b06fac4", "value": "Downloading: 100%"}}, "3d428a439216495992fcea7d5220b62e": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_71af8cf8f288416db203dc8fc845daab", "max": 399759909, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_0784650c5fba48a4bac70b3e31940430", "value": 399759909}}, "1f9efc25b3a748eebc93b7ec81b42fe4": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0b297f8195eb45aabd88f312888202eb", "placeholder": "\u200b", "style": "IPY_MODEL_2ef264c738624677ac9375481f5c046c", "value": " 400M/400M [00:19&lt;00:00, 22.8MB/s]"}}, "a265d53b6dd14757b27e6e1967ca7fc3": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "83b2702acfdf4beeaa11d3a6a7ee50bc": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "75e16aac8625425d9f70ed1a5b06fac4": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "71af8cf8f288416db203dc8fc845daab": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0784650c5fba48a4bac70b3e31940430": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "0b297f8195eb45aabd88f312888202eb": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2ef264c738624677ac9375481f5c046c": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}}
 </script></section>
 
 
