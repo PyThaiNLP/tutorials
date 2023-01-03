@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wongnai Review Classification &mdash; pythainlp-tutorials thai2plot-5-g83979b5 documentation</title>
+  <title>Wongnai Review Classification &mdash; pythainlp-tutorials thai2plot-6-g4eb4530 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -632,7 +632,7 @@ Progress: 100.0%  words/sec/thread: 391282  lr: 0.000000  loss: 0.764689  eta: 0
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get prediction</span>
-<span class="n">preds</span> <span class="o">=</span> <span class="o">!</span>/home/charin/fastText-0.1.0/fasttext predict <span class="s1">&#39;model/wongnai_bal.bin&#39;</span> <span class="s1">&#39;ft_data/test.txt&#39;</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="o">!</span>/home/charin/fastText-0.1.0/fasttext<span class="w"> </span>predict<span class="w"> </span><span class="s1">&#39;model/wongnai_bal.bin&#39;</span><span class="w"> </span><span class="s1">&#39;ft_data/test.txt&#39;</span>
 <span class="n">pred_lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;__&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">])</span>
 </pre></div>
 </div>
