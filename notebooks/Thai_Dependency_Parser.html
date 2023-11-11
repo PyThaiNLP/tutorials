@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai Dependency Parser &mdash; pythainlp-tutorials thai2plot-16-g80717c1 documentation</title>
+  <title>Thai Dependency Parser &mdash; pythainlp-tutorials thai2plot-18-g321b53d documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
@@ -104,13 +104,13 @@
 </div>
 <section id="Thai-Dependency-Parser">
 <h1>Thai Dependency Parser<a class="headerlink" href="#Thai-Dependency-Parser" title="Permalink to this heading"></a></h1>
-<p>PyThaiNLP have not <code class="docutils literal notranslate"><span class="pre">Thai</span> <span class="pre">Dependency</span> <span class="pre">Parser</span></code>. You can use Dependency Parser from spaCy-Thai.</p>
-<p>spaCy-Thai work with Universal Dependencies. <a class="reference external" href="https://github.com/KoichiYasuoka/spaCy-Thai">github.com/KoichiYasuoka/spaCy-Thai</a></p>
+<p>PyThaiNLP does not come with a dependency parser. Instead, you can use the dependency parser from <a class="reference external" href="github.com/KoichiYasuoka/spaCy-Thai">spaCy-Thai</a>, which was trained on Universal Dependencies. This tutorial shows you how to get started.</p>
+<p>Install spaCy-Thai.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install spacy_thai
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>spacy_thai
 </pre></div>
 </div>
 </div>
@@ -165,47 +165,42 @@ Installing collected packages: ufal.udpipe, deplacy, tinydb, python-crfsuite, py
 Successfully installed deplacy-1.9.3 pythainlp-2.2.6 python-crfsuite-0.9.7 spacy-thai-0.6.2 tinydb-4.4.0 ufal.udpipe-1.2.0.3
 </pre></div></div>
 </div>
+<p>Import spaCy-Thai.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy_thai</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy_thai</span>
 <span class="n">nlp</span><span class="o">=</span><span class="n">spacy_thai</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<p>Do the dependency parse by calling <code class="docutils literal notranslate"><span class="pre">nlp</span></code> on a sentence.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;พวกเราใช้ภาษาไทย&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;พวกเราใช้ภาษาไทย&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<p>You can visualize the dependency parse with <a class="reference external" href="https://spacy.io/universe/project/deplacy">deplacy</a>, a tree visualizer for Universal Dependencies.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">graphviz</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">graphviz</span>
 <span class="kn">import</span> <span class="nn">deplacy</span>
 <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">deplacy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">doc</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_Thai_Dependency_Parser_4_0.svg" src="../_images/notebooks_Thai_Dependency_Parser_4_0.svg" /></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<img alt="../_images/notebooks_Thai_Dependency_Parser_8_0.svg" src="../_images/notebooks_Thai_Dependency_Parser_8_0.svg" /></div>
 </div>
 </section>
 
