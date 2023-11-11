@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nlpO3 &mdash; pythainlp-tutorials thai2plot-14-g3f1b830 documentation</title>
+  <title>nlpO3 &mdash; pythainlp-tutorials thai2plot-16-g80717c1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
@@ -55,13 +55,9 @@
 <li class="toctree-l1"><a class="reference internal" href="find_all_thai_rhyming_words.html">Find all Thai rhyming words from Thai word</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine_translation.html">PyThaiNLP Translate</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">nlpO3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Using">Using</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#PyThaiNLP-dictionary">PyThaiNLP dictionary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#custom-dictionary">custom dictionary</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#Installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#PyThaiNLP-dictionary">PyThaiNLP dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Custom-dictionary">Custom dictionary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pythainlp_chunk.html">Thai Chunk Parser</a></li>
@@ -113,22 +109,17 @@
 </div>
 <section id="nlpO3">
 <h1>nlpO3<a class="headerlink" href="#nlpO3" title="Permalink to this heading"></a></h1>
-<p>Thai Natural Language Processing in Rust, with Python-binding.</p>
-<section id="Features">
-<h2>Features<a class="headerlink" href="#Features" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>newmm dictionary-based word tokenization, at ultra fast speed</p></li>
-<li><p>support custom dictionary</p></li>
-</ul>
-<p>GitHub: <a class="reference external" href="https://github.com/PyThaiNLP/nlpo3">https://github.com/PyThaiNLP/nlpo3</a></p>
-</section>
-<section id="Install">
-<h2>Install<a class="headerlink" href="#Install" title="Permalink to this heading"></a></h2>
+<p>nlpO3 is a Rust natural language processing library for Thai with Python and Node bindings. Similarly to newmm, it comes with a maximal-matching dictionary-based tokenizer, which honors Thai character cluster boundaries. However, compared to newmm, which is a pure Python implementation, nlpO3 is much faster. For a comparison, refer to <a class="reference external" href="https://github.com/PyThaiNLP/nlpo3/blob/main/nlpo3-python/notebooks/nlpo3_segment_benchmarks.ipynb">Benchmark nlpo3.segment</a>. Lern more about nlpO3
+<a class="reference external" href="https://github.com/PyThaiNLP/nlpo3">here</a>.</p>
+<p>In this tutorial, you will learn how to use nlpO3 to tokenize a text with a pre-prepared list of words serving as a custom dictionary.</p>
+<section id="Installation">
+<h2>Installation<a class="headerlink" href="#Installation" title="Permalink to this heading"></a></h2>
+<p>We install the Python binding using pip.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install nlpo3
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nlpo3
 </pre></div>
 </div>
 </div>
@@ -142,15 +133,14 @@ Successfully installed nlpo3-1.1.2
 </pre></div></div>
 </div>
 </section>
-<section id="Using">
-<h2>Using<a class="headerlink" href="#Using" title="Permalink to this heading"></a></h2>
 <section id="PyThaiNLP-dictionary">
-<h3>PyThaiNLP dictionary<a class="headerlink" href="#PyThaiNLP-dictionary" title="Permalink to this heading"></a></h3>
+<h2>PyThaiNLP dictionary<a class="headerlink" href="#PyThaiNLP-dictionary" title="Permalink to this heading"></a></h2>
+<p>First we try segmenting a Thai sentence into a list of words without specifying a dictionary parameter.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span>
 </pre></div>
 </div>
 </div>
@@ -158,7 +148,7 @@ Successfully installed nlpo3-1.1.2
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;ทดสอบตัดคำภาษาไทย&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;ทดสอบตัดคำภาษาไทย&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -172,14 +162,15 @@ Successfully installed nlpo3-1.1.2
 </pre></div></div>
 </div>
 </section>
-<section id="custom-dictionary">
-<h3>custom dictionary<a class="headerlink" href="#custom-dictionary" title="Permalink to this heading"></a></h3>
-<p>We try to use a thai countries dictionary for segment text.</p>
+<section id="Custom-dictionary">
+<h2>Custom dictionary<a class="headerlink" href="#Custom-dictionary" title="Permalink to this heading"></a></h2>
+<p>Now we enhance the tokenization with a pre-prepared list of countries in Thai, which will serve as a custom dictionary.</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command to download the list from GitHub. It’s a plain text file containing one word per line.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://github.com/PyThaiNLP/pythainlp/raw/dev/pythainlp/corpus/countries_th.txt
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://github.com/PyThaiNLP/pythainlp/raw/dev/pythainlp/corpus/countries_th.txt
 </pre></div>
 </div>
 </div>
@@ -206,19 +197,20 @@ countries_th.txt    100%[===================&gt;]   7.44K  --.-KB/s    in 0s
 
 </pre></div></div>
 </div>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">load_dict</span></code> function to load the contents of the downloaded file into the <code class="docutils literal notranslate"><span class="pre">countries</span></code> dictionary.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span><span class="p">,</span> <span class="n">load_dict</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nlpo3</span> <span class="kn">import</span> <span class="n">segment</span><span class="p">,</span> <span class="n">load_dict</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">load_dict</span><span class="p">(</span><span class="s2">&quot;countries_th.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">load_dict</span><span class="p">(</span><span class="s2">&quot;countries_th.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -230,16 +222,17 @@ countries_th.txt    100%[===================&gt;]   7.44K  --.-KB/s    in 0s
 Successful: dictionary name countries from file countries_th.txt has been successfully loaded
 </pre></div></div>
 </div>
+<p>Finally, we call the <code class="docutils literal notranslate"><span class="pre">segment</span></code> method on a Thai sentence specifying the <code class="docutils literal notranslate"><span class="pre">countries</span></code> dictionary in the parameters.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;สวัสดีครับประเทศไทย เกาหลี&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;สวัสดีครับประเทศไทย เกาหลี&quot;</span><span class="p">,</span> <span class="s2">&quot;countries&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -247,8 +240,6 @@ Successful: dictionary name countries from file countries_th.txt has been succes
 [&#39;สวัสดีครับประเทศ&#39;, &#39;ไทย&#39;, &#39; &#39;, &#39;เกาหลี&#39;]
 </pre></div></div>
 </div>
-<p>for speed of word segmentation benchmark, you can read more at <a class="reference external" href="https://github.com/PyThaiNLP/nlpo3/blob/main/nlpo3-python/notebooks/nlpo3_segment_benchmarks.ipynb">https://github.com/PyThaiNLP/nlpo3/blob/main/nlpo3-python/notebooks/nlpo3_segment_benchmarks.ipynb</a></p>
-</section>
 </section>
 </section>
 
