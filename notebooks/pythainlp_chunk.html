@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai Chunk Parser &mdash; pythainlp-tutorials thai2plot-18-g321b53d documentation</title>
+  <title>Thai Chunk Parser &mdash; pythainlp-tutorials thai2plot-20-gf4ed474 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
@@ -104,13 +104,14 @@
 </div>
 <section id="Thai-Chunk-Parser">
 <h1>Thai Chunk Parser<a class="headerlink" href="#Thai-Chunk-Parser" title="Permalink to this heading"></a></h1>
-<p>In PyThaiNLP, We use chunk data from ORCHID++ corpus.</p>
+<p>This tutorial demonstrates how to use the <code class="docutils literal notranslate"><span class="pre">chunk_parse</span></code> function from the PyThaiNLP library for parsing Thai text into phrases. We will use a chunking model trained on ORCHID++ corpus.</p>
 <p>Read more: <a class="reference external" href="https://github.com/PyThaiNLP/pythainlp/pull/524">https://github.com/PyThaiNLP/pythainlp/pull/524</a></p>
+<p>We will need the following libraries and packages: - PyThaiNLP - NLTK (to preprocess chunk data for visualization) - svgling (for visualization) - python-crfsuite</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>!pip install pythainlp svgling nltk python-crfsuite
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pythainlp<span class="w"> </span>svgling<span class="w"> </span>nltk<span class="w"> </span>python-crfsuite
 </pre></div>
 </div>
 </div>
@@ -139,110 +140,99 @@ Installing collected packages: python-crfsuite
 Successfully installed python-crfsuite-0.9.9
 </pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>from pythainlp.tokenize import word_tokenize
-from pythainlp.tag import pos_tag
-from pythainlp.tag import chunk_parse
-from nltk.chunk import conlltags2tree
-import svgling
-</pre></div>
-</div>
-</div>
+<p>We need to import the following modules and functions: - <code class="docutils literal notranslate"><span class="pre">word_tokenize</span></code> – this function takes a Thai text and returns a list of tokenized words - <code class="docutils literal notranslate"><span class="pre">pos_tag</span></code> – this function takes a list of tokenized words and marks them with part-of-speech (POS) tags - <code class="docutils literal notranslate"><span class="pre">chunk_parse</span></code> – this function takes words with their POS tags and marks them with inside-outside-beginning (IOB) tags - <code class="docutils literal notranslate"><span class="pre">conlltags2tree</span></code> – this function is part of the NLTK and converts IOB format to a tree - <code class="docutils literal notranslate"><span class="pre">svgling</span></code> – this package
+will be used to visualize the tree in SVG</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>def test(txt):
-    m = [(w,t) for w,t in pos_tag(word_tokenize(txt), engine= &#39;perceptron&#39;,corpus = &#39;orchid&#39;)]
-    tag = chunk_parse(m)
-    p = [(w,t,tag[i]) for i,(w,t) in enumerate(m)]
-    return p
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">pythainlp.tag</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+<span class="kn">from</span> <span class="nn">pythainlp.tag</span> <span class="kn">import</span> <span class="n">chunk_parse</span>
+<span class="kn">from</span> <span class="nn">nltk.chunk</span> <span class="kn">import</span> <span class="n">conlltags2tree</span>
+<span class="kn">import</span> <span class="nn">svgling</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<p>We define a new function <code class="docutils literal notranslate"><span class="pre">test</span></code>, which will first segment the input text into words (<code class="docutils literal notranslate"><span class="pre">word_tokenize</span></code>), tag the words with their parts of speech based on the ORCHID++ corpus (<code class="docutils literal notranslate"><span class="pre">pos_tag</span></code>) and perform chunking (<code class="docutils literal notranslate"><span class="pre">chunk_parse</span></code>). The function then combines the words, POS and IOB tags into a list of triples <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;แมวกินปลา&quot;)))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">[(</span><span class="n">w</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">txt</span><span class="p">),</span> <span class="n">engine</span><span class="o">=</span> <span class="s1">&#39;perceptron&#39;</span><span class="p">,</span><span class="n">corpus</span> <span class="o">=</span> <span class="s1">&#39;orchid&#39;</span><span class="p">)]</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="n">chunk_parse</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">[(</span><span class="n">w</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">tag</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,(</span><span class="n">w</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">p</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_pythainlp_chunk_4_0.svg" src="../_images/notebooks_pythainlp_chunk_4_0.svg" /></div>
-</div>
+<p>Finally, we call the <code class="docutils literal notranslate"><span class="pre">test</span></code> function to chunk several example sentences. We then use the <code class="docutils literal notranslate"><span class="pre">svgling.draw_tree</span></code> function to visualize the syntactic trees, which were generated from the chunked data by the <code class="docutils literal notranslate"><span class="pre">conlltags2tree</span></code> function.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;คนหนองคายเป็นคนน่ารัก&quot;)))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svgling</span><span class="o">.</span><span class="n">draw_tree</span><span class="p">(</span><span class="n">conlltags2tree</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;แมวกินปลา&quot;</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_pythainlp_chunk_5_0.svg" src="../_images/notebooks_pythainlp_chunk_5_0.svg" /></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;ปลาอะไรอยู่ในน้ำ&quot;)))
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_pythainlp_chunk_6_0.svg" src="../_images/notebooks_pythainlp_chunk_6_0.svg" /></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;ในน้ำมีอะไรอยู่&quot;)))
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_pythainlp_chunk_7_0.svg" src="../_images/notebooks_pythainlp_chunk_7_0.svg" /></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;ทำไมเขารักคุณ&quot;)))
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../_images/notebooks_pythainlp_chunk_8_0.svg" src="../_images/notebooks_pythainlp_chunk_8_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svgling</span><span class="o">.</span><span class="n">draw_tree</span><span class="p">(</span><span class="n">conlltags2tree</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;คนหนองคายเป็นคนน่ารัก&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_pythainlp_chunk_9_0.svg" src="../_images/notebooks_pythainlp_chunk_9_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svgling</span><span class="o">.</span><span class="n">draw_tree</span><span class="p">(</span><span class="n">conlltags2tree</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;ปลาอะไรอยู่ในน้ำ&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_pythainlp_chunk_10_0.svg" src="../_images/notebooks_pythainlp_chunk_10_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svgling</span><span class="o">.</span><span class="n">draw_tree</span><span class="p">(</span><span class="n">conlltags2tree</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;ในน้ำมีอะไรอยู่&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_pythainlp_chunk_11_0.svg" src="../_images/notebooks_pythainlp_chunk_11_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>svgling.draw_tree(conlltags2tree(test(&quot;คนอะไรอยู่หลังต้นไม้&quot;)))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svgling</span><span class="o">.</span><span class="n">draw_tree</span><span class="p">(</span><span class="n">conlltags2tree</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;ทำไมเขารักคุณ&quot;</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -251,15 +241,22 @@ import svgling
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_pythainlp_chunk_9_0.svg" src="../_images/notebooks_pythainlp_chunk_9_0.svg" /></div>
+<img alt="../_images/notebooks_pythainlp_chunk_12_0.svg" src="../_images/notebooks_pythainlp_chunk_12_0.svg" /></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svgling</span><span class="o">.</span><span class="n">draw_tree</span><span class="p">(</span><span class="n">conlltags2tree</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;คนอะไรอยู่หลังต้นไม้&quot;</span><span class="p">)))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_pythainlp_chunk_13_0.svg" src="../_images/notebooks_pythainlp_chunk_13_0.svg" /></div>
 </div>
 </section>
 
