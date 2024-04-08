@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'pythainlp-tutorials'
-copyright = '2019, PyThaiNLP'
+copyright = '2019 - 2024, PyThaiNLP'
 author = 'PyThaiNLP'
 
 # The full version, including alpha/beta/rc tags
