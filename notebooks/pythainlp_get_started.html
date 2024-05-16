@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials thai2plot-22-g5b613ca documentation</title>
+  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials thai2plot-23-g3447b68 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
@@ -1606,11 +1606,11 @@ True
 <h2>Named-Entity Tagging<a class="headerlink" href="#Named-Entity-Tagging" title="Permalink to this heading"></a></h2>
 <p>The tagger use BIO scheme: - B - beginning of entity - I - inside entity - O - outside entity</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip3 install pythainlp[ner]</span>
-<span class="kn">from</span> <span class="nn">pythainlp.tag.named_entity</span> <span class="kn">import</span> <span class="n">ThaiNameTagger</span>
+<span class="kn">from</span> <span class="nn">pythainlp.tag.thainer</span> <span class="kn">import</span> <span class="n">ThaiNameTagger</span>
 
 <span class="n">ner</span> <span class="o">=</span> <span class="n">ThaiNameTagger</span><span class="p">()</span>
 <span class="n">ner</span><span class="o">.</span><span class="n">get_ner</span><span class="p">(</span><span class="s2">&quot;24 มิ.ย. 2563 ทดสอบระบบเวลา 6:00 น. เดินทางจากขนส่งกรุงเทพใกล้ถนนกำแพงเพชร ไปจังหวัดกำแพงเพชร ตั๋วราคา 297 บาท&quot;</span><span class="p">)</span>
@@ -1618,7 +1618,7 @@ True
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1629,13 +1629,10 @@ True
  (&#39; &#39;, &#39;PUNCT&#39;, &#39;O&#39;),
  (&#39;2563&#39;, &#39;NUM&#39;, &#39;O&#39;),
  (&#39; &#39;, &#39;PUNCT&#39;, &#39;O&#39;),
- (&#39;ทดสอบ&#39;, &#39;VERB&#39;, &#39;O&#39;),
- (&#39;ระบบ&#39;, &#39;NOUN&#39;, &#39;O&#39;),
+ (&#39;ทดสอบระบบ&#39;, &#39;PART&#39;, &#39;O&#39;),
  (&#39;เวลา&#39;, &#39;NOUN&#39;, &#39;O&#39;),
  (&#39; &#39;, &#39;PUNCT&#39;, &#39;O&#39;),
- (&#39;6&#39;, &#39;NUM&#39;, &#39;B-TIME&#39;),
- (&#39;:&#39;, &#39;PUNCT&#39;, &#39;I-TIME&#39;),
- (&#39;00&#39;, &#39;NUM&#39;, &#39;I-TIME&#39;),
+ (&#39;6:00&#39;, &#39;NUM&#39;, &#39;B-TIME&#39;),
  (&#39; &#39;, &#39;PUNCT&#39;, &#39;I-TIME&#39;),
  (&#39;น.&#39;, &#39;NOUN&#39;, &#39;I-TIME&#39;),
  (&#39; &#39;, &#39;PUNCT&#39;, &#39;O&#39;),
