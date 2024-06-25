@@ -20,4 +20,4 @@ Maintained by the PyThaiNLP team.
 
 * See source code of these tutorials at https://github.com/PyThaiNLP/tutorials
 * Main PyThaiNLP development at https://github.com/PyThaiNLP/pythainlp
-* PyThaiNLP website at https://pythainlp.github.io
+* PyThaiNLP website at https://pythainlp.org
