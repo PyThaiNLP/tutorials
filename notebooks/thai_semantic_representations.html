@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach &mdash; pythainlp-tutorials thai2plot-25-gfa4ef11 documentation</title>
+  <title>Thai Semantic Representation &mdash; pythainlp-tutorials thai2plot-26-g3ae7871 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
@@ -64,9 +64,12 @@
 <li class="toctree-l1"><a class="reference internal" href="spaCy_PyThaiNLP_demo.html">spaCy-PyThaiNLP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="text_classification.html">Wongnai Review Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="text_generation.html">Thai Wiki Language Model for Text Generation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Usage">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Thai Semantic Representation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach">Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thai_wav2vec2_onnx.html">Thai Wav2vec2 model to ONNX model</a></li>
@@ -88,7 +91,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach</li>
+      <li class="breadcrumb-item active">Thai Semantic Representation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/thai_semantic_representations.ipynb" rel="nofollow"> View page source</a>
       </li>
@@ -103,8 +106,11 @@
 <span class="raw-html"><a target="_blank" href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/thai_semantic_representations.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a></span>
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/thai_semantic_representations.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
+<section id="Thai-Semantic-Representation">
+<h1>Thai Semantic Representation<a class="headerlink" href="#Thai-Semantic-Representation" title="Permalink to this heading"></a></h1>
+<p>This notebook collects all Thai Semantic Representations works.</p>
 <section id="Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach">
-<h1>Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach<a class="headerlink" href="#Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach" title="Permalink to this heading"></a></h1>
+<h2>Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach<a class="headerlink" href="#Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach" title="Permalink to this heading"></a></h2>
 <p>Vipasha Bansal</p>
 <p>ACL2024 SRW</p>
 <p>Abstract:</p>
@@ -118,7 +124,7 @@ surface forms. I present the first fully-implemented, unified analysis for Thai 
 <p>This notebook will guide you in running Thai semantic representations from the work.</p>
 <p>The notebook created by Wannaphong Phatthiyaphaibun, PyThaiNLP.</p>
 <section id="Install">
-<h2>Install<a class="headerlink" href="#Install" title="Permalink to this heading"></a></h2>
+<h3>Install<a class="headerlink" href="#Install" title="Permalink to this heading"></a></h3>
 <p>Get latest ACE from <a class="reference external" href="http://sweaglesw.org/linguistics/ace/">http://sweaglesw.org/linguistics/ace/</a></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -175,7 +181,7 @@ Resolving deltas: 100% (66/66), done.
 </div>
 </section>
 <section id="Usage">
-<h2>Usage<a class="headerlink" href="#Usage" title="Permalink to this heading"></a></h2>
+<h3>Usage<a class="headerlink" href="#Usage" title="Permalink to this heading"></a></h3>
 <p>We use ACE for delphin.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -237,6 +243,7 @@ Resolving deltas: 100% (66/66), done.
   &#39;flags&#39;: [(&#39;:ascore&#39;, 0.0), (&#39;:probability&#39;, 1.0)]}]
 </pre></div></div>
 </div>
+</section>
 </section>
 </section>
 
