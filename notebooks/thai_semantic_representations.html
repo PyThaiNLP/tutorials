@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach &mdash; pythainlp-tutorials thai2plot-25-gfa4ef11 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Thai Wav2vec2 model to ONNX model" href="thai_wav2vec2_onnx.html" />
+    <link rel="prev" title="Thai Wiki Language Model for Text Generation" href="text_generation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pythainlp-tutorials
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Han-Coref.html">🪿 Han-Coref: Thai Coreference resolution by PyThaiNLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Thai_Dependency_Parser.html">Thai Dependency Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="find_all_thai_rhyming_words.html">Find all Thai rhyming words from Thai word</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_translation.html">PyThaiNLP Translate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlpo3ipynb.html">nlpO3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_chunk.html">Thai Chunk Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_get_started.html">PyThaiNLP Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythainlp_wangchanberta.html">Wangchanberta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sentiment_analysis.html">Wisesight Sentiment Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spaCy_PyThaiNLP_demo.html">spaCy-PyThaiNLP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_classification.html">Wongnai Review Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text_generation.html">Thai Wiki Language Model for Text Generation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Install">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="thai_wav2vec2_onnx.html">Thai Wav2vec2 model to ONNX model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wangchanberta_getting_started_aireseach.html">WangchanBERTa: Getting Started Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word2vec_examples.html">Thai2Vec Embeddings Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythainlp-tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/notebooks/thai_semantic_representations.ipynb" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p>Interactive online version:
+<span class="raw-html"><a target="_blank" href="https://mybinder.org/v2/gh/pythainlp/tutorials/master?filepath=source/notebooks/thai_semantic_representations.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a></span>
+<span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/thai_semantic_representations.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
+</div>
+<section id="Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach">
+<h1>Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach<a class="headerlink" href="#Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach" title="Permalink to this heading"></a></h1>
+<p>Vipasha Bansal</p>
+<p>ACL2024 SRW</p>
+<p>Abstract:</p>
+<blockquote>
+<div><p>Deep semantic representations are useful for many NLU tasks (Droganova and Zeman, 2019; Schuster and Manning, 2016). Manual annotation to build these representations is time-consuming, and so automatic approaches are preferred (Droganova and Zeman, 2019; Bender et al. 2015). This paper demonstrates how rich semantic representations can be automatically derived for Thai Serial Verb Constructions (SVCs), where the semantic relationship between component verbs is not immediately clear from the
+surface forms. I present the first fully-implemented, unified analysis for Thai SVCs, deriving appropriate semantic representations (MRS; Copestake et al. 2005) from syntactic features, implemented within a DELPH-IN computational grammar (Slayden 2009). This analysis increases verified coverage of SVCs by 73% and decreases ambiguity by 46%.</p>
+</div></blockquote>
+<p>GitHub: <a class="reference external" href="https://github.com/VipashaB94/ThaiGrammar">https://github.com/VipashaB94/ThaiGrammar</a></p>
+<p>Paper: [Wait]</p>
+<hr class="docutils" />
+<p>This notebook will guide you in running Thai semantic representations from the work.</p>
+<p>The notebook created by Wannaphong Phatthiyaphaibun, PyThaiNLP.</p>
+<section id="Install">
+<h2>Install<a class="headerlink" href="#Install" title="Permalink to this heading"></a></h2>
+<p>Get latest ACE from <a class="reference external" href="http://sweaglesw.org/linguistics/ace/">http://sweaglesw.org/linguistics/ace/</a></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!wget http://sweaglesw.org/linguistics/ace/download/ace-0.9.34-x86-64.tar.gz
+!mkdir run_ace
+!tar -xvzf ace-0.9.34-x86-64.tar.gz -C run_ace
+!git clone https://github.com/VipashaB94/ThaiGrammar.git
+!pip install -q pydelphin
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+--2024-08-12 12:50:35--  http://sweaglesw.org/linguistics/ace/download/ace-0.9.34-x86-64.tar.gz
+Resolving sweaglesw.org (sweaglesw.org)... 216.129.123.154, 2001:1868:a100:105:beae:c5ff:fe24:d767
+Connecting to sweaglesw.org (sweaglesw.org)|216.129.123.154|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2526613 (2.4M) [application/x-gzip]
+Saving to: ‘ace-0.9.34-x86-64.tar.gz’
+
+ace-0.9.34-x86-64.t 100%[===================&gt;]   2.41M  4.37MB/s    in 0.6s
+
+2024-08-12 12:50:36 (4.37 MB/s) - ‘ace-0.9.34-x86-64.tar.gz’ saved [2526613/2526613]
+
+ace-0.9.34/
+ace-0.9.34/LICENSE
+ace-0.9.34/post/
+ace-0.9.34/post/english-postagger.hmm
+ace-0.9.34/erg-files/
+ace-0.9.34/erg-files/config.tdl
+ace-0.9.34/erg-files/ace-erg-qc.txt
+ace-0.9.34/RELEASE-NOTES
+ace-0.9.34/ace
+ace-0.9.34/doc/
+ace-0.9.34/doc/config.wiki
+ace-0.9.34/doc/options.wiki
+Cloning into &#39;ThaiGrammar&#39;...
+remote: Enumerating objects: 199, done.
+remote: Counting objects: 100% (199/199), done.
+remote: Compressing objects: 100% (160/160), done.
+remote: Total 199 (delta 66), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (199/199), 1.39 MiB | 2.53 MiB/s, done.
+Resolving deltas: 100% (66/66), done.
+  Preparing metadata (setup.py) ... done
+   <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">186.8/186.8 kB</span> <span class="ansi-red-fg">2.4 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+   <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">43.4/43.4 kB</span> <span class="ansi-red-fg">1.9 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+  Building wheel for progress (setup.py) ... done
+</pre></div></div>
+</div>
+</section>
+<section id="Usage">
+<h2>Usage<a class="headerlink" href="#Usage" title="Permalink to this heading"></a></h2>
+<p>We use ACE for delphin.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">delphin</span> <span class="kn">import</span> <span class="n">ace</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ace</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;./ThaiGrammar/thaigrammar/ace/config.tdl&#39;</span><span class="p">,</span> <span class="s1">&#39;thai.dat&#39;</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">&quot;./run_ace/ace-0.9.34/ace&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">ace</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;thai.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;สุรี ไป ซื้อ หนังสือ&#39;</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">&quot;./run_ace/ace-0.9.34/ace&quot;</span><span class="p">)</span>
+<span class="n">response</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;result-id&#39;: 0,
+  &#39;derivation&#39;: &#39;(328 subj-head 0.000000 0 4 (322 bare-np 0.000000 0 1 (5 สุรี_33142 0.000000 0 1 (&#34;สุรี&#34;))) (327 head-comp 0.000000 1 4 (324 drop-obj 0.000000 1 2 (323 deic-purpose-trans-svc-lex 0.000000 1 2 (6 ไป_4158 0.000000 1 2 (&#34;ไป&#34;)))) (326 head-comp 0.000000 2 4 (7 ซื้อ_4236 0.000000 2 3 (&#34;ซื้อ&#34;)) (325 bare-np 0.000000 3 4 (8 หนังสือ_4404 0.000000 3 4 (&#34;หนังสือ&#34;))))))&#39;,
+  &#39;mrs&#39;: &#39;[ LTOP: h0 INDEX: e2 [ e SF: prop ] RELS: &lt; [ named_rel&lt;-1:-1&gt; LBL: h4 CARG: &#34;สุรี&#34; ARG0: x3 ]  [ &#34;exist_q_rel&#34;&lt;-1:-1&gt; LBL: h6 ARG0: x3 RSTR: h7 BODY: h8 ]  [ &#34;_go_v_1_rel&#34;&lt;-1:-1&gt; LBL: h1 ARG0: e9 ARG1: x3 ARG2: x10 [ x COG-ST: type-id ] ]  [ &#34;purpose_rel&#34;&lt;-1:-1&gt; LBL: h1 ARG0: e2 ARG1: e9 ARG2: e11 ]  [ &#34;_buy_v_1_rel&#34;&lt;-1:-1&gt; LBL: h1 ARG0: e11 ARG1: x3 ARG2: x12 [ x PERS: 3 ] ]  [ &#34;_book_n_1_rel&#34;&lt;-1:-1&gt; LBL: h13 ARG0: x12 ]  [ &#34;exist_q_rel&#34;&lt;-1:-1&gt; LBL: h14 ARG0: x12 RSTR: h15 BODY: h16 ] &gt; HCONS: &lt; h0 qeq h1 h7 qeq h4 &gt; ICONS: &lt; &gt; ]&#39;,
+  &#39;tree&#39;: &#39;(&#34;S&#34; (&#34;NP&#34; (&#34;N&#34; (&#34;สุรี&#34;))) (&#34;VP&#34; (&#34;V&#34; (&#34;V-M&#34; (&#34;V&#34; (&#34;ไป&#34;)))) (&#34;VP&#34; (&#34;V&#34; (&#34;ซื้อ&#34;)) (&#34;NP&#34; (&#34;N&#34; (&#34;หนังสือ&#34;))))))&#39;,
+  &#39;flags&#39;: [(&#39;:ascore&#39;, 0.0), (&#39;:probability&#39;, 1.0)]}]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">ace</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;thai.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;ผม จะ เป็น คน ดี&#39;</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">&quot;./run_ace/ace-0.9.34/ace&quot;</span><span class="p">)</span>
+<span class="n">response</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;result-id&#39;: 0,
+  &#39;derivation&#39;: &#39;(603 subj-head 0.000000 0 5 (598 bare-np 0.000000 0 1 (6 ผม_4375 0.000000 0 1 (&#34;ผม&#34;))) (602 head-comp 0.000000 1 5 (7 จะ_33089 0.000000 1 2 (&#34;จะ&#34;)) (601 head-comp 0.000000 2 5 (8 เป็น_33088 0.000000 2 3 (&#34;เป็น&#34;)) (600 bare-np 0.000000 3 5 (599 head-adj-int 0.000000 3 5 (12 คน_4133 0.000000 3 4 (&#34;คน&#34;)) (13 ดี_4290 0.000000 4 5 (&#34;ดี&#34;)))))))&#39;,
+  &#39;mrs&#39;: &#39;[ LTOP: h0 INDEX: e2 [ e TENSE: fut SF: prop ] RELS: &lt; [ &#34;pron_rel&#34;&lt;-1:-1&gt; LBL: h4 ARG0: x3 [ x PERS: 1 NUM: sg GEND: m SPECI: + ] ]  [ &#34;exist_q_rel&#34;&lt;-1:-1&gt; LBL: h5 ARG0: x3 RSTR: h6 BODY: h7 ]  [ &#34;_be_v_id_rel&#34;&lt;-1:-1&gt; LBL: h1 ARG0: e2 ARG1: x3 ARG2: x8 [ x PERS: 3 ] ]  [ &#34;_person_n_1_rel&#34;&lt;-1:-1&gt; LBL: h9 ARG0: x8 ]  [ &#34;_good_a_1_rel&#34;&lt;-1:-1&gt; LBL: h9 ARG0: e10 ARG1: x8 ]  [ &#34;exist_q_rel&#34;&lt;-1:-1&gt; LBL: h11 ARG0: x8 RSTR: h12 BODY: h13 ] &gt; HCONS: &lt; h0 qeq h1 h6 qeq h4 h12 qeq h9 &gt; ICONS: &lt; &gt; ]&#39;,
+  &#39;tree&#39;: &#39;(&#34;S&#34; (&#34;NP&#34; (&#34;N&#34; (&#34;ผม&#34;))) (&#34;VP&#34; (&#34;V&#34; (&#34;จะ&#34;)) (&#34;VP&#34; (&#34;V&#34; (&#34;เป็น&#34;)) (&#34;NP&#34; (&#34;N&#34; (&#34;N&#34; (&#34;คน&#34;)) (&#34;ADJ&#34; (&#34;ดี&#34;)))))))&#39;,
+  &#39;flags&#39;: [(&#39;:ascore&#39;, 0.0), (&#39;:probability&#39;, 1.0)]}]
+</pre></div></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="text_generation.html" class="btn btn-neutral float-left" title="Thai Wiki Language Model for Text Generation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="thai_wav2vec2_onnx.html" class="btn btn-neutral float-right" title="Thai Wav2vec2 model to ONNX model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019 - 2024, PyThaiNLP.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
