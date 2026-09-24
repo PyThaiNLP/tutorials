@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai Semantic Representation &mdash; pythainlp-tutorials thai2plot-30-g70eec59 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+  <title>Thai Semantic Representation &mdash; pythainlp-tutorials thai2plot-32-g8caf131 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=eea1f72d" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=43cb7f73"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -107,10 +104,10 @@
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/thai_semantic_representation.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Thai-Semantic-Representation">
-<h1>Thai Semantic Representation<a class="headerlink" href="#Thai-Semantic-Representation" title="Permalink to this heading"></a></h1>
+<h1>Thai Semantic Representation<a class="headerlink" href="#Thai-Semantic-Representation" title="Link to this heading"></a></h1>
 <p>This notebook collects all Thai Semantic Representations works.</p>
 <section id="Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach">
-<h2>Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach<a class="headerlink" href="#Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach" title="Permalink to this heading"></a></h2>
+<h2>Automatic Derivation of Semantic Representations for Thai Serial Verb Constructions: A Grammar-Based Approach<a class="headerlink" href="#Automatic-Derivation-of-Semantic-Representations-for-Thai-Serial-Verb-Constructions:-A-Grammar-Based-Approach" title="Link to this heading"></a></h2>
 <p>Vipasha Bansal</p>
 <p>ACL2024 SRW</p>
 <p>Abstract:</p>
@@ -124,17 +121,17 @@ surface forms. I present the first fully-implemented, unified analysis for Thai 
 <p>This notebook will guide you in running Thai semantic representations from the work.</p>
 <p>The notebook created by Wannaphong Phatthiyaphaibun, PyThaiNLP.</p>
 <section id="Install">
-<h3>Install<a class="headerlink" href="#Install" title="Permalink to this heading"></a></h3>
+<h3>Install<a class="headerlink" href="#Install" title="Link to this heading"></a></h3>
 <p>Get latest ACE from <a class="reference external" href="http://sweaglesw.org/linguistics/ace/">http://sweaglesw.org/linguistics/ace/</a></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!wget http://sweaglesw.org/linguistics/ace/download/ace-0.9.34-x86-64.tar.gz
-!mkdir run_ace
-!tar -xvzf ace-0.9.34-x86-64.tar.gz -C run_ace
-!git clone https://github.com/VipashaB94/ThaiGrammar.git
-!pip install -q pydelphin
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">sweaglesw</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">linguistics</span><span class="o">/</span><span class="n">ace</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">ace</span><span class="o">-</span><span class="mf">0.9.34</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mf">64.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="err">!</span><span class="n">mkdir</span> <span class="n">run_ace</span>
+<span class="err">!</span><span class="n">tar</span> <span class="o">-</span><span class="n">xvzf</span> <span class="n">ace</span><span class="o">-</span><span class="mf">0.9.34</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mf">64.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">C</span> <span class="n">run_ace</span>
+<span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">VipashaB94</span><span class="o">/</span><span class="n">ThaiGrammar</span><span class="o">.</span><span class="n">git</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">pydelphin</span>
 </pre></div>
 </div>
 </div>
@@ -181,14 +178,14 @@ Resolving deltas: 100% (66/66), done.
 </div>
 </section>
 <section id="Usage">
-<h3>Usage<a class="headerlink" href="#Usage" title="Permalink to this heading"></a></h3>
+<h3>Usage<a class="headerlink" href="#Usage" title="Link to this heading"></a></h3>
 <p>We use ACE for pydelphin.</p>
 <p>Docs: <a class="reference external" href="https://pydelphin.readthedocs.io/en/latest/guides/ace.html">https://pydelphin.readthedocs.io/en/latest/guides/ace.html</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">delphin</span> <span class="kn">import</span> <span class="n">ace</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">delphin</span><span class="w"> </span><span class="kn">import</span> <span class="n">ace</span>
 </pre></div>
 </div>
 </div>
@@ -196,7 +193,7 @@ Resolving deltas: 100% (66/66), done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ace</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;./ThaiGrammar/thaigrammar/ace/config.tdl&#39;</span><span class="p">,</span> <span class="s1">&#39;thai.dat&#39;</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">&quot;./run_ace/ace-0.9.34/ace&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ace</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'./ThaiGrammar/thaigrammar/ace/config.tdl'</span><span class="p">,</span> <span class="s1">'thai.dat'</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">"./run_ace/ace-0.9.34/ace"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -204,8 +201,8 @@ Resolving deltas: 100% (66/66), done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">ace</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;thai.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;สุรี ไป ซื้อ หนังสือ&#39;</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">&quot;./run_ace/ace-0.9.34/ace&quot;</span><span class="p">)</span>
-<span class="n">response</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">ace</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">'thai.dat'</span><span class="p">,</span> <span class="s1">'สุรี ไป ซื้อ หนังสือ'</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">"./run_ace/ace-0.9.34/ace"</span><span class="p">)</span>
+<span class="n">response</span><span class="p">[</span><span class="s1">'results'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -225,8 +222,8 @@ Resolving deltas: 100% (66/66), done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">ace</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;thai.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;ผม จะ เป็น คน ดี&#39;</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">&quot;./run_ace/ace-0.9.34/ace&quot;</span><span class="p">)</span>
-<span class="n">response</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">ace</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">'thai.dat'</span><span class="p">,</span> <span class="s1">'ผม จะ เป็น คน ดี'</span><span class="p">,</span><span class="n">executable</span><span class="o">=</span><span class="s2">"./run_ace/ace-0.9.34/ace"</span><span class="p">)</span>
+<span class="n">response</span><span class="p">[</span><span class="s1">'results'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>

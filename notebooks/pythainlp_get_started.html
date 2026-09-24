@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials thai2plot-30-g70eec59 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+  <title>PyThaiNLP Get Started &mdash; pythainlp-tutorials thai2plot-32-g8caf131 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=eea1f72d" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=43cb7f73"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -132,7 +129,7 @@
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/pythainlp_get_started.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="PyThaiNLP-Get-Started">
-<h1>PyThaiNLP Get Started<a class="headerlink" href="#PyThaiNLP-Get-Started" title="Permalink to this heading"></a></h1>
+<h1>PyThaiNLP Get Started<a class="headerlink" href="#PyThaiNLP-Get-Started" title="Link to this heading"></a></h1>
 <p>Code examples for basic functions in PyThaiNLP <a class="reference external" href="https://github.com/PyThaiNLP/pythainlp">https://github.com/PyThaiNLP/pythainlp</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -143,20 +140,17 @@
 <span class="c1"># # see list of modules in `requirements` and `extras`</span>
 <span class="c1"># # in https://github.com/PyThaiNLP/pythainlp/blob/dev/setup.py</span>
 
-<span class="c1">#!pip install -q python-crfsuite</span>
-<span class="c1">#!pip install -q torch</span>
-<span class="c1">#!pip install -q pythainlp</span>
-<span class="c1">#!pip install -q epitran</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>pythainlp<span class="w"> </span>python-crfsuite<span class="w"> </span>torch<span class="w"> </span>epitran<span class="w"> </span>ssg<span class="w"> </span>gensim
 </pre></div>
 </div>
 </div>
 <section id="Import-PyThaiNLP">
-<h2>Import PyThaiNLP<a class="headerlink" href="#Import-PyThaiNLP" title="Permalink to this heading"></a></h2>
+<h2>Import PyThaiNLP<a class="headerlink" href="#Import-PyThaiNLP" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pythainlp</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pythainlp</span>
 
 <span class="n">pythainlp</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
@@ -168,12 +162,12 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;2.2.1&#39;
+&#39;5.3.8&#39;
 </pre></div></div>
 </div>
 </section>
 <section id="Thai-Characters">
-<h2>Thai Characters<a class="headerlink" href="#Thai-Characters" title="Permalink to this heading"></a></h2>
+<h2>Thai Characters<a class="headerlink" href="#Thai-Characters" title="Link to this heading"></a></h2>
 <p>PyThaiNLP provides some ready-to-use Thai character set (e.g. Thai consonants, vowels, tonemarks, symbols) as a string for convenience. There are also few utility functions to test if a string is in Thai or not.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -247,7 +241,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;๔&quot;</span> <span class="ow">in</span> <span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_digits</span>  <span class="c1"># check if Thai digit &quot;4&quot; is in the character set</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">"๔"</span> <span class="ow">in</span> <span class="n">pythainlp</span><span class="o">.</span><span class="n">thai_digits</span>  <span class="c1"># check if Thai digit "4" is in the character set</span>
 </pre></div>
 </div>
 </div>
@@ -262,14 +256,14 @@ True
 </div>
 </section>
 <section id="Checking-if-a-string-contains-Thai-character-or-not,-or-how-many">
-<h2>Checking if a string contains Thai character or not, or how many<a class="headerlink" href="#Checking-if-a-string-contains-Thai-character-or-not,-or-how-many" title="Permalink to this heading"></a></h2>
+<h2>Checking if a string contains Thai character or not, or how many<a class="headerlink" href="#Checking-if-a-string-contains-Thai-character-or-not,-or-how-many" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pythainlp.util</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pythainlp.util</span>
 
-<span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;ก&quot;</span><span class="p">)</span>
+<span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">"ก"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -286,7 +280,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;(ก.พ.)&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">"(ก.พ.)"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -303,7 +297,7 @@ False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">&quot;(ก.พ.)&quot;</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">&quot;.()&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">isthai</span><span class="p">(</span><span class="s2">"(ก.พ.)"</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">".()"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -321,7 +315,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">&quot;วันอาทิตย์ที่ 24 มีนาคม 2562&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">"วันอาทิตย์ที่ 24 มีนาคม 2562"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -339,7 +333,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">&quot;วันอาทิตย์ที่ 24 มีนาคม 2562&quot;</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">countthai</span><span class="p">(</span><span class="s2">"วันอาทิตย์ที่ 24 มีนาคม 2562"</span><span class="p">,</span> <span class="n">ignore_chars</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -354,15 +348,15 @@ True
 </div>
 </section>
 <section id="Collation">
-<h2>Collation<a class="headerlink" href="#Collation" title="Permalink to this heading"></a></h2>
+<h2>Collation<a class="headerlink" href="#Collation" title="Link to this heading"></a></h2>
 <p>Sorting according to Thai dictionary.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">collate</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">collate</span>
 
-<span class="n">thai_words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ค้อน&quot;</span><span class="p">,</span> <span class="s2">&quot;กระดาษ&quot;</span><span class="p">,</span> <span class="s2">&quot;กรรไกร&quot;</span><span class="p">,</span> <span class="s2">&quot;ไข่&quot;</span><span class="p">,</span> <span class="s2">&quot;ผ้าไหม&quot;</span><span class="p">]</span>
+<span class="n">thai_words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"ค้อน"</span><span class="p">,</span> <span class="s2">"กระดาษ"</span><span class="p">,</span> <span class="s2">"กรรไกร"</span><span class="p">,</span> <span class="s2">"ไข่"</span><span class="p">,</span> <span class="s2">"ผ้าไหม"</span><span class="p">]</span>
 <span class="n">collate</span><span class="p">(</span><span class="n">thai_words</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -395,18 +389,18 @@ True
 </div>
 </section>
 <section id="Date/Time-Format-and-Spellout">
-<h2>Date/Time Format and Spellout<a class="headerlink" href="#Date/Time-Format-and-Spellout" title="Permalink to this heading"></a></h2>
+<h2>Date/Time Format and Spellout<a class="headerlink" href="#Date/Time-Format-and-Spellout" title="Link to this heading"></a></h2>
 <section id="Date/Time-Format">
-<h3>Date/Time Format<a class="headerlink" href="#Date/Time-Format" title="Permalink to this heading"></a></h3>
+<h3>Date/Time Format<a class="headerlink" href="#Date/Time-Format" title="Link to this heading"></a></h3>
 <p>Get Thai day and month names with Thai Buddhist Era (B.E.). Use <a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">formatting directives</a> similar to <code class="docutils literal notranslate"><span class="pre">datetime.strftime()</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">thai_strftime</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">thai_strftime</span>
 
-<span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;%Aที่ </span><span class="si">%-d</span><span class="s2"> %B พ.ศ. %Y เวลา %H:%M น. (</span><span class="si">%a</span><span class="s2"> </span><span class="si">%d</span><span class="s2">-%b-%y)&quot;</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s2">"%Aที่ </span><span class="si">%-d</span><span class="s2"> %B พ.ศ. %Y เวลา %H:%M น. (</span><span class="si">%a</span><span class="s2"> </span><span class="si">%d</span><span class="s2">-%b-%y)"</span>
 <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1976</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
 <span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">fmt</span><span class="p">)</span>
@@ -438,7 +432,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %b %y&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">"</span><span class="si">%d</span><span class="s2"> %b %y"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -455,7 +449,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %b %Y&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">"</span><span class="si">%d</span><span class="s2"> %b %Y"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -470,15 +464,14 @@ True
 </div>
 </section>
 <section id="Time-Spellout">
-<h3>Time Spellout<a class="headerlink" href="#Time-Spellout" title="Permalink to this heading"></a></h3>
-<p><em>Note: ``thai_time()`` will be renamed to ``time_to_thaiword()`` in version 2.2.</em></p>
+<h3>Time Spellout<a class="headerlink" href="#Time-Spellout" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">thai_time</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">time_to_thaiword</span>
 
-<span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">)</span>
+<span class="n">time_to_thaiword</span><span class="p">(</span><span class="s2">"00:14:29"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -496,7 +489,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_to_thaiword</span><span class="p">(</span><span class="s2">"00:14:29"</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"6h"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -514,7 +507,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;00:14:29&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_to_thaiword</span><span class="p">(</span><span class="s2">"00:14:29"</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">"m"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -531,10 +524,10 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;8:17:00&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;8:17:00&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;m6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;18:30:01&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;m6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">thai_time</span><span class="p">(</span><span class="s2">&quot;13:30:01&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">time_to_thaiword</span><span class="p">(</span><span class="s2">"8:17:00"</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"6h"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time_to_thaiword</span><span class="p">(</span><span class="s2">"8:17:00"</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"m6h"</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">"s"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time_to_thaiword</span><span class="p">(</span><span class="s2">"18:30:01"</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"m6h"</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">"m"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time_to_thaiword</span><span class="p">(</span><span class="s2">"13:30:01"</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"6h"</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">"m"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -554,10 +547,10 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">thai_time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="n">time_to_thaiword</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -575,7 +568,7 @@ True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">thai_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;6h&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">time_to_thaiword</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"6h"</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="s2">"m"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -591,26 +584,26 @@ True
 </section>
 </section>
 <section id="Tokenization-and-Segmentation">
-<h2>Tokenization and Segmentation<a class="headerlink" href="#Tokenization-and-Segmentation" title="Permalink to this heading"></a></h2>
+<h2>Tokenization and Segmentation<a class="headerlink" href="#Tokenization-and-Segmentation" title="Link to this heading"></a></h2>
 <p>At sentence, word, and sub-word levels.</p>
 <section id="Sentence">
-<h3>Sentence<a class="headerlink" href="#Sentence" title="Permalink to this heading"></a></h3>
+<h3>Sentence<a class="headerlink" href="#Sentence" title="Link to this heading"></a></h3>
 <p>Default sentence tokenizer is “crfcut”. Tokenization engine can be chosen ussing <code class="docutils literal notranslate"><span class="pre">engine=</span></code> parameter.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">sent_tokenize</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว พุทธศักราช ๒๔๗๕ &quot;</span>
-        <span class="s2">&quot;เป็นรัฐธรรมนูญฉบับชั่วคราว ซึ่งถือว่าเป็นรัฐธรรมนูญฉบับแรกแห่งราชอาณาจักรสยาม &quot;</span>
-        <span class="s2">&quot;ประกาศใช้เมื่อวันที่ 27 มิถุนายน พ.ศ. 2475 &quot;</span>
-        <span class="s2">&quot;โดยเป็นผลพวงหลังการปฏิวัติเมื่อวันที่ 24 มิถุนายน พ.ศ. 2475 โดยคณะราษฎร&quot;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว พุทธศักราช ๒๔๗๕ "</span>
+        <span class="s2">"เป็นรัฐธรรมนูญฉบับชั่วคราว ซึ่งถือว่าเป็นรัฐธรรมนูญฉบับแรกแห่งราชอาณาจักรสยาม "</span>
+        <span class="s2">"ประกาศใช้เมื่อวันที่ 27 มิถุนายน พ.ศ. 2475 "</span>
+        <span class="s2">"โดยเป็นผลพวงหลังการปฏิวัติเมื่อวันที่ 24 มิถุนายน พ.ศ. 2475 โดยคณะราษฎร"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;default (crfcut):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"default (crfcut):"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">whitespace+newline:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;whitespace+newline&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">whitespace+newline:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"whitespace+newline"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -620,7 +613,7 @@ True
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 default (crfcut):
-[&#39;พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว พุทธศักราช ๒๔๗๕ เป็นรัฐธรรมนูญฉบับชั่วคราว &#39;, &#39;ซึ่งถือว่าเป็นรัฐธรรมนูญฉบับแรกแห่งราชอาณาจักรสยาม &#39;, &#39;ประกาศใช้เมื่อวันที่ 27 มิถุนายน พ.ศ. 2475 &#39;, &#39;โดยเป็นผลพวงหลังการปฏิวัติเมื่อวันที่ 24 มิถุนายน พ.ศ. 2475 โดยคณะราษฎร&#39;]
+[&#39;พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว พุทธศักราช ๒๔๗๕ เป็นรัฐธรรมนูญฉบับชั่วคราว &#39;, &#39;ซึ่งถือว่าเป็นรัฐธรรมนูญฉบับแรกแห่งราชอาณาจักรสยาม &#39;, &#39;ประกาศใช้เมื่อวันที่ 27 มิถุนายน พ.ศ.&#39;, &#39; 2475 โดยเป็นผลพวงหลังการปฏิวัติเมื่อวันที่ 24 มิถุนายน พ.ศ.&#39;, &#39; 2475 โดยคณะราษฎร&#39;]
 
 whitespace+newline:
 [&#39;พระราชบัญญัติธรรมนูญการปกครองแผ่นดินสยามชั่วคราว&#39;, &#39;พุทธศักราช&#39;, &#39;๒๔๗๕&#39;, &#39;เป็นรัฐธรรมนูญฉบับชั่วคราว&#39;, &#39;ซึ่งถือว่าเป็นรัฐธรรมนูญฉบับแรกแห่งราชอาณาจักรสยาม&#39;, &#39;ประกาศใช้เมื่อวันที่&#39;, &#39;27&#39;, &#39;มิถุนายน&#39;, &#39;พ.ศ.&#39;, &#39;2475&#39;, &#39;โดยเป็นผลพวงหลังการปฏิวัติเมื่อวันที่&#39;, &#39;24&#39;, &#39;มิถุนายน&#39;, &#39;พ.ศ.&#39;, &#39;2475&#39;, &#39;โดยคณะราษฎร&#39;]
@@ -628,19 +621,19 @@ whitespace+newline:
 </div>
 </section>
 <section id="Word">
-<h3>Word<a class="headerlink" href="#Word" title="Permalink to this heading"></a></h3>
+<h3>Word<a class="headerlink" href="#Word" title="Link to this heading"></a></h3>
 <p>Default word tokenizer (“newmm”) use maximum matching algorithm.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ก็จะรู้ความชั่วร้ายที่ทำไว้     และคงจะไม่ยอมให้ทำนาบนหลังคน &quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"ก็จะรู้ความชั่วร้ายที่ทำไว้     และคงจะไม่ยอมให้ทำนาบนหลังคน "</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;default (newmm):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"default (newmm):"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">newmm and keep_whitespace=False:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">newmm and keep_whitespace=False:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">keep_whitespace</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -659,19 +652,19 @@ newmm and keep_whitespace=False:
 </div>
 <p>Other algorithm can be chosen. We can also create a tokenizer with a custom dictionary.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span><span class="p">,</span> <span class="n">Tokenizer</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span><span class="p">,</span> <span class="n">Tokenizer</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;กฎหมายแรงงานฉบับปรับปรุงใหม่ประกาศใช้แล้ว&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"กฎหมายแรงงานฉบับปรับปรุงใหม่ประกาศใช้แล้ว"</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;newmm  :&quot;</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># default engine is &quot;newmm&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;longest:&quot;</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;longest&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"newmm  :"</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># default engine is "newmm"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"longest:"</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"longest"</span><span class="p">))</span>
 
-<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;แรงงาน&quot;</span><span class="p">]</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"แรงงาน"</span><span class="p">]</span>
 <span class="n">custom_tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;newmm (custom dictionary):&quot;</span><span class="p">,</span> <span class="n">custom_tokenizer</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"newmm (custom dictionary):"</span><span class="p">,</span> <span class="n">custom_tokenizer</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -687,21 +680,21 @@ newmm (custom dictionary): [&#39;กฎหมาย&#39;, &#39;แรงงา�
 </div>
 <p>Default word tokenizer use a word list from <code class="docutils literal notranslate"><span class="pre">pythainlp.corpus.common.thai_words()</span></code>. We can get that list, add/remove words, and create new tokenizer from the modified list.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus.common</span> <span class="kn">import</span> <span class="n">thai_words</span>
-<span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.corpus.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">thai_words</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tokenizer</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;นิยายวิทยาศาสตร์ของไอแซค อสิมอฟ&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"นิยายวิทยาศาสตร์ของไอแซค อสิมอฟ"</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;default dictionary:&quot;</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"default dictionary:"</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 
 <span class="n">words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">thai_words</span><span class="p">())</span>  <span class="c1"># thai_words() returns frozenset</span>
-<span class="n">words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;ไอแซค&quot;</span><span class="p">)</span>  <span class="c1"># Isaac</span>
-<span class="n">words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;อสิมอฟ&quot;</span><span class="p">)</span>  <span class="c1"># Asimov</span>
+<span class="n">words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"ไอแซค"</span><span class="p">)</span>  <span class="c1"># Isaac</span>
+<span class="n">words</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"อสิมอฟ"</span><span class="p">)</span>  <span class="c1"># Asimov</span>
 <span class="n">custom_tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;custom dictionary :&quot;</span><span class="p">,</span> <span class="n">custom_tokenizer</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"custom dictionary :"</span><span class="p">,</span> <span class="n">custom_tokenizer</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -716,21 +709,21 @@ custom dictionary : [&#39;นิยาย&#39;, &#39;วิทยาศาสต
 </div>
 <p>We can also, alternatively, create a dictionary trie, using <code class="docutils literal notranslate"><span class="pre">pythainlp.util.Trie()</span></code> function, and pass it to a default tokenizer.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus.common</span> <span class="kn">import</span> <span class="n">thai_words</span>
-<span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">Trie</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.corpus.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">thai_words</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trie</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ILO87 ว่าด้วยเสรีภาพในการสมาคมและการคุ้มครองสิทธิในการรวมตัว ILO98 ว่าด้วยสิทธิในการรวมตัวและการร่วมเจรจาต่อรอง&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"ILO87 ว่าด้วยเสรีภาพในการสมาคมและการคุ้มครองสิทธิในการรวมตัว ILO98 ว่าด้วยสิทธิในการรวมตัวและการร่วมเจรจาต่อรอง"</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;default dictionary:&quot;</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"default dictionary:"</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 
-<span class="n">new_words</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ILO87&quot;</span><span class="p">,</span> <span class="s2">&quot;ILO98&quot;</span><span class="p">,</span> <span class="s2">&quot;การร่วมเจรจาต่อรอง&quot;</span><span class="p">,</span> <span class="s2">&quot;สิทธิในการรวมตัว&quot;</span><span class="p">,</span> <span class="s2">&quot;เสรีภาพในการสมาคม&quot;</span><span class="p">,</span> <span class="s2">&quot;แรงงานสัมพันธ์&quot;</span><span class="p">}</span>
+<span class="n">new_words</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"ILO87"</span><span class="p">,</span> <span class="s2">"ILO98"</span><span class="p">,</span> <span class="s2">"การร่วมเจรจาต่อรอง"</span><span class="p">,</span> <span class="s2">"สิทธิในการรวมตัว"</span><span class="p">,</span> <span class="s2">"เสรีภาพในการสมาคม"</span><span class="p">,</span> <span class="s2">"แรงงานสัมพันธ์"</span><span class="p">}</span>
 <span class="n">words</span> <span class="o">=</span> <span class="n">new_words</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">thai_words</span><span class="p">())</span>
 
 <span class="n">custom_dictionary_trie</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;custom dictionary :&quot;</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">custom_dict</span><span class="o">=</span><span class="n">custom_dictionary_trie</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"custom dictionary :"</span><span class="p">,</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">custom_dict</span><span class="o">=</span><span class="n">custom_dictionary_trie</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -748,7 +741,7 @@ custom dictionary : [&#39;ILO87&#39;, &#39; &#39;, &#39;ว่าด้วย&#3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speedtest_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speedtest_text</span> <span class="o">=</span> <span class="s2">"""</span>
 <span class="s2">ครบรอบ 14 ปี ตากใบ เช้าวันนั้น 25 ต.ค. 2547 ผู้ชุมนุมชายกว่า 1,370 คน</span>
 <span class="s2">ถูกโยนขึ้นรถยีเอ็มซี 22 หรือ 24 คัน นอนซ้อนกันคันละ 4-5 ชั้น เดินทางจากสถานีตำรวจตากใบ ไปไกล 150 กิโลเมตร</span>
 <span class="s2">ไปถึงค่ายอิงคยุทธบริหาร ใช้เวลากว่า 6 ชั่วโมง / ในอีกคดีที่ญาติฟ้องร้องรัฐ คดีจบลงที่การประนีประนอมยอมความ</span>
@@ -764,7 +757,7 @@ custom dictionary : [&#39;ILO87&#39;, &#39; &#39;, &#39;ว่าด้วย&#3
 <span class="s2">อภิมหาโครงการเชื่อมโลกของจีนไม่ใช่เครื่องมือแผ่อิทธิพล แต่ยินดีรับฟังข้อวิจารณ์ เช่น ประเด็นกับดักหนี้สิน</span>
 <span class="s2">และความไม่โปร่งใส รัฐบาลปักกิ่งบอกว่า เวทีประชุม Belt and Road Forum ในช่วงวันที่ 25-27 เมษายน</span>
 <span class="s2">ถือเป็นงานการทูตที่สำคัญที่สุดของจีนในปี 2019</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">"""</span>
 </pre></div>
 </div>
 </div>
@@ -772,8 +765,8 @@ custom dictionary : [&#39;ILO87&#39;, &#39; &#39;, &#39;ว่าด้วย&#3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling &quot;longest&quot; engine through word_tokenize wrapper</span>
-<span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;longest&quot;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling "longest" engine through word_tokenize wrapper</span>
+<span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine="longest")
 </pre></div>
 </div>
 </div>
@@ -782,16 +775,16 @@ custom dictionary : [&#39;ILO87&#39;, &#39; &#39;, &#39;ว่าด้วย&#3
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 253 ms, sys: 2.27 ms, total: 256 ms
-Wall time: 255 ms
+CPU times: user 217 ms, sys: 1.13 ms, total: 219 ms
+Wall time: 219 ms
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling &quot;newmm&quot; engine through word_tokenize wrapper</span>
-<span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;newmm&quot;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling "newmm" engine through word_tokenize wrapper</span>
+<span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine="newmm")
 </pre></div>
 </div>
 </div>
@@ -800,16 +793,16 @@ Wall time: 255 ms
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 3.4 ms, sys: 60 µs, total: 3.46 ms
-Wall time: 3.47 ms
+CPU times: user 4.9 ms, sys: 0 ns, total: 4.9 ms
+Wall time: 4.92 ms
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling &quot;newmm&quot; engine through word_tokenize wrapper</span>
-<span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;newmm-safe&quot;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speed test: Calling "newmm" engine through word_tokenize wrapper</span>
+<span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine="newmm-safe")
 </pre></div>
 </div>
 </div>
@@ -818,42 +811,23 @@ Wall time: 3.47 ms
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 4.08 ms, sys: 88 µs, total: 4.16 ms
-Wall time: 4.15 ms
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install attacut</span>
-<span class="c1"># Speed test: Calling &quot;attacut&quot; engine through word_tokenize wrapper</span>
-<span class="o">%</span><span class="k">time</span> tokens = word_tokenize(speedtest_text, engine=&quot;attacut&quot;)
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-CPU times: user 833 ms, sys: 174 ms, total: 1.01 s
-Wall time: 576 ms
+CPU times: user 3.9 ms, sys: 0 ns, total: 3.9 ms
+Wall time: 3.92 ms
 </pre></div></div>
 </div>
 <p>Get all possible segmentations</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize.multi_cut</span> <span class="kn">import</span> <span class="n">find_all_segment</span><span class="p">,</span> <span class="n">mmcut</span><span class="p">,</span> <span class="n">segment</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.tokenize.multi_cut</span><span class="w"> </span><span class="kn">import</span> <span class="n">find_all_segment</span><span class="p">,</span> <span class="n">mmcut</span><span class="p">,</span> <span class="n">segment</span>
 
-<span class="n">find_all_segment</span><span class="p">(</span><span class="s2">&quot;มีความเป็นไปได้อย่างไรบ้าง&quot;</span><span class="p">)</span>
+<span class="n">find_all_segment</span><span class="p">(</span><span class="s2">"มีความเป็นไปได้อย่างไรบ้าง"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -877,27 +851,27 @@ Wall time: 576 ms
 </div>
 </section>
 <section id="Subword,-syllable,-and-Thai-Character-Cluster-(TCC)">
-<h3>Subword, syllable, and Thai Character Cluster (TCC)<a class="headerlink" href="#Subword,-syllable,-and-Thai-Character-Cluster-(TCC)" title="Permalink to this heading"></a></h3>
+<h3>Subword, syllable, and Thai Character Cluster (TCC)<a class="headerlink" href="#Subword,-syllable,-and-Thai-Character-Cluster-(TCC)" title="Link to this heading"></a></h3>
 <p>Tokenization can also be done at subword level, either syllable or Thai Character Cluster (TCC).</p>
 <ul class="simple">
 <li><p>Syllable segmentation is using <code class="docutils literal notranslate"><span class="pre">`ssg</span></code> &lt;<a class="reference external" href="https://github.com/ponrawee/ssg">https://github.com/ponrawee/ssg</a>&gt;`__, a CRF syllable segmenter for Thai by Ponrawee Prasertsom.</p></li>
 <li><p>TCC is smaller than syllable. For information about TCC, see <a class="reference external" href="https://www.researchgate.net/publication/2853284_Character_Cluster_Based_Thai_Information_Retrieval">Character Cluster Based Thai Information Retrieval</a> (Theeramunkong et al. 2004).</p></li>
 </ul>
 <section id="Subword-tokenization">
-<h4>Subword tokenization<a class="headerlink" href="#Subword-tokenization" title="Permalink to this heading"></a></h4>
+<h4>Subword tokenization<a class="headerlink" href="#Subword-tokenization" title="Link to this heading"></a></h4>
 <p>Default subword tokenization engine is <code class="docutils literal notranslate"><span class="pre">tcc</span></code>, which will use Thai Character Cluster (TCC) as a subword unit.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">subword_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">subword_tokenize</span>
 
-<span class="n">subword_tokenize</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">)</span>  <span class="c1"># default subword unit is TCC</span>
+<span class="n">subword_tokenize</span><span class="p">(</span><span class="s2">"ประเทศไทย"</span><span class="p">)</span>  <span class="c1"># default subword unit is TCC</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -907,22 +881,22 @@ Wall time: 576 ms
 </div>
 </section>
 <section id="Syllable-tokenization">
-<h4>Syllable tokenization<a class="headerlink" href="#Syllable-tokenization" title="Permalink to this heading"></a></h4>
+<h4>Syllable tokenization<a class="headerlink" href="#Syllable-tokenization" title="Link to this heading"></a></h4>
 <p>Default syllable tokenization engine is <code class="docutils literal notranslate"><span class="pre">dict</span></code>, which will use <code class="docutils literal notranslate"><span class="pre">newmm</span></code> word tokenization engine with a custom dictionary contains known syllables in Thai language.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">syllable_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">syllable_tokenize</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;อับดุลเลาะ อีซอมูซอ สมองบวมรุนแรง&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"อับดุลเลาะ อีซอมูซอ สมองบวมรุนแรง"</span>
 
-<span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># default engine is &quot;dict&quot;</span>
+<span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># default engine is "dict"</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -944,15 +918,15 @@ Wall time: 576 ms
 </div>
 <p>External <code class="docutils literal notranslate"><span class="pre">`ssg</span></code> &lt;<a class="reference external" href="https://github.com/ponrawee/ssg">https://github.com/ponrawee/ssg</a>&gt;`__ engine call be called. Note that <code class="docutils literal notranslate"><span class="pre">ssg</span></code> engine ommitted whitespaces in the output tokens.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;ssg&quot;</span><span class="p">)</span>  <span class="c1"># use &quot;ssg&quot; for syllable</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">syllable_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"ssg"</span><span class="p">)</span>  <span class="c1"># use "ssg" for syllable</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -962,20 +936,20 @@ Wall time: 576 ms
 </div>
 </section>
 <section id="Low-level-subword-operations">
-<h4>Low-level subword operations<a class="headerlink" href="#Low-level-subword-operations" title="Permalink to this heading"></a></h4>
+<h4>Low-level subword operations<a class="headerlink" href="#Low-level-subword-operations" title="Link to this heading"></a></h4>
 <p>These low-level TCC operations can be useful for some pre-processing tasks. Like checking if it’s ok to cut a string at a certain point or to find typos.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">tcc</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">tcc</span>
 
-<span class="n">tcc</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">)</span>
+<span class="n">tcc</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="s2">"ประเทศไทย"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -984,15 +958,15 @@ Wall time: 576 ms
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcc</span><span class="o">.</span><span class="n">tcc_pos</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">)</span>  <span class="c1"># return positions</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcc</span><span class="o">.</span><span class="n">tcc_pos</span><span class="p">(</span><span class="s2">"ประเทศไทย"</span><span class="p">)</span>  <span class="c1"># return positions</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1001,11 +975,11 @@ Wall time: 576 ms
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">tcc</span><span class="o">.</span><span class="n">tcc</span><span class="p">(</span><span class="s2">&quot;ประเทศไทย&quot;</span><span class="p">):</span>  <span class="c1"># TCC generator</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">tcc</span><span class="o">.</span><span class="n">tcc</span><span class="p">(</span><span class="s2">"ประเทศไทย"</span><span class="p">):</span>  <span class="c1"># TCC generator</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'-'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1021,7 +995,7 @@ Wall time: 576 ms
 </section>
 </section>
 <section id="Transliteration">
-<h2>Transliteration<a class="headerlink" href="#Transliteration" title="Permalink to this heading"></a></h2>
+<h2>Transliteration<a class="headerlink" href="#Transliteration" title="Link to this heading"></a></h2>
 <p>There are two types of transliteration here: romanization and transliteration.</p>
 <ul class="simple">
 <li><p>Romanization will render Thai words in the Latin alphabet using the <a class="reference external" href="https://en.wikipedia.org/wiki/Royal_Thai_General_System_of_Transcription">Royal Thai General System of Transcription (RTGS)</a>.</p>
@@ -1036,17 +1010,17 @@ Wall time: 576 ms
 </li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.transliterate</span> <span class="kn">import</span> <span class="n">romanize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.transliterate</span><span class="w"> </span><span class="kn">import</span> <span class="n">romanize</span>
 
-<span class="n">romanize</span><span class="p">(</span><span class="s2">&quot;แมว&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;maeo&#39;</span>
+<span class="n">romanize</span><span class="p">(</span><span class="s2">"แมว"</span><span class="p">)</span>  <span class="c1"># output: 'maeo'</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1055,15 +1029,15 @@ Wall time: 576 ms
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">romanize</span><span class="p">(</span><span class="s2">&quot;ภาพยนตร์&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;phapn&#39; (*obviously wrong)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">romanize</span><span class="p">(</span><span class="s2">"ภาพยนตร์"</span><span class="p">)</span>  <span class="c1"># output: 'phapn' (*obviously wrong)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1072,27 +1046,17 @@ Wall time: 576 ms
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.transliterate</span> <span class="kn">import</span> <span class="n">transliterate</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.transliterate</span><span class="w"> </span><span class="kn">import</span> <span class="n">transliterate</span>
 
-<span class="n">transliterate</span><span class="p">(</span><span class="s2">&quot;แมว&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;mɛːw&#39;</span>
+<span class="n">transliterate</span><span class="p">(</span><span class="s2">"แมว"</span><span class="p">)</span>  <span class="c1"># output: 'mɛːw'</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Update Corpus...
-Corpus: thai-g2p
-- Already up to date.
-</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1101,15 +1065,15 @@ Corpus: thai-g2p
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transliterate</span><span class="p">(</span><span class="s2">&quot;ภาพยนตร์&quot;</span><span class="p">)</span>  <span class="c1"># output: &#39;pʰaːpjanot&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transliterate</span><span class="p">(</span><span class="s2">"ภาพยนตร์"</span><span class="p">)</span>  <span class="c1"># output: 'pʰaːpjanot'</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1119,20 +1083,20 @@ Corpus: thai-g2p
 </div>
 </section>
 <section id="Normalization">
-<h2>Normalization<a class="headerlink" href="#Normalization" title="Permalink to this heading"></a></h2>
+<h2>Normalization<a class="headerlink" href="#Normalization" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">normalize()</span></code> removes zero-width spaces (ZWSP and ZWNJ), duplicated spaces, repeating vowels, and dangling characters. It also reorder vowels and tone marks during the process of removing repeating vowels.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">normalize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">normalize</span>
 
-<span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;เเปลก&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;แปลก&quot;</span>  <span class="c1"># เ เ ป ล ก  vs แ ป ล ก</span>
+<span class="n">normalize</span><span class="p">(</span><span class="s2">"เเปลก"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"แปลก"</span>  <span class="c1"># เ เ ป ล ก  vs แ ป ล ก</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1142,16 +1106,16 @@ True
 </div>
 <p>The string below contains a non-standard order of Thai characters, Sara Aa (following vowel) + Mai Ek (upper tone mark). <code class="docutils literal notranslate"><span class="pre">normalize()</span></code> will reorder it to Mai Ek + Sara Aa.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;เกา่&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">"เกา่"</span>
 <span class="n">normalize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1161,16 +1125,16 @@ True
 </div>
 <p>This can be useful for string matching, including tokenization.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;เก็บวันน้ี พรุ่งน้ีก็เกา่&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"เก็บวันน้ี พรุ่งน้ีก็เกา่"</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tokenize immediately:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"tokenize immediately:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">normalize, then tokenize:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">normalize, then tokenize:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">text</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -1189,15 +1153,15 @@ normalize, then tokenize:
 </div>
 <p>The string below contains repeating vowels (multiple Sara A in a row) normalize() will keep only one of them. It can be use to reduce variations in spellings, useful for classification task.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;เกะะะ&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalize</span><span class="p">(</span><span class="s2">"เกะะะ"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1215,22 +1179,22 @@ text = remove_dangling(text)
 <p>If you don’t like the behavior of default <code class="docutils literal notranslate"><span class="pre">normalize()</span></code>, you can call those functions shown above, also <code class="docutils literal notranslate"><span class="pre">remove_tonemark()</span></code> and <code class="docutils literal notranslate"><span class="pre">reorder_vowels()</span></code>, individually from <code class="docutils literal notranslate"><span class="pre">pythainlp.util</span></code>, to customize your own normalization.</p>
 </section>
 <section id="Digit-conversion">
-<h2>Digit conversion<a class="headerlink" href="#Digit-conversion" title="Permalink to this heading"></a></h2>
+<h2>Digit conversion<a class="headerlink" href="#Digit-conversion" title="Link to this heading"></a></h2>
 <p>Thai text sometimes use Thai digits. This can reduce performance for classification and searching. PyThaiNP provides few utility functions to deal with this.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">arabic_digit_to_thai_digit</span><span class="p">,</span> <span class="n">thai_digit_to_arabic_digit</span><span class="p">,</span> <span class="n">digit_to_text</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">arabic_digit_to_thai_digit</span><span class="p">,</span> <span class="n">thai_digit_to_arabic_digit</span><span class="p">,</span> <span class="n">digit_to_text</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;ฉุกเฉินที่ยุโรปเรียก 112 ๑๑๒&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">"ฉุกเฉินที่ยุโรปเรียก 112 ๑๑๒"</span>
 
 <span class="n">arabic_digit_to_thai_digit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1239,7 +1203,7 @@ text = remove_dangling(text)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_digit_to_arabic_digit</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
@@ -1247,7 +1211,7 @@ text = remove_dangling(text)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1256,7 +1220,7 @@ text = remove_dangling(text)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">digit_to_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
@@ -1264,7 +1228,7 @@ text = remove_dangling(text)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1274,18 +1238,18 @@ text = remove_dangling(text)
 </div>
 </section>
 <section id="Soundex">
-<h2>Soundex<a class="headerlink" href="#Soundex" title="Permalink to this heading"></a></h2>
+<h2>Soundex<a class="headerlink" href="#Soundex" title="Link to this heading"></a></h2>
 <p>“Soundex is a phonetic algorithm for indexing names by sound.” (<a class="reference external" href="https://en.wikipedia.org/wiki/Soundex">Wikipedia</a>). PyThaiNLP provides three kinds of Thai soundex.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.soundex</span> <span class="kn">import</span> <span class="n">lk82</span><span class="p">,</span> <span class="n">metasound</span><span class="p">,</span> <span class="n">udom83</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.soundex</span><span class="w"> </span><span class="kn">import</span> <span class="n">lk82</span><span class="p">,</span> <span class="n">metasound</span><span class="p">,</span> <span class="n">udom83</span>
 
 <span class="c1"># check equivalence</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lk82</span><span class="p">(</span><span class="s2">&quot;รถ&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">lk82</span><span class="p">(</span><span class="s2">&quot;รด&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">udom83</span><span class="p">(</span><span class="s2">&quot;วรร&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">udom83</span><span class="p">(</span><span class="s2">&quot;วัน&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">metasound</span><span class="p">(</span><span class="s2">&quot;นพ&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">metasound</span><span class="p">(</span><span class="s2">&quot;นภ&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lk82</span><span class="p">(</span><span class="s2">"รถ"</span><span class="p">)</span> <span class="o">==</span> <span class="n">lk82</span><span class="p">(</span><span class="s2">"รด"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">udom83</span><span class="p">(</span><span class="s2">"วรร"</span><span class="p">)</span> <span class="o">==</span> <span class="n">udom83</span><span class="p">(</span><span class="s2">"วัน"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metasound</span><span class="p">(</span><span class="s2">"นพ"</span><span class="p">)</span> <span class="o">==</span> <span class="n">metasound</span><span class="p">(</span><span class="s2">"นภ"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1300,13 +1264,13 @@ True
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;บูรณะ&quot;</span><span class="p">,</span> <span class="s2">&quot;บูรณการ&quot;</span><span class="p">,</span> <span class="s2">&quot;มัก&quot;</span><span class="p">,</span> <span class="s2">&quot;มัค&quot;</span><span class="p">,</span> <span class="s2">&quot;มรรค&quot;</span><span class="p">,</span> <span class="s2">&quot;ลัก&quot;</span><span class="p">,</span> <span class="s2">&quot;รัก&quot;</span><span class="p">,</span> <span class="s2">&quot;รักษ์&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"บูรณะ"</span><span class="p">,</span> <span class="s2">"บูรณการ"</span><span class="p">,</span> <span class="s2">"มัก"</span><span class="p">,</span> <span class="s2">"มัค"</span><span class="p">,</span> <span class="s2">"มรรค"</span><span class="p">,</span> <span class="s2">"ลัก"</span><span class="p">,</span> <span class="s2">"รัก"</span><span class="p">,</span> <span class="s2">"รักษ์"</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span>
-        <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> - lk82: </span><span class="si">{}</span><span class="s2"> - udom83: </span><span class="si">{}</span><span class="s2"> - metasound: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="s2">"</span><span class="si">{}</span><span class="s2"> - lk82: </span><span class="si">{}</span><span class="s2"> - udom83: </span><span class="si">{}</span><span class="s2"> - metasound: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">text</span><span class="p">,</span> <span class="n">lk82</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">udom83</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">metasound</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
         <span class="p">)</span>
     <span class="p">)</span>
@@ -1331,69 +1295,74 @@ True
 </div>
 </section>
 <section id="Spellchecking">
-<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Permalink to this heading"></a></h2>
+<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Link to this heading"></a></h2>
 <p>Default spellchecker uses <a class="reference external" href="http://www.norvig.com/spell-correct.html">Peter Norvig’s algorithm</a> together with word frequency from Thai National Corpus (TNC).</p>
 <p><code class="docutils literal notranslate"><span class="pre">spell()</span></code> returns a list of all possible spellings.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">spell</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">spell</span>
 
-<span class="n">spell</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
+<span class="n">spell</span><span class="p">(</span><span class="s2">"เหลืยม"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[&#39;เหลียม&#39;, &#39;เหลือม&#39;]
+[&#39;เหลือม&#39;]
 </pre></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">correct()</span></code> returns the most likely spelling.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">correct</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">correct</span>
 
-<span class="n">correct</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
+<span class="n">correct</span><span class="p">(</span><span class="s2">"เหลืยม"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;เหลียม&#39;
+&#39;เหลือม&#39;
 </pre></div></div>
 </div>
 </section>
 <section id="Spellchecking---Custom-dictionary-and-word-frequency">
-<h2>Spellchecking - Custom dictionary and word frequency<a class="headerlink" href="#Spellchecking---Custom-dictionary-and-word-frequency" title="Permalink to this heading"></a></h2>
+<h2>Spellchecking - Custom dictionary and word frequency<a class="headerlink" href="#Spellchecking---Custom-dictionary-and-word-frequency" title="Link to this heading"></a></h2>
 <p>Custom dictionary can be provided when creating spellchecker.</p>
 <p>When create a <code class="docutils literal notranslate"><span class="pre">NorvigSpellChecker</span></code> object, you can pass a custom dictionary to <code class="docutils literal notranslate"><span class="pre">custom_dict</span></code> parameter.</p>
-<p><code class="docutils literal notranslate"><span class="pre">custom_dict</span></code> can be: - a dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>), with words (<code class="docutils literal notranslate"><span class="pre">str</span></code>) as keys and frequencies (<code class="docutils literal notranslate"><span class="pre">int</span></code>) as values; or - a list, a tuple, or a set of (word, frequency) tuples; or - a list, a tuple, or a set of just words, without their frequencies – in this case <code class="docutils literal notranslate"><span class="pre">1</span></code> will be assigned to every words.</p>
+<p><code class="docutils literal notranslate"><span class="pre">custom_dict</span></code> can be:</p>
+<ul class="simple">
+<li><p>a dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>), with words (<code class="docutils literal notranslate"><span class="pre">str</span></code>) as keys and frequencies (<code class="docutils literal notranslate"><span class="pre">int</span></code>) as values; or</p></li>
+<li><p>a list, a tuple, or a set of (word, frequency) tuples; or</p></li>
+<li><p>a list, a tuple, or a set of just words, without their frequencies – in this case <code class="docutils literal notranslate"><span class="pre">1</span></code> will be assigned to every words.</p></li>
+</ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.spell</span> <span class="kn">import</span> <span class="n">NorvigSpellChecker</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.spell</span><span class="w"> </span><span class="kn">import</span> <span class="n">NorvigSpellChecker</span>
 
-<span class="n">user_dict</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;เหลียม&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;เหลือม&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;เหลียว&quot;</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span>
+<span class="n">user_dict</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"เหลียม"</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="s2">"เหลือม"</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="p">(</span><span class="s2">"เหลียว"</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)]</span>
 <span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">custom_dict</span><span class="o">=</span><span class="n">user_dict</span><span class="p">)</span>
 
-<span class="n">checker</span><span class="o">.</span><span class="n">spell</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
+<span class="n">checker</span><span class="o">.</span><span class="n">spell</span><span class="p">(</span><span class="s2">"เหลืยม"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1405,19 +1374,19 @@ True
 <p>You can use word frequencies from Thai National Corpus and Thai Textbook Corpus as well.</p>
 <p>By default, <code class="docutils literal notranslate"><span class="pre">NorvigSpellChecker</span></code> uses Thai National Corpus.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.corpus</span> <span class="kn">import</span> <span class="n">ttc</span>  <span class="c1"># Thai Textbook Corpus</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">ttc</span>  <span class="c1"># Thai Textbook Corpus</span>
 
 <span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">custom_dict</span><span class="o">=</span><span class="n">ttc</span><span class="o">.</span><span class="n">word_freqs</span><span class="p">())</span>
 
-<span class="n">checker</span><span class="o">.</span><span class="n">spell</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
+<span class="n">checker</span><span class="o">.</span><span class="n">spell</span><span class="p">(</span><span class="s2">"เหลืยม"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1426,15 +1395,15 @@ True
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker</span><span class="o">.</span><span class="n">correct</span><span class="p">(</span><span class="s2">&quot;เหลืยม&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker</span><span class="o">.</span><span class="n">correct</span><span class="p">(</span><span class="s2">"เหลืยม"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1444,7 +1413,7 @@ True
 </div>
 <p>To check the current dictionary of a spellchecker:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">checker</span><span class="o">.</span><span class="n">dictionary</span><span class="p">())[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
@@ -1452,25 +1421,25 @@ True
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[(&#39;พิธีเปิด&#39;, 18),
- (&#39;ไส้กรอก&#39;, 40),
- (&#39;ปลิง&#39;, 6),
- (&#39;เต็ง&#39;, 13),
- (&#39;ขอบคุณ&#39;, 356),
- (&#39;ประสาน&#39;, 84),
- (&#39;รำไร&#39;, 11),
- (&#39;ร่วมท้อง&#39;, 4),
- (&#39;ฝักมะขาม&#39;, 3)]
+[(&#39;ดูดู๋&#39;, 5),
+ (&#39;มะค่า&#39;, 20),
+ (&#39;ฮ้าไฮ้&#39;, 2),
+ (&#39;เรือง&#39;, 106),
+ (&#39;ซี่โครง&#39;, 23),
+ (&#39;ถวัลยราชย์&#39;, 2),
+ (&#39;ครุ&#39;, 114),
+ (&#39;ฝักใฝ่&#39;, 9),
+ (&#39;ละอาย&#39;, 44)]
 </pre></div></div>
 </div>
 <p>We can also apply conditions and filter function to dictionary when creating spellchecker.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">()</span>  <span class="c1"># use default filter (remove any word with number or non-Thai character)</span>
@@ -1479,16 +1448,16 @@ True
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-39963
+35840
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">min_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">min_len</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_len</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -1497,16 +1466,16 @@ True
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-30376
+32773
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checker_no_filter</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">dict_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># use no filter</span>
@@ -1515,20 +1484,20 @@ True
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-66209
+36274
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_yamok</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-    <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="s2">&quot;ๆ&quot;</span> <span class="ow">in</span> <span class="n">word</span> <span class="k">else</span> <span class="kc">True</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_yamok</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="k">return</span> <span class="kc">False</span> <span class="k">if</span> <span class="s2">"ๆ"</span> <span class="ow">in</span> <span class="n">word</span> <span class="k">else</span> <span class="kc">True</span>
 
 <span class="n">checker_custom_filter</span> <span class="o">=</span> <span class="n">NorvigSpellChecker</span><span class="p">(</span><span class="n">dict_filter</span><span class="o">=</span><span class="n">remove_yamok</span><span class="p">)</span>  <span class="c1"># use custom filter</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">checker_custom_filter</span><span class="o">.</span><span class="n">dictionary</span><span class="p">())</span>
@@ -1536,29 +1505,29 @@ True
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-66204
+35905
 </pre></div></div>
 </div>
 </section>
 <section id="Part-of-Speech-Tagging">
-<h2>Part-of-Speech Tagging<a class="headerlink" href="#Part-of-Speech-Tagging" title="Permalink to this heading"></a></h2>
+<h2>Part-of-Speech Tagging<a class="headerlink" href="#Part-of-Speech-Tagging" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.tag</span> <span class="kn">import</span> <span class="n">pos_tag</span><span class="p">,</span> <span class="n">pos_tag_sents</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.tag</span><span class="w"> </span><span class="kn">import</span> <span class="n">pos_tag</span><span class="p">,</span> <span class="n">pos_tag_sents</span>
 
-<span class="n">pos_tag</span><span class="p">([</span><span class="s2">&quot;การ&quot;</span><span class="p">,</span><span class="s2">&quot;เดินทาง&quot;</span><span class="p">])</span>
+<span class="n">pos_tag</span><span class="p">([</span><span class="s2">"การ"</span><span class="p">,</span><span class="s2">"เดินทาง"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1567,20 +1536,20 @@ True
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sents</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;ประกาศสำนักนายกฯ&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;ให้&quot;</span><span class="p">,</span>
-    <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;พล.ท.สรรเสริญ แก้วกำเนิด&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;พ้นจากตำแหน่ง&quot;</span><span class="p">,</span>
-    <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;ผู้ทรงคุณวุฒิพิเศษ&quot;</span><span class="p">,</span> <span class="s2">&quot;กองทัพบก&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;กระทรวงกลาโหม&quot;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;และ&quot;</span><span class="p">,</span> <span class="s2">&quot;แต่งตั้ง&quot;</span><span class="p">,</span> <span class="s2">&quot;ให้&quot;</span><span class="p">,</span> <span class="s2">&quot;เป็น&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;อธิบดีกรมประชาสัมพันธ์&#39;&quot;</span><span class="p">]]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sents</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"ประกาศสำนักนายกฯ"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"ให้"</span><span class="p">,</span>
+    <span class="s2">" "</span><span class="p">,</span> <span class="s2">"'พล.ท.สรรเสริญ แก้วกำเนิด'"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"พ้นจากตำแหน่ง"</span><span class="p">,</span>
+    <span class="s2">" "</span><span class="p">,</span> <span class="s2">"ผู้ทรงคุณวุฒิพิเศษ"</span><span class="p">,</span> <span class="s2">"กองทัพบก"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"กระทรวงกลาโหม"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"และ"</span><span class="p">,</span> <span class="s2">"แต่งตั้ง"</span><span class="p">,</span> <span class="s2">"ให้"</span><span class="p">,</span> <span class="s2">"เป็น"</span><span class="p">,</span> <span class="s2">"'อธิบดีกรมประชาสัมพันธ์'"</span><span class="p">]]</span>
 
 <span class="n">pos_tag_sents</span><span class="p">(</span><span class="n">sents</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1606,22 +1575,27 @@ True
 </div>
 </section>
 <section id="Named-Entity-Tagging">
-<h2>Named-Entity Tagging<a class="headerlink" href="#Named-Entity-Tagging" title="Permalink to this heading"></a></h2>
-<p>The tagger use BIO scheme: - B - beginning of entity - I - inside entity - O - outside entity</p>
+<h2>Named-Entity Tagging<a class="headerlink" href="#Named-Entity-Tagging" title="Link to this heading"></a></h2>
+<p>The tagger use BIO scheme:</p>
+<ul class="simple">
+<li><p>B - beginning of entity</p></li>
+<li><p>I - inside entity</p></li>
+<li><p>O - outside entity</p></li>
+</ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip3 install pythainlp[ner]</span>
-<span class="kn">from</span> <span class="nn">pythainlp.tag.thainer</span> <span class="kn">import</span> <span class="n">ThaiNameTagger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.tag.thainer</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThaiNameTagger</span>
 
 <span class="n">ner</span> <span class="o">=</span> <span class="n">ThaiNameTagger</span><span class="p">()</span>
-<span class="n">ner</span><span class="o">.</span><span class="n">get_ner</span><span class="p">(</span><span class="s2">&quot;24 มิ.ย. 2563 ทดสอบระบบเวลา 6:00 น. เดินทางจากขนส่งกรุงเทพใกล้ถนนกำแพงเพชร ไปจังหวัดกำแพงเพชร ตั๋วราคา 297 บาท&quot;</span><span class="p">)</span>
+<span class="n">ner</span><span class="o">.</span><span class="n">get_ner</span><span class="p">(</span><span class="s2">"24 มิ.ย. 2563 ทดสอบระบบเวลา 6:00 น. เดินทางจากขนส่งกรุงเทพใกล้ถนนกำแพงเพชร ไปจังหวัดกำแพงเพชร ตั๋วราคา 297 บาท"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1661,42 +1635,50 @@ True
 </div>
 </section>
 <section id="Word-Vector">
-<h2>Word Vector<a class="headerlink" href="#Word-Vector" title="Permalink to this heading"></a></h2>
+<h2>Word Vector<a class="headerlink" href="#Word-Vector" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pythainlp.word_vector</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.word_vector</span><span class="w"> </span><span class="kn">import</span> <span class="n">WordVector</span>
 
-<span class="n">pythainlp</span><span class="o">.</span><span class="n">word_vector</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s2">&quot;คน&quot;</span><span class="p">,</span> <span class="s2">&quot;มนุษย์&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-0.2504981
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pythainlp</span><span class="o">.</span><span class="n">word_vector</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">([</span><span class="s2">&quot;คน&quot;</span><span class="p">,</span> <span class="s2">&quot;มนุษย์&quot;</span><span class="p">,</span> <span class="s2">&quot;บุคคล&quot;</span><span class="p">,</span> <span class="s2">&quot;เจ้าหน้าที่&quot;</span><span class="p">,</span> <span class="s2">&quot;ไก่&quot;</span><span class="p">])</span>
+<span class="n">wv</span><span class="o">=</span><span class="n">WordVector</span><span class="p">()</span>
+
+<span class="n">wv</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s2">"คน"</span><span class="p">,</span> <span class="s2">"มนุษย์"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
+<div class="output_area docutils container">
 <div class="highlight"><pre>
-/usr/local/lib/python3.7/site-packages/gensim/models/keyedvectors.py:877: FutureWarning: arrays to stack must be passed as a &#34;sequence&#34; type such as list or tuple. Support for non-sequence iterables such as generators is deprecated as of NumPy 1.16 and will raise an error in the future.
-  vectors = vstack(self.word_vec(word, use_norm=True) for word in used_words).astype(REAL)
+Corpus: thai2fit_wv
+- Downloading: thai2fit_wv 0.1
 </pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "242ef0df0be74a98b659ccfd0f6ef044"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+np.float32(0.2504981)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wv</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">([</span><span class="s2">"คน"</span><span class="p">,</span> <span class="s2">"มนุษย์"</span><span class="p">,</span> <span class="s2">"บุคคล"</span><span class="p">,</span> <span class="s2">"เจ้าหน้าที่"</span><span class="p">,</span> <span class="s2">"ไก่"</span><span class="p">])</span>
+</pre></div>
+</div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
@@ -1709,12 +1691,12 @@ True
 </div>
 </section>
 <section id="Number-Spell-Out">
-<h2>Number Spell Out<a class="headerlink" href="#Number-Spell-Out" title="Permalink to this heading"></a></h2>
+<h2>Number Spell Out<a class="headerlink" href="#Number-Spell-Out" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pythainlp.util</span> <span class="kn">import</span> <span class="n">bahttext</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">bahttext</span>
 
 <span class="n">bahttext</span><span class="p">(</span><span class="mf">1234567890123.45</span><span class="p">)</span>
 </pre></div>
@@ -1747,7 +1729,9 @@ True
 &#39;หนึ่งบาทเก้าสิบเอ็ดสตางค์&#39;
 </pre></div></div>
 </div>
-</section>
+<script type="application/vnd.jupyter.widget-state+json">
+{"version_major": 2, "version_minor": 0, "state": {"242ef0df0be74a98b659ccfd0f6ef044": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ea759f65a8294a2e8e0209fb10684c32", "IPY_MODEL_efc1cb692583437ea7f77ea8cf9492dc", "IPY_MODEL_609cf6e6bc2a43a0a6c723ff1c8e6f90"], "layout": "IPY_MODEL_e5c6ca5c7e2945cf8c9ea7fe3b7f11d4"}}, "ea759f65a8294a2e8e0209fb10684c32": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_92cf3892051345cc80e6292661b98a4c", "placeholder": "\u200b", "style": "IPY_MODEL_e65c3f25e151461c98c7cc9bf69f05d1", "value": "100%"}}, "efc1cb692583437ea7f77ea8cf9492dc": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_18aeab249007454da5620821765a4832", "max": 62452646, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_bc42a56d04f54259baaa887167571342", "value": 62452646}}, "609cf6e6bc2a43a0a6c723ff1c8e6f90": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_fa8d05dd573042d687467349c186d027", "placeholder": "\u200b", "style": "IPY_MODEL_63942880eaf8444a965c97f6e05d5a6b", "value": "\u200762452646/62452646\u2007[00:01&lt;00:00,\u200743411640.19it/s]"}}, "e5c6ca5c7e2945cf8c9ea7fe3b7f11d4": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "92cf3892051345cc80e6292661b98a4c": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e65c3f25e151461c98c7cc9bf69f05d1": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "18aeab249007454da5620821765a4832": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bc42a56d04f54259baaa887167571342": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "fa8d05dd573042d687467349c186d027": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "63942880eaf8444a965c97f6e05d5a6b": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}}}
+</script></section>
 </section>
 
 

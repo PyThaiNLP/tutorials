@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🪿 Han-Coref: Thai Coreference resolution by PyThaiNLP &mdash; pythainlp-tutorials thai2plot-30-g70eec59 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+  <title>🪿 Han-Coref: Thai Coreference resolution by PyThaiNLP &mdash; pythainlp-tutorials thai2plot-32-g8caf131 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=eea1f72d" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=43cb7f73"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -100,13 +97,13 @@
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/Han-Coref.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="🪿-Han-Coref:-Thai-Coreference-resolution-by-PyThaiNLP">
-<h1>🪿 Han-Coref: Thai Coreference resolution by PyThaiNLP<a class="headerlink" href="#🪿-Han-Coref:-Thai-Coreference-resolution-by-PyThaiNLP" title="Permalink to this heading"></a></h1>
+<h1>🪿 Han-Coref: Thai Coreference resolution by PyThaiNLP<a class="headerlink" href="#🪿-Han-Coref:-Thai-Coreference-resolution-by-PyThaiNLP" title="Link to this heading"></a></h1>
 <p>GitHub: <a class="reference external" href="https://github.com/PyThaiNLP/han-coref">https://github.com/PyThaiNLP/han-coref</a></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip -q install spacy fastcoref pythainlp transformers sentencepiece
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="o">-</span><span class="n">q</span> <span class="n">install</span> <span class="n">spacy</span> <span class="n">fastcoref</span> <span class="n">pythainlp</span> <span class="n">transformers</span> <span class="n">sentencepiece</span>
 </pre></div>
 </div>
 </div>
@@ -135,9 +132,9 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
-<span class="kn">from</span> <span class="nn">fastcoref</span> <span class="kn">import</span> <span class="n">spacy_component</span>
-<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;th&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">spacy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastcoref</span><span class="w"> </span><span class="kn">import</span> <span class="n">spacy_component</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">"th"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -146,8 +143,8 @@
 </pre></div>
 </div>
 <div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span>
-   <span class="s2">&quot;fastcoref&quot;</span><span class="p">,</span>
-   <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;model_architecture&#39;</span><span class="p">:</span> <span class="s1">&#39;FCoref&#39;</span><span class="p">,</span><span class="s1">&#39;model_path&#39;</span><span class="p">:</span> <span class="s1">&#39;pythainlp/han-coref-v1.0&#39;</span><span class="p">}</span>
+   <span class="s2">"fastcoref"</span><span class="p">,</span>
+   <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">'model_architecture'</span><span class="p">:</span> <span class="s1">'FCoref'</span><span class="p">,</span><span class="s1">'model_path'</span><span class="p">:</span> <span class="s1">'pythainlp/han-coref-v1.0'</span><span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -200,15 +197,15 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="k">def</span> <span class="nf">get2tag</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span><span class="n">text</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">dic_ents</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span><span class="n">text</span><span class="p">,</span><span class="s2">&quot;ents&quot;</span><span class="p">:[],</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="n">title</span><span class="p">}</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get2tag</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span><span class="n">text</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">dic_ents</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"text"</span><span class="p">:</span><span class="n">text</span><span class="p">,</span><span class="s2">"ents"</span><span class="p">:[],</span><span class="s2">"title"</span><span class="p">:</span><span class="n">title</span><span class="p">}</span>
     <span class="n">_tag</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)))]</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">tag</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tags</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="n">tag</span><span class="p">:</span>
-            <span class="n">dic_ents</span><span class="p">[</span><span class="s2">&quot;ents&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">e</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">_tag</span><span class="p">[</span><span class="n">i</span><span class="p">]})</span>
-    <span class="n">colors</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="s2">&quot;#&quot;</span><span class="o">+</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">&#39;0123456789ABCDEF&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">_tag</span><span class="p">}</span> <span class="c1"># thank https://stackoverflow.com/a/50218895</span>
-    <span class="k">return</span> <span class="n">dic_ents</span><span class="p">,{</span><span class="s2">&quot;colors&quot;</span><span class="p">:</span><span class="n">colors</span><span class="p">}</span>
+            <span class="n">dic_ents</span><span class="p">[</span><span class="s2">"ents"</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"start"</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">:</span> <span class="n">e</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">:</span> <span class="n">_tag</span><span class="p">[</span><span class="n">i</span><span class="p">]})</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span><span class="s2">"#"</span><span class="o">+</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">'0123456789ABCDEF'</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">_tag</span><span class="p">}</span> <span class="c1"># thank https://stackoverflow.com/a/50218895</span>
+    <span class="k">return</span> <span class="n">dic_ents</span><span class="p">,{</span><span class="s2">"colors"</span><span class="p">:</span><span class="n">colors</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -216,7 +213,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">displacy</span>
 </pre></div>
 </div>
 </div>
@@ -224,10 +221,10 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;สาธิต แจงวุ่น ภาพแคปกลุ่มไลน์ที่ปรึกษาฯ กล่าวร้าย พิธา ยัน ไม่ใช่ตัวเอง แต่เห็นด้วยว่าอภิปรายด้อยค่าบำนาญ ขรก.&quot;</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s2">"สาธิต แจงวุ่น ภาพแคปกลุ่มไลน์ที่ปรึกษาฯ กล่าวร้าย พิธา ยัน ไม่ใช่ตัวเอง แต่เห็นด้วยว่าอภิปรายด้อยค่าบำนาญ ขรก."</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="n">dic_ents</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">get2tag</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">coref_clusters</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
-<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"ent"</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -263,10 +260,10 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;แม่สั่งให้ลูกชายไปซื้อของ แต่เธอกลับลืมเอาตังให้ลูก&#39;</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">'แม่สั่งให้ลูกชายไปซื้อของ แต่เธอกลับลืมเอาตังให้ลูก'</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="n">dic_ents</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">get2tag</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">coref_clusters</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
-<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"ent"</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -312,10 +309,10 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;แม่หมอแชมป์ เปิดใจทั้งน้ำตา เสียใจที่ลูกจากไป แต่รู้สึกภูมิใจที่ลูกเสียสละ ให้เสื้อชูชีพช่วยเพื่อนทหารรอด แต่ตัวเองเสียชีวิต&#39;</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">'แม่หมอแชมป์ เปิดใจทั้งน้ำตา เสียใจที่ลูกจากไป แต่รู้สึกภูมิใจที่ลูกเสียสละ ให้เสื้อชูชีพช่วยเพื่อนทหารรอด แต่ตัวเองเสียชีวิต'</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="n">dic_ents</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">get2tag</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">coref_clusters</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
-<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"ent"</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -361,10 +358,10 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;แม่หมอแชมป์ เปิดใจทั้งน้ำตา เสียใจที่ลูกจากไป แต่แม่รู้สึกภูมิใจที่ลูกเสียสละ ให้เสื้อชูชีพช่วยเพื่อนทหารรอด แต่ตัวเองเสียชีวิต&#39;</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">'แม่หมอแชมป์ เปิดใจทั้งน้ำตา เสียใจที่ลูกจากไป แต่แม่รู้สึกภูมิใจที่ลูกเสียสละ ให้เสื้อชูชีพช่วยเพื่อนทหารรอด แต่ตัวเองเสียชีวิต'</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="n">dic_ents</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">get2tag</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">coref_clusters</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
-<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">dic_ents</span><span class="p">,</span> <span class="n">manual</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"ent"</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

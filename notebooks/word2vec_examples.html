@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thai2Vec Embeddings Examples &mdash; pythainlp-tutorials thai2plot-30-g70eec59 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+  <title>Thai2Vec Embeddings Examples &mdash; pythainlp-tutorials thai2plot-32-g8caf131 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=eea1f72d" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=43cb7f73"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -106,11 +103,11 @@
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/word2vec_examples.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Thai2Vec-Embeddings-Examples">
-<h1>Thai2Vec Embeddings Examples<a class="headerlink" href="#Thai2Vec-Embeddings-Examples" title="Permalink to this heading"></a></h1>
+<h1>Thai2Vec Embeddings Examples<a class="headerlink" href="#Thai2Vec-Embeddings-Examples" title="Link to this heading"></a></h1>
 <p>We use the embeddings from <code class="docutils literal notranslate"><span class="pre">v0.1</span></code> since it was trained specifically for word2vec as opposed to latter versions which garner to classification. The <code class="docutils literal notranslate"><span class="pre">thai2vec.bin</span></code> 51,556 word embeddings of 300 dimensions, in descending order by their frequencies (See <code class="docutils literal notranslate"><span class="pre">thai2vec.vocab</span></code>). The files are in word2vec format readable by <code class="docutils literal notranslate"><span class="pre">gensim</span></code>. Most common applications include word vector visualization, word arithmetic, word grouping, cosine similarity and sentence or document vectors. For sample code, see
 <code class="docutils literal notranslate"><span class="pre">thwiki_lm/word2vec_examples.ipynb</span></code>.</p>
 <section id="Imports">
-<h2>Imports<a class="headerlink" href="#Imports" title="Permalink to this heading"></a></h2>
+<h2>Imports<a class="headerlink" href="#Imports" title="Link to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -131,18 +128,18 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="kn">from</span> <span class="nn">pythainlp.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
-<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">KeyedVectors</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gensim.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">KeyedVectors</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.font_manager</span> <span class="k">as</span> <span class="nn">fm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.manifold</span><span class="w"> </span><span class="kn">import</span> <span class="n">TSNE</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.font_manager</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fm</span>
 
-<span class="kn">import</span> <span class="nn">dill</span> <span class="k">as</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dill</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="s1">'./'</span>
 </pre></div>
 </div>
 </div>
@@ -151,9 +148,9 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#load into gensim</span>
-<span class="c1"># model = KeyedVectors.load_word2vec_format(f&#39;{model_path}thai2vec.bin&#39;,binary=True)</span>
-<span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_vector</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">word_vector</span><span class="o">.</span><span class="n">WordVector</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;thai2fit_wv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span> <span class="c1"># load thai2fit_wv from pythainlp</span>
+<span class="c1"># model = KeyedVectors.load_word2vec_format(f'{model_path}thai2vec.bin',binary=True)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_vector</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">word_vector</span><span class="o">.</span><span class="n">WordVector</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">"thai2fit_wv"</span><span class="p">)</span><span class="o">.</span><span class="n">get_model</span><span class="p">()</span> <span class="c1"># load thai2fit_wv from pythainlp</span>
 </pre></div>
 </div>
 </div>
@@ -180,7 +177,7 @@ Corpus: thai2fit_wv
 <span class="n">thai2dict</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span><span class="p">:</span>
     <span class="n">thai2dict</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
-<span class="n">thai2vec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">thai2dict</span><span class="p">,</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">thai2vec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">thai2dict</span><span class="p">,</span><span class="n">orient</span><span class="o">=</span><span class="s1">'index'</span><span class="p">)</span>
 <span class="n">thai2vec</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -570,11 +567,11 @@ Corpus: thai2fit_wv
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">index2word</span>
 
 <span class="c1"># #tnse</span>
-<span class="c1"># tsne = TSNE(n_components=2, init=&#39;pca&#39;, n_iter=1000)</span>
+<span class="c1"># tsne = TSNE(n_components=2, init='pca', n_iter=1000)</span>
 <span class="c1"># thai2plot = tsne.fit_transform(thai2vec)</span>
-<span class="c1"># pickle.dump(thai2plot,open(f&#39;{model_path}thai2plot.pkl&#39;,&#39;wb&#39;))</span>
+<span class="c1"># pickle.dump(thai2plot,open(f'{model_path}thai2plot.pkl','wb'))</span>
 
-<span class="n">thai2plot</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_path</span><span class="si">}</span><span class="s1">thai2plot.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+<span class="n">thai2plot</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_path</span><span class="si">}</span><span class="s1">thai2plot.pkl'</span><span class="p">,</span><span class="s1">'rb'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -631,21 +628,21 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#stolen from https://blog.manash.me/how-to-use-pre-trained-word-vectors-from-facebooks-fasttext-a71e6d55f27</span>
-<span class="k">def</span> <span class="nf">plot_with_labels</span><span class="p">(</span><span class="n">low_dim_embs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_with_labels</span><span class="p">(</span><span class="n">low_dim_embs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
                     <span class="n">axis_lims</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">low_dim_embs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="s2">&quot;More labels than embeddings&quot;</span>
+    <span class="k">assert</span> <span class="n">low_dim_embs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="s2">"More labels than embeddings"</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>  <span class="c1"># in inches</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">low_dim_embs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;TH-Sarabun-New-Regular.ttf&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">prop</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="sa">f</span><span class="s1">'TH-Sarabun-New-Regular.ttf'</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">label</span><span class="p">,</span>
                  <span class="n">fontproperties</span><span class="o">=</span><span class="n">prop</span><span class="p">,</span>
                  <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
                  <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-                 <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">,</span>
-                 <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
-                 <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+                 <span class="n">textcoords</span><span class="o">=</span><span class="s1">'offset points'</span><span class="p">,</span>
+                 <span class="n">ha</span><span class="o">=</span><span class="s1">'right'</span><span class="p">,</span>
+                 <span class="n">va</span><span class="o">=</span><span class="s1">'bottom'</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">axis_lims</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="n">axis_lims</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">filename</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
@@ -662,14 +659,19 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 </div>
 </section>
 <section id="Word-Arithmetic">
-<h2>Word Arithmetic<a class="headerlink" href="#Word-Arithmetic" title="Permalink to this heading"></a></h2>
-<p>You can do simple “arithmetic” with words based on the word vectors such as: * ผู้หญิง + พระราชา - ผู้ชาย = พระราชินี * นายกรัฐมนตรี - อำนาจ = ประธานาธิบดี * กิ้งก่า + โบราณ = ไดโนเสาร์</p>
+<h2>Word Arithmetic<a class="headerlink" href="#Word-Arithmetic" title="Link to this heading"></a></h2>
+<p>You can do simple “arithmetic” with words based on the word vectors such as:</p>
+<ul class="simple">
+<li><p>ผู้หญิง + พระราชา - ผู้ชาย = พระราชินี</p></li>
+<li><p>นายกรัฐมนตรี - อำนาจ = ประธานาธิบดี</p></li>
+<li><p>กิ้งก่า + โบราณ = ไดโนเสาร์</p></li>
+</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#word arithmetic</span>
-<span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;พระราชา&#39;</span><span class="p">,</span><span class="s1">&#39;ผู้หญิง&#39;</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ผู้ชาย&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">'พระราชา'</span><span class="p">,</span><span class="s1">'ผู้หญิง'</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">'ผู้ชาย'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -695,7 +697,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ผู้หญิง&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชา&#39;</span><span class="p">,</span><span class="s1">&#39;ผู้ชาย&#39;</span><span class="p">,</span><span class="s1">&#39;พระราชินี&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ผู้หญิง'</span><span class="p">,</span><span class="s1">'พระราชา'</span><span class="p">,</span><span class="s1">'ผู้ชาย'</span><span class="p">,</span><span class="s1">'พระราชินี'</span><span class="p">]</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -715,7 +717,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">],</span><span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">'นายกรัฐมนตรี'</span><span class="p">],</span><span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">'อำนาจ'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -741,7 +743,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;นายกรัฐมนตรี&#39;</span><span class="p">,</span><span class="s1">&#39;อำนาจ&#39;</span><span class="p">,</span><span class="s1">&#39;รองนายกรัฐมนตรี&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'นายกรัฐมนตรี'</span><span class="p">,</span><span class="s1">'อำนาจ'</span><span class="p">,</span><span class="s1">'รองนายกรัฐมนตรี'</span><span class="p">]</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -762,7 +764,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#word arithmetic</span>
-<span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;สัตว์&#39;</span><span class="p">,</span><span class="s1">&#39;พืช&#39;</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s1">'สัตว์'</span><span class="p">,</span><span class="s1">'พืช'</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[])</span>
 </pre></div>
 </div>
 </div>
@@ -788,7 +790,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;สัตว์&#39;</span><span class="p">,</span><span class="s1">&#39;พืช&#39;</span><span class="p">,</span><span class="s1">&#39;สิ่งมีชีวิต&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'สัตว์'</span><span class="p">,</span><span class="s1">'พืช'</span><span class="p">,</span><span class="s1">'สิ่งมีชีวิต'</span><span class="p">]</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -806,13 +808,18 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 </div>
 </section>
 <section id="Doesn't-Match">
-<h2>Doesn’t Match<a class="headerlink" href="#Doesn't-Match" title="Permalink to this heading"></a></h2>
-<p>It can also be used to do word groupings. For instance: * อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน - อาหารสัตว์ is type of food whereas others are meals in the day * ลาก ดึง ดูด ดัน - ดัน is pushing while the rest is pulling. * กด กัด กิน เคี้ยว - กด is not verbs for the eating process Note that this could be relying on a different “take” than you would expect. For example, you could have answered ลูกเขย in the second example because it is the one associated with male gender.</p>
+<h2>Doesn’t Match<a class="headerlink" href="#Doesn't-Match" title="Link to this heading"></a></h2>
+<p>It can also be used to do word groupings. For instance:</p>
+<ul class="simple">
+<li><p>อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน - อาหารสัตว์ is type of food whereas others are meals in the day</p></li>
+<li><p>ลาก ดึง ดูด ดัน - ดัน is pushing while the rest is pulling.</p></li>
+<li><p>กด กัด กิน เคี้ยว - กด is not verbs for the eating process Note that this could be relying on a different “take” than you would expect. For example, you could have answered ลูกเขย in the second example because it is the one associated with male gender.</p></li>
+</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">"อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน"</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -838,7 +845,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">"อาหารเช้า อาหารสัตว์ อาหารเย็น อาหารกลางวัน"</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -858,7 +865,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">"ลาก ดึง ดูด ดัน"</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -875,7 +882,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ลาก ดึง ดูด ดัน&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">"ลาก ดึง ดูด ดัน"</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -895,7 +902,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">doesnt_match</span><span class="p">(</span><span class="s2">"แมว หมา หมู หมอ"</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -912,7 +919,7 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;แมว หมา หมู หมอ&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">"แมว หมา หมู หมอ"</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -930,17 +937,17 @@ TH-Sarabun-New-Regu 100%[===================&gt;] 468.39K  --.-KB/s    in 0.04s
 </div>
 </section>
 <section id="Cosine-Similarity">
-<h2>Cosine Similarity<a class="headerlink" href="#Cosine-Similarity" title="Permalink to this heading"></a></h2>
+<h2>Cosine Similarity<a class="headerlink" href="#Cosine-Similarity" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;China + Beijing:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">,</span> <span class="s1">&#39;จีน&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Italy + Rome:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;โรม&#39;</span><span class="p">,</span><span class="s1">&#39;อิตาลี&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Beijing + Rome:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;โรม&#39;</span><span class="p">,</span> <span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Italy + Beijing:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;ปักกิ่ง&#39;</span><span class="p">,</span> <span class="s1">&#39;อิตาลี&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;China + Rome:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;โรม&#39;</span><span class="p">,</span><span class="s1">&#39;จีน&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;China + Italy:&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;อิตาลี&#39;</span><span class="p">,</span><span class="s1">&#39;จีน&#39;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'China + Beijing:'</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">'ปักกิ่ง'</span><span class="p">,</span> <span class="s1">'จีน'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Italy + Rome:'</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">'โรม'</span><span class="p">,</span><span class="s1">'อิตาลี'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Beijing + Rome:'</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">'โรม'</span><span class="p">,</span> <span class="s1">'ปักกิ่ง'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Italy + Beijing:'</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">'ปักกิ่ง'</span><span class="p">,</span> <span class="s1">'อิตาลี'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'China + Rome:'</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">'โรม'</span><span class="p">,</span><span class="s1">'จีน'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'China + Italy:'</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">'อิตาลี'</span><span class="p">,</span><span class="s1">'จีน'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -961,7 +968,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">&quot;ปักกิ่ง จีน โรม อิตาลี โตเกียว ญี่ปุ่น&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_words</span> <span class="o">=</span> <span class="s2">"ปักกิ่ง จีน โรม อิตาลี โตเกียว ญี่ปุ่น"</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="n">sample_idx</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sample_words</span><span class="p">:</span>
     <span class="n">sample_idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
@@ -979,7 +986,7 @@ China + Italy: 0.24352394
 </div>
 </section>
 <section id="Spellchecking">
-<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Permalink to this heading"></a></h2>
+<h2>Spellchecking<a class="headerlink" href="#Spellchecking" title="Link to this heading"></a></h2>
 <p>Originally contributed by <a class="reference external" href="https://github.com/sakares">Sakares ATV</a>, adapted from <a class="reference external" href="https://www.kaggle.com/cpmpml/spell-checker-using-word2vec">Kaggle Spell Checker using Word2vec by CPMP</a>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
@@ -999,30 +1006,30 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_letters</span> <span class="o">=</span> <span class="s1">&#39;กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤฤๅลฦฦๅวศษสหฬอฮะัาำิีึืุูเแโใไ็่้๊๋์&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thai_letters</span> <span class="o">=</span> <span class="s1">'กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤฤๅลฦฦๅวศษสหฬอฮะัาำิีึืุูเแโใไ็่้๊๋์'</span>
 
-<span class="k">def</span> <span class="nf">words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span> <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span> <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\w+'</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">P</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-    <span class="s2">&quot;Probability of `word`.&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">P</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="s2">"Probability of `word`."</span>
     <span class="c1"># use inverse of rank as proxy</span>
-    <span class="c1"># returns 0 if the word isn&#39;t in the dictionary</span>
+    <span class="c1"># returns 0 if the word isn't in the dictionary</span>
     <span class="k">return</span> <span class="o">-</span> <span class="n">WORDS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">correction</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-    <span class="s2">&quot;Most probable spelling correction for word.&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">correction</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="s2">"Most probable spelling correction for word."</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">candidates</span><span class="p">(</span><span class="n">word</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">candidates</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-    <span class="s2">&quot;Generate possible spelling corrections for word.&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">candidates</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="s2">"Generate possible spelling corrections for word."</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">known</span><span class="p">([</span><span class="n">word</span><span class="p">])</span> <span class="ow">or</span> <span class="n">known</span><span class="p">(</span><span class="n">edits1</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="ow">or</span> <span class="n">known</span><span class="p">(</span><span class="n">edits2</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="ow">or</span> <span class="p">[</span><span class="n">word</span><span class="p">])</span>
 
-<span class="k">def</span> <span class="nf">known</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
-    <span class="s2">&quot;The subset of `words` that appear in the dictionary of WORDS.&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">known</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="s2">"The subset of `words` that appear in the dictionary of WORDS."</span>
     <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">WORDS</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">edits1</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-    <span class="s2">&quot;All edits that are one edit away from `word`.&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">edits1</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="s2">"All edits that are one edit away from `word`."</span>
     <span class="n">letters</span>    <span class="o">=</span> <span class="n">thai_letters</span>
     <span class="n">splits</span>     <span class="o">=</span> <span class="p">[(</span><span class="n">word</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">:])</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
     <span class="n">deletes</span>    <span class="o">=</span> <span class="p">[</span><span class="n">L</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>               <span class="k">for</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span> <span class="ow">in</span> <span class="n">splits</span> <span class="k">if</span> <span class="n">R</span><span class="p">]</span>
@@ -1031,8 +1038,8 @@ China + Italy: 0.24352394
     <span class="n">inserts</span>    <span class="o">=</span> <span class="p">[</span><span class="n">L</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">R</span>               <span class="k">for</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span> <span class="ow">in</span> <span class="n">splits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">]</span>
     <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">deletes</span> <span class="o">+</span> <span class="n">transposes</span> <span class="o">+</span> <span class="n">replaces</span> <span class="o">+</span> <span class="n">inserts</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">edits2</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
-    <span class="s2">&quot;All edits that are two edits away from `word`.&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">edits2</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="s2">"All edits that are two edits away from `word`."</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">e2</span> <span class="k">for</span> <span class="n">e1</span> <span class="ow">in</span> <span class="n">edits1</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">e2</span> <span class="ow">in</span> <span class="n">edits1</span><span class="p">(</span><span class="n">e1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1041,7 +1048,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;พัดนา&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">'พัดนา'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1058,7 +1065,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;ขริง&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">'ขริง'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1075,7 +1082,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;จย้า&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">'จย้า'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1092,7 +1099,7 @@ China + Italy: 0.24352394
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">&#39;นะค่ะ&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correction</span><span class="p">(</span><span class="s1">'นะค่ะ'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WangchanBERTa: Getting Started Notebook &mdash; pythainlp-tutorials thai2plot-30-g70eec59 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+  <title>WangchanBERTa: Getting Started Notebook &mdash; pythainlp-tutorials thai2plot-32-g8caf131 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=eea1f72d" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=43cb7f73"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -118,13 +115,13 @@
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/wangchanberta_getting_started_aireseach.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="WangchanBERTa:-Getting-Started-Notebook">
-<h1>WangchanBERTa: Getting Started Notebook<a class="headerlink" href="#WangchanBERTa:-Getting-Started-Notebook" title="Permalink to this heading"></a></h1>
+<h1>WangchanBERTa: Getting Started Notebook<a class="headerlink" href="#WangchanBERTa:-Getting-Started-Notebook" title="Link to this heading"></a></h1>
 <p><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></p>
 <p>This is a developing Getting Started Notebook for WangchanBERTa. Currently it has inference methods you can easily use from <a class="reference external" href="http://huggingface.co/">HuggingFace</a>. We will add pretraining and finetuning methods from the scripts in <a class="reference external" href="https://github.com/vistec-AI/thai2transformers">vistec-ai/thai2transformers</a>.</p>
-<p><img alt="WangchanBERTa" src="https://miro.medium.com/max/2400/1*XAHtR9rKv8SJ4ESELxm2iQ.png" /></p>
+<img alt="WangchanBERTa" src="https://miro.medium.com/max/2400/1*XAHtR9rKv8SJ4ESELxm2iQ.png" />
 <p>Fork from <a class="reference external" href="https://colab.research.google.com/drive/1Kbk6sBspZLwcnOE61adAQo30xxqOQ9ko#scrollTo=n5IaCot9b3cF">https://colab.research.google.com/drive/1Kbk6sBspZLwcnOE61adAQo30xxqOQ9ko#scrollTo=n5IaCot9b3cF</a></p>
 <section id="Installation">
-<h2>Installation<a class="headerlink" href="#Installation" title="Permalink to this heading"></a></h2>
+<h2>Installation<a class="headerlink" href="#Installation" title="Link to this heading"></a></h2>
 <p>Install dependencies at specific versions to make sure WangchanBERTa works.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -196,13 +193,13 @@ Successfully installed thai2transformers-0.1.2
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partial</span>
 
 <span class="c1">#transformers</span>
-<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">CamembertTokenizer</span><span class="p">,</span>
     <span class="n">AutoTokenizer</span><span class="p">,</span>
     <span class="n">AutoModel</span><span class="p">,</span>
@@ -215,14 +212,14 @@ Successfully installed thai2transformers-0.1.2
 <span class="p">)</span>
 
 <span class="c1">#thai2transformers</span>
-<span class="kn">from</span> <span class="nn">thaixtransformers</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
-<span class="kn">from</span> <span class="nn">thaixtransformers.preprocess</span> <span class="kn">import</span> <span class="n">process_transformers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">thaixtransformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tokenizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">thaixtransformers.preprocess</span><span class="w"> </span><span class="kn">import</span> <span class="n">process_transformers</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="Choose-Pretrained-Model">
-<h2>Choose Pretrained Model<a class="headerlink" href="#Choose-Pretrained-Model" title="Permalink to this heading"></a></h2>
+<h2>Choose Pretrained Model<a class="headerlink" href="#Choose-Pretrained-Model" title="Link to this heading"></a></h2>
 <p>In this notebook, you can choose from 5 versions of WangchanBERTa, XLMR and mBERT to perform downstream tasks with Thai datasets. The datasets are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">wangchanberta-base-att-spm-uncased</span></code> (recommended) - Largest WangchanBERTa trained on 78.5GB of Assorted Thai Texts with subword tokenizer SentencePiece</p></li>
@@ -238,32 +235,32 @@ Successfully installed thai2transformers-0.1.2
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_names</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;wangchanberta-base-att-spm-uncased&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;xlm-roberta-base&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;bert-base-multilingual-cased&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;wangchanberta-base-wiki-newmm&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;wangchanberta-base-wiki-syllable&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;wangchanberta-base-wiki-sefr&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;wangchanberta-base-wiki-spm&#39;</span><span class="p">,</span>
+    <span class="s1">'wangchanberta-base-att-spm-uncased'</span><span class="p">,</span>
+    <span class="s1">'xlm-roberta-base'</span><span class="p">,</span>
+    <span class="s1">'bert-base-multilingual-cased'</span><span class="p">,</span>
+    <span class="s1">'wangchanberta-base-wiki-newmm'</span><span class="p">,</span>
+    <span class="s1">'wangchanberta-base-wiki-syllable'</span><span class="p">,</span>
+    <span class="s1">'wangchanberta-base-wiki-sefr'</span><span class="p">,</span>
+    <span class="s1">'wangchanberta-base-wiki-spm'</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="c1"># tokenizers = {</span>
-<span class="c1">#     &#39;wangchanberta-base-att-spm-uncased&#39;: AutoTokenizer,</span>
-<span class="c1">#     &#39;xlm-roberta-base&#39;: AutoTokenizer,</span>
-<span class="c1">#     &#39;bert-base-multilingual-cased&#39;: AutoTokenizer,</span>
-<span class="c1">#     &#39;wangchanberta-base-wiki-newmm&#39;: ThaiWordsNewmmTokenizer,</span>
-<span class="c1">#     &#39;wangchanberta-base-wiki-ssg&#39;: ThaiWordsSyllableTokenizer,</span>
-<span class="c1">#     &#39;wangchanberta-base-wiki-sefr&#39;: FakeSefrCutTokenizer,</span>
-<span class="c1">#     &#39;wangchanberta-base-wiki-spm&#39;: ThaiRobertaTokenizer,</span>
+<span class="c1">#     'wangchanberta-base-att-spm-uncased': AutoTokenizer,</span>
+<span class="c1">#     'xlm-roberta-base': AutoTokenizer,</span>
+<span class="c1">#     'bert-base-multilingual-cased': AutoTokenizer,</span>
+<span class="c1">#     'wangchanberta-base-wiki-newmm': ThaiWordsNewmmTokenizer,</span>
+<span class="c1">#     'wangchanberta-base-wiki-ssg': ThaiWordsSyllableTokenizer,</span>
+<span class="c1">#     'wangchanberta-base-wiki-sefr': FakeSefrCutTokenizer,</span>
+<span class="c1">#     'wangchanberta-base-wiki-spm': ThaiRobertaTokenizer,</span>
 <span class="c1"># }</span>
-<span class="n">public_models</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xlm-roberta-base&#39;</span><span class="p">,</span> <span class="s1">&#39;bert-base-multilingual-cased&#39;</span><span class="p">]</span>
+<span class="n">public_models</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'xlm-roberta-base'</span><span class="p">,</span> <span class="s1">'bert-base-multilingual-cased'</span><span class="p">]</span>
 <span class="c1">#@title Choose Pretrained Model</span>
-<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;airesearch/wangchanberta-base-att-spm-uncased&quot;</span> <span class="c1">#@param [&quot;airesearch/wangchanberta-base-att-spm-uncased&quot;, &quot;xlm-roberta-base&quot;, &quot;bert-base-multilingual-cased&quot;, &quot;airesearch/wangchanberta-base-wiki-newmm&quot;, &quot;airesearch/wangchanberta-base-wiki-syllable&quot;, &quot;airesearch/wangchanberta-base-wiki-sefr&quot;, &quot;airesearch/wangchanberta-base-wiki-spm&quot;]</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"airesearch/wangchanberta-base-att-spm-uncased"</span> <span class="c1">#@param ["airesearch/wangchanberta-base-att-spm-uncased", "xlm-roberta-base", "bert-base-multilingual-cased", "airesearch/wangchanberta-base-wiki-newmm", "airesearch/wangchanberta-base-wiki-syllable", "airesearch/wangchanberta-base-wiki-sefr", "airesearch/wangchanberta-base-wiki-spm"]</span>
 
 <span class="c1">#create tokenizer</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                <span class="n">revision</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+                <span class="n">revision</span><span class="o">=</span><span class="s1">'main'</span><span class="p">,</span>
                 <span class="n">model_max_length</span><span class="o">=</span><span class="mi">416</span><span class="p">,)</span>
 <br/></pre></div>
 </div>
@@ -283,7 +280,7 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 </div>
 </section>
 <section id="Masked-Token-Prediction">
-<h2>Masked Token Prediction<a class="headerlink" href="#Masked-Token-Prediction" title="Permalink to this heading"></a></h2>
+<h2>Masked Token Prediction<a class="headerlink" href="#Masked-Token-Prediction" title="Link to this heading"></a></h2>
 <p>The simplest task for WangchanBERTa is the task it was trained on, that is, masked token prediction. The model will try to predict the masked token in a given sequence. For example:</p>
 <blockquote>
 <div><p><strong>Question</strong>: วังจันทร์วัลเลย์ ตั้งอยู่บนพื้นที่ 3,454 <code class="docutils literal notranslate"><span class="pre">&lt;mask&gt;</span></code> ของอำเภอวังจันทร์ จังหวัดระยอง</p>
@@ -297,10 +294,10 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pipeline</span>
-<span class="n">fill_mask</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">&#39;fill-mask&#39;</span><span class="p">,</span>
+<span class="n">fill_mask</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">'fill-mask'</span><span class="p">,</span>
          <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
-         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-         <span class="n">revision</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">,)</span>
+         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+         <span class="n">revision</span> <span class="o">=</span> <span class="s1">'main'</span><span class="p">,)</span>
 </pre></div>
 </div>
 </div>
@@ -308,16 +305,16 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u0E02\u0E2D\u0E40\u0E07\u0E34\u0E19\u0E01\u0E39\u0E49\u003C</span><span class="s1">mask&gt;</span><span class="se">\u0E2B\u0E19\u0E48\u0E2D\u0E22</span><span class="s1">&#39;</span> <span class="c1">#@param [&#39;โครงการมีระยะทางทั้งหมด 114.3 &lt;mask&gt; มีจำนวนสถานี 36 สถานี เป็นเส้นทางหลักในแนวเหนือ–ใต้ ตามแนวทางรถไฟเดิมของการรถไฟแห่งประเทศไทย&#39;, &#39;วังจันทร์วัลเลย์ ตั้งอยู่บนพื้นที่ 3,454 &lt;mask&gt; ของอำเภอวังจันทร์ จังหวัดระยอง&#39;, &#39;ข้าวหน้าเนื้อ หรือเรียกเป็นภาษา&lt;mask&gt;ว่ากิวด้ง (Gyūdon)&#39;,&#39;จะไปเป็น&lt;mask&gt;โดดเด่นบนฟากฟ้า จะไปไขว่ขว้าเอามาดั่งใจฝัน&#39;, &#39;เช็คยอด&lt;mask&gt;&#39;, &#39;ขอเงินกู้&lt;mask&gt;หน่อย&#39;,&#39;กด&lt;mask&gt;ไม่ได้&#39;] {allow-input: true}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\u0E02\u0E2D\u0E40\u0E07\u0E34\u0E19\u0E01\u0E39\u0E49\u003C</span><span class="s1">mask&gt;</span><span class="se">\u0E2B\u0E19\u0E48\u0E2D\u0E22</span><span class="s1">'</span> <span class="c1">#@param ['โครงการมีระยะทางทั้งหมด 114.3 &lt;mask&gt; มีจำนวนสถานี 36 สถานี เป็นเส้นทางหลักในแนวเหนือ–ใต้ ตามแนวทางรถไฟเดิมของการรถไฟแห่งประเทศไทย', 'วังจันทร์วัลเลย์ ตั้งอยู่บนพื้นที่ 3,454 &lt;mask&gt; ของอำเภอวังจันทร์ จังหวัดระยอง', 'ข้าวหน้าเนื้อ หรือเรียกเป็นภาษา&lt;mask&gt;ว่ากิวด้ง (Gyūdon)','จะไปเป็น&lt;mask&gt;โดดเด่นบนฟากฟ้า จะไปไขว่ขว้าเอามาดั่งใจฝัน', 'เช็คยอด&lt;mask&gt;', 'ขอเงินกู้&lt;mask&gt;หน่อย','กด&lt;mask&gt;ไม่ได้'] {allow-input: true}</span>
 
-<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:&quot;boolean&quot;}</span>
+<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:"boolean"}</span>
 <span class="k">if</span> <span class="n">preprocess_input_text</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span><span class="p">:</span>
         <span class="n">input_text</span> <span class="o">=</span> <span class="n">process_transformers</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
 
 <span class="c1">#if the sequence is too short, it needs padding</span>
-<span class="k">def</span> <span class="nf">fill_mask_pad</span><span class="p">(</span><span class="n">input_text</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">fill_mask</span><span class="p">(</span><span class="n">input_text</span><span class="o">+</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fill_mask_pad</span><span class="p">(</span><span class="n">input_text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">fill_mask</span><span class="p">(</span><span class="n">input_text</span><span class="o">+</span><span class="s1">'&lt;pad&gt;'</span><span class="p">)</span>
 <span class="c1">#infer</span>
 <span class="n">fill_mask_pad</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
 <br/></pre></div>
@@ -353,23 +350,27 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 </div>
 </section>
 <section id="Sequence-Classification">
-<h2>Sequence Classification<a class="headerlink" href="#Sequence-Classification" title="Permalink to this heading"></a></h2>
-<p>Multi-class sequence classification datasets such as: * <code class="docutils literal notranslate"><span class="pre">wisesight_sentiment</span></code> - sentiment analysis from social media data provided by Wisesight * <code class="docutils literal notranslate"><span class="pre">wongnai_reviews</span></code> - review classification from Wongnai.com</p>
+<h2>Sequence Classification<a class="headerlink" href="#Sequence-Classification" title="Link to this heading"></a></h2>
+<p>Multi-class sequence classification datasets such as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wisesight_sentiment</span></code> - sentiment analysis from social media data provided by Wisesight</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wongnai_reviews</span></code> - review classification from Wongnai.com</p></li>
+</ul>
 <section id="Pretrained-Multi-class-Classifiers---Wisesight-Sentiment-and-Wongnai-Reviews">
-<h3>Pretrained Multi-class Classifiers - Wisesight Sentiment and Wongnai Reviews<a class="headerlink" href="#Pretrained-Multi-class-Classifiers---Wisesight-Sentiment-and-Wongnai-Reviews" title="Permalink to this heading"></a></h3>
+<h3>Pretrained Multi-class Classifiers - Wisesight Sentiment and Wongnai Reviews<a class="headerlink" href="#Pretrained-Multi-class-Classifiers---Wisesight-Sentiment-and-Wongnai-Reviews" title="Link to this heading"></a></h3>
 <p>You can use our state-of-the-art finetuned WangchanBERTa for these tasks right away with:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Choose Multi-class Classification Dataset</span>
-<span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">&quot;wisesight_sentiment&quot;</span> <span class="c1">#@param [&#39;wisesight_sentiment&#39;,&#39;wongnai_reviews&#39;]</span>
+<span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">"wisesight_sentiment"</span> <span class="c1">#@param ['wisesight_sentiment','wongnai_reviews']</span>
 
 <span class="c1">#pipeline</span>
-<span class="n">classify_multiclass</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">&#39;sentiment-analysis&#39;</span><span class="p">,</span>
+<span class="n">classify_multiclass</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">'sentiment-analysis'</span><span class="p">,</span>
          <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
-         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-         <span class="n">revision</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;finetuned@</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+         <span class="n">revision</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'finetuned@</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -389,9 +390,9 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u0E40\u0E04\u0E22\u0E1A\u0E49\u0E32\u0E40\u0E2D\u0E47\u0E21\u0E40\u0E04\u0E01\u0E31\u0E1A\u0E41\u0E21\u0E48</span><span class="s1"> </span><span class="se">\u0E01\u0E34\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C\u0E25\u0E30</span><span class="s1">3-4 </span><span class="se">\u0E27\u0E31\u0E19\u0E15\u0E34\u0E14</span><span class="s1"> </span><span class="se">\u0E42\u0E04\u0E15\u0E23\u0E2B\u0E19\u0E31\u0E01\u0E41\u0E25\u0E30\u0E42\u0E04\u0E15\u0E23\u0E40\u0E1B\u0E25\u0E37\u0E2D\u0E07\u0E07\u0E07\u0E07</span><span class="s1">&#39;</span>  <span class="c1">#@param [&#39;อยากกินวะแก ซื้อมาให้หน่อยจิ&#39;, &#39;ขอบคุณแกมาก โคตรบ้าเลย&#39;, &#39;ฟอร์ด บุกตลาด อีวี ในอินเดีย #prachachat #ตลาดรถยนต์&#39;, &#39;สั่งไป2 เมนู คือมัชฉะลาเต้ร้อน กับ ไอศครีมชาเขียว มัชฉะลาเต้ร้อน รสชาเขียวเข้มข้น หอม มัน แต่ไม่กลมกล่อม มันจืดแบบจืดสนิท ส่วนไอศครีมชาเขียว ทานแล้วรสมันออกใบไม้ๆมากกว่าชาเขียว แล้วก็หวานไป โดยรวมแล้วเฉยมากก ดีแค่รสชาเขียวเข้ม มีน้ำเปล่าบริการฟรี&#39;,&#39;เคยบ้าเอ็มเคกับแม่ กินอาทิตย์ละ3-4 วันติด โคตรหนักและโคตรเปลืองงงง&#39;] {allow-input: true}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\u0E40\u0E04\u0E22\u0E1A\u0E49\u0E32\u0E40\u0E2D\u0E47\u0E21\u0E40\u0E04\u0E01\u0E31\u0E1A\u0E41\u0E21\u0E48</span><span class="s1"> </span><span class="se">\u0E01\u0E34\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C\u0E25\u0E30</span><span class="s1">3-4 </span><span class="se">\u0E27\u0E31\u0E19\u0E15\u0E34\u0E14</span><span class="s1"> </span><span class="se">\u0E42\u0E04\u0E15\u0E23\u0E2B\u0E19\u0E31\u0E01\u0E41\u0E25\u0E30\u0E42\u0E04\u0E15\u0E23\u0E40\u0E1B\u0E25\u0E37\u0E2D\u0E07\u0E07\u0E07\u0E07</span><span class="s1">'</span>  <span class="c1">#@param ['อยากกินวะแก ซื้อมาให้หน่อยจิ', 'ขอบคุณแกมาก โคตรบ้าเลย', 'ฟอร์ด บุกตลาด อีวี ในอินเดีย #prachachat #ตลาดรถยนต์', 'สั่งไป2 เมนู คือมัชฉะลาเต้ร้อน กับ ไอศครีมชาเขียว มัชฉะลาเต้ร้อน รสชาเขียวเข้มข้น หอม มัน แต่ไม่กลมกล่อม มันจืดแบบจืดสนิท ส่วนไอศครีมชาเขียว ทานแล้วรสมันออกใบไม้ๆมากกว่าชาเขียว แล้วก็หวานไป โดยรวมแล้วเฉยมากก ดีแค่รสชาเขียวเข้ม มีน้ำเปล่าบริการฟรี','เคยบ้าเอ็มเคกับแม่ กินอาทิตย์ละ3-4 วันติด โคตรหนักและโคตรเปลืองงงง'] {allow-input: true}</span>
 
-<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:&quot;boolean&quot;}</span>
+<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:"boolean"}</span>
 <span class="k">if</span> <span class="n">preprocess_input_text</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span><span class="p">:</span>
         <span class="n">input_text</span> <span class="o">=</span> <span class="n">process_transformers</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
@@ -413,22 +414,22 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 </section>
 </section>
 <section id="Token-Classification">
-<h2>Token Classification<a class="headerlink" href="#Token-Classification" title="Permalink to this heading"></a></h2>
+<h2>Token Classification<a class="headerlink" href="#Token-Classification" title="Link to this heading"></a></h2>
 <p>We have state-of-the-art named entity recognition taggers based on both ThaiNER and LST20.</p>
 <section id="Pretrained-Token-Classifiers---ThaiNER-and-LST20">
-<h3>Pretrained Token Classifiers - ThaiNER and LST20<a class="headerlink" href="#Pretrained-Token-Classifiers---ThaiNER-and-LST20" title="Permalink to this heading"></a></h3>
+<h3>Pretrained Token Classifiers - ThaiNER and LST20<a class="headerlink" href="#Pretrained-Token-Classifiers---ThaiNER-and-LST20" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Choose Token Classification Dataset</span>
-<span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">&quot;thainer&quot;</span> <span class="c1">#@param [&#39;thainer&#39;,&#39;lst20&#39;]</span>
+<span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">"thainer"</span> <span class="c1">#@param ['thainer','lst20']</span>
 
 <span class="c1">#pipeline</span>
-<span class="n">classify_tokens</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">&#39;ner&#39;</span><span class="p">,</span>
+<span class="n">classify_tokens</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">'ner'</span><span class="p">,</span>
          <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
-         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-         <span class="n">revision</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;finetuned@</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s1">-ner&#39;</span><span class="p">,</span>
+         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+         <span class="n">revision</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'finetuned@</span><span class="si">{</span><span class="n">dataset_name</span><span class="si">}</span><span class="s1">-ner'</span><span class="p">,</span>
          <span class="n">ignore_labels</span><span class="o">=</span><span class="p">[],</span>
          <span class="n">grouped_entities</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -459,8 +460,8 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19\u0E2A\u0E27\u0E19\u0E01\u0E38\u0E2B\u0E25\u0E32\u0E1A\u0E40\u0E1B\u0E47\u0E19\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19\u0E17\u0E35\u0E48\u0E14\u0E35</span><span class="s1"> </span><span class="se">\u0E41\u0E15\u0E48\u0E44\u0E21\u0E48\u0E21\u0E35\u0E2A\u0E27\u0E19\u0E01\u0E38\u0E2B\u0E25\u0E32\u0E1A</span><span class="s1">&#39;</span> <span class="c1">#@param [&#39;โรงเรียนสวนกุหลาบเป็นโรงเรียนที่ดี แต่ไม่มีสวนกุหลาบ&#39;, &#39;แดงเดือดรอบสอง ลิเวอร์พูล บุกเยือน แมนฯ ยูไนเต็ด&#39;, &#39;จีน-อินเดียเสี่ยงสูญเสียจากภัยธรรมชาติมากสุด&#39;, &#39;ทำให้ประชาชนกว่า 10,000 คน ต้องอพยพออกจากพื้นที่ อิทธิพลของพายุยังทำให้บ้านเรือนเกือบ 9,700 หลังพังถล่มลงมา สร้างความเสียหายคิดเป็นมูลค่า 450 ล้านหยวน&#39;,&#39;กทช.เตรียมทดลองประมูล 3จี 25 ก.ค.นี้&#39;]</span>
-<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:&quot;boolean&quot;}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19\u0E2A\u0E27\u0E19\u0E01\u0E38\u0E2B\u0E25\u0E32\u0E1A\u0E40\u0E1B\u0E47\u0E19\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19\u0E17\u0E35\u0E48\u0E14\u0E35</span><span class="s1"> </span><span class="se">\u0E41\u0E15\u0E48\u0E44\u0E21\u0E48\u0E21\u0E35\u0E2A\u0E27\u0E19\u0E01\u0E38\u0E2B\u0E25\u0E32\u0E1A</span><span class="s1">'</span> <span class="c1">#@param ['โรงเรียนสวนกุหลาบเป็นโรงเรียนที่ดี แต่ไม่มีสวนกุหลาบ', 'แดงเดือดรอบสอง ลิเวอร์พูล บุกเยือน แมนฯ ยูไนเต็ด', 'จีน-อินเดียเสี่ยงสูญเสียจากภัยธรรมชาติมากสุด', 'ทำให้ประชาชนกว่า 10,000 คน ต้องอพยพออกจากพื้นที่ อิทธิพลของพายุยังทำให้บ้านเรือนเกือบ 9,700 หลังพังถล่มลงมา สร้างความเสียหายคิดเป็นมูลค่า 450 ล้านหยวน','กทช.เตรียมทดลองประมูล 3จี 25 ก.ค.นี้']</span>
+<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:"boolean"}</span>
 <span class="k">if</span> <span class="n">preprocess_input_text</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span><span class="p">:</span>
         <span class="n">input_text</span> <span class="o">=</span> <span class="n">process_transformers</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
@@ -491,32 +492,32 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 </section>
 </section>
 <section id="Document-Vectors">
-<h2>Document Vectors<a class="headerlink" href="#Document-Vectors" title="Permalink to this heading"></a></h2>
+<h2>Document Vectors<a class="headerlink" href="#Document-Vectors" title="Link to this heading"></a></h2>
 <p>If the HuggingFace finetuners do not have what you are looking for, or you want to do something less traditional such as clustering using document vectors or simply use the document vectors for other classifiers such as logistic regression, random forest and gradient boosting. <img alt="Image by &#64;mrpeerat" src="https://miro.medium.com/max/1000/1*3JJRwT1f2zTK1hx36-qXdg.jpeg" /></p>
-<p>Image by [&#64;mrpeerat](<a class="reference external" href="https://github.com/mrpeerat">https://github.com/mrpeerat</a>)</p>
+<p>Image by <a class="reference external" href="https://github.com/mrpeerat">&#64;mrpeerat</a></p>
 <section id="Feature-Extraction">
-<h3>Feature Extraction<a class="headerlink" href="#Feature-Extraction" title="Permalink to this heading"></a></h3>
+<h3>Feature Extraction<a class="headerlink" href="#Feature-Extraction" title="Link to this heading"></a></h3>
 <p>We can use the outputs of WangchanBERTa (or any transformer-based models) as document vectors as an example by <a class="reference external" href="https://github.com/BramVanroy/bert-for-inference/blob/master/introduction-to-bert.ipynb">BramVanroy</a>.</p>
-<p><img alt="image0" src="https://github.com/BramVanroy/bert-for-inference/raw/ab7c57d6e7c79faf83ac0f9b6595c4b3d660c43c/img/bert-feature-extraction-contextualized-embeddings.png" /></p>
+<img alt="https://github.com/BramVanroy/bert-for-inference/raw/ab7c57d6e7c79faf83ac0f9b6595c4b3d660c43c/img/bert-feature-extraction-contextualized-embeddings.png" src="https://github.com/BramVanroy/bert-for-inference/raw/ab7c57d6e7c79faf83ac0f9b6595c4b3d660c43c/img/bert-feature-extraction-contextualized-embeddings.png" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pipeline</span>
-<span class="n">feature_extractor</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">&#39;feature-extraction&#39;</span><span class="p">,</span>
+<span class="n">feature_extractor</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">'feature-extraction'</span><span class="p">,</span>
          <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
-         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-         <span class="n">revision</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">)</span>
+         <span class="n">model</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+         <span class="n">revision</span> <span class="o">=</span> <span class="s1">'main'</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">extract_last_k_tokens</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">feature_extractor</span><span class="p">,</span> <span class="n">last_k</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_last_k_tokens</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">feature_extractor</span><span class="p">,</span> <span class="n">last_k</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
     <span class="n">hidden_states</span> <span class="o">=</span> <span class="n">feature_extractor</span><span class="p">(</span><span class="n">input_text</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">last_k_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">hidden_states</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">last_k</span><span class="o">+</span><span class="mi">1</span><span class="p">)]]</span>
     <span class="n">concatenated_hidden_states</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">last_k_tokens</span><span class="p">,</span> <span class="p">[])</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">concatenated_hidden_states</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">_extract_last_k_layers</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="n">last_k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_extract_last_k_layers</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="n">last_k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
                            <span class="n">aggregator_fn</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)):</span>
-    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"pt"</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
         <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">output_hidden_states</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">hidden_states</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">hidden_states</span>
@@ -531,8 +532,8 @@ The class this function is called from is &#39;ThaiWordsNewmmTokenizer&#39;.
 <span class="c1"># Specify model and tokenizer for `extract_last_k_layers` function.</span>
 <span class="n">extract_last_k_layers</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">_extract_last_k_layers</span><span class="p">,</span>
                                 <span class="n">model</span><span class="o">=</span><span class="n">AutoModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-                                            <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                                            <span class="n">revision</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="p">),</span>
+                                            <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+                                            <span class="n">revision</span><span class="o">=</span><span class="s1">'main'</span><span class="p">),</span>
                                 <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -561,10 +562,10 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Show similarity between Food and Country (Last $k$ tokens)</span>
 <span class="c1">#@markdown Note: The sentence-level vector is obtained by aggregating (via summation) last 3 token represnetaitons of the last layer</span>
-<span class="n">text1</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินอาหารญี่ปุ่น&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
-<span class="n">text2</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินอาหารอิตาเลียน&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
-<span class="n">text3</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินกิวด้ง&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
-<span class="n">text4</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินมักกะโรนี&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
+<span class="n">text1</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินอาหารญี่ปุ่น'</span> <span class="c1">#@param {type:"raw"}</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินอาหารอิตาเลียน'</span> <span class="c1">#@param {type:"raw"}</span>
+<span class="n">text3</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินกิวด้ง'</span> <span class="c1">#@param {type:"raw"}</span>
+<span class="n">text4</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินมักกะโรนี'</span> <span class="c1">#@param {type:"raw"}</span>
 
 <span class="n">t1</span> <span class="o">=</span> <span class="n">extract_last_k_tokens</span><span class="p">(</span><span class="n">text1</span><span class="p">,</span> <span class="n">feature_extractor</span><span class="p">)[</span><span class="kc">None</span><span class="p">,:]</span>
 <span class="n">t2</span> <span class="o">=</span> <span class="n">extract_last_k_tokens</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="n">feature_extractor</span><span class="p">)[</span><span class="kc">None</span><span class="p">,:]</span>
@@ -572,13 +573,13 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <span class="n">t4</span> <span class="o">=</span> <span class="n">extract_last_k_tokens</span><span class="p">(</span><span class="n">text4</span><span class="p">,</span> <span class="n">feature_extractor</span><span class="p">)[</span><span class="kc">None</span><span class="p">,:]</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">t3</span><span class="p">,</span><span class="n">t4</span><span class="p">],</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics.pairwise</span><span class="w"> </span><span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="n">sim_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="n">ts</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">sim_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2%&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
-            <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japanese&#39;</span><span class="p">,</span><span class="s1">&#39;italian&#39;</span><span class="p">,</span><span class="s1">&#39;gyudon&#39;</span><span class="p">,</span><span class="s1">&#39;macaroni&#39;</span><span class="p">],</span>
-            <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japanese&#39;</span><span class="p">,</span><span class="s1">&#39;italian&#39;</span><span class="p">,</span><span class="s1">&#39;gyudon&#39;</span><span class="p">,</span><span class="s1">&#39;macaroni&#39;</span><span class="p">])</span>
+            <span class="n">fmt</span><span class="o">=</span><span class="s1">'.2%'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'Blues'</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">'japanese'</span><span class="p">,</span><span class="s1">'italian'</span><span class="p">,</span><span class="s1">'gyudon'</span><span class="p">,</span><span class="s1">'macaroni'</span><span class="p">],</span>
+            <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">'japanese'</span><span class="p">,</span><span class="s1">'italian'</span><span class="p">,</span><span class="s1">'gyudon'</span><span class="p">,</span><span class="s1">'macaroni'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -604,10 +605,10 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Show similarity between Food and Country (Last $k$ layers)</span>
 <span class="c1">#@markdown Note: The Sentence-level vector is obtained by aggregating (via summation) of the BOS token represnetaiton (\&lt;s\&gt;) from the last $k$ Transformer Encoder layers.</span>
-<span class="n">text1</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินอาหารญี่ปุ่น&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
-<span class="n">text2</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินอาหารอิตาเลียน&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
-<span class="n">text3</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินกิวด้ง&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
-<span class="n">text4</span> <span class="o">=</span> <span class="s1">&#39;ฉันชอบกินมักกะโรนี&#39;</span> <span class="c1">#@param {type:&quot;raw&quot;}</span>
+<span class="n">text1</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินอาหารญี่ปุ่น'</span> <span class="c1">#@param {type:"raw"}</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินอาหารอิตาเลียน'</span> <span class="c1">#@param {type:"raw"}</span>
+<span class="n">text3</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินกิวด้ง'</span> <span class="c1">#@param {type:"raw"}</span>
+<span class="n">text4</span> <span class="o">=</span> <span class="s1">'ฉันชอบกินมักกะโรนี'</span> <span class="c1">#@param {type:"raw"}</span>
 
 <span class="n">t1</span> <span class="o">=</span> <span class="n">extract_last_k_layers</span><span class="p">(</span><span class="n">text1</span><span class="p">)[</span><span class="kc">None</span><span class="p">,:]</span>
 <span class="n">t2</span> <span class="o">=</span> <span class="n">extract_last_k_layers</span><span class="p">(</span><span class="n">text2</span><span class="p">)[</span><span class="kc">None</span><span class="p">,:]</span>
@@ -615,13 +616,13 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <span class="n">t4</span> <span class="o">=</span> <span class="n">extract_last_k_layers</span><span class="p">(</span><span class="n">text4</span><span class="p">)[</span><span class="kc">None</span><span class="p">,:]</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">t3</span><span class="p">,</span><span class="n">t4</span><span class="p">],</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics.pairwise</span><span class="w"> </span><span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="n">sim_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="n">ts</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">sim_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2%&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
-            <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japanese&#39;</span><span class="p">,</span><span class="s1">&#39;italian&#39;</span><span class="p">,</span><span class="s1">&#39;gyudon&#39;</span><span class="p">,</span><span class="s1">&#39;macaroni&#39;</span><span class="p">],</span>
-            <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japanese&#39;</span><span class="p">,</span><span class="s1">&#39;italian&#39;</span><span class="p">,</span><span class="s1">&#39;gyudon&#39;</span><span class="p">,</span><span class="s1">&#39;macaroni&#39;</span><span class="p">])</span>
+            <span class="n">fmt</span><span class="o">=</span><span class="s1">'.2%'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'Blues'</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">'japanese'</span><span class="p">,</span><span class="s1">'italian'</span><span class="p">,</span><span class="s1">'gyudon'</span><span class="p">,</span><span class="s1">'macaroni'</span><span class="p">],</span>
+            <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">'japanese'</span><span class="p">,</span><span class="s1">'italian'</span><span class="p">,</span><span class="s1">'gyudon'</span><span class="p">,</span><span class="s1">'macaroni'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -643,7 +644,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </div>
 </section>
 <section id="Zero-shot-Text-Classification">
-<h3>Zero-shot Text Classification<a class="headerlink" href="#Zero-shot-Text-Classification" title="Permalink to this heading"></a></h3>
+<h3>Zero-shot Text Classification<a class="headerlink" href="#Zero-shot-Text-Classification" title="Link to this heading"></a></h3>
 <p>Zero-shot text classification is a fancy way of saying “do similarity search with a given set of labels based on pretrained model outputs”. It maybe useful when you do not have any training data to finetune at all. Here is how you can do it.</p>
 <p><strong>Updated on Friday 26 March 2021</strong>: We have released WanchanBERTa, XLMR and mBERT models finetuned on <a class="reference external" href="https://github.com/facebookresearch/XNLI">XNLI</a> dataset ( Thai sentence pairs). The finetuned model checkpoints are stored under the branch named <code class="docutils literal notranslate"><span class="pre">finetuned&#64;xnli_th</span></code> in our organization repositories (available at Huggingface Model Hub (<a class="reference external" href="https://huggingface.co/airesearch">https://huggingface.co/airesearch</a>)).</p>
 <div class="nbinput docutils container">
@@ -651,11 +652,11 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pipeline</span>
-<span class="n">zero_classify</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">&#39;zero-shot-classification&#39;</span><span class="p">,</span>
+<span class="n">zero_classify</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">'zero-shot-classification'</span><span class="p">,</span>
          <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
          <span class="n">model</span><span class="o">=</span><span class="n">AutoModelForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">-finetuned&#39;</span><span class="p">,</span>
-             <span class="n">revision</span><span class="o">=</span><span class="s1">&#39;finetuned@xnli_th&#39;</span><span class="p">)</span>
+             <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">'</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">-finetuned'</span><span class="p">,</span>
+             <span class="n">revision</span><span class="o">=</span><span class="s1">'finetuned@xnli_th'</span><span class="p">)</span>
          <span class="p">)</span>
 </pre></div>
 </div>
@@ -676,18 +677,18 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\u0E17\u0E35\u0E21\u0E44\u0E1A\u0E40\u0E14\u0E19\u0E2B\u0E32\u0E23\u0E37\u0E2D\u0E01\u0E31\u0E1A\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19</span><span class="s2"> </span><span class="se">\u0E01\u0E23\u0E30\u0E0A\u0E31\u0E1A\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E1E\u0E31\u0E19\u0E18\u0E21\u0E34\u0E15\u0E23</span><span class="s2">&quot;</span> <span class="c1">#@param [&quot;SCB 10X \u0E23\u0E48\u0E27\u0E21\u0E25\u0E07\u0E17\u0E38\u0E19\u0E43\u0E19 BlockFi Startup \u0E14\u0E49\u0E32\u0E19 Digital Asset&quot;, &quot;\u0E2D\u0E32\u0E40\u0E1A\u0E30\u0E1B\u0E23\u0E31\u0E1A\u0E04\u0E13\u0E30\u0E23\u0E31\u0E10\u0E21\u0E19\u0E15\u0E23\u0E35\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19 \u0E15\u0E31\u0E49\u0E07 \u201C\u0E23\u0E21\u0E15.\u0E01\u0E25\u0E32\u0E42\u0E2B\u0E21\u201D \u0E04\u0E19\u0E43\u0E2B\u0E21\u0E48&quot;, &quot;WangchanBERTa \u0E42\u0E21\u0E40\u0E14\u0E25\u0E1B\u0E23\u0E30\u0E21\u0E27\u0E25\u0E1C\u0E25\u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E0D\u0E48\u0E41\u0E25\u0E30\u0E01\u0E49\u0E32\u0E27\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E02\u0E13\u0E30\u0E19\u0E35\u0E49&quot;, &quot;\u201CWhere We Belong\&quot; \u0E04\u0E27\u0E49\u0E32\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E22\u0E2D\u0E14\u0E40\u0E22\u0E35\u0E48\u0E22\u0E21 \u0E2A\u0E38\u0E1E\u0E23\u0E23\u0E13\u0E2B\u0E07\u0E2A\u0E4C\u0E04\u0E23\u0E31\u0E49\u0E07\u0E17\u0E35\u0E48 29&quot;, &quot;\u0E17\u0E35\u0E21\u0E44\u0E1A\u0E40\u0E14\u0E19\u0E2B\u0E32\u0E23\u0E37\u0E2D\u0E01\u0E31\u0E1A\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19 \u0E01\u0E23\u0E30\u0E0A\u0E31\u0E1A\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E1E\u0E31\u0E19\u0E18\u0E21\u0E34\u0E15\u0E23&quot;, &quot;\u0E19\u0E31\u0E01\u0E27\u0E34\u0E08\u0E31\u0E22\u0E19\u0E32\u0E42\u0E19\u0E40\u0E17\u0E04\u0E42\u0E19\u0E42\u0E25\u0E22\u0E35 \u0E08\u0E32\u0E01\u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E27\u0E34\u0E17\u0E22\u0E2A\u0E34\u0E23\u0E34\u0E40\u0E21\u0E18\u0E35 \u0E1C\u0E39\u0E49\u0E04\u0E34\u0E14\u0E04\u0E49\u0E19\u0E41\u0E1A\u0E15\u0E40\u0E15\u0E2D\u0E23\u0E35\u0E48\u0E08\u0E32\u0E01\u0E27\u0E31\u0E2A\u0E14\u0E38\u0E01\u0E23\u0E32\u0E1F\u0E35\u0E19 \u0E04\u0E27\u0E49\u0E32\u0E23\u0E32\u0E07\u0E27\u0E31\u0E25\u0E19\u0E31\u0E01\u0E27\u0E34\u0E17\u0E22\u0E32\u0E28\u0E32\u0E2A\u0E15\u0E23\u0E4C\u0E14\u0E35\u0E40\u0E14\u0E48\u0E19 \u0E1B\u0E23\u0E30\u0E08\u0E33\u0E1B\u0E35 2562 &quot;, &quot;\u0E1E\u0E34\u0E1E\u0E34\u0E18\u0E20\u0E31\u0E13\u0E11\u0E4C\u0E1D\u0E23\u0E31\u0E48\u0E07\u0E40\u0E28\u0E2A\u0E40\u0E1C\u0E22\u0E41\u0E1E\u0E23\u0E48\u0E44\u0E1F\u0E25\u0E4C\u0E14\u0E34\u0E08\u0E34\u0E17\u0E31\u0E25\u0E20\u0E32\u0E1E\u0E27\u0E32\u0E14 \u0E20\u0E32\u0E1E\u0E16\u0E48\u0E32\u0E22 \u0E41\u0E25\u0E30\u0E20\u0E32\u0E1E\u0E1B\u0E23\u0E30\u0E01\u0E2D\u0E1A\u0E2B\u0E19\u0E31\u0E07\u0E2A\u0E37\u0E2D\u0E43\u0E19\u0E2D\u0E14\u0E35\u0E15 \u0E23\u0E27\u0E21\u0E01\u0E27\u0E48\u0E32 1 \u0E41\u0E2A\u0E19\u0E23\u0E39\u0E1B &quot;] {allow-input: true}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u0E17\u0E35\u0E21\u0E44\u0E1A\u0E40\u0E14\u0E19\u0E2B\u0E32\u0E23\u0E37\u0E2D\u0E01\u0E31\u0E1A\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19</span><span class="s2"> </span><span class="se">\u0E01\u0E23\u0E30\u0E0A\u0E31\u0E1A\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E1E\u0E31\u0E19\u0E18\u0E21\u0E34\u0E15\u0E23</span><span class="s2">"</span> <span class="c1">#@param ["SCB 10X \u0E23\u0E48\u0E27\u0E21\u0E25\u0E07\u0E17\u0E38\u0E19\u0E43\u0E19 BlockFi Startup \u0E14\u0E49\u0E32\u0E19 Digital Asset", "\u0E2D\u0E32\u0E40\u0E1A\u0E30\u0E1B\u0E23\u0E31\u0E1A\u0E04\u0E13\u0E30\u0E23\u0E31\u0E10\u0E21\u0E19\u0E15\u0E23\u0E35\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19 \u0E15\u0E31\u0E49\u0E07 \u201C\u0E23\u0E21\u0E15.\u0E01\u0E25\u0E32\u0E42\u0E2B\u0E21\u201D \u0E04\u0E19\u0E43\u0E2B\u0E21\u0E48", "WangchanBERTa \u0E42\u0E21\u0E40\u0E14\u0E25\u0E1B\u0E23\u0E30\u0E21\u0E27\u0E25\u0E1C\u0E25\u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22\u0E17\u0E35\u0E48\u0E43\u0E2B\u0E0D\u0E48\u0E41\u0E25\u0E30\u0E01\u0E49\u0E32\u0E27\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48\u0E2A\u0E38\u0E14\u0E43\u0E19\u0E02\u0E13\u0E30\u0E19\u0E35\u0E49", "\u201CWhere We Belong\" \u0E04\u0E27\u0E49\u0E32\u0E20\u0E32\u0E1E\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E22\u0E2D\u0E14\u0E40\u0E22\u0E35\u0E48\u0E22\u0E21 \u0E2A\u0E38\u0E1E\u0E23\u0E23\u0E13\u0E2B\u0E07\u0E2A\u0E4C\u0E04\u0E23\u0E31\u0E49\u0E07\u0E17\u0E35\u0E48 29", "\u0E17\u0E35\u0E21\u0E44\u0E1A\u0E40\u0E14\u0E19\u0E2B\u0E32\u0E23\u0E37\u0E2D\u0E01\u0E31\u0E1A\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19 \u0E01\u0E23\u0E30\u0E0A\u0E31\u0E1A\u0E04\u0E27\u0E32\u0E21\u0E40\u0E1B\u0E47\u0E19\u0E1E\u0E31\u0E19\u0E18\u0E21\u0E34\u0E15\u0E23", "\u0E19\u0E31\u0E01\u0E27\u0E34\u0E08\u0E31\u0E22\u0E19\u0E32\u0E42\u0E19\u0E40\u0E17\u0E04\u0E42\u0E19\u0E42\u0E25\u0E22\u0E35 \u0E08\u0E32\u0E01\u0E2A\u0E16\u0E32\u0E1A\u0E31\u0E19\u0E27\u0E34\u0E17\u0E22\u0E2A\u0E34\u0E23\u0E34\u0E40\u0E21\u0E18\u0E35 \u0E1C\u0E39\u0E49\u0E04\u0E34\u0E14\u0E04\u0E49\u0E19\u0E41\u0E1A\u0E15\u0E40\u0E15\u0E2D\u0E23\u0E35\u0E48\u0E08\u0E32\u0E01\u0E27\u0E31\u0E2A\u0E14\u0E38\u0E01\u0E23\u0E32\u0E1F\u0E35\u0E19 \u0E04\u0E27\u0E49\u0E32\u0E23\u0E32\u0E07\u0E27\u0E31\u0E25\u0E19\u0E31\u0E01\u0E27\u0E34\u0E17\u0E22\u0E32\u0E28\u0E32\u0E2A\u0E15\u0E23\u0E4C\u0E14\u0E35\u0E40\u0E14\u0E48\u0E19 \u0E1B\u0E23\u0E30\u0E08\u0E33\u0E1B\u0E35 2562 ", "\u0E1E\u0E34\u0E1E\u0E34\u0E18\u0E20\u0E31\u0E13\u0E11\u0E4C\u0E1D\u0E23\u0E31\u0E48\u0E07\u0E40\u0E28\u0E2A\u0E40\u0E1C\u0E22\u0E41\u0E1E\u0E23\u0E48\u0E44\u0E1F\u0E25\u0E4C\u0E14\u0E34\u0E08\u0E34\u0E17\u0E31\u0E25\u0E20\u0E32\u0E1E\u0E27\u0E32\u0E14 \u0E20\u0E32\u0E1E\u0E16\u0E48\u0E32\u0E22 \u0E41\u0E25\u0E30\u0E20\u0E32\u0E1E\u0E1B\u0E23\u0E30\u0E01\u0E2D\u0E1A\u0E2B\u0E19\u0E31\u0E07\u0E2A\u0E37\u0E2D\u0E43\u0E19\u0E2D\u0E14\u0E35\u0E15 \u0E23\u0E27\u0E21\u0E01\u0E27\u0E48\u0E32 1 \u0E41\u0E2A\u0E19\u0E23\u0E39\u0E1B "] {allow-input: true}</span>
 
-<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:&quot;boolean&quot;}</span>
+<span class="n">preprocess_input_text</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#@param {type:"boolean"}</span>
 <span class="k">if</span> <span class="n">preprocess_input_text</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_models</span><span class="p">:</span>
         <span class="n">input_text</span> <span class="o">=</span> <span class="n">process_transformers</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span>
 
 <span class="c1">#infer</span>
 <span class="n">zero_classify</span><span class="p">(</span><span class="n">input_text</span><span class="p">,</span>
-              <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;เศรษฐกิจ-ธุรกิจ&#39;</span><span class="p">,</span><span class="s1">&#39;การเมือง&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;เทคโนโลยี&#39;</span><span class="p">,</span> <span class="s1">&#39;ศิลปะ-บันเทิง&#39;</span><span class="p">],</span>
-              <span class="n">hypothesis_template</span><span class="o">=</span><span class="s1">&#39;พาดหัวข่าวนี้้เกี่ยวกับ</span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span>
+              <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'เศรษฐกิจ-ธุรกิจ'</span><span class="p">,</span><span class="s1">'การเมือง'</span><span class="p">,</span>
+                                <span class="s1">'เทคโนโลยี'</span><span class="p">,</span> <span class="s1">'ศิลปะ-บันเทิง'</span><span class="p">],</span>
+              <span class="n">hypothesis_template</span><span class="o">=</span><span class="s1">'พาดหัวข่าวนี้้เกี่ยวกับ</span><span class="si">{}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

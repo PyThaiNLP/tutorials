@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wongnai Review Classification &mdash; pythainlp-tutorials thai2plot-30-g70eec59 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+  <title>Wongnai Review Classification &mdash; pythainlp-tutorials thai2plot-32-g8caf131 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=eea1f72d" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=43cb7f73"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -111,7 +108,7 @@
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/text_classification.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Wongnai-Review-Classification">
-<h1>Wongnai Review Classification<a class="headerlink" href="#Wongnai-Review-Classification" title="Permalink to this heading"></a></h1>
+<h1>Wongnai Review Classification<a class="headerlink" href="#Wongnai-Review-Classification" title="Link to this heading"></a></h1>
 <p>We provide two benchmarks for 5-star multi-class classification of <a class="reference external" href="https://github.com/wongnai/wongnai-corpus">wongnai-corpus</a>: <a class="reference external" href="https://github.com/facebookresearch/fastText">fastText</a> and <a class="reference external" href="https://github.com/cstorm125/thai2fit">ULMFit</a>. In both cases, we first finetune the embeddings using all data. The benchmark numbers are based on the test set. Performance metric is the micro-averaged F1 by the test set of <a class="reference external" href="https://www.kaggle.com/c/wongnai-challenge-review-rating-prediction/data">Wongnai
 Challenge</a>.</p>
 <table class="docutils align-default">
@@ -161,40 +158,40 @@ Challenge</a>.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ast</span><span class="w"> </span><span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm_notebook</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
 <span class="c1">#viz</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="c1"># from fastai.text import *</span>
 <span class="c1"># from fastai.callbacks import CSVLogger</span>
 
-<span class="kn">from</span> <span class="nn">pythainlp</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
-<span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="n">process_thai</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.ulmfit</span><span class="w"> </span><span class="kn">import</span> <span class="n">process_thai</span>
 
-<span class="n">ft_data</span> <span class="o">=</span> <span class="s1">&#39;ft_data/&#39;</span>
+<span class="n">ft_data</span> <span class="o">=</span> <span class="s1">'ft_data/'</span>
 </pre></div>
 </div>
 </div>
 <section id="Oversampling">
-<h2>Oversampling<a class="headerlink" href="#Oversampling" title="Permalink to this heading"></a></h2>
+<h2>Oversampling<a class="headerlink" href="#Oversampling" title="Link to this heading"></a></h2>
 <p>We oversampled class <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> for 11 and 3 times respectively in order to balance the classes.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;w_review_train.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">]</span>
-<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;test_file.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
-<span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]),</span>\
-                   <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">])])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'w_review_train.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"review"</span><span class="p">,</span> <span class="s2">"rating"</span><span class="p">]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"test_file.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">)</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">"rating"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">"review"</span><span class="p">]),</span>\
+                   <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"review"</span><span class="p">])])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -247,7 +244,7 @@ Name: rating, dtype: float64
 </div>
 </section>
 <section id="fastText-Model">
-<h2><a class="reference external" href="https://github.com/facebookresearch/fastText">fastText</a> Model<a class="headerlink" href="#fastText-Model" title="Permalink to this heading"></a></h2>
+<h2><a class="reference external" href="https://github.com/facebookresearch/fastText">fastText</a> Model<a class="headerlink" href="#fastText-Model" title="Link to this heading"></a></h2>
 <p>We used embeddings pretrained on <a class="reference external" href="https://github.com/facebookresearch/fastText/blob/master/docs/pretrained-vectors.md">Thai Wikipedia Dump</a> and finetuned them using all of <code class="docutils literal notranslate"><span class="pre">wisesight-sentiment</span></code> using skipgram model. After that, we do a 5-class classification.</p>
 <table class="docutils align-default">
 <thead>
@@ -267,20 +264,20 @@ Name: rating, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_txts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;train_bal&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_txts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"train"</span><span class="p">,</span> <span class="s2">"train_bal"</span><span class="p">,</span> <span class="s2">"test"</span><span class="p">]</span>
 <span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_df</span><span class="p">,</span> <span class="n">train_bal</span><span class="p">,</span> <span class="n">test_df</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="n">ft_lines</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-        <span class="n">ft_lab</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;__label__</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
-        <span class="n">ft_text</span> <span class="o">=</span> <span class="n">replace_newline</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="n">ft_line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_lab</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ft_text</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">ft_lab</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'__label__</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">"rating"</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span>
+        <span class="n">ft_text</span> <span class="o">=</span> <span class="n">replace_newline</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">"review"</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">ft_line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">ft_lab</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ft_text</span><span class="si">}</span><span class="s1">'</span>
         <span class="n">ft_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ft_line</span><span class="p">)</span>
 
-    <span class="n">doc</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ft_lines</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_data</span><span class="si">}{</span><span class="n">df_txts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ft_lines</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">ft_data</span><span class="si">}{</span><span class="n">df_txts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">.txt'</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -293,13 +290,13 @@ Name: rating, dtype: float64
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for fasttext embedding finetuning</span>
 <span class="n">ft_lines</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">all_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">ft_lab</span> <span class="o">=</span> <span class="s2">&quot;__label__0&quot;</span>
-    <span class="n">ft_text</span> <span class="o">=</span> <span class="n">replace_newline</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">ft_line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_lab</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ft_text</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">ft_lab</span> <span class="o">=</span> <span class="s2">"__label__0"</span>
+    <span class="n">ft_text</span> <span class="o">=</span> <span class="n">replace_newline</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s2">"review"</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">ft_line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">ft_lab</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ft_text</span><span class="si">}</span><span class="s1">'</span>
     <span class="n">ft_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ft_line</span><span class="p">)</span>
 
-<span class="n">doc</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ft_lines</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ft_data</span><span class="si">}</span><span class="s1">df_all.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ft_lines</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">ft_data</span><span class="si">}</span><span class="s1">df_all.txt'</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -309,10 +306,10 @@ Name: rating, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># finetune with all data
-!/home/charin/fastText-0.1.0/fasttext skipgram \
--pretrainedVectors &#39;model/wiki.th.vec&#39; -dim 300 \
--input ft_data/df_all.txt -output &#39;model/finetuned&#39;
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># finetune with all data</span>
+<span class="o">!</span>/home/charin/fastText-0.1.0/fasttext<span class="w"> </span>skipgram<span class="w"> </span><span class="err">\</span>
+<span class="o">-</span><span class="n">pretrainedVectors</span> <span class="s1">'model/wiki.th.vec'</span> <span class="o">-</span><span class="n">dim</span> <span class="mi">300</span> \
+<span class="o">-</span><span class="nb">input</span> <span class="n">ft_data</span><span class="o">/</span><span class="n">df_all</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">output</span> <span class="s1">'model/finetuned'</span>
 </pre></div>
 </div>
 </div>
@@ -331,10 +328,10 @@ Progress: 100.0%  words/sec/thread: 24858  lr: 0.000000  loss: 1.309402  eta: 0h
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># train classifier
-!/home/charin/fastText-0.1.0/fasttext supervised \
--input &#39;ft_data/train_bal.txt&#39; -output &#39;model/wongnai_bal&#39; \
--pretrainedVectors &#39;model/finetuned.vec&#39; -epoch 5 -dim 300 -wordNgrams 2
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># train classifier</span>
+<span class="o">!</span>/home/charin/fastText-0.1.0/fasttext<span class="w"> </span>supervised<span class="w"> </span><span class="err">\</span>
+<span class="o">-</span><span class="nb">input</span> <span class="s1">'ft_data/train_bal.txt'</span> <span class="o">-</span><span class="n">output</span> <span class="s1">'model/wongnai_bal'</span> \
+<span class="o">-</span><span class="n">pretrainedVectors</span> <span class="s1">'model/finetuned.vec'</span> <span class="o">-</span><span class="n">epoch</span> <span class="mi">5</span> <span class="o">-</span><span class="n">dim</span> <span class="mi">300</span> <span class="o">-</span><span class="n">wordNgrams</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -355,8 +352,8 @@ Progress: 100.0%  words/sec/thread: 391282  lr: 0.000000  loss: 0.764689  eta: 0
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get prediction</span>
-<span class="n">preds</span> <span class="o">=</span> <span class="o">!</span>/home/charin/fastText-0.1.0/fasttext<span class="w"> </span>predict<span class="w"> </span><span class="s1">&#39;model/wongnai_bal.bin&#39;</span><span class="w"> </span><span class="s1">&#39;ft_data/test.txt&#39;</span>
-<span class="n">pred_lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;__&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">])</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="o">!</span>/home/charin/fastText-0.1.0/fasttext<span class="w"> </span>predict<span class="w"> </span><span class="s1">'model/wongnai_bal.bin'</span><span class="w"> </span><span class="s1">'ft_data/test.txt'</span>
+<span class="n">pred_lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'__'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -364,17 +361,17 @@ Progress: 100.0%  words/sec/thread: 391282  lr: 0.000000  loss: 0.764689  eta: 0
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;reviewID&quot;</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span>
-                          <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="n">pred_lab</span><span class="p">})</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"reviewID"</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span>
+                          <span class="s2">"rating"</span><span class="p">:</span> <span class="n">pred_lab</span><span class="p">})</span>
 <span class="n">submit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;submit_fastttext_bal.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"submit_fastttext_bal.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="LinearSVC-Model">
-<h2>LinearSVC Model<a class="headerlink" href="#LinearSVC-Model" title="Permalink to this heading"></a></h2>
-<p>Code for LinearSVC is initially provided by [&#64;lukkiddd](<a class="reference external" href="https://github.com/lukkiddd">https://github.com/lukkiddd</a>). <code class="docutils literal notranslate"><span class="pre">pythainlp.ulmfit.process_thai</span></code> contains text cleaning rules with the default aimed for sparse models like bag of words. It contains <code class="docutils literal notranslate"><span class="pre">pre_rules</span></code> applied before tokenization and <code class="docutils literal notranslate"><span class="pre">post_rules</span></code> applied after.</p>
+<h2>LinearSVC Model<a class="headerlink" href="#LinearSVC-Model" title="Link to this heading"></a></h2>
+<p>Code for LinearSVC is initially provided by <a class="reference external" href="https://github.com/lukkiddd">&#64;lukkiddd</a>. <code class="docutils literal notranslate"><span class="pre">pythainlp.ulmfit.process_thai</span></code> contains text cleaning rules with the default aimed for sparse models like bag of words. It contains <code class="docutils literal notranslate"><span class="pre">pre_rules</span></code> applied before tokenization and <code class="docutils literal notranslate"><span class="pre">post_rules</span></code> applied after.</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>model</p></th>
@@ -393,8 +390,8 @@ Progress: 100.0%  words/sec/thread: 391282  lr: 0.000000  loss: 0.764689  eta: 0
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_bal</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">train_bal</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_bal</span><span class="p">[</span><span class="s2">"review"</span><span class="p">],</span> <span class="n">train_bal</span><span class="p">[</span><span class="s2">"rating"</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">"review"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -405,9 +402,9 @@ Progress: 100.0%  words/sec/thread: 391282  lr: 0.000000  loss: 0.764689  eta: 0
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_splits</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">test_splits</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">train_bal</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
-    <span class="n">train_splits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">train_bal</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">])))</span>
+    <span class="n">train_splits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">train_bal</span><span class="p">[</span><span class="s2">"review"</span><span class="p">][</span><span class="n">i</span><span class="p">])))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">test_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
-    <span class="n">test_splits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">])))</span>
+    <span class="n">test_splits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">process_thai</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">"review"</span><span class="p">][</span><span class="n">i</span><span class="p">])))</span>
 </pre></div>
 </div>
 </div>
@@ -443,14 +440,14 @@ Progress: 100.0%  words/sec/thread: 391282  lr: 0.000000  loss: 0.764689  eta: 0
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfTransformer</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfTransformer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearSVC</span>
 
 <span class="n">text_clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">&quot;vect&quot;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">process_thai</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))),</span>
-    <span class="p">(</span><span class="s2">&quot;tfidf&#39;, TfidfTransformer()),</span>
-    <span class="p">(</span><span class="s2">&quot;clf&quot;</span><span class="p">,</span> <span class="n">LinearSVC</span><span class="p">()),</span>
+    <span class="p">(</span><span class="s2">"vect"</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">process_thai</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))),</span>
+    <span class="p">(</span><span class="s2">"tfidf', TfidfTransformer()),</span>
+    <span class="p">(</span><span class="s2">"clf"</span><span class="p">,</span> <span class="n">LinearSVC</span><span class="p">()),</span>
 <span class="p">])</span>
 
 <span class="n">text_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -485,8 +482,8 @@ Pipeline(memory=None,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
-<span class="n">enc</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">)</span>
 <span class="n">pred_lab</span> <span class="o">=</span> <span class="n">text_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -495,16 +492,16 @@ Pipeline(memory=None,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;reviewID&quot;</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span>
-                          <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="n">pred_lab</span><span class="p">})</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"reviewID"</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span>
+                          <span class="s2">"rating"</span><span class="p">:</span> <span class="n">pred_lab</span><span class="p">})</span>
 <span class="n">submit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;submit_linearsvc.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"submit_linearsvc.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="ULMFit-Model">
-<h2><a class="reference external" href="https://github.com/cstorm125/thai2fit">ULMFit</a> Model<a class="headerlink" href="#ULMFit-Model" title="Permalink to this heading"></a></h2>
+<h2><a class="reference external" href="https://github.com/cstorm125/thai2fit">ULMFit</a> Model<a class="headerlink" href="#ULMFit-Model" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>model</p></th>
@@ -536,22 +533,22 @@ Pipeline(memory=None,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm_notebook</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ast</span><span class="w"> </span><span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm_notebook</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
-<span class="kn">from</span> <span class="nn">fastai.text</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">fastai.callbacks</span> <span class="kn">import</span> <span class="n">CSVLogger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastai.text</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastai.callbacks</span><span class="w"> </span><span class="kn">import</span> <span class="n">CSVLogger</span>
 
-<span class="kn">from</span> <span class="nn">pythainlp.ulmfit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pythainlp.ulmfit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">model_path</span> <span class="o">=</span> <span class="s2">&quot;wongnai_data/&quot;&quot;</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="s2">"wongnai_data/""</span>
 </pre></div>
 </div>
 </div>
@@ -560,12 +557,12 @@ Pipeline(memory=None,
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#process data</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;w_review_train.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">]</span>
-<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;test_file.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
-<span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">]),</span>\
-                   <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">])])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"w_review_train.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"review"</span><span class="p">,</span> <span class="s2">"rating"</span><span class="p">]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"test_file.csv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">)</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">"rating"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">all_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">"review"</span><span class="p">]),</span>\
+                   <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"review"</span><span class="p">])])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">two_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="o">.</span><span class="n">rating</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">one_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="o">.</span><span class="n">rating</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">train_bal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_df</span><span class="p">,</span> <span class="n">one_df</span><span class="p">,</span> <span class="n">two_df</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -573,21 +570,21 @@ Pipeline(memory=None,
 </div>
 </div>
 <section id="Finetune-Language-Model">
-<h3>Finetune Language Model<a class="headerlink" href="#Finetune-Language-Model" title="Permalink to this heading"></a></h3>
+<h3>Finetune Language Model<a class="headerlink" href="#Finetune-Language-Model" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tt = Tokenizer(tok_func = ThaiTokenizer, lang = &#39;th&#39;, pre_rules = pre_rules_th, post_rules=post_rules_th)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tt = Tokenizer(tok_func = ThaiTokenizer, lang = 'th', pre_rules = pre_rules_th, post_rules=post_rules_th)</span>
 <span class="c1"># processor = [TokenizeProcessor(tokenizer=tt, chunksize=10000, mark_fields=False),</span>
 <span class="c1">#             NumericalizeProcessor(vocab=None, max_vocab=60000, min_freq=3)]</span>
 
-<span class="c1"># data_lm = (TextList.from_df(all_df, model_path, cols=[&#39;review&#39;], processor=processor)</span>
+<span class="c1"># data_lm = (TextList.from_df(all_df, model_path, cols=['review'], processor=processor)</span>
 <span class="c1">#     .random_split_by_pct(valid_pct = 0.01, seed = 1412)</span>
 <span class="c1">#     .label_for_lm()</span>
 <span class="c1">#     .databunch(bs=64))</span>
 <span class="c1"># data_lm.sanity_check()</span>
-<span class="c1"># data_lm.save(&#39;wongnai_lm.pkl&#39;)</span>
+<span class="c1"># data_lm.save('wongnai_lm.pkl')</span>
 </pre></div>
 </div>
 </div>
@@ -595,7 +592,7 @@ Pipeline(memory=None,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_lm</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;wongnai_lm.pkl&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_lm</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">"wongnai_lm.pkl"</span><span class="p">)</span>
 <span class="n">data_lm</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">train_ds</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_lm</span><span class="o">.</span><span class="n">valid_ds</span><span class="p">)</span>
 </pre></div>
@@ -702,7 +699,7 @@ Pipeline(memory=None,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;สวัสดีครับพี่น้องเสื้อ &quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">"สวัสดีครับพี่น้องเสื้อ "</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -768,7 +765,7 @@ Min numerical gradient: 1.58E-04
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#train frozen</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training frozen&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"training frozen"</span><span class="p">)</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">freeze_to</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="n">moms</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
 </pre></div>
@@ -806,7 +803,7 @@ Total time: 06:36 <p><table style='width:300px; margin-bottom:10px'>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#train unfrozen</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training unfrozen&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"training unfrozen"</span><span class="p">)</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">()</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="n">moms</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">))</span>
 </pre></div>
@@ -897,14 +894,14 @@ Total time: 1:26:45 <p><table style='width:300px; margin-bottom:10px'>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;wongnai_lm&quot;</span><span class="p">)</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">save_encoder</span><span class="p">(</span><span class="s2">&quot;wongnai_enc&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"wongnai_lm"</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">save_encoder</span><span class="p">(</span><span class="s2">"wongnai_enc"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="Classification">
-<h3>Classification<a class="headerlink" href="#Classification" title="Permalink to this heading"></a></h3>
+<h3>Classification<a class="headerlink" href="#Classification" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -980,19 +977,19 @@ Total time: 1:26:45 <p><table style='width:300px; margin-bottom:10px'>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tt</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">tok_func</span><span class="o">=</span><span class="n">ThaiTokenizer</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;th&quot;</span><span class="p">,</span> <span class="n">pre_rule</span> <span class="o">=</span><span class="n">pre_rules_th</span><span class="p">,</span> <span class="n">post_rules</span><span class="o">=</span><span class="n">post_rules_th</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tt</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">tok_func</span><span class="o">=</span><span class="n">ThaiTokenizer</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">"th"</span><span class="p">,</span> <span class="n">pre_rule</span> <span class="o">=</span><span class="n">pre_rules_th</span><span class="p">,</span> <span class="n">post_rules</span><span class="o">=</span><span class="n">post_rules_th</span><span class="p">)</span>
 <span class="n">processor</span> <span class="o">=</span> <span class="p">[</span><span class="n">TokenizeProcessor</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tt</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">mark_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
             <span class="n">NumericalizeProcessor</span><span class="p">(</span><span class="n">vocab</span><span class="o">=</span><span class="n">data_lm</span><span class="o">.</span><span class="n">vocab</span><span class="p">,</span> <span class="n">max_vocab</span><span class="o">=</span><span class="mi">60000</span><span class="p">,</span> <span class="n">min_freq</span><span class="o">=</span><span class="mi">3</span><span class="p">)]</span>
 
-<span class="n">data_cls</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">train_bal</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">)</span>
+<span class="n">data_cls</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">train_bal</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">"review"</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">)</span>
     <span class="o">.</span><span class="n">random_split_by_pct</span><span class="p">(</span><span class="n">valid_pct</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">1412</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">label_from_df</span><span class="p">(</span><span class="s2">&quot;rating&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">add_test</span><span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">test_df</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;review&quot;</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">label_from_df</span><span class="p">(</span><span class="s2">"rating"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">add_test</span><span class="p">(</span><span class="n">TextList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span><span class="n">test_df</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s2">"review"</span><span class="p">],</span> <span class="n">processor</span><span class="o">=</span><span class="n">processor</span><span class="p">))</span>
     <span class="o">.</span><span class="n">databunch</span><span class="p">(</span><span class="n">bs</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
     <span class="p">)</span>
 
 <span class="n">data_cls</span><span class="o">.</span><span class="n">sanity_check</span><span class="p">()</span>
-<span class="n">data_cls</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;wongnai_cls.pkl&quot;</span><span class="p">)</span>
+<span class="n">data_cls</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"wongnai_cls.pkl"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1069,7 +1066,7 @@ Total time: 1:26:45 <p><table style='width:300px; margin-bottom:10px'>
 <span class="n">learn</span><span class="o">.</span><span class="n">opt_func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">))</span>
 
 <span class="c1">#load pretrained finetuned model</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="s2">&quot;wongnai_enc&quot;</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load_encoder</span><span class="p">(</span><span class="s2">"wongnai_enc"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1144,7 +1141,7 @@ Total time: 18:06
 </div>
 </section>
 <section id="Submission">
-<h3>Submission<a class="headerlink" href="#Submission" title="Permalink to this heading"></a></h3>
+<h3>Submission<a class="headerlink" href="#Submission" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
@@ -1156,7 +1153,7 @@ Total time: 18:06
 <span class="n">learn</span> <span class="o">=</span> <span class="n">text_classifier_learner</span><span class="p">(</span><span class="n">data_cls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">trn_args</span><span class="p">)</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">opt_func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">))</span>
 
-<span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wongnai_cls&quot;</span><span class="p">);</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"wongnai_cls"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1181,9 +1178,9 @@ Total time: 18:06
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;reviewID&quot;</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="n">preds</span><span class="p">})</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">submit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"reviewID"</span><span class="p">:</span> <span class="n">test_df</span><span class="o">.</span><span class="n">reviewID</span><span class="p">,</span> <span class="s2">"rating"</span><span class="p">:</span> <span class="n">preds</span><span class="p">})</span>
 <span class="n">submit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;submit_ulmfit.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">submit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"submit_ulmfit.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

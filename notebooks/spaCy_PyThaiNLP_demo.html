@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>spaCy-PyThaiNLP &mdash; pythainlp-tutorials thai2plot-30-g70eec59 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+  <title>spaCy-PyThaiNLP &mdash; pythainlp-tutorials thai2plot-32-g8caf131 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/style.css?v=eea1f72d" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=43cb7f73"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -100,14 +97,14 @@
 <span class="raw-html"><a target="_blank" href="https://colab.research.google.com/github/PyThaiNLP/tutorials/blob/master/source/notebooks/spaCy_PyThaiNLP_demo.ipynb"><img alt="Google Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="spaCy-PyThaiNLP">
-<h1>spaCy-PyThaiNLP<a class="headerlink" href="#spaCy-PyThaiNLP" title="Permalink to this heading"></a></h1>
+<h1>spaCy-PyThaiNLP<a class="headerlink" href="#spaCy-PyThaiNLP" title="Link to this heading"></a></h1>
 <p>PyThaiNLP For spaCy</p>
 <p>GitHub: <a class="reference external" href="https://github.com/PyThaiNLP/spaCy-PyThaiNLP">https://github.com/PyThaiNLP/spaCy-PyThaiNLP</a></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install -U pip
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
 </pre></div>
 </div>
 </div>
@@ -133,7 +130,7 @@ Successfully installed pip-22.3.1
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install pythainlp[dependency_parsing] esupar
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pythainlp</span><span class="p">[</span><span class="n">dependency_parsing</span><span class="p">]</span> <span class="n">esupar</span>
 </pre></div>
 </div>
 </div>
@@ -238,7 +235,7 @@ Successfully installed deplacy-2.0.3 emoji-2.2.0 esupar-1.4.7 huggingface-hub-0.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install spacy-pythainlp
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">spacy</span><span class="o">-</span><span class="n">pythainlp</span>
 </pre></div>
 </div>
 </div>
@@ -295,7 +292,7 @@ Successfully installed python-crfsuite-0.9.8 spacy-pythainlp-0.1.dev6
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install attacut
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">attacut</span>
 </pre></div>
 </div>
 </div>
@@ -346,8 +343,8 @@ Successfully installed attacut-1.0.6 docopt-0.6.2 fire-0.5.0 nptyping-2.4.1 ssg-
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
-<span class="kn">import</span> <span class="nn">spacy_pythainlp.core</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">spacy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">spacy_pythainlp.core</span>
 </pre></div>
 </div>
 </div>
@@ -364,26 +361,26 @@ Successfully installed attacut-1.0.6 docopt-0.6.2 fire-0.5.0 nptyping-2.4.1 ssg-
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spacy</span><span class="w"> </span><span class="kn">import</span> <span class="n">displacy</span>
 </pre></div>
 </div>
 </div>
 <p>You can config the setting in the nlp.add_pipe.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span>
-    <span class="s2">&quot;pythainlp&quot;</span><span class="p">,</span>
+    <span class="s2">"pythainlp"</span><span class="p">,</span>
     <span class="n">config</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;pos_engine&quot;</span><span class="p">:</span> <span class="s2">&quot;perceptron&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;pos&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s2">&quot;pos_corpus&quot;</span><span class="p">:</span> <span class="s2">&quot;orchid_ud&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;sent_engine&quot;</span><span class="p">:</span> <span class="s2">&quot;crfcut&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;sent&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s2">&quot;ner_engine&quot;</span><span class="p">:</span> <span class="s2">&quot;thainer&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ner&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s2">&quot;tokenize_engine&quot;</span><span class="p">:</span> <span class="s2">&quot;newmm&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;tokenize&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="s2">&quot;dependency_parsing&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="s2">&quot;dependency_parsing_engine&quot;</span><span class="p">:</span> <span class="s2">&quot;esupar&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;dependency_parsing_model&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"pos_engine"</span><span class="p">:</span> <span class="s2">"perceptron"</span><span class="p">,</span>
+        <span class="s2">"pos"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"pos_corpus"</span><span class="p">:</span> <span class="s2">"orchid_ud"</span><span class="p">,</span>
+        <span class="s2">"sent_engine"</span><span class="p">:</span> <span class="s2">"crfcut"</span><span class="p">,</span>
+        <span class="s2">"sent"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"ner_engine"</span><span class="p">:</span> <span class="s2">"thainer"</span><span class="p">,</span>
+        <span class="s2">"ner"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"tokenize_engine"</span><span class="p">:</span> <span class="s2">"newmm"</span><span class="p">,</span>
+        <span class="s2">"tokenize"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">"dependency_parsing"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">"dependency_parsing_engine"</span><span class="p">:</span> <span class="s2">"esupar"</span><span class="p">,</span>
+        <span class="s2">"dependency_parsing_model"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
@@ -406,13 +403,13 @@ Successfully installed attacut-1.0.6 docopt-0.6.2 fire-0.5.0 nptyping-2.4.1 ssg-
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s1">'th'</span><span class="p">)</span>
 <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span>
-   <span class="s2">&quot;pythainlp&quot;</span><span class="p">,</span>
+   <span class="s2">"pythainlp"</span><span class="p">,</span>
    <span class="n">config</span><span class="o">=</span><span class="p">{</span>
-      <span class="s2">&quot;sent&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-      <span class="s2">&quot;tokenize&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-      <span class="s2">&quot;tokenize_engine&quot;</span><span class="p">:</span><span class="s2">&quot;attacut&quot;</span><span class="c1"># try change !!! &quot;attacut&quot; &quot;newmm&quot;</span>
+      <span class="s2">"sent"</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+      <span class="s2">"tokenize"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+      <span class="s2">"tokenize_engine"</span><span class="p">:</span><span class="s2">"attacut"</span><span class="c1"># try change !!! "attacut" "newmm"</span>
    <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
@@ -446,7 +443,7 @@ Corpus: thainer
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;ผมเป็นแมว ผมชอบไปเล่นที่โรงเรียนนางรอง บุรีรัมย์&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">"ผมเป็นแมว ผมชอบไปเล่นที่โรงเรียนนางรอง บุรีรัมย์"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -535,7 +532,7 @@ Corpus: pos_lst20_perceptron
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"ent"</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -563,12 +560,12 @@ Corpus: pos_lst20_perceptron
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s1">'th'</span><span class="p">)</span>
 <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span>
-   <span class="s2">&quot;pythainlp&quot;</span><span class="p">,</span>
+   <span class="s2">"pythainlp"</span><span class="p">,</span>
    <span class="n">config</span><span class="o">=</span><span class="p">{</span>
-      <span class="s2">&quot;sent&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-      <span class="s2">&quot;dependency_parsing&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+      <span class="s2">"sent"</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+      <span class="s2">"dependency_parsing"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
    <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
@@ -587,7 +584,7 @@ Corpus: pos_lst20_perceptron
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">&quot;ผมเป็นแมว ผมชอบไปเล่นที่โรงเรียนนางรอง บุรีรัมย์&quot;</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span><span class="o">=</span><span class="n">nlp</span><span class="p">(</span><span class="s2">"ผมเป็นแมว ผมชอบไปเล่นที่โรงเรียนนางรอง บุรีรัมย์"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -698,7 +695,7 @@ INFO:supar:0:00:00.204603s elapsed, 4.89 Sents/s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ent&quot;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"ent"</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -722,7 +719,7 @@ INFO:supar:0:00:00.204603s elapsed, 4.89 Sents/s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;dep&quot;</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">"dep"</span><span class="p">,</span><span class="n">jupyter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
